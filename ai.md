@@ -1,0 +1,1 @@
+huihui-ai/Huihui-Qwen3-Coder-30B-A3B-Instruct-abliterated
