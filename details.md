@@ -1,5 +1,3 @@
-Create a highly detailed, professional **system architecture + product flow diagram** for a web application that connects NGOs and nonprofit organizations so they can share surplus resources, request resources, discover organizations, collaborate, and transparently document assistance.
-
 The platform should be designed as a **trusted NGO resource coordination network**, not simply a donation website or social network.
 
 The architecture must clearly show:
@@ -1549,6 +1547,3 @@ The architecture should be sufficiently detailed that a software engineer can us
 - Administration
 - Security
 
-Make the diagram professional enough for a **startup pitch, hackathon presentation, technical documentation, or software architecture review**.
-
-Avoid unnecessary decorative elements. Prioritize clarity, hierarchy, relationships, data flow, trust boundaries, and system functionality.
