@@ -1,0 +1,13 @@
+NGO rows: 49
+  flag_invalid_email: 0
+  flag_missing_fields_of_work: 1
+    -> NGO011
+  flag_future_registration: 0
+  flag_suspect_act_name: 2
+    -> NGO010; NGO036
+  flag_duplicate_email: 0
+  flag_duplicate_reg_no: 0
+
+Disaster rows: 12  (researched: 5, shortage inferred: 4)
+Shortage items: 31, resource category links: 28, contributing NGOs: 24, districts: 13
+Disaster NGOs matched to your NGO table: 0 (expected 0 - these are national NGOs, not in your sample)

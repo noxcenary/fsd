@@ -1,0 +1,347 @@
+ngo_id,field_of_work,resource_category
+NGO001,Aged/Elderly,Other
+NGO001,Agriculture,Food
+NGO001,Children,Education Supplies
+NGO001,Civic Issues,Other
+NGO001,Dalit Upliftment,Other
+NGO001,Drinking Water,Water & Sanitation
+NGO001,Education & Literacy,Education Supplies
+NGO001,Environment & Forests,Other
+NGO001,Health & Family Welfare,Medicines
+NGO001,HIV/AIDS,Medicines
+NGO001,Human Rights,Other
+NGO001,Legal Awareness & Aid,Other
+NGO001,Micro Finance (SHGs),Livelihood
+NGO001,Micro Small & Medium Enterprises,Livelihood
+NGO001,Nutrition,Food
+NGO001,Panchayati Raj,Other
+NGO001,Rural Development & Poverty Alleviation,Other
+NGO001,Tribal Affairs,Other
+NGO001,Vocational Training,Livelihood
+NGO001,Women's Development & Empowerment,Other
+NGO001,Youth Affairs,Other
+NGO002,Education & Literacy,Education Supplies
+NGO002,Environment & Forests,Other
+NGO002,Food Processing,Food
+NGO002,Health & Family Welfare,Medicines
+NGO002,HIV/AIDS,Medicines
+NGO002,Human Rights,Other
+NGO002,Legal Awareness & Aid,Other
+NGO002,Vocational Training,Livelihood
+NGO002,Women's Development & Empowerment,Other
+NGO003,Children,Education Supplies
+NGO003,Civic Issues,Other
+NGO003,Differently Abled,Other
+NGO003,Disaster Management,Other
+NGO003,Dalit Upliftment,Other
+NGO003,Drinking Water,Water & Sanitation
+NGO003,Education & Literacy,Education Supplies
+NGO003,Environment & Forests,Other
+NGO003,Food Processing,Food
+NGO003,Health & Family Welfare,Medicines
+NGO003,HIV/AIDS,Medicines
+NGO003,Housing,Shelter
+NGO003,Human Rights,Other
+NGO003,Legal Awareness & Aid,Other
+NGO003,Labour & Employment,Livelihood
+NGO003,Micro Small & Medium Enterprises,Livelihood
+NGO003,Nutrition,Food
+NGO003,Panchayati Raj,Other
+NGO003,Rural Development & Poverty Alleviation,Other
+NGO003,Tribal Affairs,Other
+NGO003,Vocational Training,Livelihood
+NGO003,Women's Development & Empowerment,Other
+NGO003,Youth Affairs,Other
+NGO004,Panchayati Raj,Other
+NGO004,Vocational Training,Livelihood
+NGO004,Water Resources,Water & Sanitation
+NGO004,Women's Development & Empowerment,Other
+NGO004,Right to Information & Advocacy,Other
+NGO004,Rural Development & Poverty Alleviation,Other
+NGO004,Science & Technology,Other
+NGO004,Tribal Affairs,Other
+NGO004,Youth Affairs,Other
+NGO004,Skill Development,Livelihood
+NGO005,Aged/Elderly,Other
+NGO005,Agriculture,Food
+NGO005,Children,Education Supplies
+NGO005,Differently Abled,Other
+NGO005,Disaster Management,Other
+NGO005,Drinking Water,Water & Sanitation
+NGO005,Education & Literacy,Education Supplies
+NGO005,Environment & Forests,Other
+NGO005,Health & Family Welfare,Medicines
+NGO005,HIV/AIDS,Medicines
+NGO005,Housing,Shelter
+NGO005,Human Rights,Other
+NGO005,Information & Communication Technology,Other
+NGO005,Legal Awareness & Aid,Other
+NGO005,Labour & Employment,Livelihood
+NGO005,Land Resources,Other
+NGO005,Minority Issues,Other
+NGO005,Nutrition,Food
+NGO005,Panchayati Raj,Other
+NGO005,Right to Information & Advocacy,Other
+NGO005,Rural Development & Poverty Alleviation,Other
+NGO005,Science & Technology,Other
+NGO005,Tribal Affairs,Other
+NGO005,Urban Development & Poverty Alleviation,Shelter
+NGO005,Vocational Training,Livelihood
+NGO006,Agriculture,Food
+NGO007,Animal Husbandry - Dairying & Fisheries,Food
+NGO007,Aged/Elderly,Other
+NGO007,Agriculture,Food
+NGO007,Art & Culture,Other
+NGO007,Biotechnology,Other
+NGO007,Children,Education Supplies
+NGO007,Civic Issues,Other
+NGO007,Differently Abled,Other
+NGO007,Disaster Management,Other
+NGO007,Dalit Upliftment,Other
+NGO007,Drinking Water,Water & Sanitation
+NGO007,Education & Literacy,Education Supplies
+NGO007,Environment & Forests,Other
+NGO007,Food Processing,Food
+NGO007,Health & Family Welfare,Medicines
+NGO007,HIV/AIDS,Medicines
+NGO007,Housing,Shelter
+NGO007,Human Rights,Other
+NGO007,Information & Communication Technology,Other
+NGO007,Legal Awareness & Aid,Other
+NGO007,Labour & Employment,Livelihood
+NGO007,Land Resources,Other
+NGO007,Micro Finance (SHGs),Livelihood
+NGO007,Minority Issues,Other
+NGO007,Micro Small & Medium Enterprises,Livelihood
+NGO008,Aged/Elderly,Other
+NGO008,Agriculture,Food
+NGO008,Children,Education Supplies
+NGO008,Differently Abled,Other
+NGO008,Disaster Management,Other
+NGO008,Education & Literacy,Education Supplies
+NGO008,Environment & Forests,Other
+NGO008,Food Processing,Food
+NGO008,Health & Family Welfare,Medicines
+NGO008,Housing,Shelter
+NGO008,Nutrition,Food
+NGO008,Rural Development & Poverty Alleviation,Other
+NGO008,Tribal Affairs,Other
+NGO008,Tourism,Other
+NGO008,Vocational Training,Livelihood
+NGO008,Women's Development & Empowerment,Other
+NGO008,Youth Affairs,Other
+NGO009,Health & Family Welfare,Medicines
+NGO009,HIV/AIDS,Medicines
+NGO009,Legal Awareness & Aid,Other
+NGO009,Micro Finance (SHGs),Livelihood
+NGO009,Women's Development & Empowerment,Other
+NGO010,Children,Education Supplies
+NGO010,Education & Literacy,Education Supplies
+NGO010,Environment & Forests,Other
+NGO010,Health & Family Welfare,Medicines
+NGO010,Vocational Training,Livelihood
+NGO010,Women's Development & Empowerment,Other
+NGO012,Art & Culture,Other
+NGO012,Education & Literacy,Education Supplies
+NGO013,Children,Education Supplies
+NGO013,Differently Abled,Other
+NGO013,Education & Literacy,Education Supplies
+NGO013,Youth Affairs,Other
+NGO013,Human Rights,Other
+NGO013,Women's Development & Empowerment,Other
+NGO013,Skill Development,Livelihood
+NGO013,Rural Development & Poverty Alleviation,Other
+NGO013,Disaster Management,Other
+NGO013,Health & Family Welfare,Medicines
+NGO014,Health & Family Welfare,Medicines
+NGO014,Science & Technology,Other
+NGO015,Micro Finance (SHGs),Livelihood
+NGO015,Agriculture,Food
+NGO016,Religious,Other
+NGO017,Art & Culture,Other
+NGO017,Education & Literacy,Education Supplies
+NGO017,Minority Issues,Other
+NGO017,Rural Development & Poverty Alleviation,Other
+NGO017,Sports,Other
+NGO018,Tourism,Other
+NGO018,Road Safety,Other
+NGO018,Sports,Other
+NGO019,Education & Literacy,Education Supplies
+NGO019,Children,Education Supplies
+NGO020,Art & Culture,Other
+NGO020,Disaster Management,Other
+NGO020,Education & Literacy,Education Supplies
+NGO021,Rural Development & Poverty Alleviation,Other
+NGO021,Education & Literacy,Education Supplies
+NGO021,Art & Culture,Other
+NGO021,Agriculture,Food
+NGO021,Dalit Upliftment,Other
+NGO021,Urban Development & Poverty Alleviation,Shelter
+NGO021,Tribal Affairs,Other
+NGO021,Children,Education Supplies
+NGO021,Civic Issues,Other
+NGO022,Education & Literacy,Education Supplies
+NGO022,Aged/Elderly,Other
+NGO022,Religious,Other
+NGO022,Art & Culture,Other
+NGO022,Youth Affairs,Other
+NGO023,Education & Literacy,Education Supplies
+NGO023,Sports,Other
+NGO023,Skill Development,Livelihood
+NGO024,Education & Literacy,Education Supplies
+NGO025,Art & Culture,Other
+NGO025,Children,Education Supplies
+NGO025,Education & Literacy,Education Supplies
+NGO025,Micro Finance (SHGs),Livelihood
+NGO025,Youth Affairs,Other
+NGO025,Agriculture,Food
+NGO025,Animal Husbandry,Other
+NGO025,Dairying & Fisheries,Other
+NGO025,Biotechnology,Other
+NGO025,Civic Issues,Other
+NGO025,Dalit Upliftment,Other
+NGO025,Differently Abled,Other
+NGO025,Disaster Management,Other
+NGO025,Drinking Water,Water & Sanitation
+NGO025,Aged/Elderly,Other
+NGO025,Environment & Forests,Other
+NGO025,Food Processing,Food
+NGO025,Health & Family Welfare,Medicines
+NGO025,HIV/AIDS,Medicines
+NGO025,Housing,Shelter
+NGO025,Human Rights,Other
+NGO025,Information & Communication Technology,Other
+NGO025,Labour & Employment,Livelihood
+NGO025,Land Resources,Other
+NGO025,Legal Awareness & Aid,Other
+NGO025,Micro Small & Medium Enterprises,Livelihood
+NGO025,Minority Issues,Other
+NGO025,New & Renewable Energy,Other
+NGO025,Nutrition,Food
+NGO025,Panchayati Raj,Other
+NGO025,Prisoner's Issues,Other
+NGO025,Right to Information & Advocacy,Other
+NGO025,Rural Development & Poverty Alleviation,Other
+NGO025,Science & Technology,Other
+NGO025,Scientific & Industrial Research,Other
+NGO025,Sports,Other
+NGO025,Tourism,Other
+NGO025,Tribal Affairs,Other
+NGO025,Urban Development & Poverty Alleviation,Shelter
+NGO025,Vocational Training,Livelihood
+NGO025,Water Resources,Water & Sanitation
+NGO025,Women's Development & Empowerment,Other
+NGO025,Skill Development,Livelihood
+NGO025,Animal Welfare,Other
+NGO025,Religious,Other
+NGO025,Electoral Funding & Donations,Other
+NGO025,Road Safety,Other
+NGO025,Think Tank,Other
+NGO026,Religious,Other
+NGO027,Housing,Shelter
+NGO028,Education & Literacy,Education Supplies
+NGO028,Women's Development & Empowerment,Other
+NGO029,Civic Issues,Other
+NGO029,Education & Literacy,Education Supplies
+NGO029,Health & Family Welfare,Medicines
+NGO029,Information & Communication Technology,Other
+NGO029,Electoral Funding & Donations,Other
+NGO030,Agriculture,Food
+NGO030,Animal Husbandry,Other
+NGO030,Dairying & Fisheries,Other
+NGO030,Rural Development & Poverty Alleviation,Other
+NGO030,Scientific & Industrial Research,Other
+NGO030,Skill Development,Livelihood
+NGO031,Agriculture,Food
+NGO031,Art & Culture,Other
+NGO032,Civic Issues,Other
+NGO032,Animal Welfare,Other
+NGO032,Environment & Forests,Other
+NGO032,Right to Information & Advocacy,Other
+NGO032,Water Resources,Water & Sanitation
+NGO033,Panchayati Raj,Other
+NGO033,Rural Development & Poverty Alleviation,Other
+NGO033,Urban Development & Poverty Alleviation,Shelter
+NGO033,Skill Development,Livelihood
+NGO033,Religious,Other
+NGO033,Education & Literacy,Education Supplies
+NGO033,Legal Awareness & Aid,Other
+NGO033,Sports,Other
+NGO033,Women's Development & Empowerment,Other
+NGO034,Education & Literacy,Education Supplies
+NGO034,Health & Family Welfare,Medicines
+NGO035,Micro Small & Medium Enterprises,Livelihood
+NGO035,Art & Culture,Other
+NGO035,Education & Literacy,Education Supplies
+NGO036,Education & Literacy,Education Supplies
+NGO036,Aged/Elderly,Other
+NGO036,Health & Family Welfare,Medicines
+NGO036,Legal Awareness & Aid,Other
+NGO036,Animal Welfare,Other
+NGO037,Aged/Elderly,Other
+NGO037,Minority Issues,Other
+NGO038,Religious,Other
+NGO039,Education & Literacy,Education Supplies
+NGO039,Aged/Elderly,Other
+NGO039,Health & Family Welfare,Medicines
+NGO039,Nutrition,Food
+NGO039,Women's Development & Empowerment,Other
+NGO039,Children,Education Supplies
+NGO039,Dalit Upliftment,Other
+NGO039,Differently Abled,Other
+NGO039,Environment & Forests,Other
+NGO039,Vocational Training,Livelihood
+NGO039,Animal Welfare,Other
+NGO039,Religious,Other
+NGO040,Education & Literacy,Education Supplies
+NGO040,Sports,Other
+NGO040,Youth Affairs,Other
+NGO040,Vocational Training,Livelihood
+NGO040,Skill Development,Livelihood
+NGO041,Art & Culture,Other
+NGO041,Civic Issues,Other
+NGO041,Human Rights,Other
+NGO041,Legal Awareness & Aid,Other
+NGO041,Skill Development,Livelihood
+NGO042,Education & Literacy,Education Supplies
+NGO042,Health & Family Welfare,Medicines
+NGO042,Children,Education Supplies
+NGO042,Drinking Water,Water & Sanitation
+NGO043,Legal Awareness & Aid,Other
+NGO043,Micro Small & Medium Enterprises,Livelihood
+NGO043,Right to Information & Advocacy,Other
+NGO043,Water Resources,Water & Sanitation
+NGO043,Think Tank,Other
+NGO043,Children,Education Supplies
+NGO043,Women's Development & Empowerment,Other
+NGO043,Skill Development,Livelihood
+NGO044,Civic Issues,Other
+NGO044,Dalit Upliftment,Other
+NGO044,Education & Literacy,Education Supplies
+NGO044,Environment & Forests,Other
+NGO044,Labour & Employment,Livelihood
+NGO045,Art & Culture,Other
+NGO045,Education & Literacy,Education Supplies
+NGO046,Animal Husbandry,Other
+NGO046,Dairying & Fisheries,Other
+NGO046,Scientific & Industrial Research,Other
+NGO046,Sports,Other
+NGO046,Vocational Training,Livelihood
+NGO046,Women's Development & Empowerment,Other
+NGO047,Tourism,Other
+NGO047,Health & Family Welfare,Medicines
+NGO048,Animal Husbandry,Other
+NGO048,Dairying & Fisheries,Other
+NGO048,Labour & Employment,Livelihood
+NGO049,Art & Culture,Other
+NGO049,Education & Literacy,Education Supplies
+NGO049,Health & Family Welfare,Medicines
+NGO049,Women's Development & Empowerment,Other
+NGO049,Skill Development,Livelihood
+NGO049,Disaster Management,Other
+NGO049,Aged/Elderly,Other
+NGO049,Information & Communication Technology,Other
+NGO049,Rural Development & Poverty Alleviation,Other
+NGO049,Tribal Affairs,Other
+NGO049,Vocational Training,Livelihood
+NGO049,Youth Affairs,Other
