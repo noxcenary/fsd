@@ -1,0 +1,509 @@
+<!-- Screen: Publish Surplus Resource Manifest | ID: publish-surplus | UI Source: reliefnet_publish_surplus_resource_manifest_alexandria -->
+<div id="screen-publish-surplus" class="reliefnet-screen-view w-full" data-shell="dashboard">
+  <div class="flex flex-col w-full">
+<div class="max-w-[1440px] w-full mx-auto pb-16">
+<!-- Breadcrumb & Header Meta -->
+<div class="flex flex-col gap-2 pt-6 pb-4">
+<nav class="flex items-center gap-2 text-on-surface-variant font-caption text-caption">
+<span class="hover:text-on-surface cursor-pointer">Home</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-on-surface cursor-pointer">Resources</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Publish Surplus Resource</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mt-2">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm tracking-normal font-bold">Protocol RFC-8812</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label text-label-sm">Earmark ID: SUR-2024-KRN-089</span>
+</div>
+<h1 class="text-[26px] md:text-[32px] text-primary tracking-tight font-bold" style="font-family: 'Noto Serif', Georgia, serif; letter-spacing: -0.015em; color: #08211c;">List Verified Surplus Stock for Inter-NGO Transfer</h1>
+<p class="font-sans text-body-md text-on-surface-variant max-w-3xl">Earmark surplus disaster inventory from your warehouse to prevent localized spoilage, supply hoarding, and emergency bottlenecks.</p>
+</div>
+<div class="flex items-center gap-2 self-start md:self-auto">
+<div class="px-3 py-1.5 rounded-lg bg-surface-container flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">enhanced_encryption</span>
+<span class="font-caption text-caption font-semibold">SHA-256 Ledger Witness Enabled</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Humanitarian Protocol Non-Monetary Banner -->
+<div class="w-full mt-2 mb-6 p-4 rounded-xl bg-surface-container-low shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4" style="background: #fbfdfc; border-left: 4px solid #059669; border: 1px solid #d9e8e2; border-left-width: 4px; border-left-color: #059669;">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+<span class="material-symbols-outlined text-[20px]">handshake</span>
+</div>
+<div>
+<span class="font-label text-label-lg text-primary">Non-Monetary Humanitarian Protocol Enforced</span>
+<p class="font-sans text-body-sm text-on-surface-variant mt-0.5">ReliefNet strictly prohibits commercial sale, markups, or currency transactions. All transfers are recorded with cryptographic chain-of-custody.</p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0 self-end sm:self-auto">
+<span class="px-2.5 py-1 rounded bg-surface-container-highest text-on-surface font-label text-label-sm font-semibold">Zero-Cash Mandate</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+</div>
+</div>
+<!-- Stepper Pipeline Navigation -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8 bg-surface-container-low p-2 rounded-xl"><button class="flex items-center gap-3 p-3 rounded-lg bg-surface-container-lowest shadow-sm text-left transition-all ring-1 ring-primary/20" style="border-color: #059669; border-width: 1px;" type="button"><div class="w-7 h-7 rounded-full text-on-primary flex items-center justify-center font-label text-label-sm font-bold" style="background-color: #059669;">1</div><div class="flex flex-col min-w-0"><span class="font-label text-label-sm font-bold tracking-normal" style="color: #08211c; font-family: 'Noto Serif', serif;">Classification</span><span class="font-caption text-caption text-on-surface truncate">Commodity &amp; Specs</span></div></button><button class="flex items-center gap-3 p-3 rounded-lg bg-surface-container text-left transition-colors hover:bg-surface-container-lowest hover:shadow-sm" type="button"><div class="w-7 h-7 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label text-label-sm font-bold">2</div><div class="flex flex-col min-w-0"><span class="font-label text-label-sm text-on-surface-variant font-bold tracking-normal" style="font-family: 'Noto Serif', serif;">Stock &amp; Quality</span><span class="font-caption text-caption text-on-surface-variant truncate">Volume &amp; Expiry</span></div></button><button class="flex items-center gap-3 p-3 rounded-lg bg-surface-container text-left transition-colors hover:bg-surface-container-lowest hover:shadow-sm" type="button"><div class="w-7 h-7 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label text-label-sm font-bold">3</div><div class="flex flex-col min-w-0"><span class="font-label text-label-sm text-on-surface-variant font-bold tracking-normal" style="font-family: 'Noto Serif', serif;">Logistics</span><span class="font-caption text-caption text-on-surface-variant truncate">Pickup &amp; Staging Bay</span></div></button><button class="flex items-center gap-3 p-3 rounded-lg bg-surface-container text-left transition-colors hover:bg-surface-container-lowest hover:shadow-sm" type="button"><div class="w-7 h-7 rounded-full bg-surface-variant text-on-surface-variant flex items-center justify-center font-label text-label-sm font-bold">4</div><div class="flex flex-col min-w-0"><span class="font-label text-label-sm text-on-surface-variant font-bold tracking-normal" style="font-family: 'Noto Serif', serif;">Destination</span><span class="font-caption text-caption text-on-surface-variant truncate">Verification Sign-off</span></div></button></div>
+<!-- Main Wizard 12-Column Grid -->
+<div class="grid grid-cols-12 gap-6 items-start">
+<!-- Left Column: The Form Inputs (7 Cols) -->
+<form class="col-span-12 lg:col-span-7 flex flex-col gap-6" id="surplus-wizard-form" onsubmit="event.preventDefault();">
+<!-- SECTION 1: Visual Category Picker -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-4" style="border: 1px solid #d9e8e2; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label text-label-sm text-on-secondary-container tracking-normal font-bold">Step 1 of 4</span>
+<h2 class="font-serif text-headline-sm text-primary" style="font-family: 'Noto Serif', Georgia, serif; color: #08211c;">Commodity Cluster &amp; Classification</h2>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Mandatory</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+<!-- Food Option (Selected) -->
+<label class="cursor-pointer relative p-3 rounded-xl bg-secondary-container/40 hover:bg-secondary-container/60 transition-all flex flex-col gap-2" style="border: 2px solid #059669; background-color: #ecfdf5;">
+<input checked="" class="sr-only" name="commodity_category" type="radio" value="food"/>
+<div class="flex items-center justify-between">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-primary-fixed flex items-center justify-center" style="background-color: #059669; color: #ffffff;">
+<span class="material-symbols-outlined text-[18px]">rice_bowl</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[18px]">check_circle</span>
+</div>
+<div>
+<span class="font-label text-label-md text-on-surface block font-bold">Food &amp; Dry Rations</span>
+<span class="font-caption text-caption text-on-surface-variant line-clamp-2">Grains, pulses, baby nutrition, RTE meals</span>
+</div>
+</label>
+<!-- Medical Option -->
+<label class="cursor-pointer relative p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col gap-2">
+<input class="sr-only" name="commodity_category" type="radio" value="medical"/>
+<div class="flex items-center justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">vaccines</span>
+</div>
+<span class="w-4 h-4 rounded-full bg-outline-variant"></span>
+</div>
+<div>
+<span class="font-label text-label-md text-on-surface block font-bold">Medical &amp; Pharma</span>
+<span class="font-caption text-caption text-on-surface-variant line-clamp-2">Trauma kits, saline, antibiotics, cold chain</span>
+</div>
+</label>
+<!-- Shelter Option -->
+<label class="cursor-pointer relative p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col gap-2">
+<input class="sr-only" name="commodity_category" type="radio" value="shelter"/>
+<div class="flex items-center justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">roofing</span>
+</div>
+<span class="w-4 h-4 rounded-full bg-outline-variant"></span>
+</div>
+<div>
+<span class="font-label text-label-md text-on-surface block font-bold">Shelter &amp; Bedding</span>
+<span class="font-caption text-caption text-on-surface-variant line-clamp-2">Tarpaulins, high-GSM blankets, storm tents</span>
+</div>
+</label>
+<!-- WaSH Option -->
+<label class="cursor-pointer relative p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col gap-2">
+<input class="sr-only" name="commodity_category" type="radio" value="wash"/>
+<div class="flex items-center justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">water_drop</span>
+</div>
+<span class="w-4 h-4 rounded-full bg-outline-variant"></span>
+</div>
+<div>
+<span class="font-label text-label-md text-on-surface block font-bold">Water &amp; Sanitation</span>
+<span class="font-caption text-caption text-on-surface-variant line-clamp-2">RO units, chlorine tabs, 5kL bladders</span>
+</div>
+</label>
+<!-- Mobile Assets Option -->
+<label class="cursor-pointer relative p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col gap-2 sm:col-span-2 lg:col-span-2">
+<input class="sr-only" name="commodity_category" type="radio" value="equipment"/>
+<div class="flex items-center justify-between">
+<div class="w-8 h-8 rounded-lg bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">fire_hydrant</span>
+</div>
+<span class="w-4 h-4 rounded-full bg-outline-variant"></span>
+</div>
+<div>
+<span class="font-label text-label-md text-on-surface block font-bold">Equipment &amp; Tactical Assets</span>
+<span class="font-caption text-caption text-on-surface-variant">Inflatable rescue zodiacs, diesel generators, de-watering submersible pumps</span>
+</div>
+</label>
+</div>
+</div>
+<!-- SECTION 2: Commodity Specifications & Batch Identity -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-4" style="border: 1px solid #d9e8e2; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+<div class="flex items-center justify-between">
+<h2 class="font-serif text-headline-sm text-primary" style="font-family: 'Noto Serif', Georgia, serif; color: #08211c;">Commodity Specifications</h2>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label text-label-sm text-on-surface-variant">Lot Verification Required</span>
+</div>
+<div class="flex flex-col gap-3">
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Standard Item Title</label>
+<input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low text-on-surface font-sans text-body-sm focus:outline-none focus:bg-surface shadow-sm transition-all" id="input-item-title" type="text" value="Sona Masoori Parboiled Rice (Double Polished, Moisture-Proof Sealed)"/>
+<span class="font-caption text-caption text-on-surface-variant mt-1 block">Specify trade grading, package integrity, and processing standard.</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Batch / Lot Identifier</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[18px]">qr_code_2</span>
+<input class="w-full pl-9 pr-3 py-2.5 rounded-lg bg-surface-container-low font-sans text-body-sm text-on-surface focus:outline-none focus:bg-surface shadow-sm font-mono" id="input-lot-id" type="text" value="LOT-BLR-FOOD-2024-992"/>
+</div>
+</div>
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Unit of Measurement</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low font-sans text-body-sm text-on-surface focus:outline-none focus:bg-surface shadow-sm" id="select-uom">
+<option selected="" value="kg">Kilograms (kg)</option>
+<option value="tonnes">Metric Tonnes (MT)</option>
+<option value="cartons">Cartons / Multi-packs</option>
+<option value="litres">Litres (L)</option>
+<option value="units">Individual Units (Count)</option>
+</select>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Total Available Surplus</label>
+<div class="relative">
+<input class="w-full pl-3 pr-12 py-2.5 rounded-lg bg-surface-container-low font-sans text-body-sm text-on-surface font-semibold focus:outline-none focus:bg-surface shadow-sm" id="input-surplus-qty" type="number" value="500"/>
+<span class="absolute right-3 top-2.5 font-label text-label-sm text-on-surface-variant" id="label-uom-suffix">kg</span>
+</div>
+</div>
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Minimum Transfer Batch</label>
+<div class="relative">
+<input class="w-full pl-3 pr-12 py-2.5 rounded-lg bg-surface-container-low font-sans text-body-sm text-on-surface focus:outline-none focus:bg-surface shadow-sm" id="input-min-qty" type="number" value="50"/>
+<span class="absolute right-3 top-2.5 font-label text-label-sm text-on-surface-variant">kg</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant mt-1 block">Permits split allocation to multiple smaller crisis camps.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Shelf-life, Climate Storage & Quality Verification -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-4" style="border: 1px solid #d9e8e2; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+<div class="flex items-center justify-between">
+<h2 class="font-serif text-headline-sm text-primary" style="font-family: 'Noto Serif', Georgia, serif; color: #08211c;">Quality, Storage &amp; Expiration Specs</h2>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span class="font-caption text-caption font-semibold">Cold &amp; Dry Certified</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Date of Expiry / Best Before</label>
+<div class="relative">
+<input class="w-full pl-3 pr-3 py-2.5 rounded-lg bg-surface-container-low font-sans text-body-sm text-on-surface focus:outline-none focus:bg-surface shadow-sm" id="input-expiry" type="date" value="2025-05-15"/>
+</div>
+<div class="mt-2 p-2 rounded-lg bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">alarm</span>
+<span class="font-label text-label-sm font-semibold">6 Months Usable Life</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Safe Threshold</span>
+</div>
+</div>
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Storage Environment</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low font-sans text-body-sm text-on-surface focus:outline-none focus:bg-surface shadow-sm">
+<option selected="">Moisture Controlled &amp; Dry (&lt;12% RH)</option>
+<option>Dry Ambient Temperature (15°C - 30°C)</option>
+<option>Cold-Chain Refrigerated (2°C - 8°C)</option>
+<option>Ultra-Deep Freeze (-20°C)</option>
+<option>Hazardous / Shielded Containment</option>
+</select>
+<span class="font-caption text-caption text-on-surface-variant mt-1.5 block">Determines logistics transport modality requirements.</span>
+</div>
+</div>
+<!-- Quality Lab Certificate Upload Component -->
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Certification &amp; Lab Release (Optional but Priority-Ranked)</label>
+<div class="p-4 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center text-center cursor-pointer" style="border: 2px dashed #059669; background-color: #fbfdfc;">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[22px]">upload_file</span>
+</div>
+<span class="font-label text-label-md text-on-surface font-semibold">Click to upload FSSAI / Drug Controller lab assay</span>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">Supports PDF, PNG, JPG under 12MB. Digital signatures validated automatically.</p>
+<div class="mt-3 flex items-center gap-2 px-3 py-1 rounded bg-surface shadow-sm">
+<span class="material-symbols-outlined text-secondary text-[16px]">description</span>
+<span class="font-caption text-caption font-semibold text-on-surface">QA_Certificate_Rice_Lot992_Bangalore.pdf</span>
+<span class="material-symbols-outlined text-outline text-[16px] hover:text-error">close</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 4: Logistical Staging & Origin Depot -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-4" style="border: 1px solid #d9e8e2; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+<div class="flex items-center justify-between">
+<h2 class="font-serif text-headline-sm text-primary" style="font-family: 'Noto Serif', Georgia, serif; color: #08211c;">Depot Location &amp; Logistical Staging</h2>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label text-label-sm">Depot ID: BLR-CENT-04</span>
+</div>
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Origin Verified Facility</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low font-sans text-body-sm text-on-surface focus:outline-none focus:bg-surface shadow-sm">
+<option selected="">Domlur 4th Cross Central Warehouse, Bengaluru (GPS Lat 12.9611, Long 77.6387)</option>
+<option>Hubballi Airport Logistics Depot (North Karnataka Forward Post)</option>
+<option>Belagavi Flood Relief Annex Depot (Temporary Staging)</option>
+</select>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Loading Dock Capabilities</label>
+<div class="space-y-2 mt-2">
+<label class="flex items-center gap-2 text-on-surface text-body-sm font-sans cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-0" type="checkbox"/>
+<span>Heavy Forklift on site (3-Ton rated)</span>
+</label>
+<label class="flex items-center gap-2 text-on-surface text-body-sm font-sans cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-0" type="checkbox"/>
+<span>10-Wheeler high-clearance truck ramp</span>
+</label>
+<label class="flex items-center gap-2 text-on-surface text-body-sm font-sans cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-0" type="checkbox"/>
+<span>Covered weatherproof loading bay</span>
+</label>
+</div>
+</div>
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Dispatch Readiness State</label>
+<div class="p-3 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary font-semibold">
+<span class="material-symbols-outlined text-secondary text-[18px]">bolt</span>
+<span class="font-label text-label-md">Ready in &lt; 2 Hours</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Staged on wooden EUR-pallets with shrink film. Drivers can arrive immediately upon smart release token confirmation.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 5: Distribution Mandates & Intended Purpose -->
+<div class="p-6 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-4" style="border: 1px solid #d9e8e2; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+<div class="flex items-center justify-between">
+<h2 class="font-serif text-headline-sm text-primary" style="font-family: 'Noto Serif', Georgia, serif; color: #08211c;">Distribution Mandates &amp; Emergency Scope</h2>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">policy</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Intended Beneficiary Target</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low font-sans text-body-sm text-on-surface focus:outline-none focus:bg-surface shadow-sm">
+<option selected="">Flood Evacuees &amp; Temporary Relief Camps</option>
+<option>Central Community Kitchens (Langar / Hot Meals)</option>
+<option>Rural Vulnerable Settlements (Isolated cutoff)</option>
+<option>First Responder Medical Centers</option>
+</select>
+</div>
+<div>
+<label class="font-label text-label-sm text-on-surface-variant uppercase font-semibold block mb-1">Priority Geographic Theaters</label>
+<select class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-low font-sans text-body-sm text-on-surface focus:outline-none focus:bg-surface shadow-sm">
+<option selected="">Karnataka Flood Zone (Belagavi, Bagalkote, Raichur)</option>
+<option>Western Ghats Landslide Corridor</option>
+<option>All Southern River Basins (Dynamic Dispatch)</option>
+</select>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-high/60 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">verified_user</span>
+<div class="text-on-surface-variant font-caption text-caption">
+              By submitting this listing, you commit this inventory exclusively to the ReliefNet network. Double-listing or parallel private disposal voids your verified status.
+            </div>
+</div>
+</div>
+</form>
+<!-- Right Column: Sidebar Live Preview Card & Matchmaker Engine (5 Cols) -->
+<aside class="col-span-12 lg:col-span-5 flex flex-col gap-5 sticky top-20">
+<!-- Live Listing Directory Preview Card -->
+<div class="rounded-xl bg-surface-container-lowest shadow-md overflow-hidden transition-all" style="border: 1px solid #d9e8e2; background-color: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+<div class="px-5 py-3.5 bg-surface-container-high flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">visibility</span>
+<span class="font-label text-label-md text-primary tracking-normal font-bold" style="font-family: 'Noto Serif', serif; color: #08211c;">Public Marketplace Card Preview</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label text-label-sm text-on-surface-variant">Live View</span>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<!-- Simulated Listing Card Frame -->
+<div class="rounded-xl bg-surface-container-low p-4 flex flex-col gap-3">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">rice_bowl</span>
+</div>
+<div>
+<span class="font-label text-label-sm text-on-secondary-container tracking-normal font-bold">Food &amp; Dry Rations</span>
+<h3 class="font-serif text-headline-sm text-primary line-clamp-1" id="preview-title" style="font-family: 'Noto Serif', Georgia, serif; color: #08211c; font-weight: 700;">Sona Masoori Parboiled Rice</h3>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-semibold shrink-0">Surplus</span>
+</div>
+<!-- Item Imagery / Warehouse Evidence -->
+<div class="relative w-full h-36 rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Neatly arranged pallets of high quality sealed food grains stacked inside a modern clean logistics warehouse in India. Bright daylight filtering through industrial high-bay windows, highlighting moisture-resistant clean packaging and barcode tags." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvCpqriZMzkeh6D0WV92cWmc0w2bxu5I9K4dYp2hIM4_r2KVFd-uJ34eik73Q2_3SJjG1lBAlHyJjL7f-lukyjK1paelvkgV-gXLKsM9xjvk-B0BXo14fsaPeh2XfCPoUGtTjk08peqUZfHyJHyntVjIzcoLWISWafMfe5ckp1A9UVrXaJUdksIhNvS_2_IyTosWycyt-RLTIp-UPHT0Y2q2ux9Mx61M3EeHU1iXQf"/>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-primary-container/85 text-primary-fixed font-caption text-caption flex items-center gap-1 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+<span id="preview-lot-badge">LOT-BLR-FOOD-2024-992</span>
+</div>
+<div class="absolute top-2 right-2 px-2 py-0.5 rounded bg-surface/90 text-on-surface font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-[14px]">local_shipping</span>
+<span>Palletized</span>
+</div>
+</div>
+<!-- Metric Grid Inside Card -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="p-2.5 rounded-lg bg-surface">
+<span class="font-caption text-caption text-on-surface-variant block">Surplus Available</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-serif text-headline-lg text-primary font-bold" id="preview-quantity">500</span>
+<span class="font-label text-label-sm text-on-surface-variant font-semibold" id="preview-uom">kg</span>
+</div>
+</div>
+<div class="p-2.5 rounded-lg bg-surface">
+<span class="font-caption text-caption text-on-surface-variant block">Shelf Remaining</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-serif text-headline-lg text-secondary font-bold">182</span>
+<span class="font-label text-label-sm text-on-surface-variant font-semibold">Days</span>
+</div>
+</div>
+</div>
+<!-- Origin & Facility String -->
+<div class="flex items-center gap-2 pt-1 text-on-surface-variant font-sans text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">warehouse</span>
+<span class="truncate">Domlur 4th Cross Central Warehouse, BLR</span>
+</div>
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary flex items-center justify-center text-on-secondary text-[12px] font-bold">A</div>
+<span class="font-label text-label-sm text-on-surface font-semibold">Asha Relief Foundation</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Min Split: 50 kg</span>
+</div>
+</div>
+<!-- Platform AI Matching Guarantee -->
+<div class="p-4 rounded-xl bg-surface-container flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">auto_awesome</span>
+<span class="font-label text-label-sm text-primary font-bold tracking-normal">AI Instant Match Engine</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-semibold">3 Requisitions Active</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant leading-relaxed">Publishing instantly notifies high-priority field coordinators within 400km whose registered supply requisitions match this stock profile.</p>
+<!-- Compatibility Target Snapshot -->
+<div class="space-y-1.5 pt-1">
+<div class="flex items-center justify-between text-body-sm font-sans p-2 rounded bg-surface">
+<div class="flex flex-col min-w-0">
+<span class="font-label text-label-sm text-on-surface truncate">Belagavi Flood Evac Camp #3</span>
+<span class="font-caption text-caption text-on-surface-variant">Need: 450 kg Dry Grains · Red Urgent</span>
+</div>
+<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-bold">98% Match</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-sans p-2 rounded bg-surface">
+<div class="flex flex-col min-w-0">
+<span class="font-label text-label-sm text-on-surface truncate">Raichur Relief Community Kitchen</span>
+<span class="font-caption text-caption text-on-surface-variant">Need: 200 kg Grains · 24h Window</span>
+</div>
+<span class="px-2 py-1 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-bold">92% Match</span>
+</div>
+</div>
+</div>
+<!-- Action Triggers -->
+<div class="flex flex-col gap-2 pt-2">
+<button class="w-full h-11 px-4 rounded bg-primary-container text-on-primary-fixed hover:bg-secondary transition-all flex items-center justify-center gap-2 font-label text-label-lg font-bold shadow-sm" id="btn-publish-grid" style="background-color: #059669; color: #ffffff;" type="button">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span>Publish to Network Live Grid</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full h-10 px-3 rounded bg-surface-container hover:bg-surface-container-high transition-all text-on-surface font-label text-label-md flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Save Draft Manifest</span>
+</button>
+<button class="w-full h-10 px-3 rounded bg-surface-container hover:bg-surface-container-high transition-all text-on-surface font-label text-label-md flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Barcode Lot</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-center gap-2 text-center text-on-surface-variant font-caption text-caption pt-1">
+<span class="material-symbols-outlined text-[14px]">gavel</span>
+<span>Subject to National Disaster Management Authority Guidelines</span>
+</div>
+</div>
+</div>
+<!-- Verification Snapshot Indicator Card -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[26px]">network_check</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label text-label-sm text-primary uppercase font-bold tracking-wider">FieldGrid Node Sync</span>
+<span class="font-sans text-body-sm text-on-surface">Bengaluru Hub Connected</span>
+<span class="font-caption text-caption text-on-surface-variant">Last ping 1.4s ago · Zero dropped packets</span>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</div>
+<script>
+  // Simple reactive bindings for live preview updates
+  (function() {
+    const inputTitle = document.getElementById('input-item-title');
+    const inputLot = document.getElementById('input-lot-id');
+    const inputQty = document.getElementById('input-surplus-qty');
+    const selectUom = document.getElementById('select-uom');
+    
+    const previewTitle = document.getElementById('preview-title');
+    const previewLotBadge = document.getElementById('preview-lot-badge');
+    const previewQty = document.getElementById('preview-quantity');
+    const previewUom = document.getElementById('preview-uom');
+    const labelUomSuffix = document.getElementById('label-uom-suffix');
+    const btnPublish = document.getElementById('btn-publish-grid');
+
+    if(inputTitle && previewTitle) {
+      inputTitle.addEventListener('input', (e) => {
+        previewTitle.textContent = e.target.value.trim() || 'Untitled Surplus Commodity';
+      });
+    }
+
+    if(inputLot && previewLotBadge) {
+      inputLot.addEventListener('input', (e) => {
+        previewLotBadge.textContent = e.target.value.trim() || 'UNREGISTERED-LOT';
+      });
+    }
+
+    if(inputQty && previewQty) {
+      inputQty.addEventListener('input', (e) => {
+        previewQty.textContent = e.target.value || '0';
+      });
+    }
+
+    if(selectUom && previewUom && labelUomSuffix) {
+      selectUom.addEventListener('change', (e) => {
+        const val = e.target.value;
+        previewUom.textContent = val;
+        labelUomSuffix.textContent = val;
+      });
+    }
+
+    if(btnPublish) {
+      btnPublish.addEventListener('click', () => {
+        btnPublish.classList.add('opacity-75');
+        btnPublish.innerHTML = `
+          <span class="material-symbols-outlined text-[20px] animate-spin">refresh</span>
+          <span>Broadcasting to Live Grid...</span>
+        `;
+        setTimeout(() => {
+          btnPublish.classList.remove('opacity-75');
+          btnPublish.innerHTML = `
+            <span class="material-symbols-outlined text-[20px]">check_circle</span>
+            <span>Surplus Stock Published!</span>
+          `;
+          btnPublish.classList.replace('bg-primary-container', 'bg-secondary');
+        }, 1200);
+      });
+    }
+  })();
+</script>
+  </div>
+</div>

@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Public NGO Discovery Transparency Directory — ReliefNet</title>
+  <link rel="stylesheet" href="/static/css/alexandria.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Public+Sans:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: "#059669", 50: "#ecfdf5", 100: "#d1fae5", 500: "#10b981", 600: "#059669", 700: "#065f46" },
+            "primary-container": "#ecfdf5",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#065f46",
+            "primary-fixed": "#d1fae5",
+            "secondary-container": "#f0f7f4",
+            "on-secondary-container": "#08211c",
+            surface: "#fbfdfc",
+            "on-surface": "#08211c",
+            "on-surface-variant": "#52645f",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#fbfdfc",
+            "surface-container": "#f0f7f4",
+            "surface-container-high": "#d9e8e2",
+            outline: "#8fa8a1",
+            "outline-variant": "#d9e8e2"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "margin-desktop": "2rem",
+            "gutter-desktop": "1.5rem"
+          },
+          fontFamily: {
+            serif: ['"Noto Serif"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            label: ['"Public Sans"', '"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          fontSize: {
+            "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-sans antialiased text-slate-900">
+  <div id="global-header"></div>
+  <main class="w-full">
+    <div class="flex flex-col w-full">
+<div class="w-full max-w-[1600px] mx-auto px-margin-desktop py-space-lg flex flex-col gap-space-lg">
+<!-- BREADCRUMBS & CONSOLE METADATA BAR -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<nav class="flex items-center gap-space-xs font-caption text-caption text-outline">
+<span class="hover:text-on-surface cursor-pointer">Public Portal</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="hover:text-on-surface cursor-pointer">Directory</span>
+<span class="material-symbols-outlined text-[12px]">chevron_right</span>
+<span class="font-label text-label-sm text-primary">Discover NGOs</span>
+</nav>
+<div class="flex items-center gap-space-md font-label text-label-sm text-outline">
+<span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim"></span>124 Verified Network Nodes</span>
+<span>•</span>
+<span class="font-caption text-caption">Telemetry sync: 2m ago</span>
+</div>
+</div>
+<!-- PAGE HERO & HEADER -->
+<div class="bg-surface-container-low rounded-xl p-space-xl flex flex-col gap-space-md shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs text-secondary font-label text-label-sm tracking-normal">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+            Karnataka Inter-Agency Coordination Registry
+          </div>
+<h1 class="font-serif text-display-lg text-primary tracking-tight" style="font-family: 'Noto Serif', serif; letter-spacing: -0.02em;">Discover Verified Humanitarian Organizations</h1>
+<p class="font-sans text-body-lg text-on-surface-variant">Explore credentialed relief organizations, disaster coordination nodes, and regional staging depots active across the Karnataka emergency network.</p>
+</div>
+<!-- QUICK STAT BAR -->
+<div class="flex items-center gap-space-lg bg-surface-container-lowest p-space-md rounded-lg shadow-sm shrink-0">
+<div class="flex flex-col">
+<span class="font-serif text-[24px] text-primary leading-tight font-bold">124</span>
+<span class="font-label text-label-sm text-outline">Total Depots &amp; NGOs</span>
+</div>
+<div class="h-8 w-px bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-serif text-[24px] text-tertiary-container leading-tight font-bold">96.7%</span>
+<span class="font-label text-label-sm text-outline">Avg Trust Rating</span>
+</div>
+<div class="h-8 w-px bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-serif text-[24px] text-secondary leading-tight font-bold">1,842</span>
+<span class="font-label text-label-sm text-outline">Dispatches Logged</span>
+</div>
+</div>
+</div>
+<!-- SEARCH TOOLBAR & VIEW CONTROLS -->
+<div class="flex flex-col md:flex-row items-center gap-space-md pt-space-xs">
+<div class="relative flex-1 w-full bg-surface-container-lowest rounded-lg shadow-sm flex items-center px-space-md">
+<span class="material-symbols-outlined text-outline text-[20px]">search</span>
+<input class="w-full bg-transparent border-0 px-space-sm py-space-md font-sans text-body-md text-on-surface focus:outline-none placeholder:text-outline" id="searchInput" placeholder="Search NGO by name, DARPAN ID, specialization, or district..." type="text"/>
+<span class="font-caption text-caption text-outline px-space-xs py-0.5 bg-surface-container rounded shrink-0">Ctrl + K</span>
+</div>
+<!-- VIEW TOGGLES -->
+<div class="flex items-center gap-space-xs bg-surface-container p-1 rounded-lg shrink-0">
+<button class="flex items-center gap-1.5 px-space-md py-space-xs rounded font-label text-label-md bg-surface-container-lowest text-primary shadow-sm transition-all" id="viewGridBtn" onclick="switchView('grid')">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+<span>Grid View</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-space-xs rounded font-label text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="viewTableBtn" onclick="switchView('table')">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+<span>Table View</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-space-xs rounded font-label text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="viewMapBtn" onclick="switchView('map')">
+<span class="material-symbols-outlined text-[18px]">map</span>
+<span>Map Hubs</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MAIN INTERFACE BODY: FILTER SIDEBAR & DIRECTORY WORKSPACE -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- LEFT UTILITY FILTER SIDEBAR -->
+<aside class="lg:col-span-3 flex flex-col gap-space-md bg-surface-container-low rounded-xl p-space-lg shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px]">tune</span>
+<span class="font-label text-label-lg text-primary">Filter Matrix</span>
+</div>
+<button class="font-caption text-caption text-secondary hover:underline" onclick="resetFilters()">Reset All</button>
+</div>
+<!-- STATUS SELECTION CHIPS -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label text-label-sm text-outline tracking-normal">Verification Level</span>
+<div class="flex flex-col gap-1">
+<label class="flex items-center justify-between p-2 rounded bg-surface-container-lowest cursor-pointer hover:bg-surface-container transition-colors">
+<span class="flex items-center gap-2 font-label text-label-md text-on-surface">
+<input checked="" class="accent-primary" name="verif_status" onchange="applyFilters()" type="radio" value="all"/>
+                All Organizations
+              </span>
+<span class="font-caption text-caption px-1.5 py-0.5 bg-surface-container rounded text-outline font-semibold">124</span>
+</label>
+<label class="flex items-center justify-between p-2 rounded bg-surface-container-lowest cursor-pointer hover:bg-surface-container transition-colors">
+<span class="flex items-center gap-2 font-label text-label-md text-on-surface">
+<input class="accent-primary" name="verif_status" onchange="applyFilters()" type="radio" value="gov"/>
+                Government Verified
+              </span>
+<span class="font-caption text-caption px-1.5 py-0.5 bg-surface-container rounded text-outline font-semibold">84</span>
+</label>
+<label class="flex items-center justify-between p-2 rounded bg-surface-container-lowest cursor-pointer hover:bg-surface-container transition-colors">
+<span class="flex items-center gap-2 font-label text-label-md text-on-surface">
+<input class="accent-primary" name="verif_status" onchange="applyFilters()" type="radio" value="community"/>
+                Community Peer Verified
+              </span>
+<span class="font-caption text-caption px-1.5 py-0.5 bg-surface-container rounded text-outline font-semibold">40</span>
+</label>
+</div>
+</div>
+<!-- EMERGENCY ROLE FILTER -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label text-label-sm text-outline tracking-normal">Emergency Protocol Role</span>
+<div class="flex flex-wrap gap-1.5">
+<button class="role-chip active px-2.5 py-1 rounded text-label-sm font-label bg-primary text-on-primary transition-colors" data-role="all" onclick="toggleRole(this, 'all')">All Roles</button>
+<button class="role-chip px-2.5 py-1 rounded text-label-sm font-label bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors" data-role="State Disaster Partner" onclick="toggleRole(this, 'State Disaster Partner')">State Partner</button>
+<button class="role-chip px-2.5 py-1 rounded text-label-sm font-label bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors" data-role="First Responder" onclick="toggleRole(this, 'First Responder')">First Responder</button>
+<button class="role-chip px-2.5 py-1 rounded text-label-sm font-label bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors" data-role="Staging Depot" onclick="toggleRole(this, 'Staging Depot')">Staging Depot</button>
+<button class="role-chip px-2.5 py-1 rounded text-label-sm font-label bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container transition-colors" data-role="Medical Specialist" onclick="toggleRole(this, 'Medical Specialist')">Medical Specialist</button>
+</div>
+</div>
+<!-- DISTRICT / NODE SELECTOR -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label text-label-sm text-outline tracking-normal">District Operational Node</span>
+<select class="w-full bg-surface-container-lowest p-2 rounded font-sans text-body-md text-on-surface focus:outline-none cursor-pointer" id="districtFilter" onchange="applyFilters()">
+<option value="all">All Operational Districts</option>
+<option value="Bengaluru Central">Bengaluru Central</option>
+<option value="Bengaluru North">Bengaluru North (Yelahanka)</option>
+<option value="Bengaluru Rural">Bengaluru Rural</option>
+<option value="Hubballi-Dharwad">Hubballi-Dharwad</option>
+<option value="Bellandur &amp; Hosapete">Hosapete &amp; Bellandur</option>
+<option value="Mysuru">Mysuru Regional</option>
+<option value="Raichur">Raichur Inland</option>
+</select>
+</div>
+<!-- CAPABILITY & SECTOR TOGGLES -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label text-label-sm text-outline tracking-normal">Sector Capabilities</span>
+<div class="flex flex-col gap-1.5 font-label text-label-md text-on-surface-variant">
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="cap-filter accent-primary" onchange="applyFilters()" type="checkbox" value="food"/>
+<span>Food &amp; Emergency Rations</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="cap-filter accent-primary" onchange="applyFilters()" type="checkbox" value="medical"/>
+<span>Trauma &amp; Clinical Medicine</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="cap-filter accent-primary" onchange="applyFilters()" type="checkbox" value="shelter"/>
+<span>Shelter &amp; Bedding Kits</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="cap-filter accent-primary" onchange="applyFilters()" type="checkbox" value="wash"/>
+<span>WASH (Water &amp; Sanitation)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer">
+<input checked="" class="cap-filter accent-primary" onchange="applyFilters()" type="checkbox" value="logistics"/>
+<span>Mobile Fleets &amp; Transport</span>
+</label>
+</div>
+</div>
+<!-- AUDIT & VERIFICATION NOTICE -->
+<div class="bg-surface-container p-space-md rounded-lg mt-space-sm flex flex-col gap-1">
+<div class="flex items-center gap-1.5 text-primary font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            Cryptographic Integrity
+          </div>
+<p class="font-caption text-caption text-outline">All trust indices are recalculated every 60 mins against NDMA reconciliation manifests and dual-signed peer bills.</p>
+</div>
+</aside>
+<!-- RIGHT RESULTS PANE -->
+<main class="lg:col-span-9 flex flex-col gap-space-md">
+<!-- ACTIVE FILTER SUMMARY BAR -->
+<div class="flex items-center justify-between bg-surface-container-low px-space-md py-space-sm rounded-lg text-on-surface-variant text-label-sm font-label">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="text-outline">Active Filters:</span>
+<span class="bg-surface-container-lowest px-2 py-0.5 rounded text-on-surface flex items-center gap-1" id="chipStatus">Status: All <span class="material-symbols-outlined text-[12px] cursor-pointer" onclick="resetFilters()">close</span></span>
+<span class="bg-surface-container-lowest px-2 py-0.5 rounded text-on-surface flex items-center gap-1" id="chipRole">Role: All <span class="material-symbols-outlined text-[12px] cursor-pointer" onclick="resetRole()">close</span></span>
+</div>
+<span class="text-outline shrink-0"><span id="matchCount">5</span> Active Registry Records</span>
+</div>
+<!-- VIEW CONTAINER 1: GRID VIEW (DEFAULT) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter-desktop" id="gridContainer">
+<!-- NGO CARD 1 -->
+<article class="ngo-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden" data-caps="food logistics shelter" data-district="Bengaluru Central" data-role="State Disaster Partner" data-verif="gov">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center font-serif text-headline-md text-primary font-bold shrink-0">
+                    AR
+                  </div>
+<div class="flex flex-col">
+<h3 class="font-serif text-headline-sm text-primary flex items-center gap-1" style="font-family: 'Noto Serif', serif;">
+                      Asha Relief Initiative
+                      <span class="material-symbols-outlined text-secondary text-[18px]" title="Government Verified Node">verified</span>
+</h3>
+<span class="font-caption text-caption text-outline">DARPAN: KA/2021/0288412 • Est. 2012</span>
+</div>
+</div>
+<!-- TRUST INDEX SCORE RING BADGE -->
+<div class="flex flex-col items-end shrink-0">
+<div class="flex items-center gap-1 bg-secondary-container px-2 py-1 rounded text-on-secondary-container font-label text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>98.8 / 100</span>
+</div>
+<span class="font-caption text-[10px] text-outline mt-0.5">Trust Index</span>
+</div>
+</div>
+<!-- CREDENTIAL BADGES -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="font-label text-[11px] px-2 py-0.5 rounded bg-primary-container text-on-primary font-semibold">Government Verified #KA-2021-8841</span>
+<span class="font-label text-[11px] px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-semibold">State Disaster Mgmt Partner</span>
+</div>
+<!-- AUDIT STATS ROW -->
+<div class="grid grid-cols-3 gap-2 p-2 rounded bg-surface-container-low text-center">
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-primary">48</span>
+<span class="font-caption text-[10px] text-outline">Transfers Cleared</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-secondary">0</span>
+<span class="font-caption text-[10px] text-outline">Disputes Logged</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-on-surface">12m</span>
+<span class="font-caption text-[10px] text-outline">Avg Response</span>
+</div>
+</div>
+<!-- LOCATION & HUB -->
+<div class="flex items-center gap-1.5 text-on-surface-variant font-sans text-body-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
+<span>Bengaluru Central Depot (South Zone Sector 4 Hub)</span>
+</div>
+<!-- CAPABILITIES SECTORS -->
+<div class="flex flex-col gap-1">
+<span class="font-caption text-caption text-outline uppercase font-semibold">Registered Capacities</span>
+<div class="flex flex-wrap gap-1">
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Bulk Grain Warehousing</span>
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Cold-Chain Logistics</span>
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Emergency Rations</span>
+</div>
+</div>
+<!-- ACTIVE MANIFEST STATUS (SURPLUS HIGHLIGHT) -->
+<div class="p-2.5 rounded bg-surface-container-high flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] text-secondary font-bold uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                    Active Surplus Ready
+                  </span>
+<span class="font-caption text-[10px] text-outline">Manifest #8812</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface font-medium">500 kg Sona Masoori Rice, 200 Fleece Blankets available for urgent transfer.</p>
+</div>
+</div>
+<!-- CARD ACTIONS -->
+<div class="flex items-center gap-space-sm pt-space-md mt-space-sm border-t border-surface-container">
+<button class="flex-1 bg-surface-container px-space-md py-2 rounded font-label text-label-md text-on-surface hover:bg-surface-container-high transition-colors text-center" onclick="openDrawer('asha')">
+                View Public Profile
+              </button>
+<button class="bg-primary text-on-primary px-space-md py-2 rounded font-label text-label-md hover:bg-primary-container transition-colors flex items-center gap-1" onclick="triggerCoordinate('Asha Relief Initiative', 'Surplus Transfer')">
+<span class="material-symbols-outlined text-[16px]">route</span>
+<span>Coordinate Grid</span>
+</button>
+</div>
+</article>
+<!-- NGO CARD 2 -->
+<article class="ngo-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden" data-caps="food shelter" data-district="Bengaluru North" data-role="First Responder" data-verif="gov">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center font-serif text-headline-md text-primary font-bold shrink-0">
+                    KS
+                  </div>
+<div class="flex flex-col">
+<h3 class="font-serif text-headline-sm text-primary flex items-center gap-1" style="font-family: 'Noto Serif', serif;">
+                      Karuna Seva Trust
+                      <span class="material-symbols-outlined text-secondary text-[18px]" title="Government Verified Node">verified</span>
+</h3>
+<span class="font-caption text-caption text-outline">DARPAN: KA/2019/0044129 • Est. 2017</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<div class="flex items-center gap-1 bg-secondary-container px-2 py-1 rounded text-on-secondary-container font-label text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>96.2 / 100</span>
+</div>
+<span class="font-caption text-[10px] text-outline mt-0.5">Trust Index</span>
+</div>
+</div>
+<!-- CREDENTIAL BADGES -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="font-label text-[11px] px-2 py-0.5 rounded bg-primary-container text-on-primary font-semibold">Government Verified #KA-2019-4412</span>
+<span class="font-label text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold">First Responder Team</span>
+</div>
+<!-- AUDIT STATS ROW -->
+<div class="grid grid-cols-3 gap-2 p-2 rounded bg-surface-container-low text-center">
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-primary">32</span>
+<span class="font-caption text-[10px] text-outline">Transfers Cleared</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-secondary">0</span>
+<span class="font-caption text-[10px] text-outline">Disputes Logged</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-on-surface">18m</span>
+<span class="font-caption text-[10px] text-outline">Avg Response</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-sans text-body-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
+<span>Yelahanka Relief Camp (Bengaluru North Outpost)</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-caption text-caption text-outline uppercase font-semibold">Registered Capacities</span>
+<div class="flex flex-wrap gap-1">
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Field Kitchens</span>
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Family Shelter Kits</span>
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Displaced Persons Care</span>
+</div>
+</div>
+<!-- REQUISITION HIGHLIGHT -->
+<div class="p-2.5 rounded bg-error-container/40 flex flex-col gap-1 border border-error/20">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] text-error font-bold uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">crisis_alert</span>
+                    Critical Requisition
+                  </span>
+<span class="font-caption text-[10px] text-error font-semibold">Priority 1</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface font-medium">Urgent requirement: 300 kg Rice &amp; 100 Tarpaulins for Yelahanka evacuation center.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-md mt-space-sm border-t border-surface-container">
+<button class="flex-1 bg-surface-container px-space-md py-2 rounded font-label text-label-md text-on-surface hover:bg-surface-container-high transition-colors text-center" onclick="openDrawer('karuna')">
+                View Public Profile
+              </button>
+<button class="bg-primary text-on-primary px-space-md py-2 rounded font-label text-label-md hover:bg-primary-container transition-colors flex items-center gap-1" onclick="triggerCoordinate('Karuna Seva Trust', 'Requisition Match')">
+<span class="material-symbols-outlined text-[16px]">handshake</span>
+<span>Dispatch Aid</span>
+</button>
+</div>
+</article>
+<!-- NGO CARD 3 -->
+<article class="ngo-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden" data-caps="medical wash logistics" data-district="Bellandur &amp; Hosapete" data-role="Medical Specialist" data-verif="community">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center font-serif text-headline-md text-primary font-bold shrink-0">
+                    SH
+                  </div>
+<div class="flex flex-col">
+<h3 class="font-serif text-headline-sm text-primary flex items-center gap-1" style="font-family: 'Noto Serif', serif;">
+                      Spandana Health Foundation
+                      <span class="material-symbols-outlined text-outline text-[18px]" title="Peer Community Endorsed">group</span>
+</h3>
+<span class="font-caption text-caption text-outline">DARPAN: KA/2020/0119830 • Est. 2018</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<div class="flex items-center gap-1 bg-surface-container-high px-2 py-1 rounded text-on-surface font-label text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>94.0 / 100</span>
+</div>
+<span class="font-caption text-[10px] text-outline mt-0.5">Trust Index</span>
+</div>
+</div>
+<!-- CREDENTIAL BADGES -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="font-label text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-semibold">Community Verified (3 Peer Endorsements)</span>
+<span class="font-label text-[11px] px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-semibold">Medical Specialist Node</span>
+</div>
+<!-- AUDIT STATS ROW -->
+<div class="grid grid-cols-3 gap-2 p-2 rounded bg-surface-container-low text-center">
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-primary">26</span>
+<span class="font-caption text-[10px] text-outline">Transfers Cleared</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-secondary">0</span>
+<span class="font-caption text-[10px] text-outline">Disputes Logged</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-on-surface">8m</span>
+<span class="font-caption text-[10px] text-outline">Field Mobilization</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-sans text-body-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
+<span>Hosapete Field Clinic &amp; Bellandur Medical Post</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-caption text-caption text-outline uppercase font-semibold">Registered Capacities</span>
+<div class="flex flex-wrap gap-1">
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Mobile Clinic Vans</span>
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Trauma Surgical Kits</span>
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Water Filtration</span>
+</div>
+</div>
+<!-- FLEET HIGHLIGHT -->
+<div class="p-2.5 rounded bg-surface-container-high flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] text-primary font-bold uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">airport_shuttle</span>
+                    Active Mobile Fleet
+                  </span>
+<span class="font-caption text-[10px] text-tertiary-container font-semibold">Available Now</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface font-medium">2x Rapid Response Ambulances ready for emergency deployment with oxygen support.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-md mt-space-sm border-t border-surface-container">
+<button class="flex-1 bg-surface-container px-space-md py-2 rounded font-label text-label-md text-on-surface hover:bg-surface-container-high transition-colors text-center" onclick="openDrawer('spandana')">
+                View Public Profile
+              </button>
+<button class="bg-primary text-on-primary px-space-md py-2 rounded font-label text-label-md hover:bg-primary-container transition-colors flex items-center gap-1" onclick="triggerCoordinate('Spandana Health Foundation', 'Ambulance Routing')">
+<span class="material-symbols-outlined text-[16px]">medication</span>
+<span>Mobilize Unit</span>
+</button>
+</div>
+</article>
+<!-- NGO CARD 4 -->
+<article class="ngo-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden" data-caps="wash logistics shelter" data-district="Hubballi-Dharwad" data-role="Staging Depot" data-verif="gov">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center font-serif text-headline-md text-primary font-bold shrink-0">
+                    GV
+                  </div>
+<div class="flex flex-col">
+<h3 class="font-serif text-headline-sm text-primary flex items-center gap-1" style="font-family: 'Noto Serif', serif;">
+                      Grama Vikas Disaster Mission
+                      <span class="material-symbols-outlined text-secondary text-[18px]" title="Government Verified Node">verified</span>
+</h3>
+<span class="font-caption text-caption text-outline">DARPAN: KA/2018/0031092 • Est. 2008</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<div class="flex items-center gap-1 bg-secondary-container px-2 py-1 rounded text-on-secondary-container font-label text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>97.5 / 100</span>
+</div>
+<span class="font-caption text-[10px] text-outline mt-0.5">Trust Index</span>
+</div>
+</div>
+<!-- CREDENTIAL BADGES -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="font-label text-[11px] px-2 py-0.5 rounded bg-primary-container text-on-primary font-semibold">Government Verified #KA-2018-3109</span>
+<span class="font-label text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold">Staging Depot</span>
+</div>
+<!-- AUDIT STATS ROW -->
+<div class="grid grid-cols-3 gap-2 p-2 rounded bg-surface-container-low text-center">
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-primary">64</span>
+<span class="font-caption text-[10px] text-outline">Transfers Cleared</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-secondary">0</span>
+<span class="font-caption text-[10px] text-outline">Disputes Logged</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-on-surface">15m</span>
+<span class="font-caption text-[10px] text-outline">Response Rating</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-sans text-body-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
+<span>Hubballi Central Hub &amp; Dharwad Camp</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-caption text-caption text-outline uppercase font-semibold">Registered Capacities</span>
+<div class="flex flex-wrap gap-1">
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Water Purification Tablets</span>
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Flood Rescue Equipment</span>
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Inflatable Boats</span>
+</div>
+</div>
+<!-- HIGHLIGHT -->
+<div class="p-2.5 rounded bg-surface-container-high flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] text-secondary font-bold uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">water_drop</span>
+                    WASH Cache
+                  </span>
+<span class="font-caption text-[10px] text-outline">Ready for Dispatch</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface font-medium">10,000 chlorine tablets &amp; 4 high-capacity portable filtration pumps standing by.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-md mt-space-sm border-t border-surface-container">
+<button class="flex-1 bg-surface-container px-space-md py-2 rounded font-label text-label-md text-on-surface hover:bg-surface-container-high transition-colors text-center" onclick="openDrawer('grama')">
+                View Public Profile
+              </button>
+<button class="bg-primary text-on-primary px-space-md py-2 rounded font-label text-label-md hover:bg-primary-container transition-colors flex items-center gap-1" onclick="triggerCoordinate('Grama Vikas', 'Equipment Routing')">
+<span class="material-symbols-outlined text-[16px]">swap_horizontal_circle</span>
+<span>Request Gear</span>
+</button>
+</div>
+</article>
+<!-- NGO CARD 5 -->
+<article class="ngo-card bg-surface-container-lowest rounded-xl p-space-lg flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow relative overflow-hidden" data-caps="food logistics" data-district="Bengaluru Central" data-role="First Responder" data-verif="community">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center font-serif text-headline-md text-primary font-bold shrink-0">
+                    AT
+                  </div>
+<div class="flex flex-col">
+<h3 class="font-serif text-headline-sm text-primary flex items-center gap-1" style="font-family: 'Noto Serif', serif;">
+                      Annapoorna Humanitarian Trust
+                      <span class="material-symbols-outlined text-outline text-[18px]" title="Peer Community Endorsed">group</span>
+</h3>
+<span class="font-caption text-caption text-outline">DARPAN: KA/2022/0329011 • Est. 2021</span>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<div class="flex items-center gap-1 bg-surface-container-high px-2 py-1 rounded text-on-surface font-label text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">shield</span>
+<span>92.1 / 100</span>
+</div>
+<span class="font-caption text-[10px] text-outline mt-0.5">Trust Index</span>
+</div>
+</div>
+<!-- CREDENTIAL BADGES -->
+<div class="flex flex-wrap gap-1.5 pt-1">
+<span class="font-label text-[11px] px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-semibold">Community Verified (4 Peer Endorsements)</span>
+<span class="font-label text-[11px] px-2 py-0.5 rounded bg-surface-container-highest text-on-surface font-semibold">First Responder Depot</span>
+</div>
+<!-- AUDIT STATS ROW -->
+<div class="grid grid-cols-3 gap-2 p-2 rounded bg-surface-container-low text-center">
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-primary">19</span>
+<span class="font-caption text-[10px] text-outline">Transfers Cleared</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-secondary">0</span>
+<span class="font-caption text-[10px] text-outline">Disputes Logged</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm font-bold text-on-surface">25m</span>
+<span class="font-caption text-[10px] text-outline">Readiness Rating</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-sans text-body-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">location_on</span>
+<span>Koramangala Staging Center, Bengaluru</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-caption text-caption text-outline uppercase font-semibold">Registered Capacities</span>
+<div class="flex flex-wrap gap-1">
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">500 Prepared Ration Kits</span>
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Volunteer Fleet (35 Staff)</span>
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container text-on-surface">Last-Mile Distribution</span>
+</div>
+</div>
+<!-- HIGHLIGHT -->
+<div class="p-2.5 rounded bg-surface-container-high flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] text-primary font-bold uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lunch_dining</span>
+                    Daily Ration Capacity
+                  </span>
+<span class="font-caption text-[10px] text-outline">Immediate Dispatch</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface font-medium">500 Dry family ration hampers packed to Sphere standards, ready for transit.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-space-md mt-space-sm border-t border-surface-container">
+<button class="flex-1 bg-surface-container px-space-md py-2 rounded font-label text-label-md text-on-surface hover:bg-surface-container-high transition-colors text-center" onclick="openDrawer('annapoorna')">
+                View Public Profile
+              </button>
+<button class="bg-primary text-on-primary px-space-md py-2 rounded font-label text-label-md hover:bg-primary-container transition-colors flex items-center gap-1" onclick="triggerCoordinate('Annapoorna Trust', 'Direct Volunteer Routing')">
+<span class="material-symbols-outlined text-[16px]">route</span>
+<span>Coordinate Grid</span>
+</button>
+</div>
+</article>
+</div>
+<!-- VIEW CONTAINER 2: TABLE VIEW (HIDDEN INITIALLY) -->
+<div class="hidden w-full bg-surface-container-lowest rounded-xl shadow-sm overflow-x-auto" id="tableContainer">
+<table class="w-full text-left font-sans text-body-sm">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant font-label text-label-sm border-b border-surface-container">
+<th class="py-space-md px-space-lg">Organization &amp; DARPAN</th>
+<th class="py-space-md px-space-md">Verification Level</th>
+<th class="py-space-md px-space-md">District Node</th>
+<th class="py-space-md px-space-md">Trust Rating</th>
+<th class="py-space-md px-space-md">Transfers</th>
+<th class="py-space-md px-space-md">Core Sector</th>
+<th class="py-space-md px-space-lg text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="font-label text-label-md text-primary font-bold">Asha Relief Initiative</div>
+<div class="font-caption text-caption text-outline">KA/2021/0288412</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2 py-0.5 bg-primary-container text-on-primary font-label text-[11px] rounded">Govt Verified</span>
+</td>
+<td class="py-space-md px-space-md font-sans">Bengaluru Central</td>
+<td class="py-space-md px-space-md font-label font-bold text-secondary">98.8 / 100</td>
+<td class="py-space-md px-space-md font-sans">48 Cleared</td>
+<td class="py-space-md px-space-md">Food &amp; Warehousing</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="font-label text-label-sm text-secondary hover:underline" onclick="openDrawer('asha')">Inspect</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="font-label text-label-md text-primary font-bold">Karuna Seva Trust</div>
+<div class="font-caption text-caption text-outline">KA/2019/0044129</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2 py-0.5 bg-primary-container text-on-primary font-label text-[11px] rounded">Govt Verified</span>
+</td>
+<td class="py-space-md px-space-md font-sans">Bengaluru North</td>
+<td class="py-space-md px-space-md font-label font-bold text-secondary">96.2 / 100</td>
+<td class="py-space-md px-space-md font-sans">32 Cleared</td>
+<td class="py-space-md px-space-md">Field Kitchens &amp; Tarps</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="font-label text-label-sm text-secondary hover:underline" onclick="openDrawer('karuna')">Inspect</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="font-label text-label-md text-primary font-bold">Spandana Health Foundation</div>
+<div class="font-caption text-caption text-outline">KA/2020/0119830</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant font-label text-[11px] rounded">Community Verified</span>
+</td>
+<td class="py-space-md px-space-md font-sans">Hosapete &amp; Bellandur</td>
+<td class="py-space-md px-space-md font-label font-bold text-primary">94.0 / 100</td>
+<td class="py-space-md px-space-md font-sans">26 Cleared</td>
+<td class="py-space-md px-space-md">Mobile Ambulances</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="font-label text-label-sm text-secondary hover:underline" onclick="openDrawer('spandana')">Inspect</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="font-label text-label-md text-primary font-bold">Grama Vikas Disaster Mission</div>
+<div class="font-caption text-caption text-outline">KA/2018/0031092</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2 py-0.5 bg-primary-container text-on-primary font-label text-[11px] rounded">Govt Verified</span>
+</td>
+<td class="py-space-md px-space-md font-sans">Hubballi-Dharwad</td>
+<td class="py-space-md px-space-md font-label font-bold text-secondary">97.5 / 100</td>
+<td class="py-space-md px-space-md font-sans">64 Cleared</td>
+<td class="py-space-md px-space-md">Water &amp; Flood Boats</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="font-label text-label-sm text-secondary hover:underline" onclick="openDrawer('grama')">Inspect</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-lg">
+<div class="font-label text-label-md text-primary font-bold">Annapoorna Humanitarian Trust</div>
+<div class="font-caption text-caption text-outline">KA/2022/0329011</div>
+</td>
+<td class="py-space-md px-space-md">
+<span class="px-2 py-0.5 bg-surface-container text-on-surface-variant font-label text-[11px] rounded">Community Verified</span>
+</td>
+<td class="py-space-md px-space-md font-sans">Bengaluru Central</td>
+<td class="py-space-md px-space-md font-label font-bold text-primary">92.1 / 100</td>
+<td class="py-space-md px-space-md font-sans">19 Cleared</td>
+<td class="py-space-md px-space-md">Dry Ration Kits</td>
+<td class="py-space-md px-space-lg text-right">
+<button class="font-label text-label-sm text-secondary hover:underline" onclick="openDrawer('annapoorna')">Inspect</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- VIEW CONTAINER 3: MAP HUBS (STATIC MAP EMBED PIPELINE) -->
+<div class="hidden flex-col gap-space-md" id="mapContainer">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-lg text-primary">Active Regional Disaster Nodes &amp; Staging Depots</span>
+<span class="font-caption text-caption text-outline">Live GPS Geofence Grid</span>
+</div>
+<!-- Map container using data-location per instructions -->
+<div class="w-full h-96 bg-cover bg-center rounded-lg relative overflow-hidden" data-location="Bengaluru, Karnataka, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBdeyzX4EZ2Be8NZKFddP8Rn8mumSq-sni4B-MCIFb-AIp7RWAy5r-6ybsME23F2gq83H8G4dfstOqH19qfUQ3VvhPYAmVJU8hvgOtOG1Laz0bQTG2ogdZqiAGVvCPP1dUaSAxYbSqTf9QQ-VGmKSI3SjqdPRFatp9UEs4RL-E0KYzihQSASKVb84ZbIa1GQmB1qvhmG0bE7NttV-BRXBT2Hg_KC8JClA3Vvs1ETmaD');">
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[1px] flex flex-col items-center justify-center p-space-md text-center text-on-primary">
+<span class="material-symbols-outlined text-[48px] text-tertiary-fixed mb-space-xs">hub</span>
+<span class="font-serif text-headline-md font-bold">Karnataka Emergency Geographic Cluster</span>
+<p class="font-sans text-body-sm max-w-md mt-1">Showing 5 primary hubs: South Zone Sector 4 Hub, Yelahanka Camp, Hubballi Central Depot, Hosapete Outpost, and Koramangala.</p>
+<div class="mt-space-md flex gap-2">
+<span class="px-3 py-1 bg-surface-container-lowest/90 text-primary font-label text-label-sm rounded shadow">5 Active Facilities</span>
+<span class="px-3 py-1 bg-secondary text-on-secondary font-label text-label-sm rounded shadow">High Bandwidth Mesh</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    
+</div>
+</div>
+<!-- INTERACTIVE DETAIL PREVIEW MODAL / TRANSPARENCY DRAWER -->
+<div class="fixed inset-0 bg-[#08211c]/40 z-50 hidden transition-opacity" id="transparencyDrawerScrim" onclick="closeDrawer()"></div>
+<div class="fixed top-0 right-0 h-full w-full max-w-[620px] bg-surface-container-lowest shadow-2xl z-50 transform translate-x-full transition-transform duration-300 overflow-y-auto flex flex-col" id="transparencyDrawer">
+<!-- DRAWER HEADER -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between border-b border-surface-container shrink-0">
+<div class="flex flex-col">
+<span class="font-caption text-caption uppercase text-outline tracking-wider font-semibold">Institutional Dossier</span>
+<h2 class="font-serif text-headline-md text-primary font-bold" id="drawerOrgTitle" style="font-family: 'Noto Serif', serif;">Organization Profile</h2>
+</div>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high transition-colors text-on-surface" onclick="closeDrawer()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- DRAWER BODY CONTEXT -->
+<div class="p-space-xl flex flex-col gap-space-lg flex-1">
+<!-- TRUST SCORE HIGHLIGHT WIDGET -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-full bg-secondary-container flex items-center justify-center text-primary font-bold text-[22px]">
+<span id="drawerTrustScore">98.8</span>
+</div>
+<div class="flex flex-col">
+<span class="font-serif text-headline-sm text-primary font-semibold">Verified Trust Matrix</span>
+<span class="font-caption text-caption text-outline">NDMA Protocol Compliance 100%</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="px-2 py-0.5 rounded font-label text-label-sm bg-primary text-on-primary">Dispute-Free</span>
+<span class="font-caption text-caption text-outline mt-1">Audit log valid</span>
+</div>
+</div>
+<!-- GOVERNMENT CREDENTIALS & IDENTIFIERS -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label text-label-md text-outline tracking-normal font-semibold">Statutory Credentials</span>
+<div class="grid grid-cols-2 gap-space-sm p-space-md rounded-lg bg-surface-container font-sans text-body-sm">
+<div>
+<span class="text-outline block font-caption text-caption">DARPAN UID:</span>
+<span class="font-semibold text-on-surface" id="drawerDarpan">KA/2021/0288412</span>
+</div>
+<div>
+<span class="text-outline block font-caption text-caption">State Accreditation:</span>
+<span class="font-semibold text-secondary" id="drawerAccreditation">SDMA-KA Tier 1 Partner</span>
+</div>
+<div>
+<span class="text-outline block font-caption text-caption">Tax Exemption:</span>
+<span class="font-semibold text-on-surface">Section 80G / 12A Certified</span>
+</div>
+<div>
+<span class="text-outline block font-caption text-caption">CSR-1 Registry:</span>
+<span class="font-semibold text-on-surface">CSR00018442 (Active)</span>
+</div>
+</div>
+</div>
+<!-- PEER ENDORSEMENT HISTORY -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label text-label-md text-outline tracking-normal font-semibold">Peer Endorsement Network</span>
+<div class="flex flex-col gap-2">
+<div class="p-space-sm rounded bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label text-label-sm text-primary font-bold">Red Cross Karnataka Disaster Wing</span>
+<p class="font-caption text-caption text-on-surface-variant">"Reconciled 1,200 blanket packets during 2023 Krishna basin overflow with zero manifest discrepancies."</p>
+</div>
+</div>
+<div class="p-space-sm rounded bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label text-label-sm text-primary font-bold">Bengaluru Urban Civil Defense</span>
+<p class="font-caption text-caption text-on-surface-variant">"Staging protocol adherence verified during multi-agency mock flood drill."</p>
+</div>
+</div>
+</div>
+</div>
+<!-- PAST COMPLETED TRANSFERS AUDIT LOG -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label text-label-md text-outline tracking-normal font-semibold">Recent Mutual-Aid Audit Trails</span>
+<div class="rounded-lg bg-surface-container overflow-hidden">
+<div class="p-space-sm bg-surface-container-high flex justify-between font-label text-label-sm text-outline">
+<span>Manifest Hash</span>
+<span>Commodity</span>
+<span>Status</span>
+</div>
+<div class="divide-y divide-surface-container-highest font-caption text-caption">
+<div class="p-space-sm flex justify-between items-center bg-surface-container-lowest">
+<span class="font-mono text-outline">0x89f...32d</span>
+<span class="font-semibold text-on-surface">500 Dry Ration Kits</span>
+<span class="text-secondary font-bold">Cleared (24h ago)</span>
+</div>
+<div class="p-space-sm flex justify-between items-center bg-surface-container-lowest">
+<span class="font-mono text-outline">0x12c...88a</span>
+<span class="font-semibold text-on-surface">200 Fleece Blankets</span>
+<span class="text-secondary font-bold">Cleared (3d ago)</span>
+</div>
+<div class="p-space-sm flex justify-between items-center bg-surface-container-lowest">
+<span class="font-mono text-outline">0x44b...ff1</span>
+<span class="font-semibold text-on-surface">40 Medical Suture Kits</span>
+<span class="text-secondary font-bold">Cleared (1w ago)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- PUBLIC COORDINATION CONTACT -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label text-label-md text-outline tracking-normal font-semibold">Emergency Grid Contact</span>
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col gap-1.5 font-sans text-body-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">person</span>
+<span class="font-semibold text-on-surface" id="drawerContactName">Dr. Srinivas Murthy (Logistics Director)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">call</span>
+<span class="text-on-surface-variant">+91 80 2299 4410 (Emergency Control Desk)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">mail</span>
+<span class="text-on-surface-variant">grid-ops@reliefnet.karnataka.org</span>
+</div>
+</div>
+</div>
+</div>
+<!-- DRAWER PINNED FOOTER -->
+<div class="p-space-lg bg-surface-container border-t border-surface-container-high flex items-center gap-space-md shrink-0">
+<button class="flex-1 bg-surface-container-lowest py-2.5 rounded font-label text-label-md text-on-surface hover:bg-surface-container-high transition-colors" onclick="closeDrawer()">
+        Dismiss Drawer
+      </button>
+<button class="flex-1 bg-primary text-on-primary py-2.5 rounded font-label text-label-md hover:bg-primary-container transition-colors flex items-center justify-center gap-1.5" onclick="triggerCoordinateFromDrawer()">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Initiate Dispatch Request</span>
+</button>
+</div>
+</div>
+<!-- QUICK FEEDBACK TOAST -->
+<div class="fixed bottom-6 right-6 z-50 bg-primary text-on-primary px-space-lg py-space-sm rounded shadow-lg flex items-center gap-2 transform translate-y-20 opacity-0 transition-all duration-300" id="toastNotification">
+<span class="material-symbols-outlined text-tertiary-fixed text-[20px]">check_circle</span>
+<span class="font-label text-label-sm" id="toastMessage">Grid Transfer Handshake Initialized.</span>
+</div>
+<!-- INTERACTIVE LOGIC SCRIPT -->
+
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl"><div class="w-full max-w-[1600px] mx-auto px-margin-desktop py-space-xl"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter-desktop"><div class="md:col-span-5 flex flex-col gap-space-sm"><div class="flex items-center gap-space-sm"><span class="font-serif text-headline-sm text-primary">ReliefNet</span><span class="font-label text-label-sm px-space-xs py-0.5 bg-surface-container-high text-on-surface-variant rounded">NDMA Compliant</span></div><p class="font-sans text-body-sm text-on-surface-variant max-w-md">ReliefNet functions as the trusted, inter-institutional operational grid facilitating rapid inventory discovery, certified NGO verification, and automated mutual-aid routing during state and national humanitarian crises.</p><div class="flex items-center gap-space-xs text-outline font-label text-label-sm mt-space-sm"><span class="material-symbols-outlined text-[16px]">verified_user</span><span>NDMA Inter-NGO Coordination Standard V3.2 Protocol</span></div></div><div class="md:col-span-3 flex flex-col gap-space-sm"><span class="font-label text-label-md text-on-surface tracking-normal">Governance &amp; Trust</span><nav class="flex flex-col gap-space-xs"><a class="font-sans text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="verification-standards" href="#">Verification Standards</a><a class="font-sans text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="ai-matching-rules" href="#">AI Matching Rules</a><a class="font-sans text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="transfer-audit-trail" href="#">Transfer Audit Trail</a></nav></div><div class="md:col-span-4 flex flex-col gap-space-sm"><span class="font-label text-label-md text-on-surface tracking-normal">Registry &amp; Network</span><nav class="flex flex-col gap-space-xs"><a class="font-sans text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#/directory" href="#">Resource Directory</a><a class="font-sans text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#/requests" href="#">Active Shortage Matrix</a><a class="font-sans text-body-sm text-on-surface-variant hover:text-on-surface transition-colors" href="#/auth/register" href="#">Institutional Partner Onboarding</a></nav></div></div><div class="mt-space-xl pt-space-lg flex flex-col sm:flex-row items-center justify-between gap-space-md text-outline font-caption text-caption"><p>© 2025 ReliefNet Inter-NGO Humanitarian Grid. All operational manifests cryptographically verified.</p><div class="flex items-center gap-space-lg"><span>System Status: Optimal (99.98%)</span><span>Node: Bangalore IN-S1</span></div></div></div></footer>
+  </main>
+  <script src="/static/js/screen_catalog.js"></script>
+  <script src="/static/js/mock_data.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

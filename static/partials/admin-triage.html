@@ -1,0 +1,634 @@
+<!-- Screen: NGO Verification Triage Desk & Document Review | ID: admin-triage | UI Source: reliefnet_admin_verification_triage_desk_document_review_2 -->
+<div id="screen-admin-triage" class="reliefnet-screen-view w-full" data-shell="admin">
+  
+<div class="flex flex-col w-full">
+<div class="px-6 py-5 space-y-5">
+<!-- Top Nav Path & Statutory Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5 font-sans text-xs text-slate-500">
+<span>Governance &amp; Audit</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Statutory Review</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-blue-700 font-semibold">Verification Triage Desk</span>
+</div>
+<div class="flex flex-wrap items-center gap-2.5">
+<h1 class="font-serif text-2xl lg:text-[26px] font-bold text-navy tracking-tight">NGO Verification Triage &amp; Dossier Review Desk</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-200 font-label text-xs tracking-normal font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600 animate-ping"></span>
+                  NDMA RULE 12.3 ACTIVE REVIEW ENCLAVE
+                </span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 font-label text-xs font-semibold transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[17px] text-slate-500">download</span>
+<span>Bulk Export Dossiers (.CSV)</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded bg-white text-slate-700 hover:bg-slate-50 border border-slate-200 font-label text-xs font-semibold transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[17px] text-slate-500">sync</span>
+<span>Trigger Automated DARPAN Sync</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded bg-[#059669] text-white hover:bg-blue-700 font-label text-xs font-semibold transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[17px] text-yellow-300">verified</span>
+<span>Issue Emergency Fast-Track Badge</span>
+</button>
+</div>
+</div>
+<!-- 4 Metric KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+<!-- KPI 1 -->
+<div class="p-4 rounded bg-white border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-gradient-to-bl from-blue-50 to-transparent pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label text-xs tracking-normal text-slate-500 font-bold">Pending Ingestion Queue</span>
+<span class="p-1 rounded bg-blue-50 text-blue-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">pending_actions</span>
+</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1.5">
+<span class="font-serif font-bold text-3xl text-navy tracking-tight">18</span>
+<span class="font-sans text-xs text-slate-500 font-medium">dockets queued</span>
+</div>
+<div class="mt-2 flex items-center justify-between font-sans text-xs text-slate-500 pt-1 border-t border-slate-100">
+<span class="inline-flex items-center gap-1 text-blue-700 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span> 7 Govt-Track
+                </span>
+<span class="inline-flex items-center gap-1 text-slate-600 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> 11 Peer-Track
+                </span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="p-4 rounded bg-white border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-gradient-to-bl from-slate-100 to-transparent pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label text-xs tracking-normal text-slate-500 font-bold">Avg Adjudication SLA</span>
+<span class="p-1 rounded bg-slate-100 text-slate-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">timer</span>
+</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1.5">
+<span class="font-serif font-bold text-3xl text-navy tracking-tight">3.8<span class="font-serif text-base ml-0.5">h</span></span>
+<span class="font-label text-[11px] text-blue-700 font-semibold bg-blue-50 px-1.5 py-0.5 rounded border border-blue-100">Norm &lt; 6.0h</span>
+</div>
+<div class="mt-2 font-sans text-xs text-slate-500 flex items-center gap-1 pt-1 border-t border-slate-100">
+<span class="material-symbols-outlined text-[14px] text-blue-600">trending_down</span>
+<span>Speed optimized by 22m over 7-day average</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="p-4 rounded bg-white border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-gradient-to-bl from-red-50 to-transparent pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label text-xs tracking-normal text-slate-500 font-bold">AI Risk Flagged Dockets</span>
+<span class="p-1 rounded bg-red-50 text-red-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">report</span>
+</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1.5">
+<span class="font-serif font-bold text-3xl text-error tracking-tight">04</span>
+<span class="font-sans text-xs text-error font-semibold">require enhanced triage</span>
+</div>
+<div class="mt-2 font-sans text-xs text-slate-500 flex items-center gap-1 pt-1 border-t border-slate-100">
+<span class="text-error font-medium">1 Board Identity Match Flag</span>
+<span class="text-slate-300">·</span>
+<span>3 Geo Anomalies</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="p-4 rounded bg-white border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 w-24 h-24 bg-gradient-to-bl from-blue-50/50 to-transparent pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-label text-xs tracking-normal text-slate-500 font-bold">Accredited Active Consortia</span>
+<span class="p-1 rounded bg-slate-100 text-navy flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">corporate_fare</span>
+</span>
+</div>
+<div class="mt-2 flex items-baseline gap-1.5">
+<span class="font-serif font-bold text-3xl text-navy tracking-tight">1,842</span>
+<span class="font-sans text-xs text-slate-500">Total Field Nodes</span>
+</div>
+<div class="mt-2 font-sans text-xs text-slate-500 flex items-center justify-between pt-1 border-t border-slate-100">
+<span>Karnataka Theater Grid</span>
+<span class="font-label text-[11px] text-blue-700 font-bold">99.4% SLA Compliance</span>
+</div>
+</div>
+</div>
+<!-- Two-Panel Split Layout -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start">
+<!-- LEFT PANEL: Worklist Table -->
+<div class="xl:col-span-7 flex flex-col gap-4 bg-white rounded border border-slate-200 p-4 shadow-sm">
+<!-- Worklist Navigation Tabs -->
+<div class="flex items-center justify-between flex-wrap pb-1">
+<div class="flex flex-wrap items-center gap-1.5 font-label text-xs">
+<button class="px-3.5 py-1.5 rounded bg-[#059669] text-white font-semibold flex items-center gap-1.5 shadow-sm" type="button">
+<span>All Pending</span>
+<span class="px-1.5 py-0.2 rounded-full bg-white/20 text-[10px] font-bold">18</span>
+</button>
+<button class="px-3 py-1.5 rounded text-slate-600 hover:bg-slate-100 transition-colors flex items-center gap-1" type="button">
+<span>Path 1: DARPAN Fast-Track</span>
+<span class="px-1.5 py-0.2 rounded-full bg-slate-100 text-slate-600 text-[10px] font-semibold">7</span>
+</button>
+<button class="px-3 py-1.5 rounded text-slate-600 hover:bg-slate-100 transition-colors flex items-center gap-1" type="button">
+<span>Path 2: Community Vetted</span>
+<span class="px-1.5 py-0.2 rounded-full bg-slate-100 text-slate-600 text-[10px] font-semibold">11</span>
+</button>
+<button class="px-3 py-1.5 rounded text-error hover:bg-red-50 transition-colors flex items-center gap-1" type="button">
+<span>Flagged / Anomalous</span>
+<span class="px-1.5 py-0.2 rounded-full bg-red-100 text-red-700 text-[10px] font-bold">4</span>
+</button>
+<button class="px-3 py-1.5 rounded text-slate-600 hover:bg-slate-100 transition-colors flex items-center gap-1" type="button">
+<span>Approved Today</span>
+<span class="px-1.5 py-0.2 rounded-full bg-slate-100 text-slate-600 text-[10px] font-semibold">14</span>
+</button>
+</div>
+</div>
+<!-- Faceted Search & Filtering Row -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-2.5 items-center bg-slate-50 p-2.5 rounded border border-slate-200">
+<div class="md:col-span-5 relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-slate-400 text-[16px]">filter_list</span>
+<input class="w-full bg-white text-slate-800 font-sans text-xs rounded border border-slate-200 pl-8 pr-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-blue-600" placeholder="Filter by Name, PAN, DARPAN UID..." type="text" value="Kaveri Basin"/>
+</div>
+<div class="md:col-span-3">
+<select class="w-full bg-white text-slate-800 font-sans text-xs rounded border border-slate-200 px-2.5 py-1.5 focus:outline-none focus:ring-1 focus:ring-blue-600">
+<option>District: All Karnataka</option>
+<option selected="">District: Bengaluru Urban</option>
+<option>District: Belagavi</option>
+<option>District: Uttara Kannada</option>
+<option>District: Mysuru</option>
+</select>
+</div>
+<div class="md:col-span-4 flex items-center justify-end gap-1.5 font-label text-xs">
+<button class="px-2.5 py-1.5 bg-white text-slate-700 rounded border border-slate-200 hover:bg-slate-50 flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px] text-slate-500">radar</span>
+<span>15km Radius</span>
+</button>
+<button class="px-2.5 py-1.5 bg-white text-slate-700 rounded border border-slate-200 hover:bg-slate-50 flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px] text-slate-500">sort</span>
+<span>SLA Urgency</span>
+</button>
+</div>
+</div>
+<!-- Comprehensive Data Table -->
+<div class="overflow-x-auto rounded border border-slate-200 bg-white table-scroll" tabindex="0" role="region" aria-label="Verification triage table; scroll horizontally to view all columns">
+<table class="w-full text-left border-collapse table-pin-right">
+<thead>
+<tr class="bg-slate-50 text-slate-600 font-label text-[11px] tracking-normal select-none border-b border-slate-200">
+<th class="py-2.5 px-4 font-bold">Entity &amp; Registration Track</th>
+<th class="py-2.5 px-3 font-bold">DARPAN / Mandate</th>
+<th class="py-2.5 px-3 font-bold">Peer Vetting</th>
+<th class="py-2.5 px-3 font-bold">AI Risk Index</th>
+<th class="py-2.5 px-3 font-bold">SLA Clock</th>
+<th class="py-2.5 px-4 text-right font-bold">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100 font-sans text-xs">
+<!-- ROW 1 (Selected Row) -->
+<tr class="bg-blue-50/60 hover:bg-blue-50 transition-colors cursor-pointer border-l-4 border-l-[#059669]">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-serif text-[13px] font-bold text-navy truncate">Kaveri Basin Relief Coalition</span>
+<span class="px-1.5 py-0.5 rounded font-label text-[10px] bg-blue-100 text-blue-800 font-semibold">Society</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-500 text-[11px] font-mono mt-0.5">
+<span>#APP-KA-2024-9921</span>
+<span>·</span>
+<span>PAN: AABTK8821L</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-label text-xs text-blue-700 font-semibold">Under DARPAN Link</span>
+<span class="text-[11px] text-slate-500">Flood &amp; Cold-Chain</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-blue-600"></span>
+<span class="font-label text-xs font-bold text-slate-800">2/2 Validated</span>
+</div>
+<span class="text-[11px] text-slate-500 block">Red Cross + Hubballi</span>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<div class="w-7 h-7 rounded bg-blue-100 text-blue-800 flex items-center justify-center font-label text-xs font-bold">
+                            88
+                          </div>
+<div>
+<span class="font-label text-xs text-blue-700 font-bold block">A+ Safe</span>
+<span class="text-[11px] text-slate-500">Low Anomaly</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 font-mono text-[11px] font-semibold border border-slate-200">
+<span class="material-symbols-outlined text-[13px] text-error">hourglass_bottom</span>
+<span>01h 42m</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="px-3 py-1 rounded bg-[#059669] text-white font-label text-xs font-semibold hover:bg-blue-700 transition-colors shadow-sm" type="button">
+                          In Review
+                        </button>
+</td>
+</tr>
+<!-- ROW 2 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-serif text-[13px] font-semibold text-slate-800 truncate">Janahit Evac Logistics</span>
+<span class="px-1.5 py-0.5 rounded font-label text-[10px] bg-slate-100 text-slate-600 font-medium">Trust</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-500 text-[11px] font-mono mt-0.5">
+<span>#APP-KA-2024-9928</span>
+<span>·</span>
+<span>PAN: AACTJ3391K</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-label text-xs text-slate-600">Path 2 Pure Peer</span>
+<span class="text-[11px] text-slate-500">Heavy Watercraft</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-slate-300"></span>
+<span class="font-label text-xs text-slate-700 font-semibold">1/2 Endorsements</span>
+</div>
+<span class="text-[11px] text-error font-medium">Belagavi Hub Pending</span>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<div class="w-7 h-7 rounded bg-slate-100 text-slate-700 flex items-center justify-center font-label text-xs font-bold">
+                            64
+                          </div>
+<div>
+<span class="font-label text-xs text-slate-700 font-semibold block">Grade B</span>
+<span class="text-[11px] text-slate-500">Minor Drift</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-50 text-slate-600 font-mono text-[11px]">
+<span class="material-symbols-outlined text-[13px] text-slate-400">schedule</span>
+<span>03h 15m</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="px-3 py-1 rounded bg-slate-100 text-slate-700 font-label text-xs font-semibold hover:bg-slate-200 transition-colors border border-slate-200" type="button">
+                          Inspect
+                        </button>
+</td>
+</tr>
+<!-- ROW 3 -->
+<tr class="hover:bg-slate-50 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-serif text-[13px] font-semibold text-slate-800 truncate">Seva Bharati Uttara Kannada</span>
+<span class="px-1.5 py-0.5 rounded font-label text-[10px] bg-slate-100 text-slate-600 font-medium">Sec 8</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-500 text-[11px] font-mono mt-0.5">
+<span>#APP-KA-2024-9934</span>
+<span>·</span>
+<span>PAN: AAECS0101Q</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-label text-xs text-blue-700 font-semibold">DARPAN: KA-2019-4412</span>
+<span class="text-[11px] text-slate-500">Field Kitchen / Langar</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-blue-600"></span>
+<span class="font-label text-xs text-blue-700 font-semibold">Exempt (DARPAN L1)</span>
+</div>
+<span class="text-[11px] text-slate-500">Govt Direct Match</span>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<div class="w-7 h-7 rounded bg-blue-100 text-blue-800 flex items-center justify-center font-label text-xs font-bold">
+                            96
+                          </div>
+<div>
+<span class="font-label text-xs text-blue-700 font-bold block">A+ Prime</span>
+<span class="text-[11px] text-slate-500">Zero Risk</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-slate-50 text-slate-600 font-mono text-[11px]">
+<span class="material-symbols-outlined text-[13px] text-slate-400">schedule</span>
+<span>04h 50m</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="px-3 py-1 rounded bg-blue-50 text-blue-700 font-label text-xs hover:bg-[#059669] font-semibold hover:text-white transition-colors border border-blue-200" type="button">
+                          Sign Ready
+                        </button>
+</td>
+</tr>
+<!-- ROW 4 -->
+<tr class="hover:bg-red-50/50 transition-colors">
+<td class="py-3 px-4">
+<div class="flex items-center gap-2">
+<div class="min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-serif text-[13px] font-semibold text-error truncate">Shanti Humanitarian Aid</span>
+<span class="px-1.5 py-0.5 rounded font-label text-[10px] bg-red-100 text-red-700 font-medium">Trust</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-500 text-[11px] font-mono mt-0.5">
+<span>#APP-KA-2024-9890</span>
+<span>·</span>
+<span>PAN: AAYPS9011J</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-label text-xs text-error font-semibold">FCRA Mismatch / Reject</span>
+<span class="text-[11px] text-slate-500">Pharma Supplies</span>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label text-xs text-error font-semibold">Endorsement Nullified</span>
+</div>
+<span class="text-[11px] text-error font-mono">Untrusted Signer Key</span>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<div class="w-7 h-7 rounded bg-red-100 text-red-700 flex items-center justify-center font-label text-xs font-bold">
+                            32
+                          </div>
+<div>
+<span class="font-label text-xs text-error font-bold block">FLAGGED</span>
+<span class="text-[11px] text-error font-mono">PAN Sybil Hash</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<div class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-red-100 text-red-700 font-mono text-[11px] font-bold">
+<span class="material-symbols-outlined text-[13px]">gavel</span>
+<span>ESCALATED</span>
+</div>
+</td>
+<td class="py-3 px-4 text-right">
+<button class="px-3 py-1 rounded bg-error text-white font-label text-xs hover:bg-red-700 transition-colors shadow-sm font-semibold" type="button">
+                          Fraud Cell
+                        </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Bottom Pagination & Legend -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-2 pt-1 font-sans text-xs text-slate-500">
+<div class="flex items-center gap-3">
+<span>Showing 4 of 18 triage dockets</span>
+<div class="flex items-center gap-2.5">
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-[#059669]"></span>Active Row</span>
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-blue-600"></span>Govt Validated</span>
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-error"></span>Fraud Quarantine</span>
+</div>
+</div>
+<div class="flex items-center gap-1 font-label text-xs">
+<button class="px-2.5 py-1 rounded bg-slate-100 text-slate-600 border border-slate-200 disabled:opacity-40" disabled="" type="button">Previous</button>
+<span class="px-2 py-1 text-navy font-bold">1 / 5</span>
+<button class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200" type="button">Next</button>
+</div>
+</div>
+</div>
+<!-- RIGHT PANEL: Dossier & OCR Inspection Workbench -->
+<div class="xl:col-span-5 flex flex-col gap-4">
+<!-- Selected Dossier Primary Info Card -->
+<div class="bg-white rounded border border-slate-200 p-5 shadow-sm space-y-4">
+<!-- Card Header & Badge Status -->
+<div class="flex items-start justify-between gap-3">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label text-[11px] text-blue-700 font-mono tracking-normal font-bold">Dossier Inspection Enclave</span>
+<span class="px-1.5 py-0.2 rounded bg-blue-50 text-blue-700 font-label text-[10px] font-semibold border border-blue-200">Live Audit</span>
+</div>
+<h2 class="font-serif text-xl text-navy font-bold mt-1">Kaveri Basin Relief Coalition</h2>
+<div class="flex items-center gap-2 font-mono text-[11px] text-slate-500 mt-0.5">
+<span>Reg: #SOC-BLR-4412/2021</span>
+<span>·</span>
+<span>PIN: 560001 (Bengaluru Urban)</span>
+</div>
+</div>
+<div class="text-right flex flex-col items-end">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-blue-50 text-blue-800 border border-blue-200 font-label text-xs font-semibold">
+<span class="material-symbols-outlined text-[15px] text-blue-600">verified_user</span>
+                      Signatory E-Sign Valid
+                    </span>
+<span class="font-sans text-[11px] text-slate-500 mt-1">Aadhaar Vault L3 Verified</span>
+</div>
+</div>
+<!-- Authorized Signatory Details Grid -->
+<div class="grid grid-cols-2 gap-3 p-3 bg-slate-50 rounded border border-slate-200">
+<div>
+<span class="font-label text-[11px] text-slate-500 tracking-normal block font-semibold">Designated Officer / Secretary</span>
+<span class="font-serif text-xs text-navy font-bold mt-0.5 block">Dr. Arvind V. Ramanathan</span>
+<span class="font-mono text-[11px] text-blue-700 block mt-0.5">UIDAI: *******8812</span>
+</div>
+<div>
+<span class="font-label text-[11px] text-slate-500 tracking-normal block font-semibold">Field Readiness Mandate</span>
+<span class="font-sans text-xs text-slate-800 font-semibold mt-0.5 block">Category IV: Inland Floods</span>
+<span class="font-sans text-[11px] text-slate-500 block mt-0.5">Cold-Chain Vaccines &amp; Insulin</span>
+</div>
+</div>
+<!-- Document Inspection Tabs & Forensic OCR Inspection -->
+<div class="space-y-3">
+<div class="flex items-center justify-between">
+<span class="font-serif text-xs tracking-normal text-navy font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-[#059669]">document_scanner</span>
+                      Forensic OCR &amp; Ledger Proofs
+                    </span>
+<span class="font-mono text-[11px] text-blue-700 font-semibold bg-blue-50 px-2 py-0.5 rounded border border-blue-100">SHA-256 Ledger Anchored</span>
+</div>
+<!-- Tab Buttons -->
+<div class="flex items-center gap-1 bg-slate-100 p-1 rounded font-label text-xs border border-slate-200">
+<button class="flex-1 py-1 text-center rounded bg-white text-navy font-bold shadow-sm border border-slate-200" type="button">
+                      Society Deed
+                    </button>
+<button class="flex-1 py-1 text-center rounded text-slate-600 hover:text-slate-900 transition-colors" type="button">
+                      Balance Sheet (FY 23-24)
+                    </button>
+<button class="flex-1 py-1 text-center rounded text-slate-600 hover:text-slate-900 transition-colors" type="button">
+                      Staging Yard Lease
+                    </button>
+</div>
+<!-- Interactive Document Viewer Canvas -->
+<div class="bg-slate-50 rounded border border-slate-200 p-4 space-y-3">
+<div class="flex items-center justify-between font-sans text-xs">
+<div class="flex items-center gap-1.5 text-navy font-medium">
+<span class="material-symbols-outlined text-[16px] text-blue-600">verified</span>
+<span class="font-mono font-semibold text-[11px]">REG-CERT-KA-2021-99881.pdf</span>
+</div>
+<span class="font-mono text-blue-700 bg-blue-100/70 border border-blue-200 px-1.5 py-0.5 rounded text-[11px] font-bold">100% OCR CONFIDENCE</span>
+</div>
+<!-- Document Preview Visual Mock -->
+<div class="relative bg-white rounded border border-slate-200 p-4 shadow-sm space-y-2 overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-28 h-28 rounded-full bg-blue-50 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-blue-200 text-[64px]">assured_workload</span>
+</div>
+<div class="flex items-center justify-between pb-1 border-b border-slate-100">
+<span class="font-label text-[11px] tracking-normal text-slate-600 font-bold">Government of Karnataka — Department of Registrations</span>
+<span class="font-mono text-[10px] text-blue-700 font-semibold bg-blue-50 px-1.5 py-0.2 rounded border border-blue-100">Seal Match: POSITIVE</span>
+</div>
+<p class="font-sans text-xs text-slate-700 leading-relaxed">
+                        Certified that <strong class="font-serif text-navy">"Kaveri Basin Relief Coalition"</strong> is this day registered under the Karnataka Societies Registration Act, 1960. Given under my hand at Bengaluru this 14th day of October 2021.
+                      </p>
+<div class="p-2.5 bg-slate-50 rounded border border-slate-100 font-mono text-[11px] text-slate-600 space-y-1">
+<div class="flex justify-between">
+<span>REGISTRAR SEAL HASH:</span>
+<span class="text-blue-700 font-bold">0x89fe20cb4112...b210</span>
+</div>
+<div class="flex justify-between">
+<span>STATE HSM TIMESTAMP:</span>
+<span class="text-slate-700">2024-05-18T10:14:02 IST (FIPS 140-3)</span>
+</div>
+<div class="flex justify-between">
+<span>ANNUAL FILINGS:</span>
+<span class="text-blue-700 font-semibold">Compliant (Form IV Filed on 28-Feb-2024)</span>
+</div>
+</div>
+</div>
+<!-- GPS Ground Reconnaissance Validation -->
+<div class="flex items-center justify-between p-2.5 bg-white rounded border border-slate-200">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-600 text-[20px]">location_on</span>
+<div>
+<span class="font-serif text-xs text-navy font-bold block">Staging Yard: Indiranagar Ward 82</span>
+<span class="font-mono text-[11px] text-slate-500">12.9611° N, 77.6387° E · 2,400 sq.ft cold storage</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-200 font-label text-[11px] font-semibold">
+                        SDRF Verified
+                      </span>
+</div>
+</div>
+</div>
+<!-- Explainable AI Pre-Screening Summary -->
+<div class="p-4 rounded bg-slate-50 border border-slate-200 space-y-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[#059669] text-[18px]">psychology</span>
+<span class="font-serif text-xs text-navy font-bold">AI Risk Pre-Screening Analytics</span>
+</div>
+<span class="font-mono text-xs px-2 py-0.5 rounded bg-blue-100 text-blue-800 border border-blue-200 font-bold">
+                      SCORE: 88/100
+                    </span>
+</div>
+<div class="grid grid-cols-3 gap-2 text-center">
+<div class="bg-white rounded border border-slate-200 p-2">
+<span class="font-label text-[10px] text-slate-500 uppercase block font-semibold">Sybil Graph</span>
+<span class="font-mono text-xs text-blue-700 font-bold mt-0.5 block">0.02 (Clean)</span>
+</div>
+<div class="bg-white rounded border border-slate-200 p-2">
+<span class="font-label text-[10px] text-slate-500 uppercase block font-semibold">Board PAN Clashing</span>
+<span class="font-sans text-xs text-blue-700 font-bold mt-0.5 block">0 Links Found</span>
+</div>
+<div class="bg-white rounded border border-slate-200 p-2">
+<span class="font-label text-[10px] text-slate-500 uppercase block font-semibold">UDIN Cross-Ref</span>
+<span class="font-sans text-xs text-blue-700 font-bold mt-0.5 block">Match 100%</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded bg-white border border-slate-200 text-slate-600 font-sans text-[11px]">
+<span class="material-symbols-outlined text-[15px] text-blue-600">info</span>
+<span>STATUTORY NOTICE: AI acts as Decision Support only. Statutory Officer retains sole credentialing power.</span>
+</div>
+</div>
+<!-- Statutory Officer Adjudication Action Box -->
+<div class="space-y-3 p-4 rounded bg-slate-50 border border-slate-200">
+<div class="flex items-center justify-between">
+<span class="font-serif text-xs tracking-normal text-navy font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-[#059669]">gavel</span>
+                      Officer Adjudication &amp; Cryptographic Sign
+                    </span>
+<span class="font-mono text-[11px] text-blue-700 font-bold bg-blue-50 px-2 py-0.5 rounded border border-blue-100">ENCLAVE SEC-L4</span>
+</div>
+<!-- Adjudication Options -->
+<div>
+<label class="font-label text-[11px] text-slate-600 font-semibold block mb-1">Dossier Determination Verdict</label>
+<select class="w-full bg-white text-slate-800 font-sans text-xs rounded border border-slate-200 px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm font-semibold">
+<option selected="">Approve &amp; Issue Tier-2 Community Badge (Valid for 90 Days Flood Ops)</option>
+<option>Request Additional Audit Documents (Dispatch Query Notice)</option>
+<option>Reject Application with Formal Statutory Reasons</option>
+</select>
+</div>
+<!-- Officer Findings Field -->
+<div>
+<label class="font-serif text-xs text-navy font-semibold block mb-1">State Liaison Audit Finding Notes</label>
+<textarea class="w-full bg-white text-slate-800 font-serif text-xs rounded border border-slate-200 p-2.5 focus:outline-none focus:ring-1 focus:ring-blue-600 shadow-sm leading-relaxed" placeholder="Enter statutory notes..." rows="3">Physical staging yard cold-storage inspected by SDRF Unit 4. Endorsement tokens verified against Red Cross Karnataka node public key. Cleared for tier-2 field dispatch.</textarea>
+</div>
+<!-- Action Trigger Buttons -->
+<div class="flex flex-col sm:flex-row items-center gap-2 pt-1">
+<button class="w-full sm:flex-1 py-2 px-4 rounded bg-[#059669] text-white hover:bg-blue-700 font-label text-xs font-bold transition-all shadow-sm flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[17px] text-yellow-300">key</span>
+<span>Sign with SDMA Liaison Token (ECDSA P-256)</span>
+</button>
+<button class="w-full sm:w-auto py-2 px-3 rounded bg-red-50 text-red-700 border border-red-200 hover:bg-error hover:text-white font-label text-xs font-semibold transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Transfer to Fraud Desk</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Activity Ledger Snippet for this Dossier -->
+<div class="bg-white rounded border border-slate-200 p-4 shadow-sm space-y-2">
+<div class="flex items-center justify-between">
+<span class="font-serif text-xs tracking-normal text-navy font-bold">Audit Trail &amp; Peer Signatures</span>
+<span class="font-mono text-[11px] text-slate-500">Block #18,924,102</span>
+</div>
+<div class="space-y-1.5 font-sans text-xs">
+<div class="flex items-start gap-2 p-2 rounded hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-200">
+<span class="material-symbols-outlined text-blue-600 text-[16px] mt-0.5">check_circle</span>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<span class="font-serif text-xs font-bold text-navy">Indian Red Cross Society (Karnataka HQ)</span>
+<span class="font-mono text-[11px] text-slate-500">11:04 AM</span>
+</div>
+<p class="font-sans text-[11px] text-slate-500 truncate mt-0.5">Signed vouch token for Flood Rapid Rescue Team 3</p>
+</div>
+</div>
+<div class="flex items-start gap-2 p-2 rounded hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-200">
+<span class="material-symbols-outlined text-blue-600 text-[16px] mt-0.5">check_circle</span>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline">
+<span class="font-serif text-xs font-bold text-navy">Hubballi Disaster Response Volunteers</span>
+<span class="font-mono text-[11px] text-slate-500">09:12 AM</span>
+</div>
+<p class="font-sans text-[11px] text-slate-500 truncate mt-0.5">Peer reference token minted and verified on ledger</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+  
+</div>
+
+</div>

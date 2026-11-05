@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Resource Matching & Allocation Engine — ReliefNet</title>
+  <link rel="stylesheet" href="/static/css/alexandria.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Public+Sans:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: "#059669", 50: "#ecfdf5", 100: "#d1fae5", 500: "#10b981", 600: "#059669", 700: "#065f46" },
+            "primary-container": "#ecfdf5",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#065f46",
+            "primary-fixed": "#d1fae5",
+            "secondary-container": "#f0f7f4",
+            "on-secondary-container": "#08211c",
+            surface: "#fbfdfc",
+            "on-surface": "#08211c",
+            "on-surface-variant": "#52645f",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#fbfdfc",
+            "surface-container": "#f0f7f4",
+            "surface-container-high": "#d9e8e2",
+            outline: "#8fa8a1",
+            "outline-variant": "#d9e8e2"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "margin-desktop": "2rem",
+            "gutter-desktop": "1.5rem"
+          },
+          fontFamily: {
+            serif: ['"Noto Serif"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            label: ['"Public Sans"', '"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          fontSize: {
+            "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-sans antialiased text-slate-900">
+  <div id="global-header"></div>
+  <main class="w-full">
+    <div class="flex flex-col w-full space-y-space-xl">
+<!-- Top Control Deck & Breadcrumb Header -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-caption text-caption mb-1">
+<span>Relief Operations</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Decision Support</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-secondary font-label font-semibold">Algorithmic Matcher</span>
+</div>
+<h1 class="font-serif text-headline-lg text-primary tracking-tight">Intelligent Matching &amp; Shortage Allocation</h1>
+<p class="font-sans text-body-sm text-on-surface-variant mt-0.5 max-w-3xl">
+          Weighted algorithmic scoring evaluating distance, inventory availability, verification status, and historical fulfillment to recommend optimal NGO coordination.
+        </p>
+</div>
+<!-- Quick Status Badges -->
+<div class="flex items-center gap-space-sm self-start lg:self-center">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 bg-surface-container text-on-surface font-label text-label-sm rounded-lg">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+          Cluster Sync: Active
+        </span>
+<span class="inline-flex items-center gap-1 px-space-sm py-1 bg-primary-container text-on-primary font-label text-label-sm rounded-lg">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+          Model v4.2b
+        </span>
+</div>
+</div>
+<!-- Parameter Config Toolbar -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col md:flex-row items-stretch md:items-center gap-space-md justify-between">
+<div class="flex-1 max-w-xl">
+<label class="block font-label text-label-sm text-on-surface-variant tracking-normal mb-1">Active Requisition</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[20px]">assignment_turned_in</span>
+<select class="w-full bg-surface-container-lowest text-on-surface font-label text-label-md pl-10 pr-10 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-secondary/40 appearance-none cursor-pointer" id="reqSelector">
+<option selected="">#REQ-1049 - 500 kg Rice needed for Bengaluru Urban Relief</option>
+<option>#REQ-1038 - 1,200 Packets Oral Rehydration Salt (Belagavi)</option>
+<option>#REQ-1025 - 45 High-Capacity Water Filters (Raichur)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 pointer-events-none text-on-surface-variant text-[20px]">unfold_more</span>
+</div>
+</div>
+<!-- Radius Control Slider -->
+<div class="w-full md:w-64 bg-surface-container-lowest px-space-md py-1.5 rounded-lg shadow-sm flex flex-col justify-center">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label text-label-sm text-on-surface-variant">Geo-Dispatch Radius</span>
+<span class="font-label text-label-md text-primary font-bold" id="radiusLabel">25 km</span>
+</div>
+<input class="w-full h-1.5 bg-surface-container rounded-lg appearance-none cursor-pointer accent-secondary" id="radiusSlider" max="150" min="5" type="range" value="25"/>
+</div>
+<!-- Urgency Toggle / Status -->
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col">
+<span class="font-label text-label-sm text-on-surface-variant">Requisition Priority</span>
+<div class="inline-flex items-center gap-1.5 bg-error-container text-on-error-container px-space-md py-1.5 rounded-lg font-label text-label-md mt-1">
+<span class="material-symbols-outlined text-[16px] text-error">priority_high</span>
+<span>HIGH URGENCY</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary hover:bg-primary-container px-space-lg py-2.5 rounded-lg font-label text-label-md transition-all flex items-center gap-1 self-end shadow-sm" id="recomputeBtn">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Re-score Pool</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Active Request Analysis Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-44 h-44 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg">
+<div class="flex items-start gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[32px]">rice_bowl</span>
+</div>
+<div class="space-y-1">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-serif text-headline-md text-primary">500 kg Non-Perishable Rice</span>
+<span class="px-2 py-0.5 rounded bg-error/10 text-error font-label text-label-sm font-semibold">T-minus 36 hrs</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-label text-label-sm">Batch #RICE-KA-991</span>
+</div>
+<p class="font-sans text-body-md text-on-surface-variant">
+            Critical deployment earmarked for <strong class="text-on-surface font-semibold">250 families displaced by localized flash floods</strong> in the Bellandur drainage catchment basin.
+          </p>
+<div class="flex flex-wrap items-center gap-x-space-lg gap-y-1 font-caption text-caption text-on-surface-variant pt-1">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">pin_drop</span>
+              Bengaluru East Community Relief Center, Domlur (560071)
+            </span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">calendar_clock</span>
+              Required By: <strong>05 Nov 2024 • 14:00 IST</strong>
+</span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">groups</span>
+              Coordinating Lead: Asha Relief Initiative (You)
+            </span>
+</div>
+</div>
+</div>
+<!-- Candidates Found Widget -->
+<div class="bg-surface-container-low px-space-lg py-space-md rounded-xl flex items-center gap-space-lg flex-shrink-0 w-full lg:w-auto justify-between lg:justify-start">
+<div class="text-left">
+<span class="font-label text-label-sm tracking-normal text-on-surface-variant">Optimization Engine</span>
+<p class="font-serif text-headline-sm text-primary font-bold">Multi-Provider Active</p>
+<span class="font-caption text-caption text-secondary">3 compatible nodes found</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-container/60 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[26px]">hub</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Transparent Ranking Formula Explanation Bar -->
+<div class="bg-surface-container p-space-md rounded-xl shadow-sm space-y-space-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs text-primary font-label text-label-md">
+<span class="material-symbols-outlined text-[18px] text-secondary">calculate</span>
+<span>Algorithmic Weighting Structure</span>
+<span class="font-caption text-caption text-on-surface-variant font-normal">(Deterministic Multicriteria Scoring)</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-caption text-caption bg-surface-container-low px-space-sm py-1 rounded">
+<span class="material-symbols-outlined text-[15px] text-secondary">lock</span>
+<span>Audited by Open Relief Standards Consortium</span>
+</div>
+</div>
+<!-- Weight Breakdown Bar & Chips -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-xs pt-1">
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label text-label-sm text-on-surface">Quantity &amp; Readiness</span>
+</div>
+<span class="font-label text-label-md font-bold text-primary">35%</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label text-label-sm text-on-surface">Distance &amp; Transit Time</span>
+</div>
+<span class="font-label text-label-md font-bold text-primary">25%</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+<span class="font-label text-label-sm text-on-surface">Verification Tier</span>
+</div>
+<span class="font-label text-label-md font-bold text-primary">20%</span>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim"></span>
+<span class="font-label text-label-sm text-on-surface">Historical Reliability</span>
+</div>
+<span class="font-label text-label-md font-bold text-primary">20%</span>
+</div>
+</div>
+<!-- Governance Notice Banner -->
+<div class="bg-surface-container-low px-space-md py-space-xs rounded-lg flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+<p class="font-caption text-caption text-on-surface-variant flex-1">
+<strong class="text-on-surface font-semibold">Human-in-the-Loop Governance:</strong> ReliefNet algorithms compute proximity and logistics compatibility to eliminate field delays. Final dispatch and chain-of-custody transfer require mutual explicit digital sign-off from both coordinating partners.
+      </p>
+</div>
+</div>
+<!-- Candidate Providers Ranked Layout -->
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-serif text-headline-md text-primary">Top Ranked Allocators</h2>
+<span class="bg-surface-container-high px-2 py-0.5 rounded font-label text-label-sm text-on-surface font-semibold">Sorted by Composite Score</span>
+</div>
+<div class="flex items-center gap-2 font-caption text-caption text-on-surface-variant">
+<span>Displaying 3 of 12 candidate suppliers</span>
+</div>
+</div>
+<!-- Candidate Cards Grid/Stack -->
+<div class="space-y-space-md">
+<!-- Candidate #1: XYZ Food Relief Foundation -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all relative overflow-hidden" id="card-xyz">
+<!-- Visual Accent Pill -->
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-on-tertiary-container"></div>
+<div class="flex flex-col xl:flex-row gap-space-lg">
+<!-- Col 1: Identity & Scoring Profile -->
+<div class="xl:w-1/3 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-label text-label-md flex items-center justify-center font-bold">1</span>
+<div>
+<h3 class="font-serif text-headline-sm text-primary font-bold">XYZ Food Relief Foundation</h3>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-1 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px] text-on-tertiary-container">verified</span>
+                      Government verified
+                    </span>
+<span class="font-caption text-caption text-on-surface-variant font-mono">#KA-2019-4412</span>
+</div>
+</div>
+</div>
+<!-- Score Gauge -->
+<div class="mt-space-md bg-surface-container-low p-space-md rounded-xl flex items-center justify-between">
+<div>
+<span class="font-caption text-caption text-on-surface-variant tracking-normal block">Compatibility Rating</span>
+<div class="flex items-baseline gap-1">
+<span class="font-serif text-display-lg text-primary font-bold">94</span>
+<span class="font-serif text-headline-sm text-secondary font-bold">/ 100</span>
+</div>
+<span class="font-caption text-caption text-on-tertiary-container font-semibold">Optimal Primary Consolidator</span>
+</div>
+<!-- Inline SVG Mini Donut Gauge -->
+<div class="w-16 h-16 relative flex items-center justify-center">
+<svg class="w-16 h-16 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-on-tertiary-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="94, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="material-symbols-outlined absolute text-[20px] text-primary">workspace_premium</span>
+</div>
+</div>
+</div>
+<!-- Trust Vector Breakdown -->
+<div class="space-y-1 text-on-surface-variant font-caption text-caption">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">task_alt</span> Fulfillment Accuracy</span>
+<span class="font-label text-label-sm text-on-surface font-semibold">99% (58 exchanges)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">handshake</span> Mutual Collabs with Asha</span>
+<span class="font-label text-label-sm text-secondary font-semibold">4 successful</span>
+</div>
+</div>
+</div>
+<!-- Col 2: Inventory & Logistics Parameters -->
+<div class="xl:w-5/12 flex flex-col justify-between space-y-space-md border-t xl:border-t-0 xl:border-l border-surface-container-high xl:pl-space-lg">
+<div>
+<span class="font-label text-label-sm tracking-normal text-on-surface-variant block mb-1">Immediate Availability</span>
+<div class="flex items-baseline gap-2">
+<span class="font-serif text-headline-lg text-primary font-bold">300 kg</span>
+<span class="font-sans text-body-sm text-on-surface-variant">Sona Masoori Grade-A Rice</span>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded font-label text-label-sm font-semibold">Covers 60% of Need</span>
+</div>
+<!-- Segment Progress -->
+<div class="w-full bg-surface-container h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 60%"></div>
+</div>
+<!-- Transit Parameters -->
+<div class="grid grid-cols-2 gap-space-sm mt-space-md">
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">near_me</span> Proximity
+                  </span>
+<p class="font-serif text-headline-sm text-primary font-bold mt-0.5">4.8 km</p>
+<span class="font-caption text-caption text-on-surface-variant">Indiranagar Depot</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">timer</span> Transit Estimate
+                  </span>
+<p class="font-serif text-headline-sm text-primary font-bold mt-0.5">25 mins</p>
+<span class="font-caption text-caption text-on-tertiary-container font-semibold">Immediate Dispatch</span>
+</div>
+</div>
+</div>
+<!-- Explainability Rationale -->
+<div class="bg-secondary-container/30 p-space-sm rounded-lg">
+<span class="font-label text-label-sm font-bold text-on-secondary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">psychology</span> Engine Rationalization
+              </span>
+<p class="font-caption text-caption text-on-surface-variant mt-1">
+                Exact food-grade match, closest geographic proximity, high verification tier, and existing trusted collaboration history minimize fulfillment uncertainty.
+              </p>
+</div>
+</div>
+<!-- Col 3: Actions & Selection -->
+<div class="xl:w-1/4 flex flex-col justify-between space-y-space-md border-t xl:border-t-0 xl:border-l border-surface-container-high xl:pl-space-lg">
+<div class="space-y-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-caption text-caption text-on-surface-variant">Allocated Amount</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label text-label-lg font-bold text-primary">300 kg / 300 kg</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-secondary">local_shipping</span>
+<span>Self-pickup or donor van available</span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<button class="w-full bg-primary text-on-primary hover:bg-primary-container px-space-md py-2.5 rounded-lg font-label text-label-md transition-all flex items-center justify-center gap-2 shadow-sm" id="btn-xyz" onclick="toggleAllocation('xyz', 300)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span id="label-xyz">Selected (300 kg)</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="w-full bg-surface-container-low hover:bg-surface-container text-on-surface px-space-sm py-2 rounded-lg font-label text-label-sm transition-all flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span>Org Profile</span>
+</button>
+<button class="w-full bg-surface-container-low hover:bg-surface-container text-on-surface px-space-sm py-2 rounded-lg font-label text-label-sm transition-all flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">forum</span>
+<span>Secure Chat</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Candidate #2: Helping Hands Society -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all relative overflow-hidden" id="card-hhs">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-secondary"></div>
+<div class="flex flex-col xl:flex-row gap-space-lg">
+<!-- Col 1: Identity & Scoring Profile -->
+<div class="xl:w-1/3 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface font-label text-label-md flex items-center justify-center font-bold">2</span>
+<div>
+<h3 class="font-serif text-headline-sm text-primary font-bold">Helping Hands Society</h3>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-1 bg-surface-container text-on-surface px-2 py-0.5 rounded font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px] text-secondary">groups</span>
+                      COMMUNITY VERIFIED
+                    </span>
+<span class="font-caption text-caption text-on-surface-variant font-mono">3 Peer Endorsements</span>
+</div>
+</div>
+</div>
+<!-- Score Gauge -->
+<div class="mt-space-md bg-surface-container-low p-space-md rounded-xl flex items-center justify-between">
+<div>
+<span class="font-caption text-caption text-on-surface-variant tracking-normal block">Compatibility Rating</span>
+<div class="flex items-baseline gap-1">
+<span class="font-serif text-display-lg text-primary font-bold">88</span>
+<span class="font-serif text-headline-sm text-secondary font-bold">/ 100</span>
+</div>
+<span class="font-caption text-caption text-secondary font-semibold">Optimal Split Consolidator</span>
+</div>
+<div class="w-16 h-16 relative flex items-center justify-center">
+<svg class="w-16 h-16 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="88, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="material-symbols-outlined absolute text-[20px] text-secondary">trending_up</span>
+</div>
+</div>
+</div>
+<!-- Trust Vector Breakdown -->
+<div class="space-y-1 text-on-surface-variant font-caption text-caption">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">task_alt</span> Fulfillment Accuracy</span>
+<span class="font-label text-label-sm text-on-surface font-semibold">95% (24 completed)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">volunteer_activism</span> Field Fleet</span>
+<span class="font-label text-label-sm text-secondary font-semibold">1 Dedicated Van Active</span>
+</div>
+</div>
+</div>
+<!-- Col 2: Inventory & Logistics Parameters -->
+<div class="xl:w-5/12 flex flex-col justify-between space-y-space-md border-t xl:border-t-0 xl:border-l border-surface-container-high xl:pl-space-lg">
+<div>
+<span class="font-label text-label-sm tracking-normal text-on-surface-variant block mb-1">Immediate Availability</span>
+<div class="flex items-baseline gap-2">
+<span class="font-serif text-headline-lg text-primary font-bold">150 kg</span>
+<span class="font-sans text-body-sm text-on-surface-variant">Fortified White Rice Packets</span>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded font-label text-label-sm font-semibold">Covers 30% of Need</span>
+</div>
+<!-- Segment Progress -->
+<div class="w-full bg-surface-container h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 30%"></div>
+</div>
+<!-- Transit Parameters -->
+<div class="grid grid-cols-2 gap-space-sm mt-space-md">
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">near_me</span> Proximity
+                  </span>
+<p class="font-serif text-headline-sm text-primary font-bold mt-0.5">8.2 km</p>
+<span class="font-caption text-caption text-on-surface-variant">Koramangala 4th Block</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">electric_bolt</span> Rapid Deployment
+                  </span>
+<p class="font-serif text-headline-sm text-primary font-bold mt-0.5">&lt; 2 hrs</p>
+<span class="font-caption text-caption text-on-surface-variant">Dedicated Volunteer Unit</span>
+</div>
+</div>
+</div>
+<!-- Explainability Rationale -->
+<div class="bg-secondary-container/20 p-space-sm rounded-lg">
+<span class="font-label text-label-sm font-bold text-on-secondary-container flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">psychology</span> Engine Rationalization
+              </span>
+<p class="font-caption text-caption text-on-surface-variant mt-1">
+                Ideal complementary batch to close shortage deficit when merged with XYZ Foundation. Proven rapid vehicle dispatch ready within 2 hours.
+              </p>
+</div>
+</div>
+<!-- Col 3: Actions & Selection -->
+<div class="xl:w-1/4 flex flex-col justify-between space-y-space-md border-t xl:border-t-0 xl:border-l border-surface-container-high xl:pl-space-lg">
+<div class="space-y-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-caption text-caption text-on-surface-variant">Allocated Amount</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label text-label-lg font-bold text-primary">150 kg / 150 kg</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-secondary">schedule</span>
+<span>Ready for 15:30 IST pickup window</span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<button class="w-full bg-primary text-on-primary hover:bg-primary-container px-space-md py-2.5 rounded-lg font-label text-label-md transition-all flex items-center justify-center gap-2 shadow-sm" id="btn-hhs" onclick="toggleAllocation('hhs', 150)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span id="label-hhs">Selected (150 kg)</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="w-full bg-surface-container-low hover:bg-surface-container text-on-surface px-space-sm py-2 rounded-lg font-label text-label-sm transition-all flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+<span>Org Profile</span>
+</button>
+<button class="w-full bg-surface-container-low hover:bg-surface-container text-on-surface px-space-sm py-2 rounded-lg font-label text-label-sm transition-all flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">forum</span>
+<span>Chat</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Candidate #3: Hope Relief Mission - Mysuru Hub -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm hover:shadow-md transition-all relative overflow-hidden" id="card-hrm">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-surface-variant"></div>
+<div class="flex flex-col xl:flex-row gap-space-lg">
+<!-- Col 1: Identity & Scoring Profile -->
+<div class="xl:w-1/3 flex flex-col justify-between space-y-space-md">
+<div>
+<div class="flex items-center gap-space-sm">
+<span class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant font-label text-label-md flex items-center justify-center font-bold">3</span>
+<div>
+<h3 class="font-serif text-headline-sm text-primary font-bold">Hope Relief Mission (Mysuru Hub)</h3>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="inline-flex items-center gap-1 bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px] text-on-tertiary-container">verified</span>
+                      Government verified
+                    </span>
+<span class="font-caption text-caption text-on-surface-variant font-mono">#KA-2016-1029</span>
+</div>
+</div>
+</div>
+<!-- Score Gauge -->
+<div class="mt-space-md bg-surface-container-low p-space-md rounded-xl flex items-center justify-between">
+<div>
+<span class="font-caption text-caption text-on-surface-variant tracking-normal block">Compatibility Rating</span>
+<div class="flex items-baseline gap-1">
+<span class="font-serif text-display-lg text-primary font-bold">72</span>
+<span class="font-serif text-headline-sm text-secondary font-bold">/ 100</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-semibold">Single-Source Fallback</span>
+</div>
+<div class="w-16 h-16 relative flex items-center justify-center">
+<svg class="w-16 h-16 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-outline" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="72, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="material-symbols-outlined absolute text-[20px] text-outline">alt_route</span>
+</div>
+</div>
+</div>
+<!-- Trust Vector Breakdown -->
+<div class="space-y-1 text-on-surface-variant font-caption text-caption">
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-secondary">task_alt</span> Fulfillment Accuracy</span>
+<span class="font-label text-label-sm text-on-surface font-semibold">97% (112 exchanges)</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px] text-error">warning</span> Transport Complexity</span>
+<span class="font-label text-label-sm text-error font-semibold">Inter-district permit req.</span>
+</div>
+</div>
+</div>
+<!-- Col 2: Inventory & Logistics Parameters -->
+<div class="xl:w-5/12 flex flex-col justify-between space-y-space-md border-t xl:border-t-0 xl:border-l border-surface-container-high xl:pl-space-lg">
+<div>
+<span class="font-label text-label-sm tracking-normal text-on-surface-variant block mb-1">Immediate Availability</span>
+<div class="flex items-baseline gap-2">
+<span class="font-serif text-headline-lg text-primary font-bold">500 kg</span>
+<span class="font-sans text-body-sm text-on-surface-variant">Standard Parboiled Bulk Stock</span>
+<span class="bg-surface-container text-on-surface px-2 py-0.5 rounded font-label text-label-sm font-semibold">Covers 100% of Need</span>
+</div>
+<!-- Segment Progress -->
+<div class="w-full bg-surface-container h-2 rounded-full mt-2 overflow-hidden">
+<div class="bg-secondary-fixed-dim h-full rounded-full" style="width: 100%"></div>
+</div>
+<!-- Transit Parameters -->
+<div class="grid grid-cols-2 gap-space-sm mt-space-md">
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">distance</span> Transit Distance
+                  </span>
+<p class="font-serif text-headline-sm text-primary font-bold mt-0.5">135 km</p>
+<span class="font-caption text-caption text-on-surface-variant">Mysuru Industrial Area</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">schedule</span> Transit Estimate
+                  </span>
+<p class="font-serif text-headline-sm text-primary font-bold mt-0.5">3.5 hours</p>
+<span class="font-caption text-caption text-error font-semibold">Toll / Highway Delay Risk</span>
+</div>
+</div>
+</div>
+<!-- Explainability Rationale -->
+<div class="bg-surface-container p-space-sm rounded-lg">
+<span class="font-label text-label-sm font-bold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">psychology</span> Engine Rationalization
+              </span>
+<p class="font-caption text-caption text-on-surface-variant mt-1">
+                Possesses entire 500 kg single-lot consignment, but ranks lower due to highway distance, 3.5h transit overhead, and toll logistics compared to intra-city consolidation.
+              </p>
+</div>
+</div>
+<!-- Col 3: Actions & Selection -->
+<div class="xl:w-1/4 flex flex-col justify-between space-y-space-md border-t xl:border-t-0 xl:border-l border-surface-container-high xl:pl-space-lg">
+<div class="space-y-space-sm">
+<div class="bg-surface-container-low p-space-sm rounded-lg">
+<span class="font-caption text-caption text-on-surface-variant">Batch Provisioning</span>
+<div class="flex items-center justify-between mt-1">
+<span class="font-label text-label-lg font-bold text-primary">500 kg Single-Lot</span>
+<span class="material-symbols-outlined text-outline text-[20px]">radio_button_unchecked</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-secondary">currency_rupee</span>
+<span>Est. freight surcharge: ₹3,400</span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<button class="w-full bg-surface-container-low hover:bg-surface-container text-on-surface px-space-md py-2.5 rounded-lg font-label text-label-md transition-all flex items-center justify-center gap-2 shadow-sm" id="btn-hrm" onclick="selectSingleFallback()">
+<span class="material-symbols-outlined text-[18px]">swap_horiz</span>
+<span id="label-hrm">Select Alternative (Full 500 kg)</span>
+</button>
+<button class="w-full bg-surface-container-low hover:bg-surface-container text-on-surface px-space-sm py-2 rounded-lg font-label text-label-sm transition-all flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+<span>Calculate Transport Cost</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Multi-Provider Consolidation Panel (Bottom Master Action Deck) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md border-l-4 border-l-primary space-y-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">call_split</span>
+<h3 class="font-serif text-headline-md text-primary font-bold">Shortage Resolution &amp; Consolidation Summary</h3>
+</div>
+<p class="font-sans text-body-sm text-on-surface-variant mt-0.5">
+          Dual-supplier routing aggregates immediate neighborhood stocks to fulfill flood requirements with minimal transit latency.
+        </p>
+</div>
+<!-- Live Fulfillment Pill -->
+<div class="flex items-center gap-space-sm">
+<div class="bg-surface-container-low px-space-md py-1 rounded-lg text-right">
+<span class="font-caption text-caption text-on-surface-variant block">Aggregate Fulfilled</span>
+<span class="font-serif text-headline-sm font-bold text-primary" id="aggregateTotal">450 kg / 500 kg (90%)</span>
+</div>
+<div class="bg-error-container text-on-error-container px-space-md py-1 rounded-lg text-right">
+<span class="font-caption text-caption text-on-error-container block">Unallocated Gap</span>
+<span class="font-serif text-headline-sm font-bold text-error" id="remainingGap">50 kg (10%)</span>
+</div>
+</div>
+</div>
+<!-- Visual Multi-segment Progress Bar -->
+<div class="space-y-space-xs">
+<div class="w-full bg-surface-container h-4 rounded-full overflow-hidden flex">
+<div class="bg-primary-container h-full transition-all duration-500 relative group" id="bar-xyz" style="width: 60%" title="XYZ Food Relief: 300 kg"></div>
+<div class="bg-secondary h-full transition-all duration-500 relative group" id="bar-hhs" style="width: 30%" title="Helping Hands: 150 kg"></div>
+<div class="bg-error/30 h-full transition-all duration-500 relative group" id="bar-gap" style="width: 10%" title="Remaining Gap: 50 kg"></div>
+</div>
+<!-- Legend -->
+<div class="flex flex-wrap items-center justify-between font-caption text-caption text-on-surface-variant pt-1">
+<div class="flex flex-wrap items-center gap-space-md">
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+            XYZ Foundation: <strong class="text-on-surface font-semibold">300 kg</strong> (60%)
+          </span>
+<span class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+            Helping Hands: <strong class="text-on-surface font-semibold">150 kg</strong> (30%)
+          </span>
+<span class="flex items-center gap-1.5 text-error">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+            Remaining Unallocated: <strong class="font-semibold">50 kg</strong> (10%)
+          </span>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[15px]">rss_feed</span>
+          Gap auto-broadcasted to 25 km perimeter
+        </span>
+</div>
+</div>
+<!-- Final Consolidated Action Ribbon -->
+<div class="pt-space-sm flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-md border-t border-surface-container">
+<div class="flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-lg object-cover flex-shrink-0" data-alt="High quality aerial shot of Bengaluru flood relief logistics center with relief vehicles, food supply boxes, and humanitarian dispatch volunteers working during sunny morning daylight in emerald and navy uniforms" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu3y7YrbMlpkY7TvByc9dpoP20xOficJGHSYNjU23D1ELXuHXQ2fR61R9073u269VY5TG0waqZMYbSAdl_3dOnaVDaFFRxC29GdbEIe3RLRJPsyAw4yiIy9xRWUer5iZlWJZfG93V9zebCr2340-3Z-KQ6uh_gN4IRN8OqQ-UOA7oeEyBdUb-AtJlXbXDcjzACFK32MzxxmYiWr8p-YH8XUJ6kRSSkN_zfamg6MU5P"/>
+<div>
+<span class="font-label text-label-md text-primary font-bold block">Bengaluru East Community Center Dispatch</span>
+<p class="font-caption text-caption text-on-surface-variant">Generates simultaneous QR-manifests and tracking IDs (#TX-8821A &amp; #TX-8821B).</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end sm:self-center">
+<button class="bg-surface-container-low hover:bg-surface-container text-on-surface px-space-md py-2.5 rounded-lg font-label text-label-md transition-all flex items-center gap-1" onclick="saveDraft()">
+<span class="material-symbols-outlined text-[18px]">bookmark_border</span>
+<span>Save Routing Draft</span>
+</button>
+<button class="bg-primary text-on-primary hover:bg-primary-container px-space-lg py-2.5 rounded-lg font-label text-label-md font-semibold transition-all flex items-center gap-2 shadow-md" onclick="confirmPlan()">
+<span class="material-symbols-outlined text-[20px]">send_and_archive</span>
+<span>Generate Consolidated Transfer Plans</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Notification Banner Toast (hidden by default) -->
+<div class="fixed bottom-6 right-6 bg-primary text-on-primary p-space-md rounded-xl shadow-xl z-50 flex items-center gap-space-md transform translate-y-24 opacity-0 transition-all duration-300" id="toastNotification">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+</div>
+<div>
+<h4 class="font-label text-label-md font-bold" id="toastTitle">Allocation Updated</h4>
+<p class="font-caption text-caption text-on-primary/80" id="toastMsg">Consolidated manifests prepared for signing.</p>
+</div>
+<button class="text-on-primary/60 hover:text-on-primary ml-2" onclick="hideToast()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<script>
+  let state = {
+    xyz: true,
+    hhs: true,
+    hrm: false,
+    radius: 25
+  };
+
+  const slider = document.getElementById('radiusSlider');
+  const radiusLabel = document.getElementById('radiusLabel');
+
+  slider.addEventListener('input', (e) => {
+    state.radius = e.target.value;
+    radiusLabel.textContent = e.target.value + ' km';
+  });
+
+  document.getElementById('recomputeBtn').addEventListener('click', () => {
+    showToast('Recomputing Algorithm', 'Evaluated 12 local repositories within ' + state.radius + ' km radius.');
+  });
+
+  function toggleAllocation(provider, amount) {
+    if (provider === 'xyz') {
+      state.xyz = !state.xyz;
+      updateUI();
+    } else if (provider === 'hhs') {
+      state.hhs = !state.hhs;
+      updateUI();
+    }
+  }
+
+  function selectSingleFallback() {
+    state.hrm = !state.hrm;
+    if (state.hrm) {
+      state.xyz = false;
+      state.hhs = false;
+      showToast('Switched to Single Bulk Hub', 'Mysuru Hub selected for complete 500 kg fulfillment.');
+    } else {
+      state.xyz = true;
+      state.hhs = true;
+      showToast('Restored Multi-Provider Consolidation', 'Dual intra-city routing reactivated.');
+    }
+    updateUI();
+  }
+
+  function updateUI() {
+    const btnXyz = document.getElementById('btn-xyz');
+    const labelXyz = document.getElementById('label-xyz');
+    const barXyz = document.getElementById('bar-xyz');
+
+    const btnHhs = document.getElementById('btn-hhs');
+    const labelHhs = document.getElementById('label-hhs');
+    const barHhs = document.getElementById('bar-hhs');
+
+    const btnHrm = document.getElementById('btn-hrm');
+    const labelHrm = document.getElementById('label-hrm');
+
+    const totalEl = document.getElementById('aggregateTotal');
+    const gapEl = document.getElementById('remainingGap');
+    const barGap = document.getElementById('bar-gap');
+
+    let total = 0;
+
+    if (state.hrm) {
+      total = 500;
+      btnHrm.className = "w-full bg-primary text-on-primary hover:bg-primary-container px-space-md py-2.5 rounded-lg font-label text-label-md transition-all flex items-center justify-center gap-2 shadow-sm";
+      labelHrm.textContent = "Selected (Full 500 kg)";
+
+      btnXyz.className = "w-full bg-surface-container-low hover:bg-surface-container text-on-surface px-space-md py-2.5 rounded-lg font-label text-label-md transition-all flex items-center justify-center gap-2 shadow-sm";
+      labelXyz.textContent = "Select for Allocation (300 kg)";
+
+      btnHhs.className = "w-full bg-surface-container-low hover:bg-surface-container text-on-surface px-space-md py-2.5 rounded-lg font-label text-label-md transition-all flex items-center justify-center gap-2 shadow-sm";
+      labelHhs.textContent = "Select for Allocation (150 kg)";
+
+      barXyz.style.width = '0%';
+      barHhs.style.width = '0%';
+      barGap.style.width = '0%';
+      barGap.className = 'bg-primary-container h-full transition-all duration-500';
+      barGap.style.width = '100%';
+    } else {
+      btnHrm.className = "w-full bg-surface-container-low hover:bg-surface-container text-on-surface px-space-md py-2.5 rounded-lg font-label text-label-md transition-all flex items-center justify-center gap-2 shadow-sm";
+      labelHrm.textContent = "Select Alternative (Full 500 kg)";
+
+      let xyzPct = state.xyz ? 60 : 0;
+      let hhsPct = state.hhs ? 30 : 0;
+      total = (state.xyz ? 300 : 0) + (state.hhs ? 150 : 0);
+
+      if (state.xyz) {
+        btnXyz.className = "w-full bg-primary text-on-primary hover:bg-primary-container px-space-md py-2.5 rounded-lg font-label text-label-md transition-all flex items-center justify-center gap-2 shadow-sm";
+        labelXyz.textContent = "Selected (300 kg)";
+      } else {
+        btnXyz.className = "w-full bg-surface-container-low hover:bg-surface-container text-on-surface px-space-md py-2.5 rounded-lg font-label text-label-md transition-all flex items-center justify-center gap-2 shadow-sm";
+        labelXyz.textContent = "Select for Allocation (300 kg)";
+      }
+
+      if (state.hhs) {
+        btnHhs.className = "w-full bg-primary text-on-primary hover:bg-primary-container px-space-md py-2.5 rounded-lg font-label text-label-md transition-all flex items-center justify-center gap-2 shadow-sm";
+        labelHhs.textContent = "Selected (150 kg)";
+      } else {
+        btnHhs.className = "w-full bg-surface-container-low hover:bg-surface-container text-on-surface px-space-md py-2.5 rounded-lg font-label text-label-md transition-all flex items-center justify-center gap-2 shadow-sm";
+        labelHhs.textContent = "Select for Allocation (150 kg)";
+      }
+
+      barXyz.style.width = xyzPct + '%';
+      barHhs.style.width = hhsPct + '%';
+      const gapPct = 100 - (xyzPct + hhsPct);
+      barGap.style.width = gapPct + '%';
+      barGap.className = 'bg-error/30 h-full transition-all duration-500';
+    }
+
+    const gap = 500 - total;
+    const totalPct = Math.round((total / 500) * 100);
+    const gapPct = Math.round((gap / 500) * 100);
+
+    totalEl.textContent = total + ' kg / 500 kg (' + totalPct + '%)';
+    gapEl.textContent = gap + ' kg (' + gapPct + '%)';
+  }
+
+  function showToast(title, msg) {
+    const toast = document.getElementById('toastNotification');
+    document.getElementById('toastTitle').textContent = title;
+    document.getElementById('toastMsg').textContent = msg;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    setTimeout(hideToast, 4500);
+  }
+
+  function hideToast() {
+    const toast = document.getElementById('toastNotification');
+    toast.classList.add('translate-y-24', 'opacity-0');
+    toast.classList.remove('translate-y-0', 'opacity-100');
+  }
+
+  function confirmPlan() {
+    showToast('Manifests Created', 'Generated 2 coordinated transfer agreements (#TX-8821A & #TX-8821B).');
+  }
+
+  function saveDraft() {
+    showToast('Routing Saved', 'Draft configuration saved to ReliefNet temporary storage.');
+  }
+</script>
+    </div>
+  </main>
+  <script src="/static/js/screen_catalog.js"></script>
+  <script src="/static/js/mock_data.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

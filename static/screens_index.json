@@ -1,0 +1,234 @@
+[
+  {
+    "id": "public-portal",
+    "title": "Public Portal & Inter-NGO Coordination",
+    "route": "#/portal",
+    "shell": "public",
+    "uiFolder": "reliefnet_public_portal_inter_ngo_coordination_alexandria",
+    "partialBytes": 34767
+  },
+  {
+    "id": "how-it-works",
+    "title": "How It Works & Trust Verification",
+    "route": "#/how-it-works",
+    "shell": "public",
+    "uiFolder": "reliefnet_how_it_works_trust_verification_2",
+    "partialBytes": 44555
+  },
+  {
+    "id": "discover-ngos",
+    "title": "Public NGO Discovery Transparency Directory",
+    "route": "#/discover",
+    "shell": "public",
+    "uiFolder": "reliefnet_public_ngo_discovery_transparency_directory_alexandria",
+    "partialBytes": 54244
+  },
+  {
+    "id": "faceted-directory",
+    "title": "Advanced NGO Directory (Faceted Discovery)",
+    "route": "#/directory",
+    "shell": "public",
+    "uiFolder": "reliefnet_advanced_ngo_directory_faceted_discovery_alexandria",
+    "partialBytes": 55368
+  },
+  {
+    "id": "sign-in",
+    "title": "Organization Sign In & Portal Access",
+    "route": "#/auth/signin",
+    "shell": "public",
+    "uiFolder": "reliefnet_organization_sign_in_portal_access_alexandria",
+    "partialBytes": 21388
+  },
+  {
+    "id": "registration",
+    "title": "Organization Registration & Track Selection",
+    "route": "#/auth/register",
+    "shell": "public",
+    "uiFolder": "reliefnet_organization_registration_track_selection_2",
+    "partialBytes": 42753
+  },
+  {
+    "id": "darpan-verification",
+    "title": "Government DARPAN State Registry Verification",
+    "route": "#/verification/darpan",
+    "shell": "public",
+    "uiFolder": "reliefnet_government_darpan_state_registry_verification_2",
+    "partialBytes": 27374
+  },
+  {
+    "id": "peer-endorsement",
+    "title": "Community Peer Reference Endorsement",
+    "route": "#/verification/peer-endorsement",
+    "shell": "public",
+    "uiFolder": "reliefnet_community_peer_reference_endorsement",
+    "partialBytes": 29054
+  },
+  {
+    "id": "document-vault",
+    "title": "Document Vault & AI Risk Status",
+    "route": "#/verification/vault",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_document_vault_ai_risk_analysis_verification_status_2",
+    "partialBytes": 41191
+  },
+  {
+    "id": "operations-dashboard",
+    "title": "Operations Mission Console Dashboard",
+    "route": "#/dashboard",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_operations_dashboard",
+    "partialBytes": 34479
+  },
+  {
+    "id": "surplus-inventory",
+    "title": "Surplus Inventory & Expiry Watchtower",
+    "route": "#/inventory/surplus",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_surplus_inventory_expiry_control_2",
+    "partialBytes": 37314
+  },
+  {
+    "id": "publish-surplus",
+    "title": "Publish Surplus Resource Manifest",
+    "route": "#/inventory/publish",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_publish_surplus_resource_manifest_alexandria",
+    "partialBytes": 34401
+  },
+  {
+    "id": "resource-directory",
+    "title": "Resource Directory Surplus Exchange",
+    "route": "#/resources",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_resource_directory_surplus_exchange",
+    "partialBytes": 42252
+  },
+  {
+    "id": "humanitarian-services",
+    "title": "Humanitarian Services Directory & Deployment",
+    "route": "#/services",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_humanitarian_services_directory_deployment_2",
+    "partialBytes": 47400
+  },
+  {
+    "id": "emergency-requests",
+    "title": "Emergency Requests & Shortage Directory",
+    "route": "#/requests",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_emergency_requests_shortage_directory_2",
+    "partialBytes": 37350
+  },
+  {
+    "id": "create-request",
+    "title": "Create Emergency Resource Requisition",
+    "route": "#/requests/create",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_create_emergency_resource_request_2",
+    "partialBytes": 31322
+  },
+  {
+    "id": "requisition-details",
+    "title": "Requisition Details & Split Fulfillment (#REQ-1049)",
+    "route": "#/requests/REQ-1049",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_requisition_details_multi_provider_fulfillment",
+    "partialBytes": 26429
+  },
+  {
+    "id": "ai-matching",
+    "title": "AI Resource Matching & Allocation Engine",
+    "route": "#/matching",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_ai_matching_shortage_allocation",
+    "partialBytes": 45133
+  },
+  {
+    "id": "match-explainability",
+    "title": "AI Match Score Mathematical Explainability",
+    "route": "#/matching/explainability",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_ai_match_breakdown_mathematical_explainability",
+    "partialBytes": 32809
+  },
+  {
+    "id": "consignment-workspace",
+    "title": "Consignment Collaboration Workspace & Live Handshake",
+    "route": "#/transfers/workspace",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_consignment_collaboration_workspace_live_handshake_alexandria",
+    "partialBytes": 33856
+  },
+  {
+    "id": "digital-waybill",
+    "title": "Digital Waybill & Custody Verification (#WB-2023-8821A)",
+    "route": "#/transfers/waybill",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_digital_waybill_consignment_chain_of_custody_alexandria",
+    "partialBytes": 38735
+  },
+  {
+    "id": "transfer-tracking",
+    "title": "Transfer Lifecycle & Transaction Tracking",
+    "route": "#/transfers",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_transfer_tracking_transaction_lifecycle",
+    "partialBytes": 41628
+  },
+  {
+    "id": "weighbridge-dispute",
+    "title": "Consignment Dispute & Weighbridge Mediation",
+    "route": "#/disputes/weighbridge",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_consignment_dispute_reporting_weighbridge_mediation_alexandria",
+    "partialBytes": 41242
+  },
+  {
+    "id": "operational-comms",
+    "title": "Operational Comms & Mission Coordination Desk",
+    "route": "#/comms",
+    "shell": "dashboard",
+    "uiFolder": "reliefnet_operational_comms_mission_coordination_desk_2",
+    "partialBytes": 26155
+  },
+  {
+    "id": "admin-triage",
+    "title": "NGO Verification Triage Desk & Document Review",
+    "route": "#/admin/triage",
+    "shell": "admin",
+    "uiFolder": "reliefnet_admin_verification_triage_desk_document_review_2",
+    "partialBytes": 32990
+  },
+  {
+    "id": "admin-sybil-graph",
+    "title": "Cross-Network Sybil Detection & Graph Risk Intelligence",
+    "route": "#/admin/sybil-risk",
+    "shell": "admin",
+    "uiFolder": "reliefnet_admin_ai_risk_sybil_graph_intelligence_2",
+    "partialBytes": 40726
+  },
+  {
+    "id": "admin-arbitration",
+    "title": "Cargo & Dispatch Mediation Command",
+    "route": "#/admin/arbitration",
+    "shell": "admin",
+    "uiFolder": "reliefnet_admin_cargo_dispatch_mediation_command_2",
+    "partialBytes": 30204
+  },
+  {
+    "id": "admin-ledger",
+    "title": "Cryptographic Ledger & State Consensus Audit Stream",
+    "route": "#/admin/ledger",
+    "shell": "admin",
+    "uiFolder": "reliefnet_admin_cryptographic_ledger_audit_stream",
+    "partialBytes": 38697
+  },
+  {
+    "id": "design-system-guide",
+    "title": "Alexandria Design System Canonical Gazette & Style Guide",
+    "route": "#/design-system",
+    "shell": "public",
+    "uiFolder": "alexandria_design_system_printable_pdf_guide",
+    "partialBytes": 31293
+  }
+]

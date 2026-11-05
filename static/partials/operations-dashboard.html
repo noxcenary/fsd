@@ -1,0 +1,598 @@
+<!-- Screen: Operations Mission Console Dashboard | ID: operations-dashboard | UI Source: reliefnet_operations_dashboard -->
+<div id="screen-operations-dashboard" class="reliefnet-screen-view w-full" data-shell="dashboard">
+  <div class="flex flex-col w-full space-y-space-xl">
+<!-- Operations Dashboard Header Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label text-label-sm font-semibold tracking-normal">Mission Console</span>
+<span class="inline-flex items-center gap-1 font-caption text-caption text-secondary">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+          Telemetry Synced: Just now
+        </span>
+</div>
+<h1 class="font-serif text-display-lg text-primary tracking-tight font-bold">Operations Dashboard</h1>
+<p class="font-sans text-body-md text-on-surface-variant max-w-3xl">Live resource coordination status, active matches, and ongoing logistical transfers across Karnataka relief zones.</p>
+</div>
+<!-- Quick Action Triggers -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-xs lg:pt-0">
+<button class="group relative flex items-center gap-space-xs px-3.5 py-2 rounded-xl bg-error-container text-on-error-container shadow-sm transition-colors hover:bg-error hover:text-on-error cursor-pointer" id="toggle-emergency-btn" type="button">
+<span class="material-symbols-outlined text-[18px] group-hover:scale-110 transition-transform">emergency_home</span>
+<span class="font-label text-label-md font-semibold">Toggle Emergency Mode</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-error group-hover:bg-on-error"></span>
+</button>
+<button class="flex items-center gap-space-xs px-3.5 py-2 rounded-xl bg-surface-container-lowest text-secondary shadow-sm hover:bg-surface-container-low transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">add_circle</span>
+<span class="font-label text-label-md font-semibold">+ Create Need Request</span>
+</button>
+<button class="flex items-center gap-space-xs px-4 py-2 rounded-xl bg-primary-container text-on-primary shadow-sm hover:bg-tertiary-container transition-colors cursor-pointer" type="button">
+<span class="material-symbols-outlined text-[18px]">publish</span>
+<span class="font-label text-label-md font-semibold">+ Publish Resource</span>
+</button>
+</div>
+</div>
+<!-- Organization Trust & Accreditation Ribbon -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[28px]">shield_person</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h2 class="font-serif text-headline-md text-on-surface font-bold">Asha Relief Initiative</h2>
+<span class="px-2 py-0.5 rounded bg-primary-container text-primary-fixed font-mono font-label text-label-sm">#KA-2021-8841</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+              Government verified
+            </span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Disaster Management Authority Node • South Zone Sector 4 Hub</p>
+</div>
+</div>
+<!-- Quick Trust Telemetry -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md lg:gap-space-lg bg-surface-container-low/60 p-space-sm rounded-xl">
+<div class="space-y-0.5 px-space-xs">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-semibold">Fulfillment</span>
+<p class="font-serif text-headline-sm text-on-surface font-bold">98%</p>
+<span class="font-label text-label-sm text-secondary font-medium">Verified manifest</span>
+</div>
+<div class="space-y-0.5 px-space-xs">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-semibold">Exchanges</span>
+<p class="font-serif text-headline-sm text-on-surface font-bold">42</p>
+<span class="font-label text-label-sm text-secondary font-medium">Completed aid legs</span>
+</div>
+<div class="space-y-0.5 px-space-xs">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-semibold">Avg Latency</span>
+<p class="font-serif text-headline-sm text-on-surface font-bold">18 min</p>
+<span class="font-label text-label-sm text-secondary font-medium">Dispatch triage</span>
+</div>
+<div class="space-y-0.5 px-space-xs">
+<span class="font-caption text-caption text-on-surface-variant uppercase font-semibold">Integrity</span>
+<p class="font-serif text-headline-sm text-on-tertiary-container font-bold">0 Disputes</p>
+<span class="font-label text-label-sm text-on-surface-variant font-medium">100% clean audit</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Four Critical Operational Metrics -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
+<!-- Stat 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label text-label-md tracking-normal text-on-surface-variant font-semibold">Surplus Resources Listed</span>
+<h3 class="font-serif text-display-lg text-primary font-bold">3,850 <span class="font-serif text-headline-sm font-normal text-on-surface-variant">kg</span></h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">inventory</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span class="font-semibold text-primary">8 active listings</span>
+<span class="truncate max-w-[150px]">Rice, Pulses, Meds</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label text-label-md tracking-normal text-on-surface-variant font-semibold">Active Urgent Requests</span>
+<h3 class="font-serif text-display-lg text-error font-bold">4 <span class="font-serif text-headline-sm font-normal text-on-surface-variant">open</span></h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[22px]">priority_high</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-caption text-caption">
+<span class="text-on-error-container font-semibold">1 Critical Flood Relief</span>
+<span class="text-on-surface-variant">2 High Urgency</span>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label text-label-md tracking-normal text-on-surface-variant font-semibold">Active In-Flight Transfers</span>
+<h3 class="font-serif text-display-lg text-secondary font-bold">3 <span class="font-serif text-headline-sm font-normal text-on-surface-variant">moving</span></h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span class="text-primary font-semibold">1 Awaiting confirmation</span>
+<span>2 In Transit</span>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between hover:bg-surface-container-low/40 transition-colors">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label text-label-md tracking-normal text-on-surface-variant font-semibold">Platform Matches Ready</span>
+<h3 class="font-serif text-display-lg text-on-tertiary-container font-bold">6 <span class="font-serif text-headline-sm font-normal text-on-surface-variant">ranked</span></h3>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center text-on-tertiary-container">
+<span class="material-symbols-outlined text-[22px]">auto_awesome</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span class="text-secondary font-semibold">Avg 92% Compatibility</span>
+<span>AI Auto-curated</span>
+</div>
+</div>
+</div>
+<!-- Two-Column Operational Layout Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-xl items-start">
+<!-- MAIN COLUMN: Left / Central (8 Cols) -->
+<div class="xl:col-span-8 space-y-space-xl">
+<!-- Section: Active Transfers Flow -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-space-lg flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm bg-surface-container-low/50">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary">alt_route</span>
+<div>
+<h2 class="font-serif text-headline-sm text-on-surface font-bold">Active Resource Transfers</h2>
+<p class="font-caption text-caption text-on-surface-variant">Live manifest logs and verification checkpoints</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label text-label-sm text-on-surface-variant">Filter:</span>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label text-label-sm text-on-surface font-medium">All Regional Depots (KA)</span>
+</div>
+</div>
+<!-- Transfers Table Container -->
+<div class="overflow-x-auto table-scroll" tabindex="0" role="region" aria-label="Active transfer table; scroll horizontally to view all columns">
+<table class="w-full text-left font-sans text-body-sm table-pin-right">
+<thead>
+<tr class="bg-surface-container-low font-label text-label-sm text-on-surface-variant uppercase">
+<th class="py-2.5 px-space-lg font-semibold">Transfer ID &amp; Item</th>
+<th class="py-2.5 px-space-md font-semibold">Recipient NGO</th>
+<th class="py-2.5 px-space-md font-semibold">Status / Progress</th>
+<th class="py-2.5 px-space-md font-semibold">Route Logistics</th>
+<th class="py-2.5 px-space-lg font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<!-- Item 1 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-space-md px-space-lg align-top">
+<div class="font-label text-label-md font-bold text-primary">TR-8821</div>
+<div class="font-sans text-body-sm font-medium text-on-surface">500 kg Sona Masoori Rice</div>
+<div class="font-caption text-caption text-on-surface-variant">Lot #KA-BLR-094</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="font-label text-label-md font-semibold text-on-surface">Karuna Seva Trust</div>
+<div class="font-caption text-caption text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px] text-on-tertiary-container">verified</span> Gov Verified
+                  </div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="space-y-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">pin_drop</span> DELIVERED
+                    </span>
+<div class="text-[11px] font-caption text-secondary font-medium">Awaiting Receipt Confirmation</div>
+<div class="w-36 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-4/5 rounded-full"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="font-caption text-caption text-on-surface">Bengaluru South Depot</div>
+<div class="font-caption text-caption text-on-surface-variant">Last mile handover</div>
+</td>
+<td class="py-space-md px-space-lg align-top text-right">
+<button class="px-2.5 py-1 rounded bg-primary-container text-on-primary font-label text-label-sm font-semibold hover:bg-tertiary-container cursor-pointer transition-colors shadow-sm" onclick="document.getElementById('confirm-receipt-modal').classList.remove('hidden')" type="button">
+                    Verify Final
+                  </button>
+</td>
+</tr>
+<!-- Item 2 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-space-md px-space-lg align-top">
+<div class="font-label text-label-md font-bold text-primary">TR-8819</div>
+<div class="font-sans text-body-sm font-medium text-on-surface">150 Medical Emergency Kits</div>
+<div class="font-caption text-caption text-on-surface-variant">Class II Trauma Supplies</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="font-label text-label-md font-semibold text-on-surface">Spandana Health</div>
+<div class="font-caption text-caption text-on-surface-variant">Hosapete Field Clinic</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="space-y-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px] animate-spin">sync</span> IN PROGRESS
+                    </span>
+<div class="text-[11px] font-caption text-on-surface-variant">Dispatched via highway transit</div>
+<div class="w-36 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-on-tertiary-container w-1/2 rounded-full"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="font-caption text-caption text-on-surface font-mono">KA-04-E-2192</div>
+<div class="font-caption text-caption text-on-surface-variant">Shared Logistics Van</div>
+</td>
+<td class="py-space-md px-space-lg align-top text-right">
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label text-label-sm font-medium hover:bg-surface-container-high cursor-pointer transition-colors" type="button">
+                    Track GPS
+                  </button>
+</td>
+</tr>
+<!-- Item 3 -->
+<tr class="hover:bg-surface-container-low/30 transition-colors">
+<td class="py-space-md px-space-lg align-top">
+<div class="font-label text-label-md font-bold text-primary">TR-8812</div>
+<div class="font-sans text-body-sm font-medium text-on-surface">2,000 Water Purification Tabs</div>
+<div class="font-caption text-caption text-on-surface-variant">Batch: WP-880-99</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="font-label text-label-md font-semibold text-on-surface">Grama Vikas</div>
+<div class="font-caption text-caption text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px] text-on-tertiary-container">verified</span> Community Partner
+                  </div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="space-y-1.5">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-low text-secondary font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> ACCEPTED
+                    </span>
+<div class="text-[11px] font-caption text-on-surface-variant">Arranging vehicle assignment</div>
+<div class="w-36 h-1.5 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-1/4 rounded-full"></div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-md align-top">
+<div class="font-caption text-caption text-on-surface">Hubli Junction Hub</div>
+<div class="font-caption text-caption text-on-surface-variant">Scheduled pickup 16:00</div>
+</td>
+<td class="py-space-md px-space-lg align-top text-right">
+<button class="px-2.5 py-1 rounded bg-surface-container text-on-surface font-label text-label-sm font-medium hover:bg-surface-container-high cursor-pointer transition-colors" type="button">
+                    Assign Van
+                  </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Section: AI Automated Resource Matches -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-low text-on-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">magic_button</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<h2 class="font-serif text-headline-sm text-on-surface font-bold">AI Recommended Resource Matches</h2>
+<span class="px-2 py-0.5 rounded bg-primary-container text-primary-fixed font-label text-label-sm font-semibold">Live Engine</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">High-precision matches computed using geospatial distance, payload capacity, and urgency rating.</p>
+</div>
+</div>
+<button class="font-label text-label-md text-secondary hover:text-primary font-semibold flex items-center gap-1 cursor-pointer" type="button">
+            View All (6) <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Featured Match Card -->
+<div class="bg-surface-container-low rounded-xl p-space-lg space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-space-md">
+<div class="space-y-space-xs">
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-mono text-label-sm font-bold text-on-surface-variant bg-surface-container px-2 py-0.5 rounded">#REQ-402</span>
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label text-label-sm font-bold">Urgent Need (5 Nov)</span>
+<span class="text-caption font-caption text-on-surface-variant">Created 42 mins ago</span>
+</div>
+<h3 class="font-serif text-headline-sm text-on-surface font-bold">
+                300 kg Rice needed by Karuna Seva Trust in Bengaluru
+              </h3>
+<p class="font-sans text-body-sm text-on-surface-variant">
+                Matching surplus inventory from <span class="font-semibold text-on-surface">Asha Depot Whitefield</span> with zero intermediary handling requirements.
+              </p>
+</div>
+<!-- Score Pill -->
+<div class="flex-shrink-0 flex md:flex-col items-center justify-center p-space-sm bg-surface-container-lowest rounded-xl shadow-sm text-center min-w-[130px]">
+<span class="font-serif text-display-lg text-on-tertiary-container font-bold leading-tight">94%</span>
+<span class="font-label text-label-sm text-primary font-semibold uppercase">High Match</span>
+</div>
+</div>
+<!-- Compatibility Vectors -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">check_box</span>
+<div class="space-y-0.5">
+<div class="font-label text-label-sm text-on-surface-variant uppercase font-semibold">Quantity Match</div>
+<div class="font-label text-label-md font-bold text-on-surface">100% Covered (300kg)</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">near_me</span>
+<div class="space-y-0.5">
+<div class="font-label text-label-sm text-on-surface-variant uppercase font-semibold">Distance</div>
+<div class="font-label text-label-md font-bold text-on-surface">4.2 km (Bengaluru Central)</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">verified</span>
+<div class="space-y-0.5">
+<div class="font-label text-label-sm text-on-surface-variant uppercase font-semibold">Partner Trust</div>
+<div class="font-label text-label-md font-bold text-secondary">Govt Verified Org</div>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<button class="px-4 py-2 rounded-xl bg-primary-container text-on-primary font-label text-label-md font-semibold hover:bg-tertiary-container transition-colors shadow-sm cursor-pointer flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px]">forward</span>
+                Initiate Transfer
+              </button>
+<button class="px-3.5 py-2 rounded-xl bg-surface-container-lowest text-on-surface font-label text-label-md font-medium hover:bg-surface-container transition-colors cursor-pointer flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">forum</span>
+                Open Secure Chat
+              </button>
+</div>
+<button class="font-label text-label-sm text-on-surface-variant hover:text-on-surface flex items-center gap-1 cursor-pointer" type="button">
+              View Algorithmic Breakdown
+              <span class="material-symbols-outlined text-[14px]">tune</span>
+</button>
+</div>
+</div>
+<!-- Secondary Inline Mini-Match -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest flex flex-col sm:flex-row sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center font-label font-bold text-secondary">
+              91%
+            </div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<span class="font-label text-label-md font-bold text-on-surface">50 Water Filters needed by Raichur Flood Aid</span>
+<span class="px-2 py-0.2 rounded bg-surface-container font-label text-label-sm text-on-surface-variant">REQ-398</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Raichur District • 28 km to nearest transfer cache • High Urgency</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface hover:bg-surface-container font-label text-label-sm font-semibold cursor-pointer transition-colors" type="button">
+              Review Match
+            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- SIDEBAR COLUMN: Right (4 Cols) -->
+<div class="xl:col-span-4 space-y-space-xl">
+<!-- Urgent Relief Coordination Alert -->
+<div class="bg-error-container/40 rounded-xl p-space-lg shadow-sm space-y-space-sm relative overflow-hidden">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-error text-[24px] flex-shrink-0 mt-0.5">crisis_alert</span>
+<div class="space-y-1">
+<span class="inline-flex items-center gap-1 font-label text-label-sm font-bold text-on-error-container uppercase">
+              Emergency Shortage Alert
+            </span>
+<h4 class="font-serif text-headline-sm text-on-surface font-bold leading-snug">
+              Belagavi Flood Relief requires 1,000 Tarpaulin Sheets
+            </h4>
+<p class="font-caption text-caption text-on-surface-variant">
+              Multi-provider consolidation active in northern sectors. Sector coordination threshold currently at 40%.
+            </p>
+</div>
+</div>
+<div class="space-y-1 pt-space-xs">
+<div class="flex justify-between font-label text-label-sm text-on-surface font-semibold">
+<span>400 of 1,000 sheets secured</span>
+<span>40% Covered</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-error rounded-full w-2/5"></div>
+</div>
+</div>
+<div class="pt-space-xs">
+<button class="w-full py-2 rounded-xl bg-error text-on-error font-label text-label-md font-bold hover:opacity-95 transition-opacity cursor-pointer shadow-sm" type="button">
+            Pledge Resources to Belagavi
+          </button>
+</div>
+</div>
+<!-- Quick Inventory Snapshot -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">warehouse</span>
+<h3 class="font-serif text-headline-sm text-on-surface font-bold">Inventory Snapshot</h3>
+</div>
+<button class="font-label text-label-sm text-secondary hover:text-primary font-semibold" type="button">Manage</button>
+</div>
+<div class="space-y-space-sm">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">grain</span>
+<div>
+<div class="font-label text-label-md font-bold text-on-surface">Rice (Sona Masoori)</div>
+<div class="font-caption text-caption text-on-surface-variant">Central Bangalore Depot</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-serif text-headline-sm font-bold text-primary">500 kg</div>
+<div class="font-label text-label-sm text-on-tertiary-container">Available</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">medical_services</span>
+<div>
+<div class="font-label text-label-md font-bold text-on-surface">Emergency Med Kits</div>
+<div class="font-caption text-caption text-on-surface-variant">Hubli Medical Vault</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-serif text-headline-sm font-bold text-primary">150 kits</div>
+<div class="font-label text-label-sm text-secondary">Reserved (50)</div>
+</div>
+</div>
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">bed</span>
+<div>
+<div class="font-label text-label-md font-bold text-on-surface">Thermal Blankets</div>
+<div class="font-caption text-caption text-on-surface-variant">Mysuru Staging Unit</div>
+</div>
+</div>
+<div class="text-right">
+<div class="font-serif text-headline-sm font-bold text-primary">200 units</div>
+<div class="font-label text-label-sm text-on-tertiary-container">Available</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Center & Pending Confirmations -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">task_alt</span>
+<h3 class="font-serif text-headline-sm text-on-surface font-bold">Action Center</h3>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-label-sm font-bold">1 Pending</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-semibold">DELIVERED</span>
+<h4 class="font-label text-label-lg font-bold text-on-surface mt-1">TR-8821: 500kg Rice Consignment</h4>
+<p class="font-caption text-caption text-on-surface-variant">Karuna Seva Trust reported receiving vehicle KA-01-AB-1290.</p>
+</div>
+</div>
+<button class="w-full py-2 rounded-lg bg-primary-container text-on-primary font-label text-label-md font-semibold hover:bg-tertiary-container transition-colors cursor-pointer flex items-center justify-center gap-1.5 shadow-sm" onclick="document.getElementById('confirm-receipt-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+            Confirm Receipt Signoff
+          </button>
+</div>
+<!-- Incoming & Outgoing Requests Snapshot -->
+<div class="space-y-space-xs pt-space-xs">
+<span class="font-label text-label-sm text-on-surface-variant uppercase font-semibold">Recent Request Signals</span>
+<div class="flex items-center justify-between p-space-xs hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<div>
+<p class="font-label text-label-md font-medium text-on-surface">Purification Packets (Grama Vikas)</p>
+<p class="font-caption text-caption text-on-surface-variant">Outgoing dispatch</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label text-label-sm text-on-surface font-medium">ACCEPTED</span>
+</div>
+<div class="flex items-center justify-between p-space-xs hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<div>
+<p class="font-label text-label-md font-medium text-on-surface">Emergency Tarpaulins (Belagavi)</p>
+<p class="font-caption text-caption text-on-surface-variant">Incoming urgent claim</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-container font-label text-label-sm text-on-error-container font-bold">REQUESTED</span>
+</div>
+<div class="flex items-center justify-between p-space-xs hover:bg-surface-container-low rounded-lg transition-colors">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<div>
+<p class="font-label text-label-md font-medium text-on-surface">Trauma First-Aid (Spandana)</p>
+<p class="font-caption text-caption text-on-surface-variant">En route to Hosapete</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container font-label text-label-sm text-on-secondary-container font-medium">IN PROGRESS</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Utilitarian Modal: Confirm Receipt Action -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-space-md bg-inverse-surface/40 backdrop-blur-sm" id="confirm-receipt-modal">
+<div class="bg-surface-container-lowest rounded-xl shadow-xl w-full max-w-lg overflow-hidden space-y-space-md p-space-lg">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<h3 class="font-serif text-headline-sm text-on-surface font-bold">Confirm Transfer Receipt</h3>
+<p class="font-caption text-caption text-on-surface-variant">Transfer Manifest ID: TR-8821</p>
+</div>
+</div>
+<button class="p-1 rounded text-on-surface-variant hover:text-on-surface cursor-pointer" onclick="document.getElementById('confirm-receipt-modal').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-lg space-y-space-xs text-body-sm font-sans">
+<div class="flex justify-between">
+<span class="text-on-surface-variant font-medium">Consignment:</span>
+<span class="text-on-surface font-bold">500 kg Sona Masoori Rice</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant font-medium">Recipient NGO:</span>
+<span class="text-on-surface">Karuna Seva Trust (Verified)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant font-medium">Drop-off Point:</span>
+<span class="text-on-surface">Bengaluru South Depot Hub</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant font-medium">Manifest Checksum:</span>
+<span class="font-mono text-on-surface-variant text-[11px]">8f3b92-asha-karuna</span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<label class="font-label text-label-sm text-on-surface font-semibold" for="conf-notes">Verification Notes / Quality Check</label>
+<input class="w-full bg-surface-container-low px-3 py-2 rounded-lg text-body-sm font-sans text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-1 focus:ring-secondary" id="conf-notes" placeholder="Seal intact, moisture reading &lt; 11%, bags counted 20/20" type="text"/>
+</div>
+<div class="flex items-center gap-space-sm pt-space-xs justify-end">
+<button class="px-4 py-2 rounded-lg bg-surface-container text-on-surface font-label text-label-md font-semibold hover:bg-surface-container-high transition-colors cursor-pointer" onclick="document.getElementById('confirm-receipt-modal').classList.add('hidden')" type="button">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label text-label-md font-semibold hover:bg-tertiary-container transition-colors shadow-sm cursor-pointer" onclick="document.getElementById('confirm-receipt-modal').classList.add('hidden')" type="button">
+          Signoff &amp; Close Manifest
+        </button>
+</div>
+</div>
+</div>
+<script>
+    (function initDashboard() {
+      const emergencyBtn = document.getElementById('toggle-emergency-btn');
+      if (emergencyBtn) {
+        emergencyBtn.addEventListener('click', () => {
+          const isPressed = emergencyBtn.getAttribute('aria-pressed') === 'true';
+          emergencyBtn.setAttribute('aria-pressed', !isPressed);
+          if (!isPressed) {
+            emergencyBtn.classList.remove('bg-error-container', 'text-on-error-container');
+            emergencyBtn.classList.add('bg-error', 'text-on-error');
+          } else {
+            emergencyBtn.classList.remove('bg-error', 'text-on-error');
+            emergencyBtn.classList.add('bg-error-container', 'text-on-error-container');
+          }
+        });
+      }
+    })();
+  </script>
+</div>
+  </div>
+</div>

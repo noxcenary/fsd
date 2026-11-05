@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alexandria Design System Canonical Gazette & Style Guide — ReliefNet</title>
+  <link rel="stylesheet" href="/static/css/alexandria.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Public+Sans:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: "#059669", 50: "#ecfdf5", 100: "#d1fae5", 500: "#10b981", 600: "#059669", 700: "#065f46" },
+            "primary-container": "#ecfdf5",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#065f46",
+            "primary-fixed": "#d1fae5",
+            "secondary-container": "#f0f7f4",
+            "on-secondary-container": "#08211c",
+            surface: "#fbfdfc",
+            "on-surface": "#08211c",
+            "on-surface-variant": "#52645f",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#fbfdfc",
+            "surface-container": "#f0f7f4",
+            "surface-container-high": "#d9e8e2",
+            outline: "#8fa8a1",
+            "outline-variant": "#d9e8e2"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "margin-desktop": "2rem",
+            "gutter-desktop": "1.5rem"
+          },
+          fontFamily: {
+            serif: ['"Noto Serif"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            label: ['"Public Sans"', '"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          fontSize: {
+            "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-sans antialiased text-slate-900">
+  <div id="global-header"></div>
+  <main class="w-full">
+    
+
+    <!-- COVER / HEADER SECTION -->
+    <section class="border-b-2 border-slate-900 pb-8 mb-8">
+      <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2 text-xs font-mono font-semibold tracking-normal text-[#059669] mb-2">
+            <span>Platform Specification Document</span>
+            <span>&bull;</span>
+            <span>NDMA-SOP-RFC-8411</span>
+            <span>&bull;</span>
+            <span>Canonical Reference</span>
+          </div>
+          <h1 class="font-serif text-3xl sm:text-4xl font-bold text-slate-950 tracking-tight leading-tight">
+            Alexandria Design System
+          </h1>
+          <p class="font-serif italic text-lg text-slate-600 mt-1">
+            "The Digital Curator" — Statutory Crisis Ledger &amp; Humanitarian Coordination OS
+          </p>
+        </div>
+
+        <!-- Document Metadata Badge -->
+        <div class="bg-slate-50 border border-slate-200 rounded p-3 text-xs font-mono text-slate-700 min-w-[220px] self-start">
+          <div class="flex justify-between py-0.5 border-b border-slate-200/60">
+            <span class="text-slate-500">Design System ID:</span>
+            <span class="font-semibold text-slate-900">DS-ALX-01</span>
+          </div>
+          <div class="flex justify-between py-0.5 border-b border-slate-200/60">
+            <span class="text-slate-500">Revision:</span>
+            <span class="font-semibold text-slate-900">v4.2 Production</span>
+          </div>
+          <div class="flex justify-between py-0.5 border-b border-slate-200/60">
+            <span class="text-slate-500">Authority:</span>
+            <span class="font-semibold text-slate-900">ReliefNet Gov</span>
+          </div>
+          <div class="flex justify-between py-0.5">
+            <span class="text-slate-500">Date Issued:</span>
+            <span class="font-semibold text-slate-900">Nov 2024</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-wrap items-center gap-2 text-xs">
+        <span class="px-2.5 py-1 rounded bg-[#08211c] text-white font-medium">Core Brand Token: #059669</span>
+        <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-700 border border-slate-300 font-medium">Font: Noto Serif + Plus Jakarta Sans</span>
+        <span class="px-2.5 py-1 rounded bg-emerald-50 text-emerald-800 border border-emerald-300 font-medium font-mono">Consensus Hash: 0x9f18b4e7...</span>
+      </div>
+    </section>
+
+    <!-- SECTION 1: EXECUTIVE SUMMARY & NORTH STAR -->
+    <section class="mb-10 avoid-break">
+      <div class="flex items-center gap-3 border-b border-slate-200 pb-2 mb-4">
+        <span class="text-xs font-mono font-bold text-[#059669] px-2 py-0.5 bg-blue-50 border border-blue-200 rounded">01</span>
+        <h2 class="font-serif text-xl font-bold text-slate-900">Executive Summary &amp; Design Philosophy</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="md:col-span-2 space-y-3 text-sm leading-relaxed text-slate-700">
+          <p>
+            <strong class="font-serif text-slate-950">North Star: "The Digital Curator."</strong> Alexandria transforms humanitarian coordination from utilitarian administrative forms into an authoritative, scholarly editorial gazette and statutory crisis ledger. It brings typographic rigor, institutional gravitas, and high-trust archival surfaces to mission-critical public disaster relief software.
+          </p>
+          <p>
+            Designed specifically for complex state-level relief theaters (such as the Karnataka and Krishna Basin emergency nodes), Alexandria balances dense telemetry numbers, cryptographic waybill signatures, and weighbridge variances with effortless visual scannability and explicit human-in-the-loop statutory review workflows.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-lg p-4 space-y-3">
+          <h3 class="text-xs font-bold tracking-normal text-slate-900 font-mono">Core Tenets</h3>
+          <ul class="text-xs space-y-2 text-slate-600">
+            <li class="flex items-start gap-2">
+              <span class="text-[#059669] font-bold">&bull;</span>
+              <span><strong>Serif Authority:</strong> Headings command legal respect and trust.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#059669] font-bold">&bull;</span>
+              <span><strong>Tabular Rigor:</strong> Monospace hashes and tabular figures eliminate misinterpretation.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#059669] font-bold">&bull;</span>
+              <span><strong>Porcelain Surfaces:</strong> Archival, low-glare paper finishes.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-[#059669] font-bold">&bull;</span>
+              <span><strong>Explainable AI:</strong> Models advise; authorized humans always sign.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: COLOR SYSTEM & TOKEN SPECIFICATION -->
+    <section class="mb-10 avoid-break">
+      <div class="flex items-center gap-3 border-b border-slate-200 pb-2 mb-4">
+        <span class="text-xs font-mono font-bold text-[#059669] px-2 py-0.5 bg-blue-50 border border-blue-200 rounded">02</span>
+        <h2 class="font-serif text-xl font-bold text-slate-900">Color Palette &amp; Token Architecture</h2>
+      </div>
+
+      <!-- Color Swatch Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-3 mb-6">
+        <!-- Swatch 1 -->
+        <div class="border border-slate-200 rounded p-2 bg-white">
+          <div class="h-12 w-full rounded bg-[#059669] mb-2 shadow-inner"></div>
+          <div class="text-[11px] font-bold text-slate-900">primary</div>
+          <div class="text-[10px] font-mono text-slate-500">#059669</div>
+          <div class="text-[9px] text-slate-400 mt-1">Brand accent / Active</div>
+        </div>
+
+        <!-- Swatch 2 -->
+        <div class="border border-slate-200 rounded p-2 bg-white">
+          <div class="h-12 w-full rounded bg-[#047857] mb-2 shadow-inner"></div>
+          <div class="text-[11px] font-bold text-slate-900">primary-hover</div>
+          <div class="text-[10px] font-mono text-slate-500">#047857</div>
+          <div class="text-[9px] text-slate-400 mt-1">Interactive pressed</div>
+        </div>
+
+        <!-- Swatch 3 -->
+        <div class="border border-slate-200 rounded p-2 bg-white">
+          <div class="h-12 w-full rounded bg-[#08211c] mb-2 shadow-inner"></div>
+          <div class="text-[11px] font-bold text-slate-900">chrome-dark</div>
+          <div class="text-[10px] font-mono text-slate-500">#08211c</div>
+          <div class="text-[9px] text-slate-400 mt-1">Institutional header</div>
+        </div>
+
+        <!-- Swatch 4 -->
+        <div class="border border-slate-200 rounded p-2 bg-white">
+          <div class="h-12 w-full rounded bg-[#064e3b] mb-2 shadow-inner"></div>
+          <div class="text-[11px] font-bold text-slate-900">chrome-navy</div>
+          <div class="text-[10px] font-mono text-slate-500">#064e3b</div>
+          <div class="text-[9px] text-slate-400 mt-1">Console left sidebar</div>
+        </div>
+
+        <!-- Swatch 5 -->
+        <div class="border border-slate-200 rounded p-2 bg-white">
+          <div class="h-12 w-full rounded bg-[#fbfdfc] border border-slate-200 mb-2 shadow-inner"></div>
+          <div class="text-[11px] font-bold text-slate-900">surface-canvas</div>
+          <div class="text-[10px] font-mono text-slate-500">#fbfdfc</div>
+          <div class="text-[9px] text-slate-400 mt-1">Archival page ground</div>
+        </div>
+
+        <!-- Swatch 6 -->
+        <div class="border border-slate-200 rounded p-2 bg-white">
+          <div class="h-12 w-full rounded bg-[#ecfdf5] border border-blue-200 mb-2 shadow-inner"></div>
+          <div class="text-[11px] font-bold text-slate-900">primary-tint</div>
+          <div class="text-[10px] font-mono text-slate-500">#ecfdf5</div>
+          <div class="text-[9px] text-slate-400 mt-1">Selected container</div>
+        </div>
+      </div>
+
+      <!-- Semantic Status Palette Table -->
+      <div class="border border-slate-200 rounded-lg overflow-hidden text-xs">
+        <table class="w-full text-left border-collapse">
+          <thead class="bg-slate-100 border-b border-slate-200 text-slate-700 font-mono text-[11px]">
+            <tr>
+              <th class="py-2 px-3">Semantic Tier</th>
+              <th class="py-2 px-3">Background Token</th>
+              <th class="py-2 px-3">Text / Border Token</th>
+              <th class="py-2 px-3">Statutory Regulatory Context</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 text-slate-700">
+            <tr class="bg-white">
+              <td class="py-2 px-3 font-semibold text-emerald-900 flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-600"></span>
+                Tier-1 Sovereign Verified
+              </td>
+              <td class="py-2 px-3 font-mono text-slate-600">#f0fdf4 (emerald-50)</td>
+              <td class="py-2 px-3 font-mono text-slate-600">#166534 / #bbf7d0</td>
+              <td class="py-2 px-3 text-slate-600">NITI Aayog DARPAN API, zero-defect audit certificate</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="py-2 px-3 font-semibold text-blue-900 flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#059669]"></span>
+                Tier-2 Community Attested
+              </td>
+              <td class="py-2 px-3 font-mono text-slate-600">#ecfdf5 (blue-50)</td>
+              <td class="py-2 px-3 font-mono text-slate-600">#059669 / #a7f3d0</td>
+              <td class="py-2 px-3 text-slate-600">Peer consortium vouched, verified operational hub</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="py-2 px-3 font-semibold text-amber-900 flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                Urgent Restock / Expiry &lt;30d
+              </td>
+              <td class="py-2 px-3 font-mono text-slate-600">#fefce8 (amber-50)</td>
+              <td class="py-2 px-3 font-mono text-slate-600">#854d0e / #fef08a</td>
+              <td class="py-2 px-3 text-slate-600">Weighbridge &plusmn;2% tare margin, shelf-life alert</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="py-2 px-3 font-semibold text-red-900 flex items-center gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
+                Red Alert Crisis / Quarantine
+              </td>
+              <td class="py-2 px-3 font-mono text-slate-600">#fef2f2 (red-50)</td>
+              <td class="py-2 px-3 font-mono text-slate-600">#991b1b / #fecaca</td>
+              <td class="py-2 px-3 text-slate-600">SDMA Flood Emergency, Sybil cluster isolation, cold-chain breach</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 3: TYPOGRAPHY HIERARCHY -->
+    <section class="mb-10 avoid-break page-break">
+      <div class="flex items-center gap-3 border-b border-slate-200 pb-2 mb-4">
+        <span class="text-xs font-mono font-bold text-[#059669] px-2 py-0.5 bg-blue-50 border border-blue-200 rounded">03</span>
+        <h2 class="font-serif text-xl font-bold text-slate-900">Typography Scale &amp; Font Pairings</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="p-3 border border-slate-200 rounded bg-slate-50">
+          <div class="font-serif text-2xl font-bold text-slate-900">Noto Serif</div>
+          <div class="text-xs font-mono text-slate-500 mt-1">Headings &amp; Legal Dockets</div>
+          <p class="text-xs text-slate-600 mt-2">Provides institutional weight and editorial gravitas to headlines and case titles.</p>
+        </div>
+        <div class="p-3 border border-slate-200 rounded bg-slate-50">
+          <div class="font-sans text-2xl font-bold text-slate-900">Plus Jakarta Sans</div>
+          <div class="text-xs font-mono text-slate-500 mt-1">Body, Inputs &amp; Controls</div>
+          <p class="text-xs text-slate-600 mt-2">Crisp, highly legible geometry optimized for dense operational tables.</p>
+        </div>
+        <div class="p-3 border border-slate-200 rounded bg-slate-50">
+          <div class="font-mono text-2xl font-semibold text-slate-900">JetBrains Mono</div>
+          <div class="text-xs font-mono text-slate-500 mt-1">Hashes, Hashes &amp; SlAs</div>
+          <p class="text-xs text-slate-600 mt-2">Monospaced tabular digits for zero-ambiguity weight and ECDSA audit proofs.</p>
+        </div>
+      </div>
+
+      <!-- Type Scale Table -->
+      <div class="border border-slate-200 rounded-lg overflow-hidden text-xs">
+        <table class="w-full text-left border-collapse">
+          <thead class="bg-slate-100 border-b border-slate-200 text-slate-700 font-mono text-[11px]">
+            <tr>
+              <th class="py-2 px-3">Level Name</th>
+              <th class="py-2 px-3">Font &amp; Size</th>
+              <th class="py-2 px-3">Weight</th>
+              <th class="py-2 px-3">Sample Rendering</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200 text-slate-700">
+            <tr class="bg-white">
+              <td class="py-2 px-3 font-mono font-semibold text-slate-900">Display XL</td>
+              <td class="py-2 px-3 font-mono">Noto Serif 32px</td>
+              <td class="py-2 px-3">Bold (700)</td>
+              <td class="py-2 px-3 font-serif font-bold text-xl text-slate-900">Humanitarian Crisis Ledger</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="py-2 px-3 font-mono font-semibold text-slate-900">Heading LG</td>
+              <td class="py-2 px-3 font-mono">Noto Serif 24px</td>
+              <td class="py-2 px-3">Bold (700)</td>
+              <td class="py-2 px-3 font-serif font-bold text-base text-slate-900">Consignment Tare Arbitration</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="py-2 px-3 font-mono font-semibold text-slate-900">Heading MD</td>
+              <td class="py-2 px-3 font-mono">Noto Serif 20px</td>
+              <td class="py-2 px-3">Semi (600)</td>
+              <td class="py-2 px-3 font-serif font-semibold text-sm text-slate-900">Incident Docket #DISP-2024-042</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="py-2 px-3 font-mono font-semibold text-slate-900">Body Default</td>
+              <td class="py-2 px-3 font-mono">Sans 14px</td>
+              <td class="py-2 px-3">Regular (400)</td>
+              <td class="py-2 px-3 text-slate-600">Tamper-evident seal was verified intact upon arrival with zero trace.</td>
+            </tr>
+            <tr class="bg-white">
+              <td class="py-2 px-3 font-mono font-semibold text-slate-900">Monospace Hash</td>
+              <td class="py-2 px-3 font-mono">Mono 12px</td>
+              <td class="py-2 px-3">Regular (400)</td>
+              <td class="py-2 px-3 font-mono text-slate-700">0x8f4cb99201ae77a1 &bull; 418.0 kg Net</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SPACING & GEOMETRY SPECIFICATION -->
+    <section class="mb-10 avoid-break">
+      <div class="flex items-center gap-3 border-b border-slate-200 pb-2 mb-4">
+        <span class="text-xs font-mono font-bold text-[#059669] px-2 py-0.5 bg-blue-50 border border-blue-200 rounded">04</span>
+        <h2 class="font-serif text-xl font-bold text-slate-900">Geometry, Elevation &amp; Layout Grid</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs">
+        <div class="border border-slate-200 rounded p-3 bg-white">
+          <div class="font-mono font-bold text-slate-900 mb-1">Baseline Grid</div>
+          <p class="text-slate-600">8pt primary grid with a 4pt half-step for micro-tags and table padding tokens.</p>
+          <div class="mt-2 text-[10px] font-mono text-slate-400">4px &bull; 8px &bull; 16px &bull; 24px &bull; 32px</div>
+        </div>
+
+        <div class="border border-slate-200 rounded p-3 bg-white">
+          <div class="font-mono font-bold text-slate-900 mb-1">Corner Radii</div>
+          <p class="text-slate-600">Consistent geometric restraint avoiding overly playful bubbly corners.</p>
+          <div class="mt-2 text-[10px] font-mono text-slate-400">rounded-md (6px) / rounded-lg (8px)</div>
+        </div>
+
+        <div class="border border-slate-200 rounded p-3 bg-white">
+          <div class="font-mono font-bold text-slate-900 mb-1">Borders &amp; Lines</div>
+          <p class="text-slate-600">High-contrast 1px slate rules (<code class="font-mono">#d9e8e2</code>) replace noisy drop shadows.</p>
+          <div class="mt-2 text-[10px] font-mono text-slate-400">1px solid #d9e8e2</div>
+        </div>
+
+        <div class="border border-slate-200 rounded p-3 bg-white">
+          <div class="font-mono font-bold text-slate-900 mb-1">Air-Gapped Badges</div>
+          <p class="text-slate-600">FIPS 140-3 HSM cryptoseal containers highlighted in dark navy chrome.</p>
+          <div class="mt-2 text-[10px] font-mono text-slate-400">bg-[#08211c] border-slate-700</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: CORE REUSABLE COMPONENT PATTERNS -->
+    <section class="mb-10 avoid-break page-break">
+      <div class="flex items-center gap-3 border-b border-slate-200 pb-2 mb-4">
+        <span class="text-xs font-mono font-bold text-[#059669] px-2 py-0.5 bg-blue-50 border border-blue-200 rounded">05</span>
+        <h2 class="font-serif text-xl font-bold text-slate-900">Standard Component Blueprints</h2>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Component 1: Metric KPI Tile -->
+        <div class="border border-slate-200 rounded-lg p-4 bg-white">
+          <div class="text-[11px] font-mono uppercase font-bold text-slate-500 mb-2">Pattern 5.1 &bull; Statutory KPI Tile</div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+              <span class="text-[10px] font-mono font-semibold uppercase text-slate-500 block mb-1">Active Dispute Dockets</span>
+              <div class="flex items-baseline gap-2">
+                <span class="font-serif text-2xl font-bold text-slate-900">03</span>
+                <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-blue-100 text-blue-800">Priority Bench</span>
+              </div>
+              <p class="text-[10px] text-slate-500 mt-1">Under statutory conciliation</p>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+              <span class="text-[10px] font-mono font-semibold uppercase text-slate-500 block mb-1">60-Min SLA Window</span>
+              <div class="flex items-baseline gap-2">
+                <span class="font-serif text-2xl font-bold text-slate-900">88.9%</span>
+                <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">0 Demerits</span>
+              </div>
+              <p class="text-[10px] text-slate-500 mt-1">Conciliated within normative SLA</p>
+            </div>
+
+            <div class="bg-slate-50 border border-slate-200 rounded-md p-3">
+              <span class="text-[10px] font-mono font-semibold uppercase text-slate-500 block mb-1">Consortium Trust Metric</span>
+              <div class="flex items-baseline gap-2">
+                <span class="font-serif text-2xl font-bold text-slate-900">99.4%</span>
+                <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">Clean</span>
+              </div>
+              <p class="text-[10px] text-slate-500 mt-1">State Reserve Quorum Verified</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Component 2: Dual Verification Status Badges -->
+        <div class="border border-slate-200 rounded-lg p-4 bg-white">
+          <div class="text-[11px] font-mono uppercase font-bold text-slate-500 mb-2">Pattern 5.2 &bull; Verification Status Chips &amp; Trust Badges</div>
+          <div class="flex flex-wrap items-center gap-3">
+            <!-- Badge 1 -->
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-300">
+              <svg class="w-3.5 h-3.5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+              </svg>
+              Government verified (DARPAN Tier-1)
+            </span>
+
+            <!-- Badge 2 -->
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-800 border border-blue-300">
+              <svg class="w-3.5 h-3.5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
+              </svg>
+              COMMUNITY ATTESTED (Tier-2 Peer)
+            </span>
+
+            <!-- Badge 3 -->
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-red-50 text-red-800 border border-red-300 font-mono">
+              <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+              QUARANTINE / SYBIL CLUSTER #09
+            </span>
+          </div>
+        </div>
+
+        <!-- Component 3: Explainable AI Decision Box -->
+        <div class="border border-slate-200 rounded-lg p-4 bg-slate-50">
+          <div class="text-[11px] font-mono uppercase font-bold text-slate-500 mb-2">Pattern 5.3 &bull; Explainable AI &amp; Statutory Human Sign-Off Notice</div>
+          <div class="border-l-4 border-[#059669] bg-white p-3.5 rounded shadow-sm">
+            <div class="flex items-center justify-between text-xs mb-1">
+              <span class="font-serif font-bold text-slate-900 text-sm">Algorithmic Pre-Screening: Score 88/100 (Clean)</span>
+              <span class="font-mono text-[10px] text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">Non-Autonomous Notice</span>
+            </div>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              <strong>STATUTORY NOTICE:</strong> All AI models act strictly as Decision Support. Algorithmic scores never auto-approve or reject aid organizations. A certified District Disaster Management Officer must inspect evidentiary OCR vaults and apply an ECDSA P-256 cryptographic hardware signature.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: COMPLETE SCREEN IMPLEMENTATION CATALOG -->
+    <section class="mb-8 avoid-break">
+      <div class="flex items-center gap-3 border-b border-slate-200 pb-2 mb-4">
+        <span class="text-xs font-mono font-bold text-[#059669] px-2 py-0.5 bg-blue-50 border border-blue-200 rounded">06</span>
+        <h2 class="font-serif text-xl font-bold text-slate-900">Canonical Screen Implementation Catalog (Alexandria)</h2>
+      </div>
+
+      <p class="text-xs text-slate-600 mb-4">
+        The master architecture maps 28 distinct operational screens across 6 thematic batches into unified Alexandria components and navigation archetypes:
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+        <!-- Batch 1 & 2 -->
+        <div class="border border-slate-200 rounded-lg p-3.5 bg-white">
+          <div class="font-mono font-bold text-xs uppercase text-[#059669] mb-2">Public &amp; Onboarding Enclave</div>
+          <ul class="space-y-1.5 text-slate-700">
+            <li class="flex items-center justify-between">
+              <span>Public Portal &amp; Inter-NGO Coordination</span>
+              <span class="font-mono text-[10px] text-slate-400">Web Standard</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>How It Works &amp; Trust Architecture</span>
+              <span class="font-mono text-[10px] text-slate-400">Editorial Guide</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Public NGO Discovery &amp; Dossier View</span>
+              <span class="font-mono text-[10px] text-slate-400">Directory Grid</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Organization Sign-In &amp; Enclave Access</span>
+              <span class="font-mono text-[10px] text-slate-400">2FA Enclave</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Track Selection &amp; Anti-Sybil Intake</span>
+              <span class="font-mono text-[10px] text-slate-400">3-Track Form</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>DARPAN Registry Fast-Track Query</span>
+              <span class="font-mono text-[10px] text-slate-400">API Validator</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Document Evidence Vault &amp; AI Risk Matrix</span>
+              <span class="font-mono text-[10px] text-slate-400">OCR Triage</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Batch 3 & 4 -->
+        <div class="border border-slate-200 rounded-lg p-3.5 bg-white">
+          <div class="font-mono font-bold text-xs uppercase text-[#059669] mb-2">Operations &amp; Requisitions</div>
+          <ul class="space-y-1.5 text-slate-700">
+            <li class="flex items-center justify-between">
+              <span>Advanced Faceted NGO Directory</span>
+              <span class="font-mono text-[10px] text-slate-400">Faceted Mesh</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Publish Surplus Resource Manifest</span>
+              <span class="font-mono text-[10px] text-slate-400">4-Step Wizard</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Surplus Inventory &amp; Expiry Control</span>
+              <span class="font-mono text-[10px] text-slate-400">Watchtower Table</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Humanitarian Services &amp; Boat Fleets</span>
+              <span class="font-mono text-[10px] text-slate-400">Fleet Deployment</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Emergency Requests &amp; Shortage Watch</span>
+              <span class="font-mono text-[10px] text-slate-400">Deficit Ledger</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Create Emergency Resource Request</span>
+              <span class="font-mono text-[10px] text-slate-400">Urgency SLA Form</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Multi-Provider Requisition Split Allocation</span>
+              <span class="font-mono text-[10px] text-slate-400">Bilateral Split</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Batch 5: Logistics -->
+        <div class="border border-slate-200 rounded-lg p-3.5 bg-white">
+          <div class="font-mono font-bold text-xs uppercase text-[#059669] mb-2">Coordination &amp; Logistics Desk</div>
+          <ul class="space-y-1.5 text-slate-700">
+            <li class="flex items-center justify-between">
+              <span>Operational Comms &amp; Signed Dispatch</span>
+              <span class="font-mono text-[10px] text-slate-400">Signed Thread</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Consignment Live Handshake Channel</span>
+              <span class="font-mono text-[10px] text-slate-400">Bilateral Token</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Digital Consignment Waybill &amp; Stepper</span>
+              <span class="font-mono text-[10px] text-slate-400">QR Block Proof</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Weighbridge Tare Dispute Arbitration Desk</span>
+              <span class="font-mono text-[10px] text-slate-400">Variance Bench</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Batch 6: Governance -->
+        <div class="border border-slate-200 rounded-lg p-3.5 bg-white">
+          <div class="font-mono font-bold text-xs uppercase text-[#059669] mb-2">Statutory Governance Suite</div>
+          <ul class="space-y-1.5 text-slate-700">
+            <li class="flex items-center justify-between">
+              <span>NGO Verification Triage &amp; Dossier Review</span>
+              <span class="font-mono text-[10px] text-slate-400">State Liaison</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Sybil Detection &amp; Graph Intelligence</span>
+              <span class="font-mono text-[10px] text-slate-400">DAG Ring Quarantine</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Cargo &amp; Dispatch Arbitration Command</span>
+              <span class="font-mono text-[10px] text-slate-400">Sworn Statement Ruling</span>
+            </li>
+            <li class="flex items-center justify-between">
+              <span>Cryptographic Ledger &amp; State Consensus</span>
+              <span class="font-mono text-[10px] text-slate-400">Merkle Proof Stream</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER / STATUTORY SIGN-OFF BAR -->
+    <footer class="border-t-2 border-slate-900 pt-4 mt-8 text-slate-500 font-mono text-[11px] flex flex-col sm:flex-row items-center justify-between gap-3">
+      <div>
+        <span>COMPILED BY RELIEFNET HUMANITARIAN CONSORTIUM</span> &bull; 
+        <span>KARNATAKA OPERATIONS NODE</span>
+      </div>
+      <div class="flex items-center gap-3">
+        <span>FIPS 140-3 HSM SIGNED</span>
+        <span>&bull;</span>
+        <span class="text-slate-900 font-semibold">ALL RIGHTS RESERVED 2024</span>
+      </div>
+    </footer>
+
+  
+    
+
+
+  </main>
+  <script src="/static/js/screen_catalog.js"></script>
+  <script src="/static/js/mock_data.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

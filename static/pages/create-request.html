@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Emergency Resource Requisition — ReliefNet</title>
+  <link rel="stylesheet" href="/static/css/alexandria.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Public+Sans:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: "#059669", 50: "#ecfdf5", 100: "#d1fae5", 500: "#10b981", 600: "#059669", 700: "#065f46" },
+            "primary-container": "#ecfdf5",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#065f46",
+            "primary-fixed": "#d1fae5",
+            "secondary-container": "#f0f7f4",
+            "on-secondary-container": "#08211c",
+            surface: "#fbfdfc",
+            "on-surface": "#08211c",
+            "on-surface-variant": "#52645f",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#fbfdfc",
+            "surface-container": "#f0f7f4",
+            "surface-container-high": "#d9e8e2",
+            outline: "#8fa8a1",
+            "outline-variant": "#d9e8e2"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "margin-desktop": "2rem",
+            "gutter-desktop": "1.5rem"
+          },
+          fontFamily: {
+            serif: ['"Noto Serif"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            label: ['"Public Sans"', '"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          fontSize: {
+            "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-sans antialiased text-slate-900">
+  <div id="global-header"></div>
+  <main class="w-full">
+    
+<div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-6 lg:px-8 py-8 flex flex-col gap-6">
+<!-- Top Utility & Metadata Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-2 border-b border-slate-200">
+<div class="flex flex-col gap-1.5">
+<nav class="flex items-center gap-1.5 text-slate-500 font-label text-[11px] tracking-normal font-semibold">
+<span>Operations Desk</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Requisitions</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-[#059669]">Create Resource Request</span>
+</nav>
+<div class="flex items-center gap-3 flex-wrap mt-0.5">
+<h1 class="font-serif font-bold text-2xl lg:text-3xl text-[#08211c] tracking-tight">Publish Emergency Resource Requisition</h1>
+<span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-mono text-[11px] font-semibold border border-slate-200">FORM-REQ-2024-884A</span>
+</div>
+<p class="text-slate-600 text-sm max-w-3xl leading-relaxed">
+                Submit verified disaster demand to the ReliefNet algorithmic matching pool. High-urgency shortages immediately broadcast to depots within operational transit radius.
+              </p>
+</div>
+<!-- Protocol Badge Top Right -->
+<div class="shrink-0 self-start lg:self-center flex items-center gap-3 p-3 bg-white border border-slate-200 rounded-lg shadow-xs">
+<div class="w-9 h-9 rounded bg-[#ecfdf5] text-[#059669] border border-[#d1fae5] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">encrypted</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label text-xs font-semibold text-[#08211c] tracking-normal">NDMA Protocol RFC-9104</span>
+<span class="inline-flex w-1.5 h-1.5 rounded-full bg-[#059669] animate-ping"></span>
+</div>
+<span class="text-xs text-slate-500">Geofence: Karnataka South &amp; Krishna Basin</span>
+</div>
+</div>
+</div>
+<!-- Stepper Indicator -->
+<div class="w-full bg-white p-2.5 rounded-lg border border-slate-200 shadow-xs">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-2">
+<!-- Step 1: Active -->
+<div class="flex items-center gap-3 p-3 bg-[#064e3b] rounded-lg text-white shadow-xs">
+<div class="w-7 h-7 rounded bg-[#059669] text-white font-label text-xs flex items-center justify-center font-bold shrink-0">
+                  01
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label text-[10px] tracking-normal text-blue-200 font-semibold">Step 1 • Active</span>
+<span class="font-serif font-semibold text-sm truncate text-white">Commodity &amp; Need</span>
+</div>
+</div>
+<!-- Step 2: Upcoming -->
+<div class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-600">
+<div class="w-7 h-7 rounded bg-slate-200 text-slate-700 font-label text-xs flex items-center justify-center font-semibold shrink-0">
+                  02
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label text-[10px] tracking-normal text-slate-400 font-semibold">Step 2</span>
+<span class="font-serif font-semibold text-sm truncate text-slate-800">Urgency &amp; SLA</span>
+</div>
+</div>
+<!-- Step 3: Upcoming -->
+<div class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-600">
+<div class="w-7 h-7 rounded bg-slate-200 text-slate-700 font-label text-xs flex items-center justify-center font-semibold shrink-0">
+                  03
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label text-[10px] tracking-normal text-slate-400 font-semibold">Step 3</span>
+<span class="font-serif font-semibold text-sm truncate text-slate-800">Staging Bay &amp; Access</span>
+</div>
+</div>
+<!-- Step 4: Upcoming -->
+<div class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-lg text-slate-600">
+<div class="w-7 h-7 rounded bg-slate-200 text-slate-700 font-label text-xs flex items-center justify-center font-semibold shrink-0">
+                  04
+                </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label text-[10px] tracking-normal text-slate-400 font-semibold">Step 4</span>
+<span class="font-serif font-semibold text-sm truncate text-slate-800">Routing &amp; Verification</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Two-Column Workstation Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Left Column: Form & Requisition Workspace (8 of 12 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- SECTION 1: Requisition Classification -->
+<section class="bg-white p-6 rounded-lg border border-slate-200 shadow-xs flex flex-col gap-5">
+<div class="flex items-center justify-between pb-2 border-b border-slate-100">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#059669]"></span>
+<h2 class="font-serif text-base font-bold text-[#08211c] tracking-normal">Section 1: Requisition Classification</h2>
+</div>
+<span class="font-label text-[11px] font-semibold text-[#059669] bg-[#ecfdf5] border border-[#d1fae5] px-2 py-0.5 rounded">MANDATORY COMMODITY MAPPING</span>
+</div>
+<!-- Cluster Selection Grid -->
+<div class="flex flex-col gap-2">
+<label class="font-label text-[11px] font-bold text-slate-500 tracking-normal">Sectoral Cluster Matrix</label>
+<div class="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-2.5">
+<!-- Cluster 1: Food & Rations (Selected) -->
+<button class="flex flex-col items-start p-3 rounded-lg bg-[#ecfdf5] border-2 border-[#059669] text-[#08211c] shadow-xs text-left relative overflow-hidden transition-all group" type="button">
+<div class="w-full flex items-center justify-between mb-2">
+<div class="w-7 h-7 rounded bg-[#059669] text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">rice_bowl</span>
+</div>
+<span class="w-5 h-5 rounded-full bg-[#059669] text-white flex items-center justify-center">
+<span class="material-symbols-outlined text-[13px] font-bold">check</span>
+</span>
+</div>
+<span class="font-serif font-semibold text-xs text-[#08211c] leading-tight">Food &amp; Rations</span>
+<span class="text-[11px] text-[#059669] font-medium mt-0.5">Active Cluster</span>
+</button>
+<!-- Cluster 2: Medical -->
+<button class="flex flex-col items-start p-3 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-700 text-left transition-colors" type="button">
+<div class="w-7 h-7 rounded bg-slate-200 text-slate-700 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[18px]">vaccines</span>
+</div>
+<span class="font-serif font-semibold text-xs text-slate-900 leading-tight">Medical &amp; Pharma</span>
+<span class="text-[11px] text-slate-500 mt-0.5">Cluster 02</span>
+</button>
+<!-- Cluster 3: Shelter -->
+<button class="flex flex-col items-start p-3 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-700 text-left transition-colors" type="button">
+<div class="w-7 h-7 rounded bg-slate-200 text-slate-700 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[18px]">roofing</span>
+</div>
+<span class="font-serif font-semibold text-xs text-slate-900 leading-tight">Shelter &amp; Tarp</span>
+<span class="text-[11px] text-slate-500 mt-0.5">Cluster 03</span>
+</button>
+<!-- Cluster 4: WASH -->
+<button class="flex flex-col items-start p-3 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-700 text-left transition-colors" type="button">
+<div class="w-7 h-7 rounded bg-slate-200 text-slate-700 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[18px]">maps</span>
+</div>
+<span class="font-serif font-semibold text-xs text-slate-900 leading-tight">WASH Hygiene</span>
+<span class="text-[11px] text-slate-500 mt-0.5">Cluster 04</span>
+</button>
+<!-- Cluster 5: Logistics Gear -->
+<button class="flex flex-col items-start p-3 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-700 text-left transition-colors" type="button">
+<div class="w-7 h-7 rounded bg-slate-200 text-slate-700 flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-[18px]">precision_manufacturing</span>
+</div>
+<span class="font-serif font-semibold text-xs text-slate-900 leading-tight">Technical Gear</span>
+<span class="text-[11px] text-slate-500 mt-0.5">Cluster 05</span>
+</button>
+</div>
+</div>
+<!-- Item Title & SKU Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
+<div class="md:col-span-2 flex flex-col gap-1.5">
+<label class="font-label text-xs font-semibold text-slate-700 tracking-normal">Item Title &amp; Specification</label>
+<div class="relative">
+<input class="w-full px-3.5 py-2 rounded-lg bg-white border border-slate-300 text-sm text-slate-900 font-medium focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669] shadow-xs" type="text" value="500 kg Non-Perishable Parboiled Rice (Double Polished, Moisture-Proof)"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-[#059669] material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-xs font-semibold text-slate-700 tracking-normal">SKU / Catalog Tag</label>
+<input class="w-full px-3.5 py-2 rounded-lg bg-slate-50 border border-slate-300 text-sm text-slate-800 font-mono font-semibold uppercase focus:outline-none focus:border-[#059669] focus:bg-white" type="text" value="RICE-DRY-500KG-FOOD"/>
+</div>
+</div>
+<!-- Quantity, Unit & Splitting -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1 items-start">
+<div class="flex gap-2">
+<div class="w-3/5 flex flex-col gap-1.5">
+<label class="font-label text-xs font-semibold text-slate-700 tracking-normal">Total Required Quantity</label>
+<div class="relative">
+<input class="w-full px-3.5 py-2 rounded-lg bg-white border border-slate-300 text-lg text-[#08211c] font-bold focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669] shadow-xs" type="number" value="500"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-label text-xs font-semibold">NET</span>
+</div>
+</div>
+<div class="w-2/5 flex flex-col gap-1.5">
+<label class="font-label text-xs font-semibold text-slate-700 tracking-normal">Unit</label>
+<select class="w-full px-3 py-2 rounded-lg bg-white border border-slate-300 text-sm text-slate-900 font-medium focus:outline-none focus:border-[#059669] cursor-pointer">
+<option selected="">Kilograms (kg)</option>
+<option>Metric Tonnes (MT)</option>
+<option>Cartons / Packs</option>
+<option>Standard Pallets</option>
+</select>
+</div>
+</div>
+<!-- Multi-provider split toggle box -->
+<div class="p-3.5 rounded-lg bg-slate-50 border border-slate-200 flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#059669] text-[18px]">call_split</span>
+<span class="font-semibold text-xs text-[#08211c]">Multi-Provider Splitting</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="splitToggle" type="checkbox"/>
+<div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#059669]"></div>
+</label>
+</div>
+<p class="text-xs text-slate-500 leading-tight">
+                      Allow multi-provider split allocation if single depot cannot fulfill 100% of demand.
+                    </p>
+<div class="flex items-center justify-between pt-1 mt-0.5 bg-white border border-slate-200 px-2 py-1 rounded">
+<span class="text-xs text-slate-500">Minimum Chunk Threshold:</span>
+<span class="font-mono text-xs text-[#08211c] font-bold">100 kg</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: Urgency Level & Beneficiary Scope -->
+<section class="bg-white p-6 rounded-lg border border-slate-200 shadow-xs flex flex-col gap-5">
+<div class="flex items-center justify-between pb-2 border-b border-slate-100">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
+<h2 class="font-serif text-base font-bold text-[#08211c] tracking-normal">Section 2: Urgency Level &amp; Beneficiary Scope</h2>
+</div>
+<span class="font-label text-[11px] font-semibold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded tracking-wide">BROADCAST PRIORITY ACCELERATOR</span>
+</div>
+<!-- Urgency Tier Selection Pills -->
+<div class="flex flex-col gap-2">
+<label class="font-label text-[11px] font-bold text-slate-500 tracking-normal">Dynamic SLA Urgency Matrix</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2.5">
+<!-- Tier 1 -->
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-slate-500 mb-1">
+<span class="font-label text-[10px] uppercase font-bold tracking-wider">Tier 4</span>
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+</div>
+<div class="font-serif font-semibold text-xs text-slate-800">Routine Restock</div>
+</div>
+<div class="text-[11px] text-slate-500 mt-3 pt-1 border-t border-slate-200">
+                        Window: 3–5 Days
+                      </div>
+</div>
+<!-- Tier 2 -->
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-slate-500 mb-1">
+<span class="font-label text-[10px] uppercase font-bold tracking-wider">Tier 3</span>
+<span class="material-symbols-outlined text-[16px]">hourglass_empty</span>
+</div>
+<div class="font-serif font-semibold text-xs text-slate-800">Standby Alert</div>
+</div>
+<div class="text-[11px] text-slate-500 mt-3 pt-1 border-t border-slate-200">
+                        Window: 24–48 Hours
+                      </div>
+</div>
+<!-- Tier 3 -->
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors cursor-pointer flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-slate-500 mb-1">
+<span class="font-label text-[10px] uppercase font-bold tracking-wider">Tier 2</span>
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+</div>
+<div class="font-serif font-semibold text-xs text-slate-800">High Urgency</div>
+</div>
+<div class="text-[11px] text-slate-500 mt-3 pt-1 border-t border-slate-200">
+                        Window: 12–24 Hours
+                      </div>
+</div>
+<!-- Tier 4: CRITICAL RED-ALERT (Selected) -->
+<div class="p-3 rounded-lg bg-red-50 text-red-900 border-2 border-red-600 shadow-xs cursor-pointer flex flex-col justify-between relative overflow-hidden">
+<div>
+<div class="flex items-center justify-between text-red-700 font-bold mb-1">
+<span class="font-label text-[10px] tracking-normal">Tier 1 • Active</span>
+<span class="material-symbols-outlined text-[18px]">emergency</span>
+</div>
+<div class="font-serif font-bold text-xs text-red-800 leading-tight">CRITICAL RED-ALERT</div>
+</div>
+<div class="text-[11px] font-bold text-red-700 mt-3 pt-1 border-t border-red-200">
+                        Camp Evac • &lt; 12h SLA
+                      </div>
+</div>
+</div>
+</div>
+<!-- Beneficiary Scope & Time Requirements -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 pt-1">
+<div class="md:col-span-7 flex flex-col gap-1.5">
+<label class="font-label text-xs font-semibold text-slate-700 tracking-normal">Target Beneficiary Demographic Scope</label>
+<div class="relative">
+<textarea class="w-full p-3 rounded-lg bg-white border border-slate-300 text-xs text-slate-900 font-medium focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669] resize-none leading-relaxed shadow-xs" rows="2">250 Displaced Families (approx. 1,100 individuals in Bellandur temporary transit camp)</textarea>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col gap-1.5">
+<label class="font-label text-xs font-semibold text-slate-700 tracking-normal">Required Staging By Date &amp; Zulu</label>
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 flex flex-col gap-1">
+<div class="flex items-center gap-2 text-[#08211c] font-semibold text-sm">
+<span class="material-symbols-outlined text-[18px] text-[#059669]">calendar_clock</span>
+<span>05 Nov 2024, 14:00 IST</span>
+</div>
+<div class="flex items-center justify-between text-slate-500 text-xs">
+<span>Standard Zulu Sync:</span>
+<span class="font-mono font-bold text-[#08211c]">08:30 UTC</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Destination Receiving Staging Bay -->
+<section class="bg-white p-6 rounded-lg border border-slate-200 shadow-xs flex flex-col gap-5">
+<div class="flex items-center justify-between pb-2 border-b border-slate-100">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#059669]"></span>
+<h2 class="font-serif text-base font-bold text-[#08211c] tracking-normal">Section 3: Destination Receiving Staging Bay</h2>
+</div>
+<span class="font-label text-[11px] font-semibold text-slate-600 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded">GPS CORRIDOR VERIFIED</span>
+</div>
+<!-- Staging Yard Location Card & Map Preview -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-stretch">
+<div class="md:col-span-7 flex flex-col justify-between gap-3">
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-xs font-semibold text-slate-700 tracking-normal">Designated Field Node ID</label>
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[#059669] text-[22px] shrink-0 mt-0.5">location_on</span>
+<div class="flex flex-col">
+<span class="font-serif font-bold text-sm text-[#08211c] leading-tight">Bellandur Flood Relief Outpost</span>
+<span class="text-xs text-slate-500 mt-0.5">Camp Zone Beta • GPS: 12.9352° N, 77.6772° E</span>
+<span class="text-xs text-[#059669] font-medium mt-1">Status: Open Staging Bay, Unpaved Heavy Soil</span>
+</div>
+</div>
+</div>
+<!-- Local Consignee Receiving Officer -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label text-xs font-semibold text-slate-700 tracking-normal">Local Consignee Receiving Lead</label>
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-[#064e3b] text-white flex items-center justify-center font-bold text-xs">
+                            VR
+                          </div>
+<div class="flex flex-col">
+<span class="font-serif font-bold text-xs text-[#08211c]">Dr. Vinay Rao</span>
+<span class="text-[11px] text-slate-500">Field Operations Lead • Verified ID #8129</span>
+</div>
+</div>
+<a class="px-2.5 py-1 rounded bg-white border border-slate-200 text-[#059669] font-semibold text-xs hover:bg-[#ecfdf5] transition-colors" href="tel:+919845018293">
+                          +91 98450 18293
+                        </a>
+</div>
+</div>
+</div>
+<!-- Static Map Micro Canvas -->
+<div class="md:col-span-5 relative rounded-lg border border-slate-200 overflow-hidden min-h-[140px] shadow-xs flex flex-col justify-end p-3.5 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqcOn9Wk67bAwzMKfdO4_fdFmlrjhh4wuJdrnWW1F0MF9ZpQqU6y_rPCYvb3Q5w2H-d-TEEvGBGhczE4E1f0qCa0ZzkiStO1Ur_eZV5QQXljxGSCmkVfhLONHgeIeRS1t7Pq4P4yD8LjOQabMpkhhVSg4jqZKe5steu4UHEEcU2wLgVcuWO9_OEB54Vyl7ExKsH9XQXlIwLkDsbyp0RWOdi5dxc_PqPdbnAFnMT3ZP');">
+<div class="absolute inset-0 bg-gradient-to-t from-[#08211c]/90 via-[#08211c]/40 to-transparent"></div>
+<div class="relative z-10 flex items-center justify-between text-white">
+<div class="flex flex-col">
+<span class="font-label text-[10px] tracking-normal text-blue-200 font-semibold">Transit Grid Sector</span>
+<span class="font-serif font-bold text-sm">Bangalore South-East</span>
+</div>
+<div class="w-7 h-7 rounded bg-white/20 backdrop-blur-sm flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-[16px]">navigation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Unloading Capabilities Matrix -->
+<div class="flex flex-col gap-2 pt-1">
+<label class="font-label text-[11px] font-bold text-slate-500 tracking-normal">Unloading Capabilities &amp; Logistics Clearance Checklist</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<!-- Check 1 -->
+<label class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer">
+<input checked="" class="w-4 h-4 rounded border-slate-300 text-[#059669] focus:ring-[#059669]" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-slate-900">Covered Dock Available</span>
+<span class="text-[11px] text-slate-500">Weatherproof shelter for dry storage</span>
+</div>
+</label>
+<!-- Check 2 (Unchecked) -->
+<label class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer opacity-75">
+<input class="w-4 h-4 rounded border-slate-300 text-[#059669] focus:ring-[#059669]" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-slate-700">Forklift on-site</span>
+<span class="text-[11px] text-slate-500">Heavy mechanical pallet offloading</span>
+</div>
+</label>
+<!-- Check 3 -->
+<label class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer">
+<input checked="" class="w-4 h-4 rounded border-slate-300 text-[#059669] focus:ring-[#059669]" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-slate-900">Manual Volunteer Team Ready</span>
+<span class="text-[11px] text-slate-500">15 physical hands active on-site</span>
+</div>
+</label>
+<!-- Check 4 -->
+<label class="flex items-center gap-3 p-3 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-colors cursor-pointer">
+<input checked="" class="w-4 h-4 rounded border-slate-300 text-[#059669] focus:ring-[#059669]" type="checkbox"/>
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-slate-900">Flood Clearance Vehicle Access</span>
+<span class="text-[11px] text-slate-500">Water level &gt; 45cm on access culvert</span>
+</div>
+</label>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Live Matching & AI Engine (4 of 12 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-5 sticky top-20">
+<!-- Live Forecast Card -->
+<div class="bg-white p-5 rounded-lg border border-slate-200 shadow-sm flex flex-col gap-4 relative overflow-hidden">
+<!-- Top Accent Navy Bar -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-[#059669]"></div>
+<!-- Header -->
+<div class="flex items-start justify-between pt-1">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 text-[#059669]">
+<span class="material-symbols-outlined text-[18px]">psychology</span>
+<span class="font-label text-[11px] tracking-normal font-bold">AI Routing Engine</span>
+</div>
+<h3 class="font-serif font-bold text-base text-[#08211c] tracking-tight mt-0.5">Algorithmic Fulfillment Forecast</h3>
+</div>
+<div class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-700 font-mono text-[10px] font-bold">
+                    v4.2-SOLVER
+                  </div>
+</div>
+<!-- Speed & Availability Metrics Bento -->
+<div class="grid grid-cols-2 gap-2">
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 flex flex-col">
+<span class="text-[11px] text-slate-500">Est. Match Speed</span>
+<span class="font-mono text-base font-bold text-[#08211c] mt-0.5">&lt; 18 minutes</span>
+<span class="text-[10px] text-[#059669] font-medium mt-0.5">To initial pledge</span>
+</div>
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 flex flex-col">
+<span class="text-[11px] text-slate-500">Regional Surplus</span>
+<span class="font-mono text-base font-bold text-[#08211c] mt-0.5">1,850 kg</span>
+<span class="text-[10px] text-slate-500 mt-0.5">Across 3 verified depots</span>
+</div>
+</div>
+<!-- Circular Metric / Radial Scope inline -->
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative w-10 h-10 shrink-0">
+<svg class="w-10 h-10 transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-slate-200" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-[#059669]" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="92, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute inset-0 flex items-center justify-center font-mono text-[11px] font-bold text-[#08211c]">92%</span>
+</div>
+<div class="flex flex-col">
+<span class="font-serif font-bold text-xs text-[#08211c]">Regional Demand Confidence</span>
+<span class="text-[11px] text-slate-500">45 km operational perimeter</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#059669] text-[20px]">radar</span>
+</div>
+<!-- Recommended Consolidators Stack -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] font-bold text-slate-500 tracking-normal">Depot Candidates Match Stack</span>
+<span class="text-[11px] text-[#059669] font-semibold">Sorted by ETA</span>
+</div>
+<!-- Match Card 1 -->
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-serif font-bold text-xs text-[#08211c]">1. XYZ Food Relief Foundation</span>
+<span class="px-1.5 py-0.5 rounded bg-[#ecfdf5] text-[#059669] border border-[#d1fae5] font-mono text-[10px] font-bold">94% MATCH</span>
+</div>
+<div class="flex items-center justify-between text-slate-500 text-xs">
+<span class="text-slate-800 font-medium">300 kg lot @ Indiranagar Hub</span>
+<span>4.8 km distance</span>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-1 mt-0.5">
+<div class="bg-[#059669] h-1 rounded-full w-[94%]"></div>
+</div>
+</div>
+<!-- Match Card 2 -->
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-serif font-bold text-xs text-[#08211c]">2. Helping Hands Society</span>
+<span class="px-1.5 py-0.5 rounded bg-slate-200 text-slate-700 font-mono text-[10px] font-bold">88% MATCH</span>
+</div>
+<div class="flex items-center justify-between text-slate-500 text-xs">
+<span class="text-slate-800 font-medium">150 kg lot @ Koramangala Bay</span>
+<span>8.2 km distance</span>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-1 mt-0.5">
+<div class="bg-[#059669] h-1 rounded-full w-[88%]"></div>
+</div>
+</div>
+<!-- Match Card 3 -->
+<div class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-slate-300 transition-colors flex flex-col gap-1.5 opacity-80">
+<div class="flex items-center justify-between">
+<span class="font-serif font-semibold text-xs text-slate-700">3. Mysore Hope Mission</span>
+<span class="px-1.5 py-0.5 rounded bg-slate-200 text-slate-600 font-mono text-[10px]">72% MATCH</span>
+</div>
+<div class="flex items-center justify-between text-slate-500 text-xs">
+<span>500 kg single lot (Transit penalty)</span>
+<span>135 km distance</span>
+</div>
+<div class="w-full bg-slate-200 rounded-full h-1 mt-0.5">
+<div class="bg-slate-400 h-1 rounded-full w-[72%]"></div>
+</div>
+</div>
+</div>
+<!-- Recommendation Callout -->
+<div class="p-3 rounded-lg bg-[#ecfdf5] border border-[#d1fae5] text-[#08211c] flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[20px] text-[#059669] shrink-0 mt-0.5">tips_and_updates</span>
+<div class="flex flex-col">
+<span class="font-serif font-bold text-xs text-[#064e3b]">Split Routing Recommended</span>
+<span class="text-xs text-slate-600 leading-tight mt-0.5">
+                      Aggregating Depots 1 &amp; 2 covers 90% (450 kg) within 1.8 hours. Third tranche routed via express courier.
+                    </span>
+</div>
+</div>
+<!-- Digital Verification Alert -->
+<div class="flex items-center gap-2 p-2 rounded bg-slate-50 border border-slate-200 text-slate-600 text-[11px]">
+<span class="material-symbols-outlined text-[#059669] text-[16px] shrink-0">verified_user</span>
+<span>Requires authorized trustee digital signature prior to network broadcast.</span>
+</div>
+<!-- Primary & Secondary CTA Buttons -->
+<div class="flex flex-col gap-2 pt-1">
+<button class="w-full py-2.5 px-4 rounded-lg bg-[#059669] hover:bg-[#047857] text-white active:scale-[0.99] transition-all font-semibold text-xs flex items-center justify-center gap-2 shadow-xs" type="button">
+<span>Review &amp; Broadcast to Grid</span>
+<span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="w-full py-2 px-3 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[16px] text-slate-500">save</span>
+<span>Save Draft</span>
+</button>
+<button class="w-full py-2 px-3 rounded-lg bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-xs" type="button">
+<span class="material-symbols-outlined text-[16px] text-slate-500">sim_card_download</span>
+<span>Export PDF</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Manifest Context & Dispatch Rules -->
+<div class="p-4 rounded-lg bg-white border border-slate-200 shadow-xs flex flex-col gap-1.5 text-slate-600">
+<div class="flex items-center gap-2 text-[#08211c] font-serif text-xs uppercase font-bold">
+<span class="material-symbols-outlined text-[16px] text-[#059669]">policy</span>
+<span>ReliefNet Operational SLA Guarantee</span>
+</div>
+<p class="text-xs leading-relaxed text-slate-500">
+                  All broadcast tranches are legally bound by standard NDMA disaster dispatch terms. Pledging depots are expected to package, manifest, and dispatch within designated SLA windows.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    
+</div>
+
+
+  </main>
+  <script src="/static/js/screen_catalog.js"></script>
+  <script src="/static/js/mock_data.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

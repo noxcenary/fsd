@@ -1,0 +1,672 @@
+<!-- Screen: Cryptographic Ledger & State Consensus Audit Stream | ID: admin-ledger | UI Source: reliefnet_admin_cryptographic_ledger_audit_stream -->
+<div id="screen-admin-ledger" class="reliefnet-screen-view w-full" data-shell="admin">
+  <div class="flex flex-col w-full">
+<!-- Ledger Telemetry & Statutory Audit Top Deck -->
+<div class="px-margin-desktop py-space-lg bg-surface-container-low flex flex-col gap-space-lg">
+<!-- Path & System Status Bar -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption tracking-normal">
+<span>Governance &amp; Audit</span>
+<span class="material-symbols-outlined text-[13px]">chevron_right</span>
+<span>Integrity &amp; Audit</span>
+<span class="material-symbols-outlined text-[13px]">chevron_right</span>
+<span class="text-primary font-semibold">Cryptographic Ledger &amp; Audit Logs</span>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-serif text-headline-lg text-primary tracking-tight">Cryptographic Ledger &amp; State Consensus Audit Stream</h1>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-primary-container text-on-primary font-label text-label-sm tracking-normal">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed animate-pulse"></span>
+            FIPS 140-3 Strict Enclave - Immutable Append-Only Ledger
+          </span>
+<span class="font-caption text-caption text-on-surface-variant bg-surface-container px-2 py-0.5 rounded font-mono">RFC-8212 OPEN RELIEF</span>
+</div>
+</div>
+<!-- Action Protocol Buttons -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="inline-flex items-center gap-1.5 px-space-sm py-2 rounded bg-surface-container-lowest text-on-surface font-label text-label-md hover:bg-surface-container-high transition-colors shadow-sm" id="btnVerifyMerkle" type="button">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<span>Verify Merkle Root Integrity</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-sm py-2 rounded bg-surface-container-lowest text-on-surface font-label text-label-md hover:bg-surface-container-high transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">file_download</span>
+<span>Export Statutory Audit (.JSON / .PDF)</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md py-2 rounded bg-primary-container text-on-primary font-label text-label-md hover:bg-tertiary-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">camera</span>
+<span>Snapshot State Mesh Node</span>
+</button>
+</div>
+</div>
+<!-- 4 Cryptographic Health KPI Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="p-space-lg rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-sm tracking-normal text-on-surface-variant font-semibold">Current Consensus Block</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">token</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-serif text-headline-lg font-bold text-primary font-mono">#4,882,148</span>
+<span class="font-label text-label-sm text-secondary font-medium">Synced</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption pt-space-xs">
+<span>Karnataka SDMA Liaison Node</span>
+<span class="font-mono text-secondary">Mined 12s ago</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="p-space-lg rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-sm tracking-normal text-on-surface-variant font-semibold">Transactions Sealed</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">lock</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-serif text-headline-lg font-bold text-primary font-mono">28,491</span>
+<span class="font-label text-label-sm text-on-secondary-container bg-secondary-container px-1 rounded font-semibold">0 Reorgs</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption pt-space-xs">
+<span>Zero Rolled Back Operations</span>
+<span class="font-mono text-on-surface font-semibold">100% Finality</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="p-space-lg rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-sm tracking-normal text-on-surface-variant font-semibold">Consensus Relays Online</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">hub</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-serif text-headline-lg font-bold text-primary font-mono">28 / 28</span>
+<span class="font-label text-label-sm text-secondary font-medium">100% Quorum</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption pt-space-xs">
+<span>Regional Disaster Mesh Relays</span>
+<span class="font-mono text-secondary">Avg Latency 14ms</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="p-space-lg rounded-lg bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-sm tracking-normal text-on-surface-variant font-semibold">ZK-Proof Validity Rate</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">flaky</span>
+</div>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-serif text-headline-lg font-bold text-secondary font-mono">100.0%</span>
+<span class="font-label text-label-sm text-on-secondary-fixed-variant bg-secondary-fixed px-1.5 py-0.5 rounded font-bold">FIPS SEC-L4</span>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption pt-space-xs">
+<span>Groth16 / BN254 Pairings</span>
+<span class="font-mono text-on-surface">0 Anomalies</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Operational Filter Deck & Dynamic Merkle Node Bar -->
+<div class="px-margin-desktop py-space-md flex flex-col gap-space-md bg-surface">
+<!-- Live State Anchor Banner -->
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md">
+<div class="flex w-full items-start sm:items-center gap-space-md flex-1 min-w-0">
+<div class="w-10 h-10 rounded bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">account_tree</span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label text-label-sm uppercase text-on-surface-variant font-bold">Active Root (Epoch #304):</span>
+<code class="min-w-0 max-w-[calc(100%-24px)] font-mono font-caption text-caption text-primary bg-surface-container-high px-2 py-0.5 rounded truncate select-all" title="0x9f18b4e7201c8091dd7a43f88029d2c0ee78c3b1a26d782e44318c5e0031ae82">0x9f18b4e7201c8091dd7a43f88029d2c0ee78c3b1a26d782e44318c5e0031ae82</code>
+<button class="text-on-surface-variant hover:text-primary" onclick="navigator.clipboard.writeText('0x9f18b4e7201c8091dd7a43f88029d2c0ee78c3b1a26d782e44318c5e0031ae82')" title="Copy Root SHA-256">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-caption text-caption mt-0.5 flex-wrap">
+<span>Genesis Anchor: <strong class="text-on-surface">Block #0001 (01 Nov 2024)</strong></span>
+<span>Anchor Authority: <span class="text-secondary font-medium">Karnataka State Disaster Management Authority (K-SDMA)</span></span>
+</div>
+</div>
+</div>
+<!-- Witness Seals -->
+<div class="flex items-center gap-space-xs shrink-0 self-stretch sm:self-auto justify-end">
+<div class="flex flex-col text-right">
+<span class="font-label text-label-sm text-on-surface font-semibold">3/3 Consensus Signatures</span>
+<span class="font-caption text-caption text-secondary">SDMA-KA • NITI-DARPAN • IRCS-GOV</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+</div>
+</div>
+</div>
+<!-- Search & Multi-Faceted Query Controls -->
+<div class="p-space-md rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-sm items-center">
+<!-- Event Category Dropdown -->
+<div class="lg:col-span-3">
+<label class="block font-label text-label-sm uppercase text-on-surface-variant font-semibold mb-1">Event Category</label>
+<div class="relative">
+<select class="w-full bg-surface-container text-on-surface font-sans text-body-sm rounded px-space-sm py-2 focus:outline-none focus:bg-surface-container-lowest" id="eventFilter">
+<option value="ALL">All Ledger Events (28,491)</option>
+<option value="DISPUTE">Dispute Conciliation &amp; Settlements</option>
+<option value="WAYBILL">Waybill &amp; Dispatch Manifests</option>
+<option value="VOUCH">ECDSA Peer Endorsements</option>
+<option value="ALGO">Algorithmic Matching Executions</option>
+<option value="DARPAN">Govt DARPAN Regulatory Seals</option>
+<option value="SURPLUS">Surplus Resource Publication</option>
+</select>
+</div>
+</div>
+<!-- Block Height or SHA Search -->
+<div class="lg:col-span-4">
+<label class="block font-label text-label-sm uppercase text-on-surface-variant font-semibold mb-1">Search Block #, SHA-256, or UID</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-on-surface-variant text-[16px]">fingerprint</span>
+<input class="w-full bg-surface-container text-on-surface font-sans text-body-sm rounded pl-8 pr-3 py-2 focus:outline-none focus:bg-surface-container-lowest" id="hashSearch" placeholder="0x7c9f..., #4882148, or SDMA-881" type="text"/>
+</div>
+</div>
+<!-- Zulu Time Horizon -->
+<div class="lg:col-span-3">
+<label class="block font-label text-label-sm uppercase text-on-surface-variant font-semibold mb-1">Time Horizon (UTC / Zulu)</label>
+<div class="flex items-center gap-2 bg-surface-container rounded px-3 py-2 text-on-surface font-sans text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">schedule</span>
+<span class="truncate">Live Stream • Last 6 Hours</span>
+</div>
+</div>
+<!-- Filter Triggers -->
+<div class="lg:col-span-2 flex items-end gap-space-xs pt-4 lg:pt-0">
+<button class="w-full py-2 px-space-sm rounded bg-primary text-on-primary font-label text-label-md hover:bg-primary-container transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">filter_alt</span>
+<span>Filter</span>
+</button>
+<button class="py-2 px-2.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" title="Reset Filters" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+</button>
+</div>
+</div>
+<!-- Quick Category Toggle Pills -->
+<div class="flex flex-wrap items-center gap-space-xs text-on-surface-variant pt-space-xs">
+<span class="font-label text-label-sm uppercase font-semibold shrink-0">Tags:</span>
+<button class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label text-label-sm whitespace-nowrap">Show All</button>
+<button class="px-2 py-0.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-label text-label-sm whitespace-nowrap">State Transitions (8)</button>
+<button class="px-2 py-0.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-label text-label-sm whitespace-nowrap">Corridor Dispatches (42)</button>
+<button class="px-2 py-0.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-label text-label-sm whitespace-nowrap">Weighbridge Seals (19)</button>
+<button class="px-2 py-0.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-label text-label-sm whitespace-nowrap">DARPAN Vetting (11)</button>
+<button class="px-2 py-0.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-label text-label-sm whitespace-nowrap">Zero-Knowledge Proofs (314)</button>
+</div>
+</div>
+</div>
+<!-- Real-Time Cryptographic Event Stream & Audit Log Table -->
+<div class="px-margin-desktop py-space-md">
+<div class="rounded-lg bg-surface-container-lowest shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header & Live Pulse Subtitle -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="font-serif text-headline-sm text-primary font-bold">Tamper-Evident State Event Log</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            Streaming Block 4,882,148
+          </span>
+</div>
+<div class="flex items-center gap-space-md text-on-surface-variant font-caption text-caption">
+<span>Deterministic Consensus: <strong class="text-on-surface">Raft + BFT Witness</strong></span>
+<span>Hash Algorithm: <strong class="text-on-surface font-mono">SHA-256 (RFC-6234)</strong></span>
+</div>
+</div>
+<!-- Scrollable Data Table Grid -->
+<div class="w-full overflow-x-auto table-scroll" tabindex="0" role="region" aria-label="Consensus ledger table; scroll horizontally to view all columns">
+<table class="w-full text-left font-sans text-body-sm table-pin-right">
+<thead class="bg-surface-container text-on-surface-variant font-label text-label-sm tracking-normal">
+<tr>
+<th class="py-space-md px-space-lg font-semibold whitespace-nowrap" scope="col">Timestamp (Zulu / IST)</th>
+<th class="py-space-md px-space-md font-semibold whitespace-nowrap" scope="col">Block #</th>
+<th class="py-space-md px-space-md font-semibold whitespace-nowrap" scope="col">Canonical Event Type</th>
+<th class="py-space-md px-space-md font-semibold whitespace-nowrap" scope="col">Entity / Signing Actor</th>
+<th class="py-space-md px-space-md font-semibold min-w-[260px]" scope="col">Operational Details &amp; Payload Summary</th>
+<th class="py-space-md px-space-md font-semibold whitespace-nowrap" scope="col">Merkle Witness &amp; SHA-256</th>
+<th class="py-space-md px-space-md font-semibold whitespace-nowrap text-right" scope="col">Verification</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-on-surface">
+<!-- Row 1: Selected / High Attention Row (Highlighted) -->
+<tr class="bg-surface-container-high/60 hover:bg-surface-container-high transition-colors cursor-pointer group" onclick="selectLedgerRow(1)">
+<td class="py-space-md px-space-lg whitespace-nowrap">
+<div class="font-mono text-on-surface font-semibold">14:46:12 UTC</div>
+<div class="font-caption text-caption text-on-surface-variant">20:16:12 IST</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-mono text-primary font-bold">
+<span class="px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed">#4,882,148</span>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-error-container text-on-error-container font-label text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">balance</span>
+                  DISPUTE_CONCILIATION_SEALED
+                </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-on-surface">Officer K. N. Murthy</div>
+<div class="font-caption text-caption text-on-surface-variant font-mono">SDMA-LIAISON-881</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-sans text-body-sm text-on-surface line-clamp-1">Docket #DISP-2024-042: Bilateral BoQ amended to 418.0 kg. Zero-fault reputation applied.</div>
+<div class="font-caption text-caption text-on-surface-variant">Enclave State Transition: RESOLVED • Non-Fault Ledger Affirmation</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-mono text-caption text-caption">
+<div class="flex items-center gap-1 text-primary font-bold">
+<span>0x7c9f...4a12</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+<div class="text-on-surface-variant">Tree Depth: 16 • Index #04</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  VALID (3/3)
+                </span>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer group" onclick="selectLedgerRow(2)">
+<td class="py-space-md px-space-lg whitespace-nowrap">
+<div class="font-mono text-on-surface">14:41:05 UTC</div>
+<div class="font-caption text-caption text-on-surface-variant">20:11:05 IST</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-mono text-on-surface font-semibold">
+                #4,882,147
+              </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-label text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+                  WAYBILL_DISPATCHED_IN_CORRIDOR
+                </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-on-surface">Ramesh K. (Driver)</div>
+<div class="font-caption text-caption text-on-surface-variant font-mono">REG-KA-04-E-2192</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-sans text-body-sm text-on-surface line-clamp-1">Waybill #WB-2023-8821A: Seal #SL-99812 verified en-route on Domlur-Bellandur corridor.</div>
+<div class="font-caption text-caption text-on-surface-variant">Geofence Check: PASSED • Transit Corridors Clear</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-mono text-caption text-caption">
+<div class="flex items-center gap-1 text-on-surface">
+<span>0x4b81...09ef</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+<div class="text-on-surface-variant">Tree Depth: 16 • Index #03</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  VALID (3/3)
+                </span>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer group" onclick="selectLedgerRow(3)">
+<td class="py-space-md px-space-lg whitespace-nowrap">
+<div class="font-mono text-on-surface">14:38:22 UTC</div>
+<div class="font-caption text-caption text-on-surface-variant">20:08:22 IST</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-mono text-on-surface font-semibold">
+                #4,882,146
+              </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">military_tech</span>
+                  PEER_VOUCH_ECDSA_COUNTERSIGNED
+                </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-on-surface">Red Cross Disaster Wing</div>
+<div class="font-caption text-caption text-on-surface-variant font-mono">UID #KA-2018-3109</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-sans text-body-sm text-on-surface line-clamp-1">Cryptographic vouch token issued for Kaveri Basin Relief Coalition (#APP-9921). Proximity 18km.</div>
+<div class="font-caption text-caption text-on-surface-variant">Reputation Vector: +15.2 • Sybil Risk: 0.01% Low</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-mono text-caption text-caption">
+<div class="flex items-center gap-1 text-on-surface">
+<span>0x89f4...2a1b</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+<div class="text-on-surface-variant">Tree Depth: 16 • Index #02</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  VALID (3/3)
+                </span>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer group" onclick="selectLedgerRow(4)">
+<td class="py-space-md px-space-lg whitespace-nowrap">
+<div class="font-mono text-on-surface">14:35:10 UTC</div>
+<div class="font-caption text-caption text-on-surface-variant">20:05:10 IST</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-mono text-on-surface font-semibold">
+                #4,882,145
+              </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+                  ALGORITHMIC_MATCH_SOLVED
+                </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-on-surface">ReliefNet Engine v4.2</div>
+<div class="font-caption text-caption text-on-surface-variant font-mono">CONSENSUS-SOLVER-KA</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-sans text-body-sm text-on-surface line-clamp-1">Requisition #REQ-1049: Multicriteria bipartite match solved across XYZ Food (60%) &amp; Helping Hands (40%).</div>
+<div class="font-caption text-caption text-on-surface-variant">Zero Spoilage Optimization • Objective Loss: 0.0018</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-mono text-caption text-caption">
+<div class="flex items-center gap-1 text-on-surface">
+<span>0x9a7f...e431</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+<div class="text-on-surface-variant">Tree Depth: 16 • Index #01</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  VALID (3/3)
+                </span>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer group" onclick="selectLedgerRow(5)">
+<td class="py-space-md px-space-lg whitespace-nowrap">
+<div class="font-mono text-on-surface">14:30:00 UTC</div>
+<div class="font-caption text-caption text-on-surface-variant">20:00:00 IST</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-mono text-on-surface font-semibold">
+                #4,882,144
+              </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                  GOVT_DARPAN_VERIFIED_ISSUED
+                </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-on-surface">Nodal Officer R. Kulkarni</div>
+<div class="font-caption text-caption text-on-surface-variant font-mono">GOVT-AUDIT-DESK-4</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-sans text-body-sm text-on-surface line-clamp-1">Asha Relief Initiative granted Sovereign Green Tier-1 status via API DARPAN #KA/2021/0288412.</div>
+<div class="font-caption text-caption text-on-surface-variant">Statutory Compliance Verified • 12A/80G Validated</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-mono text-caption text-caption">
+<div class="flex items-center gap-1 text-on-surface">
+<span>0x2c10...881f</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+<div class="text-on-surface-variant">Tree Depth: 16 • Index #00</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  VALID (3/3)
+                </span>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container transition-colors cursor-pointer group" onclick="selectLedgerRow(6)">
+<td class="py-space-md px-space-lg whitespace-nowrap">
+<div class="font-mono text-on-surface">14:24:19 UTC</div>
+<div class="font-caption text-caption text-on-surface-variant">19:54:19 IST</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-mono text-on-surface font-semibold">
+                #4,882,143
+              </td>
+<td class="py-space-md px-space-md whitespace-nowrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container text-on-surface font-label text-label-sm font-bold">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+                  SURPLUS_MANIFEST_PUBLISHED
+                </span>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-on-surface">XYZ Food Relief Org</div>
+<div class="font-caption text-caption text-on-surface-variant font-mono">PAN-AAATX9918P</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="font-sans text-body-sm text-on-surface line-clamp-1">500 kg Non-Perishable Rice (Lot #LOT-DRY-994) published with zero-cash humanitarian mandate.</div>
+<div class="font-caption text-caption text-on-surface-variant">Expiry: 180 Days • Storage Node: Yeshwanthpur Grain Silo</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap font-mono text-caption text-caption">
+<div class="flex items-center gap-1 text-on-surface">
+<span>0xef32...91ab</span>
+<button class="opacity-0 group-hover:opacity-100 transition-opacity text-on-surface-variant hover:text-primary">
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+<div class="text-on-surface-variant">Tree Depth: 16 • Index #12</div>
+</td>
+<td class="py-space-md px-space-md whitespace-nowrap text-right">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  VALID (3/3)
+                </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Paging & Stream Status -->
+<div class="px-space-lg py-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-caption text-caption">
+<span>Showing <strong>6</strong> of <strong>28,491</strong> validated immutable records</span>
+<span class="hidden sm:inline">•</span>
+<span class="hidden sm:inline font-mono">Stream Socket: wss://ledger.reliefnet.gov.in/v1/feed</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Previous Page">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<span class="px-2 font-mono font-label text-label-sm text-primary font-bold">Page 1 / 4,749</span>
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container-high transition-colors" title="Next Page">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Forensic Deep-Dive Inspection Panel (Focused Transaction #4,882,148) -->
+<div class="px-margin-desktop py-space-md pb-space-xl">
+<div class="rounded-lg bg-surface-container-lowest shadow-md overflow-hidden flex flex-col">
+<!-- Forensic Header -->
+<div class="p-space-lg bg-primary-container text-on-primary flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex min-w-0 items-center gap-space-sm">
+<div class="w-9 h-9 shrink-0 rounded bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[20px]">manage_search</span>
+</div>
+<div class="min-w-0">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-serif text-headline-sm font-bold">Forensic Transaction Receipt &amp; Proof Inspector</span>
+<span class="px-2 py-0.5 rounded bg-secondary text-on-secondary font-label text-label-sm font-mono uppercase">DISPUTE_CONCILIATION_SEALED</span>
+</div>
+<p class="font-caption text-caption text-on-primary-container">RFC-8212 Non-Repudiation Proof Envelope • State Transition Block #4,882,148</p>
+</div>
+</div>
+<!-- Receipt Export Controls -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded bg-primary text-on-primary hover:bg-surface-container-highest hover:text-on-surface transition-colors font-label text-label-sm font-semibold" id="copyJsonBtn" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copy Raw JSON Payload</span>
+</button>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-colors font-label text-label-sm font-bold" type="button">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Download Proof (.PEM)</span>
+</button>
+</div>
+</div>
+<!-- Detailed Cryptographic Metadata Grid -->
+<div class="p-space-lg grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md bg-surface-container-low">
+<!-- Field 1 -->
+<div class="p-space-sm bg-surface-container-lowest rounded flex flex-col gap-1">
+<span class="font-label text-label-sm uppercase text-on-surface-variant font-semibold">Signer Public Key Fingerprint</span>
+<div class="font-mono text-body-sm text-body-sm text-on-surface truncate" title="SHA-256: 4A:91:BB:72:08:C1:DE:33:F9:AA:02:19:D4:55:01:CE">
+            4A:91:BB:72:08:C1:DE:33:F9:AA
+          </div>
+<span class="font-caption text-caption text-secondary">Authorized State Nodal Liaison</span>
+</div>
+<!-- Field 2 -->
+<div class="p-space-sm bg-surface-container-lowest rounded flex flex-col gap-1">
+<span class="font-label text-label-sm uppercase text-on-surface-variant font-semibold">Gas &amp; Quota Consumption</span>
+<div class="font-mono text-body-sm text-body-sm text-primary font-bold">
+            0 GAS (HUMANITARIAN EXEMPT)
+          </div>
+<span class="font-caption text-caption text-on-surface-variant">Non-monetary civic infrastructure tier</span>
+</div>
+<!-- Field 3 -->
+<div class="p-space-sm bg-surface-container-lowest rounded flex flex-col gap-1">
+<span class="font-label text-label-sm uppercase text-on-surface-variant font-semibold">Hardware Enclave Seal</span>
+<div class="font-mono text-body-sm text-body-sm text-on-surface">
+            HSM-SL4-BLR-019 #SECURE
+          </div>
+<span class="font-caption text-caption text-secondary">FIPS 140-3 Physical Token Verified</span>
+</div>
+<!-- Field 4 -->
+<div class="p-space-sm bg-surface-container-lowest rounded flex flex-col gap-1">
+<span class="font-label text-label-sm uppercase text-on-surface-variant font-semibold">State Consensus Finality</span>
+<div class="font-mono text-body-sm text-body-sm text-secondary font-bold">
+            CONFIRMED (28 RELAY WITNESSES)
+          </div>
+<span class="font-caption text-caption text-on-surface-variant">Deterministic finality achieved</span>
+</div>
+</div>
+<!-- JSON Payload Viewer & Cryptographic Signature Box -->
+<div class="p-space-lg grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Canonical JSON Stream -->
+<div class="lg:col-span-7 flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-sm uppercase text-on-surface-variant font-bold">Canonical Payload (Canonical JSON RFC-8785)</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono">Payload Size: 842 Bytes</span>
+</div>
+<pre class="p-space-md rounded bg-surface-container font-mono text-caption text-caption text-on-surface overflow-x-auto leading-relaxed max-h-72" id="jsonPayload"><code>{
+  "docket_id": "DISP-2024-042",
+  "block_height": 4882148,
+  "action": "CONCILIATION_FINAL_AFFIRMATION",
+  "authorized_by": {
+    "officer_uid": "SDMA-LIAISON-881",
+    "name": "K. N. Murthy",
+    "role": "Joint Commissioner Relief &amp; SDMA Nodal Liaison",
+    "jurisdiction": "Karnataka Disaster Node"
+  },
+  "reconciliation_parameters": {
+    "original_claimed_kg": 500.0,
+    "received_weighbridge_kg": 418.0,
+    "final_agreed_kg": 418.0,
+    "loss_classification": "MOISTURE_IN_TRANSIT",
+    "fault_attribution": "ZERO_FAULT_FORCE_MAJEURE"
+  },
+  "reputation_impact": {
+    "xyz_food_foundation": "PROTECTED_NEUTRAL",
+    "peer_reputation_score": 98.4
+  },
+  "rfc8212_attestation": {
+    "consensus_rule": "SUPERMAJORITY_28_NODE",
+    "state_hash_pre": "0x4b819f72c018281ef8410928a9b1c741e938102a9b348271a01294812048fbc1",
+    "state_hash_post": "0x7c9fa1284b39174029bcde0192841920acde9412093481293810293481209384"
+  }
+}</code></pre>
+</div>
+<!-- Merkle Proof Vector & Signatures -->
+<div class="lg:col-span-5 flex flex-col gap-space-sm justify-between">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label text-label-sm uppercase text-on-surface-variant font-bold">Cryptographic Witness Signatures</span>
+<div class="space-y-space-xs">
+<!-- Witness 1 -->
+<div class="p-2.5 rounded bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<div>
+<div class="font-label text-label-sm text-on-surface font-semibold">SDMA Karnataka Sovereign Key</div>
+<div class="font-mono font-caption text-caption text-on-surface-variant truncate w-48">0xecd984...192b (ECDSA secp256k1)</div>
+</div>
+</div>
+<span class="font-caption text-caption text-secondary font-mono font-bold">14:46:12Z</span>
+</div>
+<!-- Witness 2 -->
+<div class="p-2.5 rounded bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<div>
+<div class="font-label text-label-sm text-on-surface font-semibold">NITI-DARPAN Verification Node</div>
+<div class="font-mono font-caption text-caption text-on-surface-variant truncate w-48">0x88f012...49a1 (Ed25519)</div>
+</div>
+</div>
+<span class="font-caption text-caption text-secondary font-mono font-bold">14:46:13Z</span>
+</div>
+<!-- Witness 3 -->
+<div class="p-2.5 rounded bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+<div>
+<div class="font-label text-label-sm text-on-surface font-semibold">IRCS Sovereign Humanitarian Relay</div>
+<div class="font-mono font-caption text-caption text-on-surface-variant truncate w-48">0x33b491...cc88 (ECDSA secp256k1)</div>
+</div>
+</div>
+<span class="font-caption text-caption text-secondary font-mono font-bold">14:46:14Z</span>
+</div>
+</div>
+</div>
+<!-- Proof Vector Validation Result Pill -->
+<div class="p-space-sm rounded bg-secondary-container text-on-secondary-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">format_image_left</span>
+<span class="font-label text-label-md">Merkle Path Integrity Validated (Height: 16)</span>
+</div>
+<span class="font-mono font-caption text-caption font-bold">Deterministic 0.00ms</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function selectLedgerRow(rowIndex) {
+    const rows = document.querySelectorAll('tbody tr');
+    rows.forEach(r => r.classList.remove('bg-surface-container-high/60'));
+    if (rows[rowIndex - 1]) {
+      rows[rowIndex - 1].classList.add('bg-surface-container-high/60');
+    }
+  }
+
+  document.getElementById('copyJsonBtn')?.addEventListener('click', () => {
+    const jsonText = document.getElementById('jsonPayload')?.innerText;
+    if (jsonText) {
+      navigator.clipboard.writeText(jsonText).then(() => {
+        const btn = document.getElementById('copyJsonBtn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span><span>Copied to Clipboard!</span>';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+        }, 2000);
+      });
+    }
+  });
+
+  document.getElementById('btnVerifyMerkle')?.addEventListener('click', () => {
+    const btn = document.getElementById('btnVerifyMerkle');
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-secondary text-[18px] animate-spin">refresh</span><span>Verifying 28,491 Hashes...</span>';
+    setTimeout(() => {
+      btn.innerHTML = '<span class="material-symbols-outlined text-secondary text-[18px]">verified</span><span>All Merkle Roots Verified (RFC-8212 OK)</span>';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+      }, 3000);
+    }, 1200);
+  });
+</script>
+  </div>
+</div>

@@ -1,0 +1,471 @@
+<!-- Screen: Community Peer Reference Endorsement | ID: peer-endorsement | UI Source: reliefnet_community_peer_reference_endorsement -->
+<div id="screen-peer-endorsement" class="reliefnet-screen-view w-full" data-shell="public">
+  <div class="flex flex-col w-full">
+<!-- Progress Stepper Sub-Header -->
+<div class="w-full bg-surface-container-low shadow-sm">
+<div class="max-w-[1600px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<!-- Verification Route Badge & Title -->
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded bg-primary text-on-primary flex items-center justify-center font-serif text-headline-sm">
+            P2
+          </div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label text-label-sm tracking-normal text-secondary">Alternative Trust Track</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm">Community Verified</span>
+</div>
+<h1 class="font-serif text-headline-md text-primary tracking-tight">Community Peer Reference & Endorsement Workflow</h1>
+</div>
+</div>
+<!-- 4-Step Stepper Array -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-xs">
+<!-- Step 1: Completed -->
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded bg-surface-container-lowest shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant leading-none">Step 01</span>
+<span class="font-label text-label-sm text-on-surface font-semibold">Baseline Info</span>
+</div>
+</div>
+<!-- Step 2: Active -->
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded bg-primary text-on-primary shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed animate-spin" style="animation-duration: 3s;">sync</span>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-primary-fixed-dim leading-none">Step 02 • Active</span>
+<span class="font-label text-label-sm font-semibold text-on-primary">Peer Vetting</span>
+</div>
+</div>
+<!-- Step 3: Upcoming -->
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded bg-surface-container opacity-70">
+<span class="material-symbols-outlined text-[18px] text-outline">lock_clock</span>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant leading-none">Step 03</span>
+<span class="font-label text-label-sm text-on-surface-variant">OCR & Vault</span>
+</div>
+</div>
+<!-- Step 4: Upcoming -->
+<div class="flex items-center gap-space-xs px-space-sm py-1.5 rounded bg-surface-container opacity-70">
+<span class="material-symbols-outlined text-[18px] text-outline">verified_user</span>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant leading-none">Step 04</span>
+<span class="font-label text-label-sm text-on-surface-variant">Council Audit</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Canvas Layout -->
+<div class="w-full max-w-[1600px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-xl space-y-space-xl">
+<!-- Top Alert & Cryptographic Protocol Banners -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-stretch">
+<!-- Primary Explanation Banner -->
+<div class="lg:col-span-8 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 top-0 translate-x-12 -translate-y-8 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="space-y-space-sm relative z-10">
+<div class="flex items-center gap-space-xs text-on-tertiary-container font-label text-label-md">
+<span class="material-symbols-outlined text-[20px]">token</span>
+<span>PEER ENDORSEMENT CRYPTOGRAPHIC TOKEN SYSTEM (PECTS-v2.1)</span>
+</div>
+<h2 class="font-serif text-headline-md text-primary">Decentralized Trust for Grassroots Aid Coalitions</h2>
+<p class="font-sans text-body-md text-on-surface-variant max-w-3xl">
+            Community-driven verification bypasses centralized DARPAN bottlenecks by deploying mutual cryptographic vouching. Applicants require signed endorsements from at least <strong class="text-primary font-semibold">2 established Tier-1 or Tier-2 NGOs</strong> operating within an active <strong class="text-primary font-semibold">150 km disaster operational radius</strong>.
+          </p>
+</div>
+<!-- Metric Badges Row -->
+<div class="pt-space-md mt-space-md grid grid-cols-2 sm:grid-cols-3 gap-space-sm relative z-10">
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="font-caption text-caption text-secondary uppercase block">Radius Radius</span>
+<span class="font-serif text-headline-sm text-primary">150.00 km</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded">
+<span class="font-caption text-caption text-secondary uppercase block">Threshold</span>
+<span class="font-serif text-headline-sm text-primary">2 Attestations</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded col-span-2 sm:col-span-1">
+<span class="font-caption text-caption text-secondary uppercase block">Audit Proof Hash</span>
+<span class="font-serif text-headline-sm text-on-tertiary-container">BLAKE3-256</span>
+</div>
+</div>
+</div>
+<!-- Anti-Sybil Callout Box -->
+<div class="lg:col-span-4 bg-primary-container text-on-primary p-space-lg rounded-xl shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label text-label-sm uppercase font-bold tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">shield_lock</span>
+              Strict Anti-Sybil Protocol
+            </span>
+<span class="text-primary-fixed-dim font-label text-label-sm">RFC-0941</span>
+</div>
+<h3 class="font-serif text-headline-sm text-on-primary">Zero Recursive Validation Engine</h3>
+<p class="font-sans text-body-sm text-primary-fixed-dim leading-relaxed">
+            Unverified or conditionally ranked NGOs are cryptographically barred from signing tokens. Directed Acyclic Graph (DAG) state monitors mathematically scan and eliminate cyclic loops or tit-for-tat mutual endorsement rings.
+          </p>
+</div>
+<div class="mt-space-md pt-space-sm bg-surface-container-lowest/10 p-space-sm rounded flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">verified</span>
+<span class="font-label text-label-sm text-on-primary">Continuous Cyclic Graph Sweep Active</span>
+</div>
+</div>
+</div>
+<!-- Sponsor & Reference NGO Nomination Module -->
+<div class="space-y-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<span class="font-label text-label-sm tracking-normal text-secondary">Cluster Nodes Validation</span>
+<h2 class="font-serif text-headline-lg text-primary">Sponsor NGO Attestation Manifest</h2>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label text-label-md bg-surface-container-low px-space-md py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-[18px] text-primary">distance</span>
+<span>Proximity Filter: Operational Cluster Karnataka-Central</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter-desktop">
+<!-- Slot 1: Completed / Signed -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between">
+<div class="space-y-space-md">
+<!-- Header Status -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-serif">
+<span class="material-symbols-outlined text-[28px] text-on-tertiary-container">domain_verification</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label text-label-sm">SLOT 01 • VALIDATED</span>
+<span class="text-on-surface-variant font-caption text-caption">18 km away</span>
+</div>
+<h3 class="font-serif text-headline-sm text-primary">Red Cross Karnataka Disaster Wing</h3>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span> Tier-1 Govt
+              </span>
+</div>
+<!-- Credentials & Hash Data -->
+<div class="bg-surface-container-low rounded-lg p-space-sm space-y-space-xs">
+<div class="flex justify-between items-center text-caption font-caption">
+<span class="text-on-surface-variant">Accreditation ID:</span>
+<span class="text-primary font-semibold">#KA-2018-3109 (DARPAN Verified)</span>
+</div>
+<div class="flex justify-between items-center text-caption font-caption">
+<span class="text-on-surface-variant">Geographic Anchor:</span>
+<span class="text-primary font-semibold">Bengaluru Central Depot (Zone 4)</span>
+</div>
+<div class="flex justify-between items-center text-caption font-caption">
+<span class="text-on-surface-variant">Timestamp:</span>
+<span class="text-primary font-semibold">02 Nov 2024 • 14:38:12 UTC</span>
+</div>
+<div class="flex justify-between items-center text-caption font-caption bg-surface-container-lowest p-1 rounded">
+<span class="text-on-surface-variant">Signature Hash:</span>
+<span class="text-secondary font-mono">0x89f4b931c81...2a1b7e90</span>
+</div>
+</div>
+<!-- Attestation Statement -->
+<div class="bg-surface-container-low/60 rounded p-space-md space-y-1">
+<span class="font-caption text-caption text-secondary uppercase font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">format_quote</span> Official Vouch Note
+              </span>
+<p class="font-sans text-body-sm text-on-surface italic">
+                “Collaborated during 2023 Krishna basin flood evacuation. Highly competent ground logistics team with documented boat-drop operations and local volunteer roster verification.”
+              </p>
+<div class="pt-1 flex items-center gap-space-xs text-caption font-caption text-on-surface-variant">
+<span>Signatory: Dr. S. Ramanathan</span>
+<span>•</span>
+<span>Disaster Response Director</span>
+</div>
+</div>
+</div>
+<!-- Cryptographic State Footprint -->
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-caption font-caption">
+<span class="text-on-tertiary-container flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[16px]">key</span> ECDSA Secp256k1 Signed
+            </span>
+<button class="text-secondary hover:text-primary font-label text-label-sm inline-flex items-center gap-1 transition-colors">
+<span>Inspect Raw Cert</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+</div>
+<!-- Slot 2: Pending Peer Acceptance -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between relative overflow-hidden">
+<div class="space-y-space-md">
+<!-- Header Status -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-serif">
+<span class="material-symbols-outlined text-[28px] text-secondary">pending_actions</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-xs py-0.5 rounded bg-surface-container-highest text-on-surface-variant font-label text-label-sm">SLOT 02 • IN DISPATCH</span>
+<span class="text-error font-caption text-caption font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">timer</span> 47h 58m Remaining
+                    </span>
+</div>
+<h3 class="font-serif text-headline-sm text-primary">Hubballi Community Trust</h3>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span> Tier-1 Verified
+              </span>
+</div>
+<!-- Peer Selector / Search Component -->
+<div class="space-y-space-xs">
+<label class="block font-label text-label-sm text-on-surface-variant tracking-normal">
+                Select Qualified Endorsement Peer (Within 150 km)
+              </label>
+<div class="relative">
+<div class="flex items-center bg-surface-container-low rounded-lg px-space-sm py-2">
+<span class="material-symbols-outlined text-[20px] text-outline mr-space-xs">search</span>
+<input class="bg-transparent text-body-sm font-sans text-on-surface w-full focus:outline-none" type="text" value="Hubballi Community Trust (#KA-2020-8812) - 84 km"/>
+<span class="material-symbols-outlined text-[20px] text-on-surface cursor-pointer">arrow_drop_down</span>
+</div>
+</div>
+</div>
+<!-- Live Expiry Meter & Protocol Status -->
+<div class="bg-surface-container-low rounded-lg p-space-sm space-y-space-xs">
+<div class="flex items-center justify-between text-caption font-caption">
+<span class="text-on-surface-variant">Cryptographic Token Validity:</span>
+<span class="font-semibold text-primary">48 Hours TTL (Time-To-Live)</span>
+</div>
+<!-- Progress Bar for Token Countdown -->
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full w-[92%]"></div>
+</div>
+<div class="flex items-center justify-between text-caption font-caption text-secondary">
+<span>Nonce: 0x9f08a4e3</span>
+<span>Channel: TLS 1.3 Verified Relays</span>
+</div>
+</div>
+<!-- Action Dispatch Buttons -->
+<div class="space-y-space-xs">
+<div class="flex flex-col sm:flex-row gap-space-xs">
+<button class="flex-1 bg-primary text-on-primary px-space-md py-2 rounded text-label-md font-label flex items-center justify-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Send In-Platform Token Request</span>
+</button>
+<button class="bg-surface-container text-on-surface px-space-md py-2 rounded text-label-md font-label flex items-center justify-center gap-space-xs hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">link</span>
+<span>Generate Link</span>
+</button>
+</div>
+<p class="font-caption text-caption text-on-surface-variant text-center">
+                Automated SMS & Field Mesh Alert queued for authorized trustee signatory.
+              </p>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between text-caption font-caption">
+<span class="text-on-surface-variant">Status: Awaiting Trustee Multi-Sig</span>
+<button class="text-error font-label text-label-sm hover:underline">Revoke Token Slot</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Community Operational Proof Checklist & Ground Geotagging -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg space-y-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<div>
+<span class="font-label text-label-sm tracking-normal text-secondary">Ground Operational Footprint</span>
+<h2 class="font-serif text-headline-lg text-primary">Community Operational Proof Checklist</h2>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">satellite_alt</span>
+<span class="font-label text-label-sm text-primary font-semibold">Dual Geotag & EXIF Integrity Check</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-desktop">
+<!-- Physical HQ Verification Card with Map -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-md font-semibold text-primary">1. Physical Headquarters Geotag</span>
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label text-label-sm">GPS LOCKED</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface-variant">
+              Fixed administrative command post or field equipment storage shed within stated district bounds.
+            </p>
+</div>
+<!-- Static Map Preview -->
+<div class="w-full h-40 bg-cover bg-center rounded relative overflow-hidden flex items-end p-space-sm" data-location="Hubballi, Karnataka" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDY2AhVM02dQz7En4faM1p1sBR8X8kUlaX6FREbPwmsUsUdGHc_2C6sozxhOaIYVoBEgBzpn5gWfuhECWvTpOsUMMnzia8ZpK4W8kLoFBa9Mtuw5A3YItro0RPKE5RPuUdzbt6dMZJr7tzPk6eXFtAq_bz1_AynaEMTSmK8W7rL2wF2nfBAENsKIih8hiP-HpPUq3Fjld84hPZATjHoD8qMHnoZVyOdPG1zKvGybqyP')">
+<div class="bg-inverse-surface/85 backdrop-blur-sm text-inverse-on-surface px-space-xs py-1 rounded font-caption text-caption flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary-fixed">location_on</span>
+<span>15.3647° N, 75.1240° E • Hubballi Yard</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-caption font-caption text-on-surface-variant">
+<span>EXIF Cryptographically Verified</span>
+<span class="text-on-tertiary-container font-semibold">Match Confidence: 99.4%</span>
+</div>
+</div>
+<!-- Field Relief Photo Logs -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-md font-semibold text-primary">2. Field Relief Logs (12 Mo)</span>
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label text-label-sm">8 BATCHES UPLOADED</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface-variant">
+              Timestamped relief ration distribution, water filtration dispatch, and rescue logistics rosters.
+            </p>
+</div>
+<!-- Photo Mosaic Preview -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="h-19 rounded overflow-hidden relative">
+<img class="w-full h-20 object-cover rounded" data-alt="Humanitarian relief volunteers in Karnataka unloading clean drinking water containers from a transport truck, bright natural outdoor lighting, documentary style, muted forest greens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0qJwmoe8xbcObrzpip_ql3hcT1C5BfxZTqcx4imxJBJgGh4fpEZuXE8yayyRq2tR7Fj_Ga00Pz1tMS9-4hCeq2PCvwPaykSWVkkWrilgzY_aOZXrx1EouTog5cxesKnXQUI0dp_BZYb_sRrC4w1SGX68KJ0DRhbxtqAXTFIXbIwkoW46MwyrrHQ0AVUaBKSgzieq9qqveXjXh4wz7R6aJRjAjsyWnprzIgL7c3uP_"/>
+<div class="absolute bottom-1 left-1 bg-surface-container-lowest/80 text-on-surface font-caption text-[10px] px-1 rounded">Ration Run 04</div>
+</div>
+<div class="h-19 rounded overflow-hidden relative">
+<img class="w-full h-20 object-cover rounded" data-alt="Disaster response team members reviewing paper route logs near flood relief boats, deep greens and technical gear, sharp focal depth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJhgCiNvU30-PDMTlfpKT8z_VTmoZL61VQVB4iJcCZocmcB8PGhtFBgvnIU0ddcgU6wzfugJYD9_d0Nvf98LGuimwp9FGrzAUzzOzMFoOZJK852C2NSzxIOGZyXDBs9xuJnWa2S-DVg_yCTyojhmonTM6R8Rfbb7BXBlviggJPbWJFM_Ap5XHZXGZiuimzr5euT8Zyhs75DVme3Nb2XvgmdVguCynxeDULEa7v0aJp"/>
+<div class="absolute bottom-1 left-1 bg-surface-container-lowest/80 text-on-surface font-caption text-[10px] px-1 rounded">Boat Cluster B</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-caption font-caption text-on-surface-variant">
+<span>Audit trail: 42 Geotagged captures</span>
+<button class="text-secondary font-label text-label-sm hover:text-primary">View Full Feed</button>
+</div>
+</div>
+<!-- Distribution Manifests & Muster Rolls -->
+<div class="bg-surface-container-low rounded-lg p-space-md flex flex-col justify-between space-y-space-md">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label text-label-md font-semibold text-primary">3. Beneficiary Signoff Muster</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm">READY FOR OCR</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface-variant">
+              Physical signature registers with field village officer countersignatures for disaster distributions.
+            </p>
+</div>
+<!-- Upload Dropzone Interface -->
+<div class="border-2 border-dashed border-outline-variant bg-surface-container-lowest rounded p-space-md flex flex-col items-center justify-center text-center cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[28px] text-secondary">cloud_upload</span>
+<span class="font-label text-label-sm text-primary mt-1">Upload Additional PDF / Scan Batches</span>
+<span class="font-caption text-caption text-on-surface-variant">PDF, TIFF up to 25MB</span>
+</div>
+<div class="flex items-center justify-between text-caption font-caption text-on-surface-variant">
+<span>OCR Integrity Parser: Armed</span>
+<span class="text-primary font-semibold">12 Files Verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cluster Operational Radius Map Visualizer -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<span class="font-label text-label-sm tracking-normal text-secondary">Spatial Constraint Verification</span>
+<h3 class="font-serif text-headline-sm text-primary">150km Radius Peer Density & Endorsement Topology</h3>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-1 font-caption text-caption text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span>Target Applicant</span>
+</div>
+<div class="flex items-center gap-1 font-caption text-caption text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+<span>Signed Peer</span>
+</div>
+<div class="flex items-center gap-1 font-caption text-caption text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span>Pending Peer</span>
+</div>
+</div>
+</div>
+<!-- Vector Radius Visual Simulation -->
+<div class="w-full bg-surface-container-low rounded-lg p-space-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="space-y-space-sm max-w-md">
+<div class="font-label text-label-md text-primary font-bold">Topology Compliance Status: OPTIMAL</div>
+<p class="font-sans text-body-sm text-on-surface-variant">
+            Applicant coordinate (Hubballi Area) is positioned within range of 7 Tier-1 accredited non-governmental depots. Radial triangulation prevents geographic isolation and Sybil fabrication by verifying physical proximity.
+          </p>
+<div class="bg-surface-container-lowest p-space-sm rounded space-y-1 font-caption text-caption">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Node Red Cross KA:</span>
+<span class="text-primary font-semibold">18.2 km (Inside Perimeter)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Node Hubballi Comm Trust:</span>
+<span class="text-primary font-semibold">84.1 km (Inside Perimeter)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Radial Clearance:</span>
+<span class="text-on-tertiary-container font-semibold">100% Validated</span>
+</div>
+</div>
+</div>
+<!-- SVG Visual Radial Geometry -->
+<div class="w-full max-w-xs aspect-square flex items-center justify-center relative">
+<svg class="w-full h-full text-secondary" viewbox="0 0 200 200">
+<!-- 150km Perimeter Ring -->
+<circle class="opacity-40" cx="100" cy="100" fill="none" r="90" stroke="currentColor" stroke-dasharray="4 4" stroke-width="1.5"></circle>
+<!-- 100km Mid Ring -->
+<circle class="opacity-20" cx="100" cy="100" fill="none" r="60" stroke="currentColor" stroke-width="1"></circle>
+<!-- 50km Inner Ring -->
+<circle class="opacity-20" cx="100" cy="100" fill="none" r="30" stroke="currentColor" stroke-width="1"></circle>
+<!-- Target Node (Center) -->
+<circle cx="100" cy="100" fill="#047857" r="7"></circle>
+<!-- Connecting Line to Slot 1 -->
+<line stroke="#166534" stroke-width="2" x1="100" x2="114" y1="100" y2="88"></line>
+<circle cx="114" cy="88" fill="#166534" r="5"></circle>
+<!-- Connecting Line to Slot 2 -->
+<line stroke="#047857" stroke-dasharray="2 2" stroke-width="2" x1="100" x2="60" y1="100" y2="135"></line>
+<circle cx="60" cy="135" fill="#047857" r="5"></circle>
+<!-- Secondary nearby nodes -->
+<circle class="opacity-60" cx="140" cy="140" fill="#52645f" r="3"></circle>
+<circle class="opacity-60" cx="80" cy="40" fill="#52645f" r="3"></circle>
+</svg>
+<div class="absolute bottom-2 text-center text-caption font-caption text-on-surface-variant">
+            Cluster Radius Scale: 1:150,000
+          </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Sticky Task Execution Bar -->
+<div class="sticky bottom-0 w-full bg-surface-container-lowest/95 backdrop-blur-md shadow-lg py-space-md z-40">
+<div class="max-w-[1600px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<!-- Progress Summary Text -->
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-serif">
+<span class="material-symbols-outlined text-[22px]">flaky</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-serif text-headline-sm text-primary">1 of 2 Peer Endorsements Secured</span>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-high text-on-surface font-label text-label-sm">50% Vetted</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">
+            Pending token signing by Hubballi Community Trust. You may proceed to prepare audited accounts & document vault.
+          </p>
+</div>
+</div>
+<!-- Action Button Group -->
+<div class="flex items-center gap-space-sm self-end md:self-auto">
+<button class="bg-surface-container text-on-surface px-space-md py-2.5 rounded font-label text-label-md hover:bg-surface-container-high transition-colors">
+          Save Endorsement State
+        </button>
+<button class="bg-primary text-on-primary px-space-lg py-2.5 rounded font-label text-label-md flex items-center gap-space-xs hover:bg-primary-container transition-colors shadow-sm">
+<span>Proceed to Document Vault & AI Pre-Screening</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Interactive micro-interaction for Token Refresh & Expiry simulator
+  const copyLinkBtn = Array.from(document.querySelectorAll('button')).find(btn => btn.textContent.includes('Generate Link')) || document.querySelectorAll('button')[3];
+  if (copyLinkBtn) {
+    copyLinkBtn.addEventListener('click', () => {
+      const originalText = copyLinkBtn.innerHTML;
+      copyLinkBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check</span><span>Token Link Copied</span>';
+      setTimeout(() => {
+        copyLinkBtn.innerHTML = originalText;
+      }, 2500);
+    });
+  }
+</script>
+  <footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full max-w-[1600px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-md text-on-surface-variant"><span class="font-caption text-caption">© 2024 ReliefNet Consortium • Node ID: IND-KA-BNG-04</span><span class="font-caption text-caption hidden sm:inline">• FIPS 140-3 Trust Fabric</span></div><div class="flex items-center gap-space-lg"><a class="font-label text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="operational-guidelines" href="#">Operational Guidelines</a><a class="font-label text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="security-manifesto" href="#">Security Manifesto</a><a class="font-label text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="incident-line" href="#">Crisis Emergency Dispatch</a></div></div></footer>
+</div>

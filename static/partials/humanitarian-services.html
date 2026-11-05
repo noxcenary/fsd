@@ -1,0 +1,707 @@
+<!-- Screen: Humanitarian Services Directory & Deployment | ID: humanitarian-services | UI Source: reliefnet_humanitarian_services_directory_deployment_2 -->
+<div id="screen-humanitarian-services" class="reliefnet-screen-view w-full" data-shell="dashboard">
+  
+<div class="flex flex-col w-full max-w-[1400px] mx-auto">
+<!-- Interactive Script for Filtering & Modals -->
+<script>
+          function switchTab(btn, cat) {
+            document.querySelectorAll('.filter-tab-pill').forEach(el => {
+              el.className = 'filter-tab-pill px-4 py-1.5 rounded-full text-slate-600 bg-white border border-slate-200 font-label text-[13px] font-medium flex items-center gap-2 transition-colors hover:bg-slate-50 hover:text-slate-900';
+              const badge = el.querySelector('.tab-badge');
+              if (badge) {
+                badge.className = 'tab-badge px-1.5 py-0.2 rounded-full bg-slate-100 text-slate-600 font-label text-[11px] font-semibold';
+              }
+            });
+            btn.className = 'filter-tab-pill px-4 py-1.5 rounded-full bg-[#064e3b] text-white border border-[#064e3b] font-label text-[13px] font-medium flex items-center gap-2 shadow-sm';
+            const activeBadge = btn.querySelector('.tab-badge');
+            if (activeBadge) {
+              activeBadge.className = 'tab-badge px-1.5 py-0.2 rounded-full bg-white/20 text-white font-label text-[11px] font-semibold';
+            }
+
+            const cards = document.querySelectorAll('.service-grid-card');
+            cards.forEach(card => {
+              if (cat === 'all' || card.dataset.category === cat) {
+                card.style.display = 'flex';
+              } else {
+                card.style.display = 'none';
+              }
+            });
+          }
+
+          function toggleQuickFilter(chip) {
+            chip.classList.toggle('bg-blue-50');
+            chip.classList.toggle('text-[#065f46]');
+            chip.classList.toggle('border-blue-300');
+            chip.classList.toggle('bg-white');
+            chip.classList.toggle('text-slate-600');
+            chip.classList.toggle('border-slate-200');
+          }
+
+          function openMissionDrawer() {
+            const drawer = document.getElementById('missionDrawer');
+            if (drawer) drawer.classList.remove('translate-x-full');
+          }
+
+          function closeMissionDrawer() {
+            const drawer = document.getElementById('missionDrawer');
+            if (drawer) drawer.classList.add('translate-x-full');
+          }
+
+          function triggerDispatchModal(serviceTitle, provider) {
+            const modal = document.getElementById('dispatchModal');
+            const titleSpan = document.getElementById('modalTargetService');
+            const providerSpan = document.getElementById('modalTargetProvider');
+            if (titleSpan) titleSpan.textContent = serviceTitle;
+            if (providerSpan) providerSpan.textContent = provider;
+            if (modal) modal.classList.remove('hidden');
+          }
+
+          function closeDispatchModal() {
+            const modal = document.getElementById('dispatchModal');
+            if (modal) modal.classList.add('hidden');
+          }
+        </script>
+<!-- Top Breadcrumb & Alexandria Header -->
+<div class="flex flex-col gap-2 pb-6 border-b border-slate-200 mb-6">
+<div class="flex items-center gap-2 text-slate-500 font-label text-[12px]">
+<span class="hover:text-slate-800 cursor-pointer">Operations Desk</span>
+<span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span>
+<span class="hover:text-slate-800 cursor-pointer">Logistics &amp; Fleets</span>
+<span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span>
+<span class="text-[#059669] font-semibold">Specialized Services Directory</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pt-2">
+<div class="flex flex-col max-w-3xl">
+<div class="flex items-center gap-2.5 mb-2">
+<span class="px-2.5 py-0.5 rounded bg-blue-50 text-[#065f46] border border-blue-200 font-label text-[11px] tracking-normal font-bold">Live Operational Ledger</span>
+<span class="text-slate-500 font-sans text-[12px] flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-[#059669]"></span> Synchronized with Karnataka SDMA Node
+                </span>
+</div>
+<h1 class="font-serif text-[32px] sm:text-[38px] text-[#08211c] tracking-tight font-bold leading-tight">
+                Humanitarian Services &amp; Operational Assets
+              </h1>
+<p class="font-sans text-[14px] text-slate-600 mt-2 leading-relaxed">
+                Coordinate mutual-aid capabilities: high-mobility 4x4 triage vans, swiftwater Zodiac squads, trailer water purification engineers, and field kitchens without inter-agency friction.
+              </p>
+</div>
+<!-- Action CTAs -->
+<div class="flex items-center gap-2.5 shrink-0 flex-wrap">
+<button class="px-3.5 py-2 rounded-md bg-white border border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-900 font-label text-[13px] font-semibold flex items-center gap-2 transition-all shadow-sm" onclick="openMissionDrawer()">
+<span class="material-symbols-outlined text-[18px] text-[#059669]">satellite_alt</span>
+<span>Active Mission Telemetry</span>
+<span class="px-1.5 py-0.5 rounded bg-[#064e3b] text-white font-label text-[11px] font-bold">1</span>
+</button>
+<button class="px-3.5 py-2 rounded-md bg-white border border-slate-200 hover:border-slate-300 text-slate-700 hover:text-slate-900 font-label text-[13px] font-semibold flex items-center gap-2 transition-all shadow-sm" onclick="triggerDispatchModal('Rapid Assistance Intake', 'Karnataka Inter-Agency Mesh')">
+<span class="material-symbols-outlined text-[18px] text-[#059669]">add_task</span>
+<span>Request Service Assistance</span>
+</button>
+<button class="px-4 py-2 rounded-md bg-[#059669] hover:bg-[#047857] text-white font-label text-[13px] font-semibold flex items-center gap-2 shadow-sm transition-all">
+<span class="material-symbols-outlined text-[18px]">domain_add</span>
+<span>Register Capability</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Telemetry Key Metrics (Alexandria Blue & Crisp White Style) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+<div class="bg-white p-4 rounded-lg border border-slate-200/90 shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label text-[11px] tracking-normal text-slate-500 font-medium">Active Mobile Clinics</span>
+<span class="font-sans text-[26px] text-[#08211c] font-bold mt-0.5">26 Units</span>
+<span class="font-sans text-[12px] text-[#059669] mt-1 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 19 In Field / 7 Standby
+              </span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-blue-50 border border-blue-100 text-[#059669] flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">medical_services</span>
+</div>
+</div>
+<div class="bg-white p-4 rounded-lg border border-slate-200/90 shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label text-[11px] tracking-normal text-slate-500 font-medium">Swiftwater &amp; Marine Vessels</span>
+<span class="font-sans text-[26px] text-[#08211c] font-bold mt-0.5">18 Boats</span>
+<span class="font-sans text-[12px] text-red-600 mt-1 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">crisis_alert</span> 12 Deployed in Belagavi Basin
+              </span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-red-50 border border-red-100 text-red-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">sailing</span>
+</div>
+</div>
+<div class="bg-white p-4 rounded-lg border border-slate-200/90 shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label text-[11px] tracking-normal text-slate-500 font-medium">Clean Water Flow / Hr</span>
+<span class="font-sans text-[26px] text-[#08211c] font-bold mt-0.5">48,000 L</span>
+<span class="font-sans text-[12px] text-[#065f46] mt-1 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">water_drop</span> 14 Engineering rigs active
+              </span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-blue-50 border border-blue-100 text-[#059669] flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">water_ec</span>
+</div>
+</div>
+<div class="bg-white p-4 rounded-lg border border-slate-200/90 shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label text-[11px] tracking-normal text-slate-500 font-medium">Rations &amp; Langar Output</span>
+<span class="font-sans text-[26px] text-[#08211c] font-bold mt-0.5">32,500/day</span>
+<span class="font-sans text-[12px] text-slate-600 mt-1 flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> 12 Mobile Kitchen trucks
+              </span>
+</div>
+<div class="w-11 h-11 rounded-lg bg-slate-50 border border-slate-200 text-[#064e3b] flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">soup_kitchen</span>
+</div>
+</div>
+</div>
+<!-- Category Nav Pills -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 mb-3 scrollbar-none">
+<button class="filter-tab-pill px-4 py-1.5 rounded-full bg-[#064e3b] text-white border border-[#064e3b] font-label text-[13px] font-medium flex items-center gap-2 shadow-sm" onclick="switchTab(this, 'all')">
+<span>All Field Services</span>
+<span class="tab-badge px-1.5 py-0.2 rounded-full bg-white/20 text-white font-label text-[11px] font-semibold">84</span>
+</button>
+<button class="filter-tab-pill px-4 py-1.5 rounded-full text-slate-600 bg-white border border-slate-200 font-label text-[13px] font-medium flex items-center gap-2 transition-colors hover:bg-slate-50 hover:text-slate-900" onclick="switchTab(this, 'medical')">
+<span class="material-symbols-outlined text-[16px] text-[#059669]">emergency</span>
+<span>Medical &amp; Mobile Clinics</span>
+<span class="tab-badge px-1.5 py-0.2 rounded-full bg-slate-100 text-slate-600 font-label text-[11px] font-semibold">26</span>
+</button>
+<button class="filter-tab-pill px-4 py-1.5 rounded-full text-slate-600 bg-white border border-slate-200 font-label text-[13px] font-medium flex items-center gap-2 transition-colors hover:bg-slate-50 hover:text-slate-900" onclick="switchTab(this, 'rescue')">
+<span class="material-symbols-outlined text-[16px] text-[#059669]">sailing</span>
+<span>Heavy Logistics &amp; Rescue Fleets</span>
+<span class="tab-badge px-1.5 py-0.2 rounded-full bg-slate-100 text-slate-600 font-label text-[11px] font-semibold">18</span>
+</button>
+<button class="filter-tab-pill px-4 py-1.5 rounded-full text-slate-600 bg-white border border-slate-200 font-label text-[13px] font-medium flex items-center gap-2 transition-colors hover:bg-slate-50 hover:text-slate-900" onclick="switchTab(this, 'wash')">
+<span class="material-symbols-outlined text-[16px] text-[#059669]">water_ph</span>
+<span>WASH &amp; Water Engineers</span>
+<span class="tab-badge px-1.5 py-0.2 rounded-full bg-slate-100 text-slate-600 font-label text-[11px] font-semibold">14</span>
+</button>
+<button class="filter-tab-pill px-4 py-1.5 rounded-full text-slate-600 bg-white border border-slate-200 font-label text-[13px] font-medium flex items-center gap-2 transition-colors hover:bg-slate-50 hover:text-slate-900" onclick="switchTab(this, 'food')">
+<span class="material-symbols-outlined text-[16px] text-[#059669]">restaurant</span>
+<span>Field Kitchens &amp; Catering</span>
+<span class="tab-badge px-1.5 py-0.2 rounded-full bg-slate-100 text-slate-600 font-label text-[11px] font-semibold">12</span>
+</button>
+<button class="filter-tab-pill px-4 py-1.5 rounded-full text-slate-600 bg-white border border-slate-200 font-label text-[13px] font-medium flex items-center gap-2 transition-colors hover:bg-slate-50 hover:text-slate-900" onclick="switchTab(this, 'roster')">
+<span class="material-symbols-outlined text-[16px] text-[#059669]">groups</span>
+<span>Volunteer Rapid Roster</span>
+<span class="tab-badge px-1.5 py-0.2 rounded-full bg-slate-100 text-slate-600 font-label text-[11px] font-semibold">14</span>
+</button>
+</div>
+<!-- Search & Filter Toolbar -->
+<div class="bg-white p-3.5 rounded-lg border border-slate-200 shadow-sm mb-6 flex flex-col md:flex-row gap-3 items-stretch md:items-center justify-between">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400 text-[19px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 rounded-md bg-slate-50 text-slate-800 placeholder:text-slate-400 font-sans text-[13px] border border-slate-200 focus:outline-none focus:border-[#059669] focus:bg-white transition-all" placeholder="Search by vehicle type, specialized gear, medical crew, or operational node..." type="text"/>
+</div>
+<div class="flex items-center gap-2 flex-wrap">
+<button class="px-3 py-1.5 rounded-md bg-blue-50 text-[#065f46] border border-blue-300 font-label text-[12px] font-semibold flex items-center gap-1.5 cursor-pointer transition-all" onclick="toggleQuickFilter(this)">
+<span class="material-symbols-outlined text-[15px] text-[#059669]">bolt</span>
+<span>Immediate Response (24/7)</span>
+</button>
+<button class="px-3 py-1.5 rounded-md bg-white text-slate-600 border border-slate-200 font-label text-[12px] font-medium flex items-center gap-1.5 cursor-pointer hover:bg-slate-50 transition-all" onclick="toggleQuickFilter(this)">
+<span class="material-symbols-outlined text-[15px] text-slate-400">airline_seat_recline_normal</span>
+<span>Dedicated Crew Included</span>
+</button>
+<button class="px-3 py-1.5 rounded-md bg-white text-slate-600 border border-slate-200 font-label text-[12px] font-medium flex items-center gap-1.5 cursor-pointer hover:bg-slate-50 transition-all" onclick="toggleQuickFilter(this)">
+<span class="material-symbols-outlined text-[15px] text-[#059669]">verified</span>
+<span>Govt Verified Tier-1</span>
+</button>
+<button class="px-3 py-1.5 rounded-md bg-white text-slate-600 border border-slate-200 font-label text-[12px] font-medium flex items-center gap-1.5 cursor-pointer hover:bg-slate-50 transition-all" onclick="toggleQuickFilter(this)">
+<span class="material-symbols-outlined text-[15px] text-slate-400">near_me</span>
+<span>Within 40km Radius</span>
+</button>
+<button class="w-8 h-8 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-800 hover:bg-slate-50 transition-colors" title="Export Manifest as GeoJSON">
+<span class="material-symbols-outlined text-[18px]">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Primary Services Showcase Grid (2x2 Layout with Alexandria Typography & Styling) -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-8">
+<!-- Card 1: 4x4 Mobile Triage Clinic -->
+<div class="service-grid-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition-all" data-category="medical">
+<div>
+<div class="p-5 bg-slate-50/80 border-b border-slate-200 flex items-start justify-between gap-4">
+<div class="flex gap-4">
+<div class="w-13 h-13 p-3 rounded-lg bg-blue-50 border border-blue-200 text-[#059669] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[30px]">ambulance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded bg-blue-100/70 text-[#065f46] font-label text-[11px] font-bold">Immediate Standby</span>
+<span class="px-2 py-0.5 rounded bg-slate-200/70 text-slate-700 font-label text-[11px] font-medium">4x4 Heavy Chassis</span>
+</div>
+<h2 class="font-serif text-[20px] text-[#08211c] font-bold tracking-tight truncate">
+                      2x 4x4 Mobile Triage Clinic &amp; O2 Vans
+                    </h2>
+<div class="flex items-center gap-2 text-slate-500 font-label text-[12px] mt-0.5">
+<span class="font-semibold text-slate-900">St. Jude Health Mission</span>
+<span>·</span>
+<span class="flex items-center gap-0.5 text-[#065f46] font-medium"><span class="material-symbols-outlined text-[14px]">verified</span> DARPAN #KA-2019-4412</span>
+</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-white border border-slate-200 text-slate-600 font-label text-[12px] font-medium shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-[#059669]">pin_drop</span> 5.0 km Depot
+                </span>
+</div>
+<!-- Spec Body & Photo Element -->
+<div class="p-5 flex flex-col md:flex-row gap-5">
+<div class="w-full md:w-44 h-36 rounded-md bg-cover bg-center shrink-0 overflow-hidden relative border border-slate-200" data-alt="Rugged white and green specialized 4x4 ambulance mobile medical clinic parked ready on a tarmac with oxygen equipment visible through open rear doors, subdued natural lighting, sharp utilitarian aesthetic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqYuBnlzIuMDUW-XQBgwog295GusTb-_C5pWg_pQFBronQiAfonhG1rVdFhhtl-dX5QNxO4XoWqpHqRCewiRn9mHTHJkNBrpLGLdinBQ6OcaY9BVZucdWCqAb-_jN2TLptsJIfa0FPOB3QfIK4RB-dUVzZlgpC7VNTLQayjaWi8bWxULDjJF7JKttVGpwe3jGoy8h3tk1XrQEHmmy7mJAOwMlFAksNE4ANfvY8S4Jv')">
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-[#064e3b] text-white font-label text-[10px] font-semibold">Self-Powered Diesel</span>
+</div>
+<div class="flex-1 flex flex-col justify-between space-y-3">
+<div class="grid grid-cols-2 gap-2 font-sans text-[13px]">
+<div class="bg-slate-50 border border-slate-200/70 p-2.5 rounded-md">
+<span class="font-label text-[10px] text-slate-500 block tracking-normal font-semibold">Crew Onboard</span>
+<span class="font-label text-[12px] text-slate-900 font-bold">1 Paramedic + 1 Driver</span>
+<span class="font-sans text-[11px] text-slate-500 block mt-0.5">12h rotational shift</span>
+</div>
+<div class="bg-slate-50 border border-slate-200/70 p-2.5 rounded-md">
+<span class="font-label text-[10px] text-slate-500 block tracking-normal font-semibold">Protocol Type</span>
+<span class="font-label text-[12px] text-slate-900 font-bold">Non-Monetary Aid</span>
+<span class="font-sans text-[11px] text-[#059669] block mt-0.5 font-medium">Govt mutual pact</span>
+</div>
+</div>
+<div>
+<span class="font-label text-[11px] text-slate-500 tracking-normal block mb-1 font-semibold">Specialized Payload Inventory</span>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-700 font-label text-[11px]">2x 10L/min O2 Concentrators</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-700 font-label text-[11px]">Zoll AED Defibrillator</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-700 font-label text-[11px]">4x Suture Minor Surgery Packs</span>
+<span class="px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-700 font-label text-[11px]">Cold-Chain Vaccines</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="px-5 py-3.5 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-4">
+<div class="flex items-center gap-2 font-label text-[12px] text-slate-600">
+<span class="w-2 h-2 rounded-full bg-[#059669]"></span>
+<span>Shivajinagar Yard · Instant GPS Tracking</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-md bg-white border border-slate-200 text-slate-700 font-label text-[12px] font-semibold hover:bg-slate-50 transition-colors">
+                  Inspect Crew Manifest
+                </button>
+<button class="px-3.5 py-1.5 rounded-md bg-[#059669] hover:bg-[#047857] text-white font-label text-[12px] font-semibold flex items-center gap-1 transition-all shadow-sm" onclick="triggerDispatchModal('2x 4x4 Mobile Triage Clinic &amp; Emergency Oxygen Vans', 'St. Jude Health Mission')">
+<span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
+<span>Request Dispatch</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Swiftwater Inflatable Rescue Boat (IRB) Squad -->
+<div class="service-grid-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition-all" data-category="rescue">
+<div>
+<div class="p-5 bg-slate-50/80 border-b border-slate-200 flex items-start justify-between gap-4">
+<div class="flex gap-4">
+<div class="w-13 h-13 p-3 rounded-lg bg-red-50 border border-red-200 text-red-600 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[30px]">sailing</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded bg-red-100 text-red-700 font-label text-[11px] font-bold">Active Sector Belagavi</span>
+<span class="px-2 py-0.5 rounded bg-slate-200/70 text-slate-700 font-label text-[11px] font-medium">Class-IV Water Qualified</span>
+</div>
+<h2 class="font-serif text-[20px] text-[#08211c] font-bold tracking-tight truncate">
+                      Swiftwater IRB Squad (Cluster B)
+                    </h2>
+<div class="flex items-center gap-2 text-slate-500 font-label text-[12px] mt-0.5">
+<span class="font-semibold text-slate-900">Red Cross Karnataka Disaster Wing</span>
+<span>·</span>
+<span class="flex items-center gap-0.5 text-[#065f46] font-medium"><span class="material-symbols-outlined text-[14px]">verified</span> Govt Verified Tier-1</span>
+</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-white border border-slate-200 text-slate-600 font-label text-[12px] font-medium shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-red-500">water</span> Krishna Basin
+                </span>
+</div>
+<!-- Spec Body & Photo Element -->
+<div class="p-5 flex flex-col md:flex-row gap-5">
+<div class="w-full md:w-44 h-36 rounded-md bg-cover bg-center shrink-0 overflow-hidden relative border border-slate-200" data-alt="High-contrast action shot of heavy duty orange inflatable Zodiac rescue boats moored on riverbank, safety helmets and life jackets stacked systematically, grey monsoon skies, rugged utilitarian gear" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkO9wpUtvdyg2b2K8kGDBiBZxbhflTnmNCnJcGtaiGIsb0PfOIq05i3fCLdkWWOCMMUWpjmlsM7I0bgfh7zqDh2RIRLFokdY4AfE4CH03YmkTcIcRTeVhl3rP3JgRsyclzkr1CxHuNUTKk2P2S_Ui52iFX96e8zoGT1X8Cm5OJgG0S33TVhUGk03lN-tGV50s2kLkSEuJROtFOOdalPiyqZAmIxjkwFuS5L3U4Ll8A')">
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-red-700 text-white font-label text-[10px] font-semibold">Evac: 40/hr capacity</span>
+</div>
+<div class="flex-1 flex flex-col justify-between space-y-3">
+<div class="grid grid-cols-2 gap-2 font-sans text-[13px]">
+<div class="bg-slate-50 border border-slate-200/70 p-2.5 rounded-md">
+<span class="font-label text-[10px] text-slate-500 block tracking-normal font-semibold">Boat Fleets</span>
+<span class="font-label text-[12px] text-slate-900 font-bold">3x Zodiac 40HP Outboard</span>
+<span class="font-sans text-[11px] text-slate-500 block mt-0.5">Aluminum floorboards</span>
+</div>
+<div class="bg-slate-50 border border-slate-200/70 p-2.5 rounded-md">
+<span class="font-label text-[10px] text-slate-500 block tracking-normal font-semibold">Divers &amp; Crew</span>
+<span class="font-label text-[12px] text-slate-900 font-bold">6x Certified Rescue Divers</span>
+<span class="font-sans text-[11px] text-[#059669] block mt-0.5 font-medium">WFR &amp; PADI certified</span>
+</div>
+</div>
+<div>
+<span class="font-label text-[11px] text-slate-500 tracking-normal block mb-1 font-semibold">Operational Nodal Readiness</span>
+<p class="font-sans text-[13px] text-slate-600 line-clamp-2 leading-relaxed">
+                      Currently staged along Hubballi-Belagavi riverine corridor. Authorized for emergency lateral re-tasking by district disaster collectors or network incident commanders.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="px-5 py-3.5 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-4">
+<div class="flex items-center gap-2 font-label text-[12px] text-red-700 font-medium">
+<span class="w-2 h-2 rounded-full bg-red-600 animate-ping"></span>
+<span>Nodal Call Protocol: Tier-1 Escalation Required</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-md bg-white border border-slate-200 text-slate-700 font-label text-[12px] font-semibold hover:bg-slate-50 transition-colors">
+                  Nodal Comms Line
+                </button>
+<button class="px-3.5 py-1.5 rounded-md bg-[#064e3b] hover:bg-[#08211c] text-white font-label text-[12px] font-semibold flex items-center gap-1 transition-all shadow-sm" onclick="triggerDispatchModal('Swiftwater Inflatable Rescue Boat Squad (Cluster B)', 'Red Cross Karnataka Disaster Wing')">
+<span class="material-symbols-outlined text-[16px]">call_split</span>
+<span>Joint Mission Re-Task</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Solar Water Filtration Engineering Team -->
+<div class="service-grid-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition-all" data-category="wash">
+<div>
+<div class="p-5 bg-slate-50/80 border-b border-slate-200 flex items-start justify-between gap-4">
+<div class="flex gap-4">
+<div class="w-13 h-13 p-3 rounded-lg bg-blue-50 border border-blue-200 text-[#059669] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[30px]">water_drop</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded bg-blue-100 text-[#065f46] font-label text-[11px] font-bold">Available for Dispatch</span>
+<span class="px-2 py-0.5 rounded bg-slate-200/70 text-slate-700 font-label text-[11px] font-medium">Off-Grid Solar Rig</span>
+</div>
+<h2 class="font-serif text-[20px] text-[#08211c] font-bold tracking-tight truncate">
+                      High-Capacity Solar Water Filtration Team
+                    </h2>
+<div class="flex items-center gap-2 text-slate-500 font-label text-[12px] mt-0.5">
+<span class="font-semibold text-slate-900">CleanWaters Grassroots Collective</span>
+<span>·</span>
+<span class="text-slate-500 font-medium">Community Verified (4 Endorsements)</span>
+</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-white border border-slate-200 text-slate-600 font-label text-[12px] font-medium shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-[#059669]">pin_drop</span> 14 km Depot
+                </span>
+</div>
+<!-- Spec Body & Photo Element -->
+<div class="p-5 flex flex-col md:flex-row gap-5">
+<div class="w-full md:w-44 h-36 rounded-md bg-cover bg-center shrink-0 overflow-hidden relative border border-slate-200" data-alt="Industrial portable water filtration trailer with solar photovoltaic panels deployed on roof, clean stainless steel pumps, technician inspecting test vials, daylight outdoor technical setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBb3D1tZohIpPxaHOeUlFewlxI232AFNQSntyCVfUBG4Rq8KRhAPW9mSr8sNrCPeLrGTjdhJn_T1JteRodOIoPFzcKddF0IRIFdHUXSonn8sIv_DWFYLAh2rev0Hr4KFYNxBjAgghZQ9E_LUmzipz3048dV3TN7TMsXxeeVcrCELiJ8YaL1moNKMWPneasLVs7NZjSbSCoNoxK-MHJj5SI4oSgpDyYFX2BmDLf58P73')">
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-[#064e3b] text-white font-label text-[10px] font-semibold">2,000 L/hr Potable</span>
+</div>
+<div class="flex-1 flex flex-col justify-between space-y-3">
+<div class="grid grid-cols-2 gap-2 font-sans text-[13px]">
+<div class="bg-slate-50 border border-slate-200/70 p-2.5 rounded-md">
+<span class="font-label text-[10px] text-slate-500 block tracking-normal font-semibold">Filtration Tech</span>
+<span class="font-label text-[12px] text-slate-900 font-bold">Sand + Carbon + UV</span>
+<span class="font-sans text-[11px] text-slate-500 block mt-0.5">Tested to WHO flood standards</span>
+</div>
+<div class="bg-slate-50 border border-slate-200/70 p-2.5 rounded-md">
+<span class="font-label text-[10px] text-slate-500 block tracking-normal font-semibold">Deploy Crew</span>
+<span class="font-label text-[12px] text-slate-900 font-bold">2 Certified Engineers</span>
+<span class="font-sans text-[11px] text-[#059669] block mt-0.5 font-medium">Full spares &amp; replacement</span>
+</div>
+</div>
+<div>
+<span class="font-label text-[11px] text-slate-500 tracking-normal block mb-1 font-semibold">Mobility &amp; Deployment Readiness</span>
+<p class="font-sans text-[13px] text-slate-600 line-clamp-2 leading-relaxed">
+                      Mounted on towable off-road trailer. Features integrated 12kW LiFePO4 battery pack and 1.8kW rooftop solar foldouts; operates autonomously without fuel dependency for 72+ continuous hours.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="px-5 py-3.5 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-4">
+<div class="flex items-center gap-2 font-label text-[12px] text-slate-600">
+<span class="w-2 h-2 rounded-full bg-[#059669]"></span>
+<span>Electronic City Yard · Pre-calibrated Turbidity Sensors</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-md bg-white border border-slate-200 text-slate-700 font-label text-[12px] font-semibold hover:bg-slate-50 transition-colors">
+                  View Field Proof
+                </button>
+<button class="px-3.5 py-1.5 rounded-md bg-[#059669] hover:bg-[#047857] text-white font-label text-[12px] font-semibold flex items-center gap-1 transition-all shadow-sm" onclick="triggerDispatchModal('High-Capacity Solar Water Filtration Engineering Team', 'CleanWaters Grassroots Collective')">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Request Deployment</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Community Heavy Relief Kitchen Unit -->
+<div class="service-grid-card bg-white rounded-lg border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition-all" data-category="food">
+<div>
+<div class="p-5 bg-slate-50/80 border-b border-slate-200 flex items-start justify-between gap-4">
+<div class="flex gap-4">
+<div class="w-13 h-13 p-3 rounded-lg bg-blue-50 border border-blue-200 text-[#059669] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[30px]">soup_kitchen</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded bg-blue-100 text-[#065f46] font-label text-[11px] font-bold">Active Rolling Fleet</span>
+<span class="px-2 py-0.5 rounded bg-slate-200/70 text-slate-700 font-label text-[11px] font-medium">High-Volume Kitchen</span>
+</div>
+<h2 class="font-serif text-[20px] text-[#08211c] font-bold tracking-tight truncate">
+                      Heavy Relief Kitchen Fleet (Mobile Langar)
+                    </h2>
+<div class="flex items-center gap-2 text-slate-500 font-label text-[12px] mt-0.5">
+<span class="font-semibold text-slate-900">Annapoorna Humanitarian Trust</span>
+<span>·</span>
+<span class="text-slate-500 font-medium">Community Verified Network Partner</span>
+</div>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded bg-white border border-slate-200 text-slate-600 font-label text-[12px] font-medium shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-[#059669]">pin_drop</span> Yeshwanthpur Base
+                </span>
+</div>
+<!-- Spec Body & Photo Element -->
+<div class="p-5 flex flex-col md:flex-row gap-5">
+<div class="w-full md:w-44 h-36 rounded-md bg-cover bg-center shrink-0 overflow-hidden relative border border-slate-200" data-alt="Large commercial stainless steel mobile cooking truck interior with clean industrial steam kettles, packed sealed hygienic relief food boxes stacked neatly, volunteers in clean aprons preparing supplies" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmudJ1T7UopgFm6CBcswD-rfGuOfNGZeGJb0KYqOQqf1QylN8pj3NoqI4sEmThBrCM9xeR0Jn8XchceLpnq9U0vmSZQK_6lQKqrZ86UCqyedcfo372BcWleCklouT3ylYlETC-6SeJMVyEp6VLuyBGgOrydllIKIGE224Y3cV2HlX2-0M2HQedX1gHYVYmiKqjOnMXmitCSnF2nC1vKG8N68YsxJ6MpczIxTRHh5J4')">
+<span class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-[#064e3b] text-white font-label text-[10px] font-semibold">3,500 meals/cycle</span>
+</div>
+<div class="flex-1 flex flex-col justify-between space-y-3">
+<div class="grid grid-cols-2 gap-2 font-sans text-[13px]">
+<div class="bg-slate-50 border border-slate-200/70 p-2.5 rounded-md">
+<span class="font-label text-[10px] text-slate-500 block tracking-normal font-semibold">Truck Fleet</span>
+<span class="font-label text-[12px] text-slate-900 font-bold">2x Eicher 14ft Rigs</span>
+<span class="font-sans text-[11px] text-slate-500 block mt-0.5">Industrial LPG manifold + tanks</span>
+</div>
+<div class="bg-slate-50 border border-slate-200/70 p-2.5 rounded-md">
+<span class="font-label text-[10px] text-slate-500 block tracking-normal font-semibold">Thermal Holding</span>
+<span class="font-label text-[12px] text-slate-900 font-bold">Insulated Dispensers</span>
+<span class="font-sans text-[11px] text-[#059669] block mt-0.5 font-medium">Maintains 65°C safe food</span>
+</div>
+</div>
+<div>
+<span class="font-label text-[11px] text-slate-500 tracking-normal block mb-1 font-semibold">Operational Model</span>
+<p class="font-sans text-[13px] text-slate-600 line-clamp-2 leading-relaxed">
+                      Rapid mobilization to relief evacuation clusters. Can hook directly to central raw grain supplies or mobilize with pre-packed dal, rice, and sealed dry biscuit rations for first 48 hours.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="px-5 py-3.5 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-4">
+<div class="flex items-center gap-2 font-label text-[12px] text-slate-600">
+<span class="w-2 h-2 rounded-full bg-[#059669]"></span>
+<span>FSSAI Certified Hygiene Protocols Active</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-md bg-white border border-slate-200 text-slate-700 font-label text-[12px] font-semibold hover:bg-slate-50 transition-colors">
+                  Coordinate Rations Hub
+                </button>
+<button class="px-3.5 py-1.5 rounded-md bg-[#059669] hover:bg-[#047857] text-white font-label text-[12px] font-semibold flex items-center gap-1 transition-all shadow-sm" onclick="triggerDispatchModal('Heavy Relief Kitchen Unit (Mobile Langar Fleet)', 'Annapoorna Humanitarian Trust')">
+<span class="material-symbols-outlined text-[16px]">soup_kitchen</span>
+<span>Request Kitchen Rig</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Mutual-Aid Protocol Accord & Attestation Banner -->
+<div class="bg-white border border-slate-200 rounded-lg p-6 mb-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-blue-50 border border-blue-200 text-[#059669] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px]">handshake</span>
+</div>
+<div class="flex flex-col">
+<span class="font-serif text-[18px] text-[#08211c] font-bold">Standard Mutual-Aid Service Pact (ReliefNet SMASP-10)</span>
+<p class="font-sans text-[13px] text-slate-600 max-w-2xl mt-0.5 leading-relaxed">
+                All shared vehicular assets, specialized engineering crews, and rescue boats operate under decentralized non-monetary aid compacts. Fuel replenishment is audited via QR ledger and backed by SDMA emergency contingency credits.
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-2.5 shrink-0">
+<button class="px-4 py-2 rounded-md bg-white border border-slate-200 text-slate-700 font-label text-[13px] font-semibold hover:bg-slate-50 transition-colors">
+              Read Mutual-Aid Bylaws
+            </button>
+<button class="px-4 py-2 rounded-md bg-[#064e3b] hover:bg-[#08211c] text-white font-label text-[13px] font-semibold flex items-center gap-1.5 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Review Signed Compacts</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Telemetry & Joint Mission Drawer (Right Flyout) -->
+<div class="fixed top-0 right-0 h-full w-full max-w-lg bg-white border-l border-slate-200 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between" id="missionDrawer">
+<div class="flex flex-col flex-1 overflow-y-auto">
+<!-- Drawer Header -->
+<div class="p-5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="w-2.5 h-2.5 rounded-full bg-[#059669] animate-pulse"></span>
+<div>
+<span class="font-label text-[11px] tracking-normal text-slate-500 font-bold block">Joint Mission Desk</span>
+<span class="font-serif text-[18px] text-[#08211c] font-bold">Mission #JMM-402</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 transition-colors" onclick="closeMissionDrawer()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Drawer Content -->
+<div class="p-5 space-y-5">
+<!-- Target Mission Overview -->
+<div class="bg-blue-50/50 border border-blue-100 p-4 rounded-lg space-y-1.5">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-blue-100 text-[#065f46] font-label text-[11px] font-bold">Active Deployment</span>
+<span class="font-sans text-[12px] text-slate-500">Started 4h 18m ago</span>
+</div>
+<span class="font-serif text-[16px] text-[#08211c] block font-bold">Hosapete Flood Camp Medical Rapid Response</span>
+<p class="font-sans text-[13px] text-slate-600 leading-relaxed">
+                St. Jude Mobile Triage Clinic #1 assigned to triage 240 displaced families at Government Higher Primary School Relief Hub.
+              </p>
+</div>
+<!-- Telemetry Map Preview -->
+<div>
+<span class="font-label text-[11px] tracking-normal text-slate-500 block mb-2 font-bold">Live GPS Node Telemetry</span>
+<div class="w-full h-44 rounded-lg bg-cover bg-center border border-slate-200 relative overflow-hidden flex items-end p-3" data-location="Hosapete, Karnataka" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCP-tumym7OQC4-UwSsW1_c6tD6x03jP09Ma5bMsPJx2KI9v2VJRCUY4wDlHcxU5jfBnC2ZWZW17sgSmdn9syd3Mn14lIRy6q8imRNlXI_oHjcLEAHLPX3rC9qYX_TTjH_81OQ9r0TdaqmxaOFVzb0WJUX1MDWkAbVXiXvkCp-AyLzsBMjjy07NPWMECaalRN7DWPHzRIHkx1QRPy4oY_hSTaSDrmmPY04TqKM1A1Fz')">
+<div class="bg-white/95 backdrop-blur-md border border-slate-200 px-3 py-2 rounded-md flex items-center justify-between w-full shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-red-600">navigation</span>
+<span class="font-label text-[12px] text-slate-900 font-bold">Current Speed: 38 km/h</span>
+</div>
+<span class="font-sans text-[12px] text-slate-500 font-medium">ETA: 22 Mins</span>
+</div>
+</div>
+</div>
+<!-- Consumable & Mutual-Aid Attestation Audit -->
+<div class="space-y-2">
+<span class="font-label text-[11px] tracking-normal text-slate-500 block font-bold">Mission Telemetry &amp; Log</span>
+<div class="bg-slate-50 border border-slate-200/80 rounded-md p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[19px] text-[#059669]">local_gas_station</span>
+<span class="font-sans text-[13px] text-slate-700 font-medium">Fuel Level (Diesel)</span>
+</div>
+<span class="font-sans text-[13px] text-slate-900 font-bold">78% (Tank 60L)</span>
+</div>
+<div class="bg-slate-50 border border-slate-200/80 rounded-md p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[19px] text-[#059669]">medical_information</span>
+<span class="font-sans text-[13px] text-slate-700 font-medium">Oxygen Reserve</span>
+</div>
+<span class="font-sans text-[13px] text-slate-900 font-bold">2,400 L / 100%</span>
+</div>
+<div class="bg-slate-50 border border-slate-200/80 rounded-md p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-[19px] text-slate-500">assignment_turned_in</span>
+<span class="font-sans text-[13px] text-slate-700 font-medium">Attestation Compact</span>
+</div>
+<span class="font-label text-[12px] text-[#065f46] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">check</span> Digitally Signed
+                </span>
+</div>
+</div>
+<!-- Checkpoints Timeline -->
+<div>
+<span class="font-label text-[11px] tracking-normal text-slate-500 block mb-2 font-bold">Operational Checkpoints</span>
+<div class="space-y-3 relative pl-4 border-l border-slate-200 ml-1">
+<div class="flex items-start gap-2.5 relative">
+<span class="w-2.5 h-2.5 rounded-full bg-[#059669] -ml-[21px] mt-1 ring-4 ring-blue-50"></span>
+<div class="flex flex-col">
+<span class="font-sans text-[13px] text-slate-900 font-semibold">Checkpoint 2: Passed Tungabhadra Toll Gate</span>
+<span class="font-sans text-[11px] text-slate-500">Zulu 08:12 · Paramedic reports smooth transit</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5 relative">
+<span class="w-2.5 h-2.5 rounded-full bg-slate-400 -ml-[21px] mt-1 ring-4 ring-slate-100"></span>
+<div class="flex flex-col">
+<span class="font-sans text-[13px] text-slate-900 font-semibold">Checkpoint 1: Departed Shivajinagar Hub</span>
+<span class="font-sans text-[11px] text-slate-500">Zulu 04:24 · Pre-trip equipment certified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-3">
+<button class="px-3.5 py-2 rounded-md bg-white border border-slate-200 text-slate-700 font-label text-[12px] font-semibold hover:bg-slate-100 transition-colors" onclick="closeMissionDrawer()">
+            Dismiss Panel
+          </button>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-2 rounded-md bg-white border border-slate-200 text-slate-700 font-label text-[12px] font-semibold hover:bg-slate-100 transition-colors">
+              Mission Log PDF
+            </button>
+<button class="px-4 py-2 rounded-md bg-[#059669] hover:bg-[#047857] text-white font-label text-[12px] font-semibold transition-colors shadow-sm">
+              Broadcast Comms
+            </button>
+</div>
+</div>
+</div>
+<!-- Dispatch / Mutual-Aid Request Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/50 backdrop-blur-sm" id="dispatchModal">
+<div class="bg-white rounded-lg max-w-lg w-full border border-slate-200 shadow-2xl overflow-hidden flex flex-col">
+<!-- Modal Header -->
+<div class="p-5 bg-slate-50 border-b border-slate-200 flex items-start justify-between">
+<div>
+<span class="font-label text-[11px] tracking-normal text-slate-500 font-bold block">Humanitarian Inter-Agency Dispatch</span>
+<h3 class="font-serif text-[19px] text-[#08211c] font-bold mt-0.5" id="modalTargetService">Specialized Asset Dispatch</h3>
+<span class="font-label text-[12px] text-[#059669] font-medium" id="modalTargetProvider">St. Jude Health Mission</span>
+</div>
+<button class="w-8 h-8 rounded-md bg-white border border-slate-200 flex items-center justify-center text-slate-500 hover:text-slate-900 transition-colors" onclick="closeDispatchModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Modal Body Form -->
+<div class="p-5 space-y-4">
+<div>
+<label class="font-label text-[11px] tracking-normal text-slate-600 block mb-1 font-bold">Incident / Crisis Cluster</label>
+<select class="w-full px-3 py-2 rounded-md bg-slate-50 border border-slate-200 text-slate-900 font-sans text-[13px] focus:outline-none focus:border-[#059669]">
+<option>Flood Relief · North Karnataka (Active Priority)</option>
+<option>Bagalkot Water Contamination Zone</option>
+<option>Raichur Evacuation Transit Center 3</option>
+</select>
+</div>
+<div>
+<label class="font-label text-[11px] tracking-normal text-slate-600 block mb-1 font-bold">Target Destination / Delivery Hub Coordinates</label>
+<input class="w-full px-3 py-2 rounded-md bg-slate-50 border border-slate-200 text-slate-900 font-sans text-[13px] focus:outline-none focus:border-[#059669]" type="text" value="Community Hall Center, Ward 4, Hosapete (15.2689° N, 76.3909° E)"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="font-label text-[11px] tracking-normal text-slate-600 block mb-1 font-bold">Requested Duration</label>
+<select class="w-full px-3 py-2 rounded-md bg-slate-50 border border-slate-200 text-slate-900 font-sans text-[13px] focus:outline-none focus:border-[#059669]">
+<option>48 Hours (Standard)</option>
+<option>72 Hours (Extended)</option>
+<option>5 Days (Rotating Crew)</option>
+</select>
+</div>
+<div>
+<label class="font-label text-[11px] tracking-normal text-slate-600 block mb-1 font-bold">Fuel Attestation</label>
+<div class="h-10 px-3 rounded-md bg-slate-100 border border-slate-200 flex items-center text-slate-600 font-label text-[12px] font-medium">
+                  SDMA Card Contingency
+                </div>
+</div>
+</div>
+<div class="p-3.5 rounded-md bg-blue-50/60 border border-blue-200 space-y-1">
+<div class="flex items-center gap-1.5 text-[#065f46] font-label text-[12px] font-bold">
+<span class="material-symbols-outlined text-[16px] text-[#059669]">verified_user</span>
+<span>ReliefNet Non-Monetary Mutual-Aid Agreement</span>
+</div>
+<p class="font-sans text-[12px] text-slate-600 leading-relaxed">
+                By dispatching, requesting officer pledges emergency security clearances, secure staging access, and return replenishment of consumables under Karnataka Disaster Protocol #2024-C.
+              </p>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-end gap-2.5">
+<button class="px-4 py-2 rounded-md bg-white border border-slate-200 text-slate-700 font-label text-[13px] font-semibold hover:bg-slate-100 transition-colors" onclick="closeDispatchModal()">
+              Cancel
+            </button>
+<button class="px-5 py-2 rounded-md bg-[#059669] hover:bg-[#047857] text-white font-label text-[13px] font-bold flex items-center gap-1.5 transition-all shadow-sm" onclick="closeDispatchModal(); alert('Emergency dispatch request transmitted via satellite packet relay to asset leads.');">
+<span class="material-symbols-outlined text-[17px]">bolt</span>
+<span>Confirm Dispatch Order</span>
+</button>
+</div>
+</div>
+</div>
+
+  
+</div>
+
+</div>

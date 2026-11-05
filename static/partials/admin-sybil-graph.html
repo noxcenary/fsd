@@ -1,0 +1,644 @@
+<!-- Screen: Cross-Network Sybil Detection & Graph Risk Intelligence | ID: admin-sybil-graph | UI Source: reliefnet_admin_ai_risk_sybil_graph_intelligence_2 -->
+<div id="screen-admin-sybil-graph" class="reliefnet-screen-view w-full" data-shell="admin">
+  <div class="flex flex-col w-full">
+<!-- Interactive Toast Notification (Simulated System Intercept) -->
+<div class="fixed bottom-6 right-6 z-50 transition-all duration-300 transform translate-y-24 opacity-0 pointer-events-none flex items-center gap-space-sm bg-[#064e3b] text-on-primary px-space-lg py-space-md rounded-xl shadow-2xl border border-primary-fixed-dim/30" id="toastNotification">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label font-bold text-xs" id="toastTitle">Cryptographic Block Committed</span>
+<span class="font-sans text-xs text-primary-fixed-dim" id="toastMessage">Entities quarantined. SHA-256 state seal synced.</span>
+</div>
+</div>
+<!-- Primary Intelligence Canvas -->
+<div class="w-full px-space-lg py-space-md space-y-space-md">
+<!-- Top Command & Anomaly Telemetry Bar -->
+<div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-md bg-surface-container-lowest p-space-lg rounded-xl shadow-sm border border-outline-variant/30">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-sans text-xs">
+<span>Governance &amp; Audit</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Statutory Review</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-[#059669] font-medium">AI Risk &amp; Sybil Graph</span>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-serif text-2xl font-bold tracking-tight text-[#064e3b]">Cross-Network Sybil Detection &amp; Graph Risk Intelligence</h1>
+<div class="flex items-center gap-1.5 px-space-sm py-1 rounded bg-[#ecfdf5] text-[#047857] font-label text-xs font-semibold">
+<span class="w-2 h-2 rounded-full bg-[#059669] animate-ping"></span>
+<span class="font-mono tracking-normal">DAG Sweep: ACTIVE (Zulu 14:48:10)</span>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant px-space-xs py-0.5 rounded font-mono font-label text-xs">RFC-0941 V1.4 STRICT</span>
+</div>
+</div>
+<div class="flex items-center flex-wrap gap-space-xs">
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label text-xs font-semibold transition-colors active:scale-95 border border-outline-variant/30" id="btnTopologyScan" onclick="triggerScanAnimation()">
+<span class="material-symbols-outlined text-[18px]" id="scanIcon">sync</span>
+<span>Force Topology Scan</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label text-xs font-semibold transition-colors border border-outline-variant/30" onclick="showToast('Threat Dossier Exported', 'Downloaded: SYB-2024-09_NDMA_Forensic_Pack.json')">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export Dossier (.JSON)</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-[#059669] text-on-primary hover:bg-[#064e3b] font-label text-xs font-semibold transition-colors shadow-sm" onclick="showToast('Norms Synchronized', 'Peer loop coefficient clamped to zero tolerance.')">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Update Sybil Heuristics</span>
+</button>
+</div>
+</div>
+<!-- 4 Risk Telemetry KPI Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs tracking-normal text-on-surface-variant font-bold">Graph Nodes Monitored</span>
+<span class="material-symbols-outlined text-[20px] text-[#059669]">hub</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-serif text-2xl font-bold text-[#064e3b] tracking-tight">1,842 <span class="font-sans text-xs font-normal text-on-surface-variant">Entities</span></div>
+<div class="font-sans text-xs text-on-surface-variant flex items-center justify-between mt-1">
+<span>3,410 Directed Peer Edges</span>
+<span class="text-[#059669] font-medium font-mono">+18 today</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-space-sm overflow-hidden">
+<div class="bg-[#059669] h-full rounded-full" style="width: 82%;"></div>
+</div>
+</div>
+<!-- Card 2: Loops Blocked -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs tracking-normal text-error font-bold">Recursive Loops Blocked</span>
+<span class="material-symbols-outlined text-[20px] text-error" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-serif text-2xl font-bold text-error tracking-tight">14 <span class="font-sans text-xs font-normal text-on-surface-variant">Rings Intercepted</span></div>
+<div class="font-sans text-xs text-on-surface-variant flex items-center justify-between mt-1">
+<span>Tit-For-Tat Collusion</span>
+<span class="font-label text-[10px] bg-error-container text-on-error-container px-1 py-0.5 rounded font-mono font-bold">CRITICAL</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-space-sm overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Card 3: Optical Flags -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs tracking-normal text-on-surface-variant font-bold">Synthetic Document Flags</span>
+<span class="material-symbols-outlined text-[20px] text-[#059669]">document_scanner</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-serif text-2xl font-bold text-[#064e3b] tracking-tight">03 <span class="font-sans text-xs font-normal text-on-surface-variant">Anomalies</span></div>
+<div class="font-sans text-xs text-on-surface-variant flex items-center justify-between mt-1">
+<span>Pixel Hash Clones (OCR v4.2)</span>
+<span class="text-[#064e3b] font-semibold font-mono">Dharwad Sec</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-space-sm overflow-hidden">
+<div class="bg-[#059669] h-full rounded-full" style="width: 35%;"></div>
+</div>
+</div>
+<!-- Card 4: Trust Integrity -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs tracking-normal text-on-surface-variant font-bold">Consortium Trust Integrity</span>
+<span class="material-symbols-outlined text-[20px] text-[#059669]">verified</span>
+</div>
+<div class="mt-space-sm">
+<div class="font-serif text-2xl font-bold text-[#064e3b] tracking-tight">99.4% <span class="font-sans text-xs font-normal text-[#059669] font-medium">Clean</span></div>
+<div class="font-sans text-xs text-on-surface-variant flex items-center justify-between mt-1">
+<span>State Reserve Quorum</span>
+<span class="text-[#059669] font-semibold font-mono">SEC-L4 Active</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full mt-space-sm overflow-hidden">
+<div class="bg-[#059669] h-full rounded-full" style="width: 99.4%;"></div>
+</div>
+</div>
+</div>
+<!-- Main Workspace Split: Left (65%) Interactive DAG & Attack Ring, Right (35%) Threat Inspector -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start">
+<!-- LEFT AREA (65% width approx -> 8 columns out of 12) -->
+<div class="lg:col-span-8 space-y-space-md">
+<!-- Visual Canvas Card -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col border border-outline-variant/30">
+<!-- Canvas Toolbar Header -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex flex-wrap items-center justify-between gap-space-xs border-b border-outline-variant/20">
+<div class="flex items-center gap-space-sm">
+<span class="font-label text-xs tracking-normal text-[#064e3b] font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-[#059669]">schema</span>
+                TOPOLOGY PROJECTION MATRIX
+              </span>
+<span class="font-mono text-xs text-on-surface-variant bg-surface-container-high px-1.5 py-0.5 rounded">KARNATAKA NODE CLUSTER</span>
+</div>
+<!-- Filters & Sliders -->
+<div class="flex items-center flex-wrap gap-space-sm">
+<div class="flex items-center gap-1 text-xs text-on-surface-variant">
+<span>Dist. Radius:</span>
+<input class="w-16 accent-[#059669] h-1 bg-surface-container cursor-pointer" max="300" min="50" title="Proximity Vector Slider" type="range" value="150"/>
+<span class="font-mono font-label text-xs text-on-surface font-semibold">150km</span>
+</div>
+<div class="flex items-center gap-1 text-xs text-on-surface-variant pl-space-xs">
+<span>Min Weight:</span>
+<input class="w-14 accent-[#059669] h-1 bg-surface-container cursor-pointer" max="10" min="1" title="Edge Weight Slider" type="range" value="3"/>
+<span class="font-mono font-label text-xs text-on-surface font-semibold">0.3</span>
+</div>
+<!-- Filter Toggle for Collusion -->
+<button class="flex items-center gap-1 px-space-xs py-1 rounded bg-error-container text-on-error-container font-label text-xs font-semibold transition-all" id="toggleFilterLoop" onclick="toggleSybilHighlight()">
+<span class="material-symbols-outlined text-[14px]">cycle</span>
+<span>Highlight Cycles</span>
+</button>
+<div class="flex items-center bg-surface-container rounded p-0.5 border border-outline-variant/30">
+<button class="p-1 hover:bg-surface-container-high rounded text-on-surface" onclick="adjustZoom(1.1)" title="Zoom In"><span class="material-symbols-outlined text-[16px]">zoom_in</span></button>
+<button class="p-1 hover:bg-surface-container-high rounded text-on-surface" onclick="adjustZoom(0.9)" title="Zoom Out"><span class="material-symbols-outlined text-[16px]">zoom_out</span></button>
+<button class="p-1 hover:bg-surface-container-high rounded text-on-surface" onclick="resetZoom()" title="Center View"><span class="material-symbols-outlined text-[16px]">center_focus_strong</span></button>
+</div>
+</div>
+</div>
+<!-- Interactive SVG Network Graph Container -->
+<div class="relative w-full h-[520px] bg-[#08211c] overflow-hidden select-none cursor-grab active:cursor-grabbing flex items-center justify-center" id="graphViewport">
+<!-- Background Coordinate Grid Pattern -->
+<svg class="absolute inset-0 w-full h-full opacity-15 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="40" id="grid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="#34d399" stroke-width="0.5"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid)" height="100%" width="100%"></rect>
+</svg>
+<!-- Vector Graph Scene -->
+<svg class="w-full h-full transition-transform duration-300" id="networkGraphSvg" viewbox="0 0 900 520">
+<defs>
+<!-- Marker Arrowheads -->
+<marker id="arrow-blue" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="22" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#059669"></path>
+</marker>
+<marker id="arrow-amber" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="20" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#6ee7b7"></path>
+</marker>
+<marker id="arrow-red" markerheight="6" markerwidth="6" orient="auto-start-reverse" refx="22" refy="5" viewbox="0 0 10 10">
+<path d="M 0 1 L 10 5 L 0 9 z" fill="#ba1a1a"></path>
+</marker>
+<!-- Glowing Filter for Malicious Loop -->
+<filter height="140%" id="crimsonGlow" width="140%" x="-20%" y="-20%">
+<fegaussianblur result="blur" stddeviation="3"></fegaussianblur>
+<fecomposite in="SourceGraphic" in2="blur" operator="over"></fecomposite>
+</filter>
+</defs>
+<!-- CLUSTER ALPHA: Sovereign Anchor & Linear Endorsements (Clean / Blue) -->
+<g class="transition-opacity duration-300" id="cluster-alpha">
+<!-- Outer Cluster boundary indicator -->
+<circle cx="210" cy="180" fill="#059669" fill-opacity="0.08" r="140"></circle>
+<text fill="#6ee7b7" font-family="Inter" font-size="11" font-weight="600" letter-spacing="1" x="90" y="70">CLUSTER ALPHA: SOVEREIGN TIER-1 ANCHOR</text>
+<!-- Directed Edges -->
+<path d="M 160 130 L 260 110" marker-end="url(#arrow-blue)" stroke="#059669" stroke-dasharray="4 2" stroke-width="2"></path>
+<path d="M 260 110 L 220 230" marker-end="url(#arrow-blue)" stroke="#059669" stroke-width="2"></path>
+<path d="M 160 130 L 140 240" marker-end="url(#arrow-blue)" stroke="#059669" stroke-width="1.5"></path>
+<!-- Node: Red Cross Karnataka (Anchor Root) -->
+<g class="cursor-pointer" onclick="selectNode('RED-CROSS-KA', 'Red Cross Karnataka', 'Tier-1 Sovereign Anchor', '0.00 (Anchor Quorum)', 'Clean Verified')">
+<circle cx="160" cy="130" fill="#064e3b" r="18" stroke="#34d399" stroke-width="2"></circle>
+<circle cx="160" cy="130" fill="#34d399" r="8"></circle>
+<text fill="#ffffff" font-family="Noto Serif" font-size="12" font-weight="700" text-anchor="middle" x="160" y="165">Red Cross KA</text>
+<text fill="#6ee7b7" font-family="Inter" font-size="9" text-anchor="middle" x="160" y="177">SOVEREIGN ROOT</text>
+</g>
+<!-- Node: Hubballi Mutual Aid -->
+<g class="cursor-pointer" onclick="selectNode('HUB-MUTUAL', 'Hubballi Mutual Aid', 'Accredited Tier-2 NGO', '0.04 (Low Risk)', 'Direct Anchor Vouch')">
+<circle cx="260" cy="110" fill="#064e3b" r="14" stroke="#059669" stroke-width="1.5"></circle>
+<text fill="#f0f7f4" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle" x="260" y="90">Hubballi Mutual Aid</text>
+</g>
+<!-- Node: Asha Relief Taskforce -->
+<g class="cursor-pointer" onclick="selectNode('ASHA-RELIEF', 'Asha Relief Karnataka', 'Field Partner', '0.08 (Low Risk)', 'Tier-2 Endorsement')">
+<circle cx="220" cy="230" fill="#064e3b" r="14" stroke="#059669" stroke-width="1.5"></circle>
+<text fill="#f0f7f4" font-family="Inter" font-size="11" font-weight="600" text-anchor="middle" x="220" y="260">Asha Relief</text>
+</g>
+<!-- Node: Malnad Rescue Corp -->
+<g class="cursor-pointer" onclick="selectNode('MALNAD-CORP', 'Malnad Rescue Corp', 'Affiliate NGO', '0.11 (Low Risk)', 'Clean Geo-Trace')">
+<circle cx="140" cy="240" fill="#064e3b" r="12" stroke="#059669" stroke-width="1"></circle>
+<text fill="#f0f7f4" font-family="Inter" font-size="10" text-anchor="middle" x="140" y="270">Malnad Corp</text>
+</g>
+</g>
+<!-- CLUSTER BETA: Grassroots Auxiliary Group (Indigo / Proximity Conditional) -->
+<g class="transition-opacity duration-300" id="cluster-beta">
+<circle cx="480" cy="380" fill="#059669" fill-opacity="0.05" r="110"></circle>
+<text fill="#6ee7b7" font-family="Inter" font-size="11" font-weight="600" letter-spacing="1" x="390" y="300">CLUSTER BETA: PROXIMITY AUXILIARY</text>
+<path d="M 220 230 L 430 360" stroke="#059669" stroke-dasharray="3 3" stroke-width="1"></path>
+<path d="M 430 360 L 510 350" marker-end="url(#arrow-amber)" stroke="#34d399" stroke-width="1.5"></path>
+<path d="M 510 350 L 490 430" marker-end="url(#arrow-amber)" stroke="#34d399" stroke-width="1.5"></path>
+<g class="cursor-pointer" onclick="selectNode('BELAGAVI-CIVIC', 'Belagavi Civic Care', 'Regional Volunteer Entity', '0.28 (Conditional)', 'GPS Verified Staging')">
+<circle cx="430" cy="360" fill="#064e3b" r="13" stroke="#6ee7b7" stroke-width="1.5"></circle>
+<text fill="#f0f7f4" font-family="Inter" font-size="10" font-weight="500" text-anchor="middle" x="430" y="390">Belagavi Civic</text>
+</g>
+<g class="cursor-pointer" onclick="selectNode('SAHAY-SANGH', 'Sahay Sangh Gokak', 'Grassroots Trust', '0.34 (Conditional)', 'Proximity: 64km')">
+<circle cx="510" cy="350" fill="#064e3b" r="12" stroke="#6ee7b7" stroke-width="1.5"></circle>
+<text fill="#f0f7f4" font-family="Inter" font-size="10" text-anchor="middle" x="510" y="330">Sahay Sangh</text>
+</g>
+<g class="cursor-pointer" onclick="selectNode('RURAL-GRID-KA', 'Rural Grid Outreach', 'Community Group', '0.22 (Low Risk)', 'DARPAN Verified')">
+<circle cx="490" cy="430" fill="#064e3b" r="11" stroke="#6ee7b7" stroke-width="1"></circle>
+<text fill="#f0f7f4" font-family="Inter" font-size="10" text-anchor="middle" x="490" y="455">Rural Grid</text>
+</g>
+</g>
+<!-- CLUSTER GAMMA: DETECTED COLLUSIVE SYBIL RING #SYB-2024-09 (CRIMSON LOOP - PRESERVED HIGH CONTRAST) -->
+<g class="transition-transform duration-500" id="cluster-gamma">
+<!-- Highlight zone -->
+<circle class="animate-pulse" cx="680" cy="180" fill="#ba1a1a" fill-opacity="0.12" r="130" stroke="#ba1a1a" stroke-dasharray="4 4" stroke-width="1"></circle>
+<text fill="#ffdad6" font-family="Noto Serif" font-size="12" font-weight="700" letter-spacing="1" x="560" y="65">INCIDENT #SYB-2024-09: RECURSIVE SYBIL RING</text>
+<text fill="#ffb4ab" font-family="Inter" font-size="10" x="560" y="80">No Sovereign Anchor • Circular Timestamp Hash Delta: 4.2m</text>
+<!-- Malicious Loop Circular Edges -->
+<!-- Edge 1: Kalyana Aid -> Vikas Relief -->
+<path d="M 680 110 C 740 120, 770 180, 740 230" fill="none" filter="url(#crimsonGlow)" id="sybilEdge1" marker-end="url(#arrow-red)" stroke="#ba1a1a" stroke-width="3"></path>
+<!-- Edge 2: Vikas Relief -> Gramin Vikas -->
+<path d="M 740 230 C 700 270, 640 260, 610 220" fill="none" filter="url(#crimsonGlow)" id="sybilEdge2" marker-end="url(#arrow-red)" stroke="#ba1a1a" stroke-width="3"></path>
+<!-- Edge 3: Gramin Vikas -> Kalyana Aid (Completing Fatal Cycle) -->
+<path d="M 610 220 C 590 160, 630 110, 680 110" fill="none" filter="url(#crimsonGlow)" id="sybilEdge3" marker-end="url(#arrow-red)" stroke="#ba1a1a" stroke-width="3.5"></path>
+<!-- Dynamic Traveling Pulse along the attack loop -->
+<circle cx="680" cy="110" fill="#ffdad6" r="5">
+<animatemotion dur="4s" path="M 0 0 C 60 10, 90 70, 60 120 C 20 160, -40 150, -70 110 C -90 50, -50 0, 0 0" repeatcount="indefinite"></animatemotion>
+</circle>
+<!-- Sybil Node 1: Kalyana Aid Trust -->
+<g class="cursor-pointer" onclick="selectNode('KALYANA-AID', 'Kalyana Aid Trust', 'Applicant #APP-44910', '0.94 (Critical Sybil)', 'Ring Originator • Shared Signatory Hash')">
+<circle cx="680" cy="110" fill="#93000a" r="20" stroke="#ffb4ab" stroke-width="2.5"></circle>
+<circle cx="680" cy="110" fill="#ffdad6" r="9"></circle>
+<text fill="#ffffff" font-family="Noto Serif" font-size="12" font-weight="700" text-anchor="middle" x="680" y="85">Kalyana Aid Trust</text>
+<text fill="#ffdad6" font-family="Inter" font-size="9" font-weight="600" text-anchor="middle" x="680" y="97">DARPAN: KA/2024/09110</text>
+</g>
+<!-- Sybil Node 2: Vikas Relief Foundation -->
+<g class="cursor-pointer" onclick="selectNode('VIKAS-RELIEF', 'Vikas Relief Foundation', 'Applicant #APP-44918', '0.96 (Critical Sybil)', 'Reciprocal Endorser • Cloned Seal #STMP-8812')">
+<circle cx="740" cy="230" fill="#93000a" r="18" stroke="#ba1a1a" stroke-width="2"></circle>
+<circle cx="740" cy="230" fill="#ba1a1a" r="8"></circle>
+<text fill="#ffffff" font-family="Noto Serif" font-size="11" font-weight="700" text-anchor="middle" x="740" y="262">Vikas Relief Fdn</text>
+<text fill="#ffdad6" font-family="Inter" font-size="9" text-anchor="middle" x="740" y="274">SHARED PAN HASH</text>
+</g>
+<!-- Sybil Node 3: Gramin Vikas Wing -->
+<g class="cursor-pointer" onclick="selectNode('GRAMIN-WING', 'Gramin Vikas Wing', 'Applicant #APP-44922', '0.93 (Critical Sybil)', 'Loop Closer • Fake Warehouse Coords')">
+<circle cx="610" cy="220" fill="#93000a" r="18" stroke="#ba1a1a" stroke-width="2"></circle>
+<circle cx="610" cy="220" fill="#ba1a1a" r="8"></circle>
+<text fill="#ffffff" font-family="Noto Serif" font-size="11" font-weight="700" text-anchor="middle" x="610" y="250">Gramin Vikas Wing</text>
+<text fill="#ffdad6" font-family="Inter" font-size="9" text-anchor="middle" x="610" y="262">SYNTHETIC REGISTRATION</text>
+</g>
+<!-- Floating Danger Pill in Canvas -->
+<rect fill="#ba1a1a" height="22" rx="4" width="110" x="625" y="160"></rect>
+<text fill="#ffffff" font-family="Inter" font-size="10" font-weight="700" text-anchor="middle" x="680" y="175">CYCLE COLLUSION</text>
+</g>
+<!-- Central Canvas Compass / HUD metadata -->
+<g transform="translate(30, 480)">
+<text fill="#6ee7b7" font-family="Inter" font-size="10" font-weight="500" x="0" y="0">HEURISTIC: NDMA-DAG-ENGINE-v2.9</text>
+<text fill="#34d399" font-family="Inter" font-size="9" x="0" y="14">ZERO-KNOWLEDGE SEED: 0x88f9...3ac9</text>
+</g>
+</svg>
+<!-- Bottom Left Topology Status Pill within Canvas -->
+<div class="absolute bottom-3 left-3 bg-surface-container-lowest/90 backdrop-blur px-space-sm py-1 rounded text-on-surface flex items-center gap-space-sm border border-outline-variant/30">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+<span class="font-label text-xs font-mono text-error font-bold">1 ISOLATED COMPONENT FLAGGED</span>
+<span class="font-sans text-xs text-on-surface-variant">| Recurrence Index: 0.98</span>
+</div>
+<!-- Graph Legend in Canvas Bottom Right -->
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur px-space-md py-1.5 rounded flex items-center gap-space-md font-label text-xs border border-outline-variant/30">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="w-3 h-3 rounded-full bg-[#064e3b] border border-[#34d399]"></span>
+<span>Tier-1 Anchor</span>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="w-3 h-3 rounded-full bg-[#059669]"></span>
+<span>Auxiliary NGO</span>
+</div>
+<div class="flex items-center gap-1.5 text-error font-semibold">
+<span class="w-3 h-3 rounded-full bg-error"></span>
+<span>Sybil Ring Member</span>
+</div>
+</div>
+</div>
+<!-- Active Threat Alert Card beneath map -->
+<div class="p-space-md bg-error-container text-on-error-container flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md border border-error/30 rounded-xl">
+<div class="flex items-start gap-space-sm">
+<div class="w-9 h-9 rounded bg-error text-on-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">crisis_alert</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label text-xs font-bold tracking-normal text-error">CRITICAL SYBIL INTERCEPT #SYB-2024-09</span>
+<span class="bg-error text-on-error px-1.5 py-0.2 rounded font-mono font-label text-[10px] font-bold">BLOCK CONFIDENCE: 99.8%</span>
+</div>
+<p class="font-sans text-xs text-on-surface mt-0.5">
+                  Circular endorsement collusion identified. 3 applicants sharing identical PAN signatory phone hash (<code class="font-mono font-semibold">+91-98450-XXXXX</code>) and reciprocal vouching timestamps executed within <strong>4.2 minutes</strong>.
+                </p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 rounded bg-error text-on-error font-label text-xs font-bold tracking-normal hover:opacity-90 transition-opacity shadow-xs" onclick="inspectCluster('gamma')">
+                Isolate Ring
+              </button>
+</div>
+</div>
+</div>
+<!-- Secondary Comparative Audit Table (Collusion vs Tier-1) -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md space-y-space-sm border border-outline-variant/30">
+<div class="flex items-center justify-between">
+<h2 class="font-serif text-lg text-[#064e3b] font-bold">Ring Member Attribution Log &amp; Digital Trace</h2>
+<span class="font-sans text-xs text-on-surface-variant">Statutory Ledger Match under Section 18</span>
+</div>
+<div class="overflow-x-auto table-scroll" tabindex="0" role="region" aria-label="Sybil graph edge table; scroll horizontally to view all columns">
+<table class="w-full text-left font-sans text-xs table-pin-right">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant font-label text-[11px] tracking-normal font-bold">
+<th class="py-2.5 px-3">Entity Name &amp; ID</th>
+<th class="py-2.5 px-3">Vouch Target</th>
+<th class="py-2.5 px-3">Delta Time</th>
+<th class="py-2.5 px-3">Notary Stamp Fingerprint</th>
+<th class="py-2.5 px-3">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-3">
+<div class="font-label text-xs font-semibold text-on-surface">Kalyana Aid Trust</div>
+<div class="font-mono text-[11px] text-on-surface-variant">PAN: AABTK8921C</div>
+</td>
+<td class="py-2.5 px-3 text-error font-medium">Vikas Relief Fdn</td>
+<td class="py-2.5 px-3 font-mono text-[11px] text-on-surface">T+00:00 (Origin)</td>
+<td class="py-2.5 px-3 font-mono text-[11px] text-error font-semibold">#STMP-8812 (DUP)</td>
+<td class="py-2.5 px-3">
+<span class="bg-error-container text-on-error-container font-label text-[11px] font-bold px-2 py-0.5 rounded">HOLD PENDING</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-3">
+<div class="font-label text-xs font-semibold text-on-surface">Vikas Relief Foundation</div>
+<div class="font-mono text-[11px] text-on-surface-variant">PAN: AABTV1140G</div>
+</td>
+<td class="py-2.5 px-3 text-error font-medium">Gramin Vikas Wing</td>
+<td class="py-2.5 px-3 font-mono text-[11px] text-on-surface">T+02:18</td>
+<td class="py-2.5 px-3 font-mono text-[11px] text-error font-semibold">#STMP-8812 (DUP)</td>
+<td class="py-2.5 px-3">
+<span class="bg-error-container text-on-error-container font-label text-[11px] font-bold px-2 py-0.5 rounded">HOLD PENDING</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-2.5 px-3">
+<div class="font-label text-xs font-semibold text-on-surface">Gramin Vikas Wing</div>
+<div class="font-mono text-[11px] text-on-surface-variant">PAN: AACTG7743M</div>
+</td>
+<td class="py-2.5 px-3 text-error font-medium">Kalyana Aid Trust</td>
+<td class="py-2.5 px-3 font-mono text-[11px] text-on-surface">T+04:12 (Cycle Closed)</td>
+<td class="py-2.5 px-3 font-mono text-[11px] text-error font-semibold">#STMP-8812 (DUP)</td>
+<td class="py-2.5 px-3">
+<span class="bg-error-container text-on-error-container font-label text-[11px] font-bold px-2 py-0.5 rounded">HOLD PENDING</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- RIGHT AREA (35% width approx -> 4 columns out of 12) - Forensic Inspector -->
+<div class="lg:col-span-4 space-y-space-md">
+<!-- Selected Entity Dossier Panel -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border-t-4 border-error border-x border-b border-outline-variant/30">
+<div class="p-space-md bg-surface-container-low flex items-center justify-between border-b border-outline-variant/20">
+<div>
+<span class="font-label text-xs tracking-normal text-error font-bold block">Deep Inspection Target</span>
+<h2 class="font-serif text-lg text-[#064e3b] font-bold" id="inspectedTitle">Kalyana Aid Trust &amp; Allied Shell Entities</h2>
+<span class="font-sans text-xs text-on-surface-variant font-mono" id="inspectedSub">INCIDENT: #SYB-2024-09 | DARPAN: KA/2024/09110</span>
+</div>
+<div class="text-right">
+<div class="text-error font-serif text-2xl font-bold leading-none" id="inspectedScore">94.2</div>
+<span class="font-sans text-xs text-on-surface-variant">Risk Coeff.</span>
+</div>
+</div>
+<!-- Deep Anomaly Signals Breakdown -->
+<div class="p-space-md space-y-space-md">
+<!-- Algorithmic Metric Meter -->
+<div class="bg-surface-container-low p-space-sm rounded-lg space-y-1.5 border border-outline-variant/20">
+<div class="flex items-center justify-between font-label text-xs">
+<span class="text-on-surface font-semibold">Graph Centrality Factor:</span>
+<span class="font-mono text-error font-bold">0.12 (Isolated Archipelago)</span>
+</div>
+<div class="flex items-center justify-between font-label text-xs">
+<span class="text-on-surface font-semibold">Mutual Reciprocity:</span>
+<span class="font-mono text-error font-bold">1.00 (Pure Loop)</span>
+</div>
+<div class="flex items-center justify-between font-label text-xs">
+<span class="text-on-surface font-semibold">Sovereign Lineage:</span>
+<span class="font-mono text-error font-bold">0 Ancestors (Disconnected)</span>
+</div>
+</div>
+<!-- Signal 1: Non-Recursive Rule -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs text-error font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">sync_problem</span>
+                  Non-Recursive Rule Breach
+                </span>
+<span class="font-sans text-xs font-mono font-bold text-error">100% CERTAINTY</span>
+</div>
+<p class="font-sans text-xs text-on-surface-variant">
+                RFC-0941 Clause 4.2 prohibits circular endorsement trees. Entity A endorsed B, B endorsed C, and C closed the cycle back to A without any Tier-1 anchor.
+              </p>
+</div>
+<!-- Signal 2: Optical Forensics -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs text-[#064e3b] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-[#059669]">flaky</span>
+                  Optical Forensics (OCR v4.2)
+                </span>
+<span class="font-sans text-xs font-mono font-bold text-error">HASH MATCH</span>
+</div>
+<div class="bg-surface-container-high/60 p-space-xs rounded font-sans text-xs text-on-surface space-y-1">
+<div class="flex justify-between font-mono">
+<span>Cloned Seal:</span>
+<span class="text-error font-semibold">#STMP-8812</span>
+</div>
+<p class="text-on-surface-variant">
+                  Same notary stamp micro-imperfections detected across 3 distinct sub-registrar jurisdictions (Dharwad, Hubballi, Belagavi).
+                </p>
+</div>
+</div>
+<!-- Signal 3: Cross-Metadata Match -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs text-[#064e3b] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-[#059669]">fingerprint</span>
+                  Entity Cross-Metadata Match
+                </span>
+<span class="font-sans text-xs font-mono text-[#059669] font-bold">TELEMETRY MATCH</span>
+</div>
+<div class="font-sans text-xs text-on-surface-variant">
+                Shared bank IFSC branch <code class="font-mono text-on-surface font-semibold">SBIN0040112</code> (Dharwad Main). Consecutive penny-drop verification calls recorded within 18 seconds of each other.
+              </div>
+</div>
+<!-- Signal 4: Satellite SAR Warehouse Geofence -->
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs text-[#064e3b] font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-error">satellite_alt</span>
+                  SAR Geofence Verification
+                </span>
+<span class="font-sans text-xs font-mono text-error font-bold">SPOOFED YARD</span>
+</div>
+<div class="font-sans text-xs text-on-surface-variant">
+                Warehouse claimed at <span class="font-mono font-semibold">15.4589° N, 75.0078° E</span>. Synthetic aperture radar imagery confirms residential high-rise with zero cargo staging capacity.
+              </div>
+</div>
+<!-- Visual Satellite Evidence Thumbnail -->
+<div class="relative rounded overflow-hidden group">
+<div class="bg-cover bg-center w-full h-24" data-alt="High resolution tactical satellite radar imagery displaying marked yellow crosshairs over an urban residential high rise building that failed warehouse verification for disaster relief staging, monochromatic thermal imagery style with digital heads-up display overlay" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2OYLI8jQqUGnWjmca_JAYeMrc4YqBvmLhlfwadPY9cGpxLSn8BN7wET4OFUHBj5Q9rXYFFterqPGPfGL4QfQVrMZd6h_OfdL8hCxmdVP1O8GXkO2Gm9wRrjYAhKrvtSbbn09n9Cjy2QQKzxv600al06zs7_bWPwV4_VaZk8HlgZJd-jWGdTuPoNnDWP_GC85E11gsVBoZSRkGh49vIaGzpdz_4GEKkiQn48F06fU_')"></div>
+<div class="absolute inset-0 bg-[#064e3b]/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-xs">
+<span class="font-label text-xs text-on-primary bg-[#059669] px-space-xs py-0.5 rounded font-semibold">View SAR Frame 2024-K09</span>
+</div>
+<span class="absolute bottom-1 right-1 font-mono text-[9px] bg-inverse-surface/80 text-inverse-on-surface px-1 rounded">SAR-COPERNICUS-04</span>
+</div>
+<!-- Immediate Administrative Interventions Area -->
+<div class="pt-space-xs space-y-space-xs">
+<span class="font-label text-xs tracking-normal text-[#064e3b] font-bold block">
+                Statutory Execution Console
+              </span>
+<!-- Critical Button 1 -->
+<button class="w-full flex items-center justify-center gap-space-xs px-space-sm py-2 rounded bg-error text-on-error font-label text-xs font-bold hover:bg-on-error-container transition-all shadow-sm active:scale-[0.99]" id="btnQuarantine" onclick="executeQuarantine()">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span>Quarantine All 3 Entities on Ledger</span>
+</button>
+<!-- Critical Button 2 -->
+<button class="w-full flex items-center justify-center gap-space-xs px-space-sm py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label text-xs font-semibold transition-colors border border-outline-variant/30" onclick="showToast('Section 18 Notice Dispatched', 'Statutory order #NDMA/KA/18-0912 dispatched via digital portal to registered PAN emails.')">
+<span class="material-symbols-outlined text-[18px]">outgoing_mail</span>
+<span>Issue Statutory Inquiry Notice (Sec 18)</span>
+</button>
+<!-- Critical Button 3 -->
+<button class="w-full flex items-center justify-center gap-space-xs px-space-sm py-2 rounded bg-surface-container hover:bg-surface-container-high text-error font-label text-xs font-semibold transition-colors border border-outline-variant/30" onclick="showToast('Registry Updated', 'Associated PANs and IFSC accounts added to Statewide Fraud Blacklist.')">
+<span class="material-symbols-outlined text-[18px]">block</span>
+<span>Add PANs &amp; Cheques to Blacklist Registry</span>
+</button>
+</div>
+<!-- HSM Audit Seal metadata -->
+<div class="p-space-xs bg-surface-container-high rounded flex items-center justify-between text-xs font-sans text-on-surface-variant">
+<span>HSM Node Key:</span>
+<span class="font-mono text-on-surface font-semibold">0x7F...D89A</span>
+<span class="text-[#059669] font-semibold font-mono">FIPS-140-3 VALID</span>
+</div>
+</div>
+</div>
+<!-- Recent Resolved Dossiers History -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md space-y-space-xs border border-outline-variant/30">
+<div class="flex items-center justify-between">
+<span class="font-label text-xs tracking-normal text-[#064e3b] font-bold">Past Incident Intercepts</span>
+<span class="font-sans text-xs text-[#059669] font-medium">Auto-Archived</span>
+</div>
+<div class="space-y-space-xs font-sans text-xs">
+<div class="flex items-center justify-between p-space-xs rounded bg-surface-container-low border border-outline-variant/20">
+<div>
+<div class="font-label text-xs text-on-surface font-semibold">#SYB-2024-08 (Bidar Circle)</div>
+<div class="font-sans text-[11px] text-on-surface-variant">Dual-vouch mirror collusion</div>
+</div>
+<span class="font-label text-xs text-[#059669] font-mono font-semibold">RESOLVED</span>
+</div>
+<div class="flex items-center justify-between p-space-xs rounded bg-surface-container-low border border-outline-variant/20">
+<div>
+<div class="font-label text-xs text-on-surface font-semibold">#SYB-2024-05 (Raichur Grid)</div>
+<div class="font-sans text-[11px] text-on-surface-variant">OCR signature forgery</div>
+</div>
+<span class="font-label text-xs text-error font-mono font-semibold">QUARANTINED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Inline Script for Interactivity, Visual Feedback & Micro-interactions -->
+<script>
+    let currentZoom = 1;
+    let cyclesHighlighted = true;
+
+    function showToast(title, msg) {
+      const toast = document.getElementById('toastNotification');
+      const tTitle = document.getElementById('toastTitle');
+      const tMsg = document.getElementById('toastMessage');
+      if (!toast) return;
+      tTitle.innerText = title;
+      tMsg.innerText = msg;
+      toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+      setTimeout(() => {
+        toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      }, 4200);
+    }
+
+    function triggerScanAnimation() {
+      const icon = document.getElementById('scanIcon');
+      icon.classList.add('animate-spin');
+      showToast('DAG Topology Scan Commenced', 'Traversing 1,842 nodes with recursive DFS cycle-detection...');
+      setTimeout(() => {
+        icon.classList.remove('animate-spin');
+        showToast('Scan Completed', 'Discovered zero new cycles. Active incident #SYB-2024-09 remains open.');
+      }, 1600);
+    }
+
+    function toggleSybilHighlight() {
+      cyclesHighlighted = !cyclesHighlighted;
+      const gamma = document.getElementById('cluster-gamma');
+      const btn = document.getElementById('toggleFilterLoop');
+      if (cyclesHighlighted) {
+        gamma.style.opacity = '1';
+        btn.classList.add('bg-error-container', 'text-on-error-container');
+        btn.classList.remove('bg-surface-container', 'text-on-surface');
+        showToast('Cycle Highlight Active', 'Filtering view focus to circular graph paths.');
+      } else {
+        gamma.style.opacity = '0.25';
+        btn.classList.remove('bg-error-container', 'text-on-error-container');
+        btn.classList.add('bg-surface-container', 'text-on-surface');
+      }
+    }
+
+    function adjustZoom(factor) {
+      currentZoom = Math.min(Math.max(currentZoom * factor, 0.6), 2.2);
+      const svg = document.getElementById('networkGraphSvg');
+      svg.style.transform = `scale(${currentZoom})`;
+    }
+
+    function resetZoom() {
+      currentZoom = 1;
+      const svg = document.getElementById('networkGraphSvg');
+      svg.style.transform = 'scale(1)';
+      const alpha = document.getElementById('cluster-alpha');
+      const beta = document.getElementById('cluster-beta');
+      const gamma = document.getElementById('cluster-gamma');
+      alpha.style.opacity = '1';
+      beta.style.opacity = '1';
+      gamma.style.opacity = '1';
+    }
+
+    function inspectCluster(clusterName) {
+      const alpha = document.getElementById('cluster-alpha');
+      const beta = document.getElementById('cluster-beta');
+      const gamma = document.getElementById('cluster-gamma');
+      if (clusterName === 'gamma') {
+        alpha.style.opacity = '0.15';
+        beta.style.opacity = '0.15';
+        gamma.style.opacity = '1';
+        adjustZoom(1.3);
+        showToast('Incident Zoomed', 'Focusing camera on Sybil Incident #SYB-2024-09 circular loop.');
+      }
+    }
+
+    function selectNode(id, name, type, risk, details) {
+      document.getElementById('inspectedTitle').innerText = name;
+      document.getElementById('inspectedSub').innerText = `${type} | ${details}`;
+      document.getElementById('inspectedScore').innerText = risk.split(' ')[0];
+      showToast(`Inspecting: ${name}`, `Risk profile: ${risk}. Telemetry updated in inspector.`);
+    }
+
+    function executeQuarantine() {
+      const btn = document.getElementById('btnQuarantine');
+      btn.disabled = true;
+      btn.classList.remove('bg-error');
+      btn.classList.add('bg-on-surface-variant');
+      btn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span> Committing to Crypto Ledger...';
+
+      setTimeout(() => {
+        btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">verified</span> QUARANTINE COMMITTED & FROZEN';
+        btn.classList.remove('bg-on-surface-variant');
+        btn.classList.add('bg-[#064e3b]', 'text-on-primary');
+        showToast('Cryptographic Quarantine Active', 'Resource claiming and e-Waybills completely frozen for Kalyana Aid, Vikas Relief, and Gramin Vikas.');
+      }, 1200);
+    }
+  </script>
+</div>
+  </div>
+</div>

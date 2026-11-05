@@ -1,0 +1,557 @@
+<!-- Screen: AI Match Score Mathematical Explainability | ID: match-explainability | UI Source: reliefnet_ai_match_breakdown_mathematical_explainability -->
+<div id="screen-match-explainability" class="reliefnet-screen-view w-full" data-shell="dashboard">
+  <div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-space-md lg:px-space-xl py-space-xl space-y-space-xl">
+<!-- Top Meta Breadcrumbs and Headline -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label text-label-sm">
+<span>Operations Desk</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span>Decision Support</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Algorithmic Explainability</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md">
+<div>
+<h1 class="font-serif text-display-lg text-primary tracking-tight">Algorithmic Match Score &amp; Weighted Factor Breakdown</h1>
+<p class="font-sans text-body-md text-on-surface-variant mt-1">
+            Mathematical explainability inspector for Requisition <span class="font-semibold text-on-surface">#REQ-1049</span> vs. Candidate Allocators. Audited under Open Relief Standards Consortium (<span class="font-mono text-label-sm">RFC-8212</span>).
+          </p>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 bg-surface-container px-space-sm py-1.5 rounded-lg text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label text-label-md font-semibold">Deterministic Hash: #9A7F-RFC8212-EXEC</span>
+</div>
+</div>
+</div>
+<!-- Audit Guarantee Banner (Formula & Non-Autonomous Guardrails) -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-high p-space-lg shadow-sm">
+<div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-lg">
+<div class="space-y-space-xs max-w-3xl">
+<div class="flex items-center gap-space-xs text-secondary font-label text-label-sm tracking-normal">
+<span class="material-symbols-outlined text-[16px]">policy</span>
+<span>Deterministic Weighted Formula (Non-Autonomous AI Governance)</span>
+</div>
+<div class="font-mono text-headline-sm text-primary font-bold tracking-tight">
+            S<sub>m</sub> = (0.35 × Q) + (0.25 × D) + (0.20 × V) + (0.20 × R)
+          </div>
+<p class="font-sans text-body-sm text-on-surface-variant leading-relaxed">
+            AI models strictly calculate spatial, temporal, and inventory compatibility vectors under zero neural hallucinations. Cargo dispatch requires final human dual-tier mutual-aid cryptographic handshake.
+          </p>
+</div>
+<div class="flex flex-row lg:flex-col gap-space-xs shrink-0 self-stretch justify-center bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span class="font-label text-label-sm tracking-normal text-on-surface-variant">Model State</span>
+</div>
+<span class="font-serif text-headline-sm text-primary font-semibold">Verified Deterministic</span>
+<span class="font-caption text-caption text-secondary">ISO/IEC 42001 Audited Node</span>
+</div>
+</div>
+</div>
+<!-- Candidate Selector & Comparison Control Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm space-y-space-md">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<!-- Left Target Requisition Summary -->
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">emergency</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label text-label-lg text-primary font-bold">REQ-1049</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-error text-on-error uppercase">Critical Priority</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-semibold bg-surface-container text-on-surface">Bellandur Flood Hub</span>
+</div>
+<span class="font-sans text-body-sm text-on-surface-variant mt-0.5">Target Requirement: <strong class="text-on-surface">500 kg Dry Packaged Rice</strong> • Humidity Threshold: &lt; 14%</span>
+</div>
+</div>
+<!-- Right Candidate Selector Dropdown Area -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label text-label-md">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+<span>Candidate Allocator:</span>
+</div>
+<div class="relative">
+<select class="w-full sm:w-80 bg-surface-container-low text-on-surface font-label text-label-lg px-space-md py-2.5 rounded-lg appearance-none cursor-pointer focus:outline-none focus:bg-surface-container-highest shadow-sm pr-10" id="candidateSelect" onchange="switchCandidate(this.value)">
+<option selected="" value="xyz">XYZ Food Relief Foundation (94/100 - Primary)</option>
+<option value="helping">Helping Hands Collective (88/100 - Split Node)</option>
+<option value="mysore">Mysore Hope Mission (72/100 - Single Lot)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Live Baseline Metadata Ribbon -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm pt-space-sm">
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">Allocated Depot</span>
+<span class="font-label text-label-md text-primary font-bold">Indiranagar Sector 4</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">Haul Distance</span>
+<span class="font-label text-label-md text-primary font-bold">4.8 km (Optimal)</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">Lot Availability</span>
+<span class="font-label text-label-md text-primary font-bold">300 kg (60% coverage)</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">Govt Sovereign Tier</span>
+<span class="font-label text-label-md text-secondary font-bold">Tier-1 Sovereign</span>
+</div>
+</div>
+</div>
+<!-- 4 Detailed Vector Breakdown Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Vector 1: Quantity Match & Readiness (Q - 35%) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between transition-colors hover:shadow-md">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center font-bold font-mono text-[14px]">Q</span>
+<div>
+<h3 class="font-serif text-headline-sm text-primary">Quantity Match &amp; Readiness</h3>
+<span class="font-caption text-caption text-on-surface-variant tracking-normal font-semibold">Weight Coefficient: 35.0% (0.35)</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-serif text-headline-lg text-primary font-bold">98<span class="text-label-md text-on-surface-variant font-normal">/100</span></div>
+<span class="font-label text-label-sm text-secondary font-bold">+34.30 pts contrib.</span>
+</div>
+</div>
+<!-- Progress Visual -->
+<div class="space-y-1">
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-700" style="width: 98%;"></div>
+</div>
+<div class="flex justify-between font-caption text-caption text-on-surface-variant">
+<span>Lot Capacity: 300 kg immediate</span>
+<span class="font-semibold text-primary">98% Fit Score</span>
+</div>
+</div>
+<!-- Factor Qualitative Trace -->
+<div class="bg-surface-container-low rounded-lg p-space-md space-y-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface font-label text-label-md">
+<span class="material-symbols-outlined text-secondary text-[16px]">fact_check</span>
+<span>Vector Audit Observations</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface-variant leading-relaxed">
+              300 kg immediate lot covers 60% of total need with zero packaging conversion latency. Pre-palletized on EUR-pallets. Hermetic moisture barrier intact with QA seal #KA-9882.
+            </p>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Formula: 0.35 × 98.0</span>
+<span class="font-mono text-primary font-semibold">= 34.30 Effective</span>
+</div>
+</div>
+<!-- Vector 2: Distance & Transit Logistics (D - 25%) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between transition-colors hover:shadow-md">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center font-bold font-mono text-[14px]">D</span>
+<div>
+<h3 class="font-serif text-headline-sm text-primary">Distance &amp; Real-Time Logistics</h3>
+<span class="font-caption text-caption text-on-surface-variant tracking-normal font-semibold">Weight Coefficient: 25.0% (0.25)</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-serif text-headline-lg text-primary font-bold">92<span class="text-label-md text-on-surface-variant font-normal">/100</span></div>
+<span class="font-label text-label-sm text-secondary font-bold">+23.00 pts contrib.</span>
+</div>
+</div>
+<!-- Progress Visual -->
+<div class="space-y-1">
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full transition-all duration-700" style="width: 92%;"></div>
+</div>
+<div class="flex justify-between font-caption text-caption text-on-surface-variant">
+<span>Haul Radius: 4.8 km (Transit &lt; 25m)</span>
+<span class="font-semibold text-primary">92% Spatial Score</span>
+</div>
+</div>
+<!-- Factor Qualitative Trace -->
+<div class="bg-surface-container-low rounded-lg p-space-md space-y-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface font-label text-label-md">
+<span class="material-symbols-outlined text-secondary text-[16px]">navigation</span>
+<span>Vector Audit Observations</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface-variant leading-relaxed">
+              Depot distance 4.8 km. Live GIS road passability index: Optimal (zero waterlogging on Indiranagar-Bellandur arterial). Dedicated high-clearance 4x4 rig departure window in &lt; 25 mins.
+            </p>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Formula: 0.25 × 92.0</span>
+<span class="font-mono text-primary font-semibold">= 23.00 Effective</span>
+</div>
+</div>
+<!-- Vector 3: Verification Tier Level (V - 20%) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between transition-colors hover:shadow-md">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center font-bold font-mono text-[14px]">V</span>
+<div>
+<h3 class="font-serif text-headline-sm text-primary">Verification Tier Level</h3>
+<span class="font-caption text-caption text-on-surface-variant tracking-normal font-semibold">Weight Coefficient: 20.0% (0.20)</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-serif text-headline-lg text-on-tertiary-container font-bold">100<span class="text-label-md text-on-surface-variant font-normal">/100</span></div>
+<span class="font-label text-label-sm text-secondary font-bold">+20.00 pts contrib.</span>
+</div>
+</div>
+<!-- Progress Visual -->
+<div class="space-y-1">
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full transition-all duration-700" style="width: 100%;"></div>
+</div>
+<div class="flex justify-between font-caption text-caption text-on-surface-variant">
+<span>Govt Sovereign DARPAN #KA-2019-4412</span>
+<span class="font-semibold text-on-tertiary-container">100% Trust Max</span>
+</div>
+</div>
+<!-- Factor Qualitative Trace -->
+<div class="bg-surface-container-low rounded-lg p-space-md space-y-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface font-label text-label-md">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified_user</span>
+<span>Vector Audit Observations</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface-variant leading-relaxed">
+              Government Verified Tier-1 Sovereign Accreditation. Full compliance clearance; zero escrow restriction holds. Instant mutual crypto-release keys active on the consortium mesh.
+            </p>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Formula: 0.20 × 100.0</span>
+<span class="font-mono text-primary font-semibold">= 20.00 Effective</span>
+</div>
+</div>
+<!-- Vector 4: Historical Reliability & Settlement Rate (R - 20%) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm flex flex-col justify-between transition-colors hover:shadow-md">
+<div class="space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-8 h-8 rounded-lg bg-surface-container-high text-primary flex items-center justify-center font-bold font-mono text-[14px]">R</span>
+<div>
+<h3 class="font-serif text-headline-sm text-primary">Reliability &amp; Settlement</h3>
+<span class="font-caption text-caption text-on-surface-variant tracking-normal font-semibold">Weight Coefficient: 20.0% (0.20)</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-serif text-headline-lg text-primary font-bold">96<span class="text-label-md text-on-surface-variant font-normal">/100</span></div>
+<span class="font-label text-label-sm text-secondary font-bold">+19.20 pts contrib.</span>
+</div>
+</div>
+<!-- Progress Visual -->
+<div class="space-y-1">
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full transition-all duration-700" style="width: 96%;"></div>
+</div>
+<div class="flex justify-between font-caption text-caption text-on-surface-variant">
+<span>58 Transits • 99.4% Sign-off</span>
+<span class="font-semibold text-primary">96% Historical Score</span>
+</div>
+</div>
+<!-- Factor Qualitative Trace -->
+<div class="bg-surface-container-low rounded-lg p-space-md space-y-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface font-label text-label-md">
+<span class="material-symbols-outlined text-secondary text-[16px]">history_edu</span>
+<span>Vector Audit Observations</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface-variant leading-relaxed">
+              58 total inter-NGO cargo transfers in past 12 months. 99.4% consignee sign-off accuracy. 0.0% dispute rate. 4 prior seamless mutual aid operations with Asha Relief Initiative.
+            </p>
+</div>
+</div>
+<div class="pt-space-md mt-space-md flex items-center justify-between text-on-surface-variant font-caption text-caption">
+<span>Formula: 0.20 × 96.0</span>
+<span class="font-mono text-primary font-semibold">= 19.20 Effective</span>
+</div>
+</div>
+</div>
+<!-- Total Mathematical Sum Summary Section -->
+<div class="bg-primary-container text-on-primary rounded-xl p-space-xl shadow-md">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-xl">
+<div class="space-y-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-space-xs px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label text-label-sm">
+<span class="material-symbols-outlined text-[16px]">calculate</span>
+<span>Mathematical Proof of Compatibility</span>
+</div>
+<h2 class="font-serif text-headline-lg font-bold">Summation Synthesis &amp; Confidence Rating</h2>
+<div class="font-mono text-body-md text-on-primary-container mt-1">
+            Σ = (34.30) + (23.00) + (20.00) + (19.20) = 96.50 raw → Calibrated: 94.00
+          </div>
+<p class="font-sans text-body-sm text-surface-container-highest/80 pt-1">
+            Under consortium guidelines, candidates exceeding 90.00 qualify as <span class="font-semibold text-secondary-fixed">Optimal Primary Consolidator</span>. Immediate single-truck release or partial split allocation is cryptographically approved.
+          </p>
+</div>
+<!-- Gauge & Badging -->
+<div class="flex items-center gap-space-lg bg-tertiary-container p-space-lg rounded-xl shrink-0">
+<div class="relative w-24 h-24 flex items-center justify-center">
+<!-- Inline SVG Gauge Chart -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 36 36">
+<path class="text-primary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-tertiary-fixed-dim" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="94, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-serif text-display-lg text-on-tertiary font-bold leading-none">94</span>
+<span class="font-caption text-caption text-secondary-fixed leading-none mt-0.5">/ 100</span>
+</div>
+</div>
+<div class="space-y-1">
+<span class="font-caption text-caption tracking-normal text-secondary-fixed font-semibold">Consensus Status</span>
+<div class="font-serif text-headline-sm text-on-tertiary font-bold">OPTIMAL PRIMARY</div>
+<div class="flex items-center gap-1 text-on-tertiary-container font-label text-label-sm">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Consensus Engine Sign-Off</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Side-by-Side Factor Comparison Matrix -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden space-y-space-md">
+<div class="p-space-lg pb-0 flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-serif text-headline-md text-primary font-bold">Multi-Candidate Allocator Comparison</h2>
+<p class="font-sans text-body-sm text-on-surface-variant">Cross-evaluation of active candidate pools for Requisition #REQ-1049.</p>
+</div>
+<div class="flex items-center gap-space-xs font-label text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[16px]">sync_alt</span>
+<span>Matrix Synchronized at Zulu 14:32:00</span>
+</div>
+</div>
+<div class="overflow-x-auto table-scroll" tabindex="0" role="region" aria-label="Match scoring table; scroll horizontally to view all columns">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-on-surface font-label text-label-md tracking-normal">
+<th class="py-3 px-space-lg">Metric Vector</th>
+<th class="py-3 px-space-md text-center">Weight</th>
+<th class="py-3 px-space-md bg-secondary-container/30 text-primary">XYZ Food Relief (#1)</th>
+<th class="py-3 px-space-md">Helping Hands (#2)</th>
+<th class="py-3 px-space-md">Mysore Hope Mission (#3)</th>
+</tr>
+</thead>
+<tbody class="font-sans text-body-sm divide-y divide-surface-container">
+<!-- Row 1: Available Volume -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-lg font-semibold text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">inventory</span>
+<span>Available Volume</span>
+</td>
+<td class="py-space-md px-space-md text-center font-mono text-on-surface-variant">35%</td>
+<td class="py-space-md px-space-md bg-secondary-container/20">
+<div class="font-semibold text-primary">300 kg <span class="font-mono text-secondary">(98 pts)</span></div>
+<div class="font-caption text-caption text-on-surface-variant">Immediate lot • 60% coverage</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface">150 kg <span class="font-mono text-on-surface-variant">(85 pts)</span></div>
+<div class="font-caption text-caption text-on-surface-variant">Immediate lot • 30% coverage</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface">500 kg <span class="font-mono text-secondary">(100 pts)</span></div>
+<div class="font-caption text-caption text-on-surface-variant">Full requisition bulk volume</div>
+</td>
+</tr>
+<!-- Row 2: Transit Distance / Time -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-lg font-semibold text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">route</span>
+<span>Transit Distance / Latency</span>
+</td>
+<td class="py-space-md px-space-md text-center font-mono text-on-surface-variant">25%</td>
+<td class="py-space-md px-space-md bg-secondary-container/20">
+<div class="font-semibold text-primary">4.8 km / 25 min <span class="font-mono text-secondary">(92 pts)</span></div>
+<div class="font-caption text-caption text-on-surface-variant">Optimal arterial road passability</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface">8.2 km / 45 min <span class="font-mono text-on-surface-variant">(86 pts)</span></div>
+<div class="font-caption text-caption text-on-surface-variant">Moderate traffic slowdown</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-error font-semibold">135 km / 3.5 hrs <span class="font-mono text-error">(48 pts)</span></div>
+<div class="font-caption text-caption text-error font-medium">Interstate highway &amp; toll risks</div>
+</td>
+</tr>
+<!-- Row 3: Verification Credential -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-lg font-semibold text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">shield</span>
+<span>Verification Credential</span>
+</td>
+<td class="py-space-md px-space-md text-center font-mono text-on-surface-variant">20%</td>
+<td class="py-space-md px-space-md bg-secondary-container/20">
+<div class="font-semibold text-on-tertiary-container">Tier-1 Sovereign Govt <span class="font-mono text-on-tertiary-container">(100 pts)</span></div>
+<div class="font-caption text-caption text-on-surface-variant">NITI Aayog DARPAN Verified</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface">Tier-2 Community <span class="font-mono text-on-surface-variant">(75 pts)</span></div>
+<div class="font-caption text-caption text-on-surface-variant">City District Council Attested</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface font-semibold">Tier-1 Sovereign Govt <span class="font-mono text-on-tertiary-container">(100 pts)</span></div>
+<div class="font-caption text-caption text-on-surface-variant">State Disaster Authority Reg.</div>
+</td>
+</tr>
+<!-- Row 4: Reliability & Settlement -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-space-md px-space-lg font-semibold text-primary flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px]">workspace_premium</span>
+<span>Reliability &amp; Settlement</span>
+</td>
+<td class="py-space-md px-space-md text-center font-mono text-on-surface-variant">20%</td>
+<td class="py-space-md px-space-md bg-secondary-container/20">
+<div class="font-semibold text-primary">99.4% Settled, 0 Disputes <span class="font-mono text-secondary">(96 pts)</span></div>
+<div class="font-caption text-caption text-on-surface-variant">58 confirmed manifests</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface">95.0% Settled, 0 Disputes <span class="font-mono text-on-surface-variant">(92 pts)</span></div>
+<div class="font-caption text-caption text-on-surface-variant">21 confirmed manifests</div>
+</td>
+<td class="py-space-md px-space-md">
+<div class="text-on-surface">97.2% Settled, 1 Dispute <span class="font-mono text-on-surface-variant">(88 pts)</span></div>
+<div class="font-caption text-caption text-on-surface-variant">36 confirmed manifests</div>
+</td>
+</tr>
+<!-- Summary Final Row -->
+<tr class="bg-surface-container-high font-label text-label-lg">
+<td class="py-space-lg px-space-lg font-bold text-primary uppercase">Composite Weighted Score</td>
+<td class="py-space-lg px-space-md text-center font-mono text-primary font-bold">100%</td>
+<td class="py-space-lg px-space-md bg-secondary-container text-on-secondary-container">
+<div class="font-serif text-headline-sm font-bold">94 / 100</div>
+<span class="font-label text-label-sm uppercase font-semibold">Recommended Lead</span>
+</td>
+<td class="py-space-lg px-space-md">
+<div class="font-serif text-headline-sm font-bold text-on-surface">88 / 100</div>
+<span class="font-label text-label-sm text-on-surface-variant uppercase font-semibold">Recommended Split</span>
+</td>
+<td class="py-space-lg px-space-md">
+<div class="font-serif text-headline-sm font-bold text-on-surface">72 / 100</div>
+<span class="font-label text-label-sm text-on-surface-variant uppercase font-semibold">Single-Source Fallback</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Tunable Weight Parameters (Human-in-the-Loop Governance Panel) -->
+<div class="bg-surface-container-low rounded-xl p-space-lg space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[22px]">tune</span>
+<div>
+<h3 class="font-serif text-headline-sm text-primary">Human Override: Tunable Weight Parameters</h3>
+<p class="font-caption text-caption text-on-surface-variant">Permits emergency logistics officers to prioritize real-time distance over volume during acute flash floods.</p>
+</div>
+</div>
+<button class="self-start md:self-auto text-secondary hover:text-primary font-label text-label-sm underline flex items-center gap-1" onclick="resetSliders()">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Reset Consortium Norms (35/25/20/20)</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md pt-space-xs">
+<div class="bg-surface-container-lowest p-space-md rounded-lg space-y-space-xs">
+<div class="flex justify-between items-center text-primary font-label text-label-md">
+<span>Quantity (Q)</span>
+<span class="font-mono font-bold" id="labelQ">35%</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-surface-container cursor-pointer rounded-lg" id="sliderQ" max="60" min="10" oninput="updateSliders('Q')" type="range" value="35"/>
+<span class="font-caption text-caption text-on-surface-variant block">Baseline inventory match</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg space-y-space-xs">
+<div class="flex justify-between items-center text-primary font-label text-label-md">
+<span>Distance (D)</span>
+<span class="font-mono font-bold" id="labelD">25%</span>
+</div>
+<input class="w-full accent-secondary h-1.5 bg-surface-container cursor-pointer rounded-lg" id="sliderD" max="60" min="10" oninput="updateSliders('D')" type="range" value="25"/>
+<span class="font-caption text-caption text-on-surface-variant block">Spatial passability transit</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg space-y-space-xs">
+<div class="flex justify-between items-center text-primary font-label text-label-md">
+<span>Verification (V)</span>
+<span class="font-mono font-bold" id="labelV">20%</span>
+</div>
+<input class="w-full accent-on-tertiary-container h-1.5 bg-surface-container cursor-pointer rounded-lg" id="sliderV" max="40" min="10" oninput="updateSliders('V')" type="range" value="20"/>
+<span class="font-caption text-caption text-on-surface-variant block">Govt/Consortium accreditation</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-lg space-y-space-xs">
+<div class="flex justify-between items-center text-primary font-label text-label-md">
+<span>Reliability (R)</span>
+<span class="font-mono font-bold" id="labelR">20%</span>
+</div>
+<input class="w-full accent-primary-container h-1.5 bg-surface-container cursor-pointer rounded-lg" id="sliderR" max="40" min="10" oninput="updateSliders('R')" type="range" value="20"/>
+<span class="font-caption text-caption text-on-surface-variant block">Consignee sign-off accuracy</span>
+</div>
+</div>
+</div>
+<!-- Action & Protocol Acceptance Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-sm pb-space-xl">
+<div class="flex items-center gap-space-sm text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-secondary text-[20px]">security</span>
+<span>Cryptographic Audit Proof generated under RFC-8212. All parameters signed by Local Cell #KA-FLOOD-DESK-4.</span>
+</div>
+<div class="flex items-center gap-space-md w-full sm:w-auto justify-end">
+<button class="w-full sm:w-auto px-space-lg py-2.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label text-label-lg transition-colors flex items-center justify-center gap-space-xs shadow-sm" onclick="exportAuditPDF()">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Export Certified Audit PDF</span>
+</button>
+<button class="w-full sm:w-auto px-space-xl py-2.5 rounded-lg bg-primary-container hover:bg-tertiary-container text-on-primary font-label text-label-lg transition-colors flex items-center justify-center gap-space-xs shadow-sm" onclick="proceedSplitAllocation()">
+<span>Proceed with Split Allocation Plan</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+    function switchCandidate(candKey) {
+      const candidates = {
+        xyz: { name: "XYZ Food Relief Foundation", score: 94, coverage: "300 kg (60%)", dist: "4.8 km" },
+        helping: { name: "Helping Hands Collective", score: 88, coverage: "150 kg (30%)", dist: "8.2 km" },
+        mysore: { name: "Mysore Hope Mission", score: 72, coverage: "500 kg (100%)", dist: "135 km" }
+      };
+      const sel = candidates[candKey];
+      if (sel) {
+        console.log("Candidate active:", sel.name, "Composite:", sel.score);
+      }
+    }
+
+    function updateSliders(activeKey) {
+      const q = document.getElementById('sliderQ').value;
+      const d = document.getElementById('sliderD').value;
+      const v = document.getElementById('sliderV').value;
+      const r = document.getElementById('sliderR').value;
+      document.getElementById('labelQ').innerText = q + '%';
+      document.getElementById('labelD').innerText = d + '%';
+      document.getElementById('labelV').innerText = v + '%';
+      document.getElementById('labelR').innerText = r + '%';
+    }
+
+    function resetSliders() {
+      document.getElementById('sliderQ').value = 35;
+      document.getElementById('sliderD').value = 25;
+      document.getElementById('sliderV').value = 20;
+      document.getElementById('sliderR').value = 20;
+      updateSliders();
+    }
+
+    function exportAuditPDF() {
+      const btn = event.currentTarget;
+      const origText = btn.innerHTML;
+      btn.innerHTML = "<span class='material-symbols-outlined text-[18px] animate-spin'>progress_activity</span><span>Compiling SHA-256 Ledger...</span>";
+      setTimeout(() => {
+        btn.innerHTML = "<span class='material-symbols-outlined text-[18px] text-on-tertiary-container'>check_circle</span><span>Audit PDF Ready</span>";
+        setTimeout(() => { btn.innerHTML = origText; }, 2200);
+      }, 1000);
+    }
+
+    function proceedSplitAllocation() {
+      alert("Redirecting to Dual-Tier Mutual-Aid Cryptographic Handshake for Requisition #REQ-1049 (Consolidator: XYZ Food Relief Foundation).");
+    }
+  </script>
+</div>
+  </div>
+</div>

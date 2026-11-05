@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transfer Lifecycle & Transaction Tracking — ReliefNet</title>
+  <link rel="stylesheet" href="/static/css/alexandria.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Public+Sans:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: "#059669", 50: "#ecfdf5", 100: "#d1fae5", 500: "#10b981", 600: "#059669", 700: "#065f46" },
+            "primary-container": "#ecfdf5",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#065f46",
+            "primary-fixed": "#d1fae5",
+            "secondary-container": "#f0f7f4",
+            "on-secondary-container": "#08211c",
+            surface: "#fbfdfc",
+            "on-surface": "#08211c",
+            "on-surface-variant": "#52645f",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#fbfdfc",
+            "surface-container": "#f0f7f4",
+            "surface-container-high": "#d9e8e2",
+            outline: "#8fa8a1",
+            "outline-variant": "#d9e8e2"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "margin-desktop": "2rem",
+            "gutter-desktop": "1.5rem"
+          },
+          fontFamily: {
+            serif: ['"Noto Serif"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            label: ['"Public Sans"', '"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          fontSize: {
+            "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-sans antialiased text-slate-900">
+  <div id="global-header"></div>
+  <main class="w-full">
+    <div class="flex flex-col w-full">
+<!-- Top Operational Banner & Stats -->
+<div class="mb-space-lg flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-sm mb-1.5">
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container animate-ping"></span>
+          Decentralized Relief Ledger Active
+        </span>
+<span class="font-caption text-caption text-on-surface-variant font-mono">NODE: KA-BLR-09</span>
+</div>
+<h1 class="font-serif text-display-lg text-primary tracking-tight">Transfer Lifecycle &amp; Audit Trail</h1>
+<p class="font-sans text-body-md text-on-surface-variant max-w-3xl mt-1">
+        End-to-end transparent verification of resource dispatches, chain-of-custody tracking, mutual confirmations, and reputation updates.
+      </p>
+</div>
+<!-- Live Telemetry Quick Metric Strip -->
+<div class="flex items-center gap-space-md bg-surface-container-lowest p-2.5 rounded-xl shadow-sm">
+<div class="px-space-md py-1 border-r border-outline-variant/30 text-left">
+<p class="font-label text-label-sm text-on-surface-variant uppercase">Settlement Rate</p>
+<p class="font-serif text-headline-sm text-primary font-bold">99.4%</p>
+</div>
+<div class="px-space-md py-1 border-r border-outline-variant/30 text-left">
+<p class="font-label text-label-sm text-on-surface-variant uppercase">Avg Handshake</p>
+<p class="font-serif text-headline-sm text-primary font-bold">42m</p>
+</div>
+<div class="px-space-md py-1 text-left">
+<p class="font-label text-label-sm text-on-surface-variant uppercase">Audit Hashes</p>
+<p class="font-serif text-headline-sm text-secondary font-mono font-bold">8,419</p>
+</div>
+</div>
+</div>
+<!-- Filter Navigation Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-2 mb-space-lg">
+<button class="flex items-center gap-2 px-space-lg py-2 rounded-lg bg-primary-container text-on-primary font-label text-label-md transition-all">
+<span>All Transfers</span>
+<span class="px-1.5 py-0.5 rounded-full bg-on-primary-container text-primary-container font-label text-label-sm">12</span>
+</button>
+<button class="flex items-center gap-2 px-space-lg py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label text-label-md transition-all">
+<span>Active / In Transit</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label text-label-sm">3</span>
+</button>
+<button class="flex items-center gap-2 px-space-lg py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label text-label-md transition-all">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>Delivered &amp; Awaiting Confirmation</span>
+<span class="px-1.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-label-sm">2</span>
+</button>
+<button class="flex items-center gap-2 px-space-lg py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container font-label text-label-md transition-all">
+<span>Completed</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label text-label-sm">38</span>
+</button>
+<button class="flex items-center gap-2 px-space-lg py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-error hover:bg-error-container/40 font-label text-label-md transition-all">
+<span class="inline-block w-2 h-2 rounded-full bg-error"></span>
+<span>Exceptions &amp; Disputed</span>
+<span class="px-1.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label text-label-sm">1</span>
+</button>
+</div>
+<!-- Section 1: Active Transfer Spotlight (Bento 2-Col Grid) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-xl">
+<!-- Main Focus Card: #TR-8821 -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between relative overflow-hidden">
+<!-- Ambient subtle background glow -->
+<div class="absolute -right-24 -top-24 w-80 h-80 bg-secondary-container/25 rounded-full blur-3xl pointer-events-none"></div>
+<div>
+<!-- Top Bar with Status Badge -->
+<div class="flex flex-wrap items-center justify-between gap-space-md mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="font-serif text-headline-sm text-primary font-mono font-bold tracking-tight">#TR-8821</span>
+<span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label text-label-sm font-semibold">Priority Aid Dispatch</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono">Hash: 0x9f18...d2c0</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant shadow-sm animate-pulse">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container"></span>
+<span class="font-label text-label-sm font-bold tracking-normal">Delivered — Awaiting Receiver Confirmation</span>
+</div>
+</div>
+<!-- Manifest & Party Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md p-space-md bg-surface-container-low rounded-xl mb-space-xl">
+<!-- Resource Info -->
+<div>
+<span class="font-caption text-caption text-on-surface-variant tracking-normal block mb-1">Manifest Cargo</span>
+<p class="font-serif text-headline-sm text-on-surface font-bold">500 kg Sona Masoori Rice</p>
+<p class="font-sans text-body-sm text-on-surface-variant mt-0.5">20 Bags × 25kg sealed jute</p>
+</div>
+<!-- Provider Info -->
+<div class="border-t md:border-t-0 md:border-l border-outline-variant/30 pt-space-sm md:pt-0 md:pl-space-md">
+<span class="font-caption text-caption text-on-surface-variant tracking-normal block mb-1">Origin &amp; Custodian</span>
+<div class="flex items-center gap-1.5">
+<span class="font-label text-label-lg text-on-surface font-semibold truncate">Asha Relief Initiative</span>
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container" title="Govt Verified">verified</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[13px]">location_on</span> Bengaluru Central Depot
+            </p>
+</div>
+<!-- Receiver Info -->
+<div class="border-t md:border-t-0 md:border-l border-outline-variant/30 pt-space-sm md:pt-0 md:pl-space-md">
+<span class="font-caption text-caption text-on-surface-variant tracking-normal block mb-1">Destination &amp; Consignee</span>
+<div class="flex items-center gap-1.5">
+<span class="font-label text-label-lg text-on-surface font-semibold truncate">Karuna Seva Trust</span>
+<span class="material-symbols-outlined text-[15px] text-on-tertiary-container" title="Govt Verified">verified</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant flex items-center gap-1 mt-1">
+<span class="material-symbols-outlined text-[13px]">flag</span> Yelahanka Relief Camp
+            </p>
+</div>
+</div>
+<!-- 6-Step Visual Lifecycle Stepper -->
+<div class="mb-space-xl">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label text-label-md text-on-surface font-bold">Lifecycle State Machine</span>
+<span class="font-caption text-caption text-on-surface-variant">Step 5 of 6 Active</span>
+</div>
+<!-- Stepper Track -->
+<div class="relative grid grid-cols-6 gap-2">
+<!-- Connecting Line -->
+<div class="absolute top-4 left-6 right-6 h-0.5 bg-surface-container-high -z-0">
+<div class="h-full bg-secondary w-4/5 transition-all"></div>
+</div>
+<!-- Step 1: REQUESTED -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-[15px] mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label text-label-sm font-bold text-on-surface">1. Requested</span>
+<span class="font-caption text-caption text-on-surface-variant text-[10px]">2 Nov, 10:15 AM</span>
+<span class="font-caption text-caption text-on-surface-variant/80 text-[10px] mt-0.5 hidden xl:block">AI matched</span>
+</div>
+<!-- Step 2: ACCEPTED -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-[15px] mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label text-label-sm font-bold text-on-surface">2. Accepted</span>
+<span class="font-caption text-caption text-on-surface-variant text-[10px]">2 Nov, 11:30 AM</span>
+<span class="font-caption text-caption text-on-surface-variant/80 text-[10px] mt-0.5 hidden xl:block">Terms signed</span>
+</div>
+<!-- Step 3: IN PROGRESS -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-[15px] mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label text-label-sm font-bold text-on-surface">3. In Progress</span>
+<span class="font-caption text-caption text-on-surface-variant text-[10px]">3 Nov, 09:00 AM</span>
+<span class="font-caption text-caption text-on-surface-variant/80 text-[10px] mt-0.5 hidden xl:block">KA-04-E-2192</span>
+</div>
+<!-- Step 4: DELIVERED -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center text-[15px] mb-2 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<span class="font-label text-label-sm font-bold text-on-surface">4. Delivered</span>
+<span class="font-caption text-caption text-on-surface-variant text-[10px]">3 Nov, 02:45 PM</span>
+<span class="font-caption text-caption text-on-surface-variant/80 text-[10px] mt-0.5 hidden xl:block">Gate 2 Dropoff</span>
+</div>
+<!-- Step 5: RECEIVED (Pending Focus) -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center text-[15px] mb-2 shadow-sm ring-4 ring-secondary-container/40 animate-pulse">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<span class="font-label text-label-sm font-bold text-secondary">5. Received</span>
+<span class="font-caption text-caption text-secondary font-semibold text-[10px]">Pending Check</span>
+<span class="font-caption text-caption text-on-surface-variant/80 text-[10px] mt-0.5 hidden xl:block">Karuna Seva</span>
+</div>
+<!-- Step 6: COMPLETED -->
+<div class="relative z-10 flex flex-col items-center text-center">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-outline flex items-center justify-center text-[15px] mb-2">
+<span class="material-symbols-outlined text-[16px]">hourglass_empty</span>
+</div>
+<span class="font-label text-label-sm font-semibold text-on-surface-variant/70">6. Completed</span>
+<span class="font-caption text-caption text-on-surface-variant/50 text-[10px]">Awaiting Sign</span>
+<span class="font-caption text-caption text-on-surface-variant/50 text-[10px] mt-0.5 hidden xl:block">Stock deduct</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Verification Control Box -->
+<div class="p-space-md bg-surface-container rounded-xl flex flex-col md:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[22px] text-secondary">assignment_turned_in</span>
+</div>
+<div>
+<p class="font-label text-label-md text-on-surface font-bold">Consignee Mutual Confirmation Required</p>
+<p class="font-caption text-caption text-on-surface-variant">Karuna Seva Trust inspection officer must sign off cargo inspection.</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm w-full md:w-auto">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-lowest hover:bg-error-container text-on-surface-variant hover:text-on-error-container font-label text-label-md transition-colors flex items-center gap-1.5" id="btn-report-dispute">
+<span class="material-symbols-outlined text-[16px]">report_problem</span>
+<span>Report Discrepancy</span>
+</button>
+<button class="px-space-lg py-2 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-label text-label-md shadow-sm transition-all flex items-center gap-1.5" id="btn-confirm-receipt">
+<span class="material-symbols-outlined text-[18px]">how_to_reg</span>
+<span>Confirm Goods Received &amp; Verified</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Side Spotlight Panel: Live Logistics Snapshot & Custody Card -->
+<div class="lg:col-span-4 flex flex-col gap-space-md">
+<!-- Route Map & Dispatch Context -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-secondary">local_shipping</span>
+<span class="font-label text-label-md text-on-surface font-bold">Logistics Telemetry</span>
+</div>
+<span class="font-caption text-caption font-mono bg-surface-container px-2 py-0.5 rounded text-on-surface-variant">KA-04-E-2192</span>
+</div>
+<!-- Integrated Map View -->
+<div class="w-full h-36 bg-cover bg-center rounded-lg relative overflow-hidden mb-space-sm shadow-xs" data-location="Bengaluru, Karnataka" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1c9B0iFQ-YjPFIbtYgaUAm8WX7ErfPLLpwMES-wKECp6Ta-jklpedylMejIBvDQu0WrHjgZ2gfiWkiODY16UPBkaGfFIiCT1nk7d8utiZitArZCp1Chzi2ZCfulc83CFgIVbeHEP9lzeKUVUS3Rmrtj2kgioQGho8sf42-YfJNjkyzEI_hGJ8cblBZlpVYlCdRA7kfuwfw1I2pLLLD_aeMLk3Y9J0gGzE0mOuqhd2')">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-2 left-2 right-2 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-1 font-caption text-caption">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span>GPS Drop Point: Yelahanka Camp (Gate 2)</span>
+</div>
+<span class="font-mono text-[10px] bg-primary/80 px-1.5 py-0.5 rounded">13.1007° N, 77.5963° E</span>
+</div>
+</div>
+<!-- Driver & Dispatch Handshake Details -->
+<div class="space-y-2">
+<div class="flex items-center justify-between py-1 bg-surface-container-low px-2.5 rounded">
+<span class="font-caption text-caption text-on-surface-variant">Driver</span>
+<span class="font-label text-label-sm text-on-surface font-semibold">Ramesh K. (+91 98450 ****)</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-low px-2.5 rounded">
+<span class="font-caption text-caption text-on-surface-variant">Waybill Pass</span>
+<a class="font-label text-label-sm text-secondary hover:underline flex items-center gap-1 font-mono" href="#">
+              WB-2023-8821.pdf <span class="material-symbols-outlined text-[14px]">download</span>
+</a>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-low px-2.5 rounded">
+<span class="font-caption text-caption text-on-surface-variant">Communication Channel</span>
+<button class="font-label text-label-sm text-secondary hover:underline flex items-center gap-1">
+<span>Open Thread</span> <span class="material-symbols-outlined text-[14px]">forum</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Quick Chain Proof Fingerprint -->
+<div class="bg-surface-container rounded-xl p-space-md flex flex-col justify-between flex-1 shadow-xs">
+<div>
+<div class="flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">enhanced_encryption</span>
+<span class="font-label text-label-md text-on-surface font-bold">Cryptographic Ledger Proof</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mb-3 leading-relaxed">
+            Every handover step is anchored with GPS timestamp, driver key verification, and recipient signature token.
+          </p>
+<div class="bg-surface-container-lowest p-2 rounded font-mono text-[11px] text-on-surface-variant break-all">
+<p class="text-secondary font-bold mb-0.5">BLOCK #047857-A</p>
+            7b89f81d114c0e0e334a1b02cc491f618a8b13d2890fc2c82
+          </div>
+</div>
+<div class="flex items-center justify-between mt-3 pt-2 border-t border-outline-variant/30">
+<span class="font-caption text-caption text-on-surface-variant">Tamper Resistance: Valid</span>
+<span class="material-symbols-outlined text-[18px] text-on-tertiary-container">verified</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Comprehensive Transfers Table -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm mb-space-xl overflow-hidden">
+<!-- Table Header Toolbar -->
+<div class="p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md bg-surface-container-lowest">
+<div>
+<h2 class="font-serif text-headline-sm text-primary font-bold">Transaction Ledger &amp; Manifest Manifests</h2>
+<p class="font-sans text-body-sm text-on-surface-variant">Live multi-entity distribution stream across regional relief corridors</p>
+</div>
+<div class="flex items-center gap-space-sm w-full md:w-auto">
+<div class="relative flex-1 md:w-64">
+<span class="material-symbols-outlined absolute left-2.5 top-2 text-[18px] text-on-surface-variant">filter_list</span>
+<input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant pl-8 pr-3 py-1.5 rounded-lg text-body-sm font-sans focus:outline-none focus:bg-surface-container-lowest transition-colors" placeholder="Filter by ID, partner, hub..." type="text"/>
+</div>
+<button class="px-space-md py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface font-label text-label-md flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Export CSV</span>
+</button>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label text-label-sm tracking-normal">
+<th class="py-3 px-space-md">Transfer ID &amp; Manifest</th>
+<th class="py-3 px-space-md">Counterparty</th>
+<th class="py-3 px-space-md">Quantity / Metric</th>
+<th class="py-3 px-space-md">Route Corridor</th>
+<th class="py-3 px-space-md">Lifecycle Status</th>
+<th class="py-3 px-space-md">Time &amp; ETA</th>
+<th class="py-3 px-space-md text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 text-body-sm font-sans">
+<!-- Row 1: IN PROGRESS -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2">
+<span class="font-mono font-bold text-primary">#TR-8820</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-label text-label-md text-on-surface block font-semibold">150 Med Trauma Kits</span>
+<span class="font-caption text-caption text-on-surface-variant">Class-A Field Surgical</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="font-label text-label-md text-on-surface font-semibold">Spandana Health</span>
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">verified</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Receiver • NGO Level 2</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="font-label text-label-md font-bold text-on-surface">150 kits</span>
+<span class="font-caption text-caption text-on-surface-variant block">3 Crates (Sterile)</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="truncate max-w-[100px]">Rajajinagar</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">arrow_forward</span>
+<span class="truncate max-w-[100px]">Hosapete PHC</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Express Ambulance</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                IN PROGRESS
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="font-label text-label-sm text-on-surface">Est. 18:30 Today</span>
+<span class="font-caption text-caption text-on-surface-variant block">Dispatched 13:40</span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="inline-flex items-center gap-1 opacity-90 group-hover:opacity-100">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Track Vehicle">
+<span class="material-symbols-outlined text-[18px]">gps_fixed</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Audit Log">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: COMPLETED (TR-8815) -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2">
+<span class="font-mono font-bold text-primary">#TR-8815</span>
+</div>
+<span class="font-label text-label-md text-on-surface block font-semibold">2,000 Water Tablets</span>
+<span class="font-caption text-caption text-on-surface-variant">Aquatabs Chlorine 67mg</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="font-label text-label-md text-on-surface font-semibold">Grama Vikas</span>
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">verified</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Receiver • Flood Unit</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="font-label text-label-md font-bold text-on-surface">2,000 units</span>
+<span class="font-caption text-caption text-secondary block font-semibold">Stock: 5,000 → 3,000</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="truncate max-w-[100px]">Hubballi Hub</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">arrow_forward</span>
+<span class="truncate max-w-[100px]">Dharwad Camp</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Direct Transit</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                COMPLETED
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="font-label text-label-sm text-on-surface">Settled Yesterday</span>
+<span class="font-caption text-caption text-on-surface-variant block font-mono">16:12 IST</span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="inline-flex items-center gap-1 opacity-90 group-hover:opacity-100">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="View Receipt">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Audit Log">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: COMPLETED (TR-8810) -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2">
+<span class="font-mono font-bold text-primary">#TR-8810</span>
+</div>
+<span class="font-label text-label-md text-on-surface block font-semibold">300 Thermal Blankets</span>
+<span class="font-caption text-caption text-on-surface-variant">High-GSM Woolen</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="font-label text-label-md text-on-surface font-semibold">Belagavi Relief Mission</span>
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">verified</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Regional Consignee</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="font-label text-label-md font-bold text-on-surface">300 blankets</span>
+<span class="font-caption text-caption text-secondary block font-semibold">Trust Score +2 pts</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="truncate max-w-[100px]">Koramangala</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">arrow_forward</span>
+<span class="truncate max-w-[100px]">Belagavi Staging</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Heavy Freight</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface font-label text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+                COMPLETED
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="font-label text-label-sm text-on-surface">1 Nov 2023</span>
+<span class="font-caption text-caption text-on-surface-variant block font-mono">09:44 IST</span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="inline-flex items-center gap-1 opacity-90 group-hover:opacity-100">
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="View Certificate">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</button>
+<button class="p-1 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="Audit Log">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: DISPUTED (TR-8804) -->
+<tr class="hover:bg-error-container/20 transition-colors group">
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-2">
+<span class="font-mono font-bold text-error">#TR-8804</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-error"></span>
+</div>
+<span class="font-label text-label-md text-on-surface block font-semibold">100 kg Lentils (Toor Dal)</span>
+<span class="font-caption text-caption text-error font-semibold">Discrepancy: Weighbridge Audit</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1.5">
+<span class="font-label text-label-md text-on-surface font-semibold">Janahitha Trust</span>
+<span class="material-symbols-outlined text-[14px] text-outline">shield</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Unresolved Arbitration</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="font-label text-label-md font-bold text-on-surface">100 kg claimed</span>
+<span class="font-caption text-caption text-error block">Received: 82.4 kg</span>
+</td>
+<td class="py-3 px-space-md">
+<div class="flex items-center gap-1 text-on-surface">
+<span class="truncate max-w-[100px]">Mysuru Store</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant">arrow_forward</span>
+<span class="truncate max-w-[100px]">Mandya Center</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Pickup Tempo</span>
+</td>
+<td class="py-3 px-space-md">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-error-container text-on-error-container font-label text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+                DISPUTED
+              </span>
+</td>
+<td class="py-3 px-space-md">
+<span class="font-label text-label-sm text-error font-semibold">Weight Mismatch</span>
+<span class="font-caption text-caption text-on-surface-variant block">Hold by Mediator</span>
+</td>
+<td class="py-3 px-space-md text-right">
+<div class="inline-flex items-center gap-1 opacity-90 group-hover:opacity-100">
+<button class="px-2 py-1 rounded bg-error-container text-on-error-container text-[11px] font-bold" title="Arbitration Docket">
+                  Resolve
+                </button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination Summary -->
+<div class="px-space-md py-3 bg-surface-container-low flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">Showing 4 of 12 filtered transfers</span>
+<div class="flex items-center gap-2">
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface-variant font-label text-label-sm hover:text-on-surface transition-colors" disabled="">Previous</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-lowest text-on-surface-variant font-label text-label-sm hover:text-on-surface transition-colors">Next</button>
+</div>
+</div>
+</div>
+<!-- Section 3: Immutable Audit Log & Verification Ledger Preview -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- Live Audit Stream Panel -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-full bg-on-tertiary-container animate-pulse"></div>
+<h3 class="font-serif text-headline-sm text-primary font-bold">Immutable Audit Log &amp; Verification Stream</h3>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-mono">Consensus: 100% OK</span>
+</div>
+<!-- Audit Entries Stream -->
+<div class="space-y-space-sm font-mono text-[12px]">
+<!-- Highlighted Live Record -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col md:flex-row md:items-start justify-between gap-space-sm transition-colors hover:bg-surface-container">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">pin_drop</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface">02:45 PM IST</span>
+<span class="px-1.5 py-0.2 bg-secondary-container text-on-secondary-container rounded text-[10px] font-sans font-semibold">Delivery Checkpoint Logged</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface mt-1 font-sans">
+                Cargo dropped at Yelahanka Hub by Driver <span class="font-semibold text-primary">Ramesh K.</span>
+</p>
+<p class="text-on-surface-variant mt-0.5 text-[11px]">
+                GPS Coordinates: 13.1007° N, 77.5963° E • Altitude: 915m MSL • Accuracy: ±3.1m
+              </p>
+</div>
+</div>
+<div class="text-right flex md:flex-col items-center md:items-end justify-between gap-1 text-[11px] text-on-surface-variant">
+<span class="font-semibold text-secondary">Hash Verified</span>
+<span class="text-[10px] break-all">0x8a92...fc77</span>
+</div>
+</div>
+<!-- Prior Record 1 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col md:flex-row md:items-start justify-between gap-space-sm transition-colors hover:bg-surface-container">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">departure_board</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface">09:00 AM IST</span>
+<span class="px-1.5 py-0.2 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-sans font-semibold">Dispatch Transit Initiated</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface mt-1 font-sans">
+                Vehicle KA-04-E-2192 departed Asha Depot. Cargo scale logged: 500.00 kg.
+              </p>
+<p class="text-on-surface-variant mt-0.5 text-[11px]">
+                Seal #SL-8821 affixed by Warehouse Supt. Anand Vardhan.
+              </p>
+</div>
+</div>
+<div class="text-right flex md:flex-col items-center md:items-end justify-between gap-1 text-[11px] text-on-surface-variant">
+<span class="font-semibold text-secondary">Hash Verified</span>
+<span class="text-[10px] break-all">0x43e1...b09a</span>
+</div>
+</div>
+<!-- Prior Record 2 -->
+<div class="p-space-md rounded-lg bg-surface-container-low flex flex-col md:flex-row md:items-start justify-between gap-space-sm transition-colors hover:bg-surface-container">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-[18px] text-secondary mt-0.5">handshake</span>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-bold text-on-surface">2 Nov, 11:30 AM</span>
+<span class="px-1.5 py-0.2 bg-surface-container-high text-on-surface-variant rounded text-[10px] font-sans font-semibold">Bilateral Contract Committed</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface mt-1 font-sans">
+                Asha Relief &amp; Karuna Seva mutually accepted allocation terms via ReliefNet Messaging.
+              </p>
+</div>
+</div>
+<div class="text-right flex md:flex-col items-center md:items-end justify-between gap-1 text-[11px] text-on-surface-variant">
+<span class="font-semibold text-secondary">Hash Verified</span>
+<span class="text-[10px] break-all">0x117c...90df</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Side: Reputation & Trust Escalation Engine -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl shadow-sm p-space-lg flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-2 mb-space-sm">
+<span class="material-symbols-outlined text-[20px] text-secondary">stars</span>
+<h3 class="font-serif text-headline-sm text-primary font-bold">Reputation Updates</h3>
+</div>
+<p class="font-sans text-body-sm text-on-surface-variant mb-space-md">
+          Autonomous institutional credit allocation upon cryptographic confirmation.
+        </p>
+<!-- Trust Metric Visual -->
+<div class="bg-surface-container p-space-md rounded-xl mb-space-md">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label text-label-md text-on-surface font-semibold">Asha Relief Trust Index</span>
+<span class="font-label text-label-lg font-bold text-primary">98.8 / 100</span>
+</div>
+<div class="w-full bg-surface-container-high h-2.5 rounded-full overflow-hidden mb-2">
+<div class="bg-primary h-full rounded-full" style="width: 98.8%"></div>
+</div>
+<div class="flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>Tier: Platinum Partner</span>
+<span class="text-secondary font-semibold">+2 pts on #TR-8821 close</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex items-center gap-2 p-2 rounded bg-surface-container-low text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">done_all</span>
+<span class="text-on-surface text-[12px]">Zero unresolved non-delivery flags across 48 orders</span>
+</div>
+<div class="flex items-center gap-2 p-2 rounded bg-surface-container-low text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">done_all</span>
+<span class="text-on-surface text-[12px]">Automated state disaster inventory reconciliation</span>
+</div>
+</div>
+</div>
+<!-- Mutual Handshake Helper Footer -->
+<div class="pt-space-md mt-space-md border-t border-outline-variant/30 flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">Consensus Algorithm: BFT-Relief-v2</span>
+<button class="font-label text-label-sm text-secondary hover:underline flex items-center gap-0.5">
+<span>Ledger Specs</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Dual-Confirmation Dialog (Mock utilitarian drawer) -->
+<div class="fixed inset-0 bg-primary/40 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4" id="confirmation-modal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-xl shadow-xl p-space-lg flex flex-col gap-space-md">
+<div class="flex items-center justify-between pb-space-sm border-b border-outline-variant/30">
+<div>
+<span class="font-label text-label-sm text-secondary uppercase font-bold tracking-wider">Consignee Sign-Off</span>
+<h4 class="font-serif text-headline-sm text-primary font-bold">Confirm Cargo Receipt: #TR-8821</h4>
+</div>
+<button class="p-1 text-on-surface-variant hover:text-on-surface rounded" id="modal-close-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="space-y-space-sm">
+<div class="p-space-sm rounded bg-surface-container-low flex items-center gap-3">
+<img class="w-16 h-16 rounded object-cover" data-alt="Close up photograph of sealed white jute rice bags stacked inside an organized clean logistics delivery truck with clear inspection labels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGuBOscZpHA0J25HiV5m6iJh5JUqE8pOIwUNpCF5IBoJIS8qnwO5ZDPPeqLXpO36-uDvFefS0BakqVjc9loAcKDDF5Jn1bF75JfC2FB5L2nLCacLa04qSul1aaBPUrKrgazMzrAN2xboP8Z95H6rvM0ktD0Ym01-x7YoaN7fD8pR7Irjj_BXqTE46RqIQdOi598ngnxSIyDE5IygLNoCn1QtDtKI7T7J2bdyFnREfq"/>
+<div>
+<p class="font-label text-label-md text-on-surface font-bold">500 kg Sona Masoori Rice</p>
+<p class="font-caption text-caption text-on-surface-variant">Dispatched by Asha Relief • Arrived Yelahanka Hub</p>
+</div>
+</div>
+<div>
+<label class="block font-label text-label-sm text-on-surface font-semibold mb-1">Receiver Inspector Name / ID</label>
+<input class="w-full bg-surface-container-low px-3 py-2 rounded text-body-sm font-sans text-on-surface focus:outline-none focus:bg-surface-container-lowest" type="text" value="Deepak Gowda (Field Officer - Karuna Seva)"/>
+</div>
+<div>
+<label class="block font-label text-label-sm text-on-surface font-semibold mb-1">Condition Verification</label>
+<div class="flex items-center gap-space-md">
+<label class="flex items-center gap-1.5 text-body-sm text-on-surface cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-0" type="checkbox"/> Bags Intact (20/20)
+            </label>
+<label class="flex items-center gap-1.5 text-body-sm text-on-surface cursor-pointer">
+<input checked="" class="rounded text-primary focus:ring-0" type="checkbox"/> Weight Verified (500kg)
+            </label>
+</div>
+</div>
+<div class="p- space-sm bg-secondary-container/40 p-3 rounded text-[12px] text-on-secondary-container">
+<p class="font-semibold">Note on Finality:</p>
+          Confirming will execute atomic stock update in Asha Relief's depot and unlock reputation reward points.
+        </div>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-sm border-t border-outline-variant/30">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface-variant font-label text-label-md hover:bg-surface-container-high transition-colors" id="modal-cancel-btn">
+          Cancel
+        </button>
+<button class="px-space-lg py-2 rounded-lg bg-primary text-on-primary font-label text-label-md hover:bg-primary-container transition-all flex items-center gap-1.5" id="modal-submit-btn">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Submit Mutual Handshake</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interaction for the verification confirmation modal
+  const openBtn = document.getElementById('btn-confirm-receipt');
+  const closeBtn = document.getElementById('modal-close-btn');
+  const cancelBtn = document.getElementById('modal-cancel-btn');
+  const submitBtn = document.getElementById('modal-submit-btn');
+  const modal = document.getElementById('confirmation-modal');
+
+  if (openBtn && modal) {
+    openBtn.addEventListener('click', () => {
+      modal.classList.remove('hidden');
+    });
+  }
+
+  const closeModal = () => {
+    if (modal) modal.classList.add('hidden');
+  };
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (cancelBtn) cancelBtn.addEventListener('click', closeModal);
+  if (submitBtn) {
+    submitBtn.addEventListener('click', () => {
+      submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span> Signing Ledger...';
+      setTimeout(() => {
+        alert('Transaction #TR-8821 confirmed! Inventory updated and cryptographic proof committed to ledger.');
+        closeModal();
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">verified</span><span>Submit Mutual Handshake</span>';
+      }, 700);
+    });
+  }
+
+  const disputeBtn = document.getElementById('btn-report-dispute');
+  if (disputeBtn) {
+    disputeBtn.addEventListener('click', () => {
+      alert('Dispute Protocol: Opening mediation docket for #TR-8821. Both parties and state disaster monitors will be alerted.');
+    });
+  }
+</script>
+    </div>
+  </main>
+  <script src="/static/js/screen_catalog.js"></script>
+  <script src="/static/js/mock_data.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

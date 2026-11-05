@@ -1,0 +1,652 @@
+﻿<!-- Screen: Surplus Inventory & Expiry Watchtower | ID: surplus-inventory | UI Source: reliefnet_surplus_inventory_expiry_control_2 -->
+<div id="screen-surplus-inventory" class="reliefnet-screen-view w-full" data-shell="dashboard">
+  <div class="flex flex-col w-full pb-16">
+<!-- Top Navigation Breadcrumb & Context Header -->
+<div class="flex flex-col gap-space-sm pt-space-md mb-space-lg">
+<nav class="flex items-center gap-2 text-slate-500 font-label">
+<a class="text-label-sm hover:text-navy-deep transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="text-label-sm hover:text-navy-deep transition-colors" href="#">Resources</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-label-sm font-semibold text-navy-deep">Organization Inventory Management</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col max-w-3xl">
+<h1 class="font-serif text-[32px] md:text-[36px] font-bold text-navy-deep tracking-tight leading-tight">Surplus Inventory &amp; Expiry Watchtower</h1>
+<p class="font-sans text-body-md text-slate-600 mt-1 leading-relaxed">
+          Live monitoring of Asha Relief Initiative's staged humanitarian assets, reservation locks, in-flight transfers, and automated expiry mitigation.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 hover:text-navy-deep transition-colors font-label text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-slate-500">upload_file</span>
+<span>Bulk Manifest Import</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 hover:text-navy-deep transition-colors font-label text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-slate-500">receipt_long</span>
+<span>Audited Stock Ledger</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-alexandria-blue text-white hover:bg-blue-700 transition-colors font-label text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>Add New Surplus Lot</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Top Telemetry Metrics Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Metric 1 -->
+<div class="p-space-lg rounded bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label text-label-sm tracking-normal text-slate-500 font-semibold">Total Listed Surplus</span>
+<span class="font-serif text-display-lg text-navy-deep mt-1 font-bold">3,850 <span class="font-sans text-headline-sm font-normal text-slate-500">kg</span></span>
+</div>
+<div class="w-10 h-10 rounded bg-blue-50 border border-blue-100 flex items-center justify-center text-alexandria-blue">
+<span class="material-symbols-outlined text-[22px]">warehouse</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs border-t border-slate-100">
+<span class="font-caption text-caption text-slate-500">42 distinct lots across 3 depots</span>
+<span class="inline-flex items-center gap-1 font-label text-label-sm text-alexandria-blue font-semibold">
+<span class="material-symbols-outlined text-[14px]">sensors</span> Online
+        </span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="p-space-lg rounded bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label text-label-sm tracking-normal text-slate-500 font-semibold">Active Reservation Locks</span>
+<span class="font-serif text-display-lg text-slate-700 mt-1 font-bold">650 <span class="font-sans text-headline-sm font-normal text-slate-500">kg</span></span>
+</div>
+<div class="w-10 h-10 rounded bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined text-[22px]">lock_clock</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs border-t border-slate-100">
+<span class="font-caption text-caption text-slate-500 font-mono">Queued: #TR-8821 &amp; #TR-8819</span>
+<span class="font-label text-label-sm px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 font-semibold">16.8% locked</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="p-space-lg rounded bg-white border border-red-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label text-label-sm tracking-normal text-error font-semibold">Critical Expiry Horizon</span>
+<span class="font-serif text-display-lg text-error mt-1 font-bold">2 <span class="font-sans text-headline-sm font-normal text-slate-500">Lots</span></span>
+</div>
+<div class="w-10 h-10 rounded bg-error-container border border-red-200 flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined text-[22px]">timer_off</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs border-t border-slate-100">
+<span class="font-caption text-caption text-slate-500">Expiry threshold &lt; 30 days</span>
+<span class="font-label text-label-sm px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-semibold animate-pulse">Broadcast On</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="p-space-lg rounded bg-white border border-slate-200 shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label text-label-sm tracking-normal text-slate-500 font-semibold">Waste Prevention Rate</span>
+<span class="font-serif text-display-lg text-navy-deep mt-1 font-bold">99.8%</span>
+</div>
+<div class="w-10 h-10 rounded bg-blue-50 border border-blue-100 flex items-center justify-center text-alexandria-blue">
+<span class="material-symbols-outlined text-[22px]">eco</span>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-md pt-space-xs border-t border-slate-100">
+<span class="font-caption text-caption text-slate-500">Saved to active flood clinics</span>
+<span class="font-label text-label-sm text-alexandria-blue font-semibold">+2.4% vs Q3</span>
+</div>
+</div>
+</div>
+<!-- Expiry Risk Alert Banner -->
+<div class="relative overflow-hidden mb-space-lg rounded bg-amber-50/60 border border-amber-300 p-space-lg text-amber-950 shadow-sm">
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md relative z-10">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded bg-amber-600 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">priority_high</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label text-label-md px-2 py-0.5 rounded bg-amber-200 text-amber-900 font-bold tracking-normal border border-amber-300">High Risk Alert</span>
+<span class="font-caption text-caption font-mono text-slate-600">Lot #BLR-MED-771</span>
+</div>
+<p class="font-sans text-body-md text-slate-800 mt-1">
+<span class="font-bold text-navy-deep">Lot #BLR-MED-771 (150 Litres Pediatric ORS Liquid)</span> reaches shelf-life limit in <span class="font-bold text-red-700 underline decoration-red-400">18 days</span>. Auto-matching recommended to <span class="font-semibold text-slate-900">Bellandur Flood Clinic</span> (14 km away, 420 children in care).
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm w-full lg:w-auto shrink-0 justify-end">
+<button class="px-space-md py-2 rounded bg-white border border-slate-300 text-slate-700 font-label text-label-md hover:bg-slate-100 transition-colors shadow-sm">
+          Dismiss Alert
+        </button>
+<button class="flex items-center gap-1.5 px-space-md py-2 rounded bg-error text-white font-label text-label-md hover:bg-red-700 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>1-Click Expedited Transfer</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Inventory Management Table & Control Toolbar -->
+<div class="flex flex-col bg-white border border-slate-200 rounded shadow-sm overflow-hidden mb-space-lg">
+<!-- Filter Tabs Header -->
+<div class="px-space-lg pt-space-lg pb-space-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md border-b border-slate-200">
+<div class="flex flex-wrap items-center gap-1 font-label">
+<button class="px-3 py-1.5 rounded bg-alexandria-blue text-white font-semibold text-label-md shadow-sm">All Lots (42)</button>
+<button class="px-3 py-1.5 rounded bg-slate-100 text-slate-600 hover:text-navy-deep hover:bg-slate-200/80 font-medium text-label-md transition-colors">Dry Provisions (18)</button>
+<button class="px-3 py-1.5 rounded bg-slate-100 text-slate-600 hover:text-navy-deep hover:bg-slate-200/80 font-medium text-label-md transition-colors">Medical &amp; First Aid (12)</button>
+<button class="px-3 py-1.5 rounded bg-slate-100 text-slate-600 hover:text-navy-deep hover:bg-slate-200/80 font-medium text-label-md transition-colors">WASH &amp; Purifiers (8)</button>
+<button class="px-3 py-1.5 rounded bg-slate-100 text-slate-600 hover:text-navy-deep hover:bg-slate-200/80 font-medium text-label-md transition-colors">Shelter Kits (4)</button>
+<button class="px-3 py-1.5 rounded bg-red-50 border border-red-200 text-red-700 font-semibold text-label-md flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Flagged / Expiring Soon (3)
+        </button>
+</div>
+<!-- Quick Search Toolbar (Dropdown Style 1: Emerald UI Animated Flyouts) -->
+<div class="flex items-center gap-space-sm font-label">
+  <!-- Depot Filter Dropdown -->
+  <div class="dropdown-emerald" data-state="closed">
+    <button type="button" class="dropdown-emerald-trigger py-1.5 px-3 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-700">
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-slate-500 text-[16px]">tune</span>
+        <span class="dropdown-label">All Depots</span>
+      </div>
+      <span class="dropdown-emerald-chevron material-symbols-outlined text-slate-400 text-[16px]">expand_more</span>
+    </button>
+    <div class="dropdown-emerald-menu w-48 shadow-lg" role="listbox">
+      <div class="dropdown-emerald-item active" style="--item-idx: 0;" onclick="this.closest('.dropdown-emerald').querySelector('.dropdown-label').innerText = 'All Depots'; this.closest('.dropdown-emerald').setAttribute('data-state', 'closed')">All Depots</div>
+      <div class="dropdown-emerald-item" style="--item-idx: 1;" onclick="this.closest('.dropdown-emerald').querySelector('.dropdown-label').innerText = 'Domlur Central Hub'; this.closest('.dropdown-emerald').setAttribute('data-state', 'closed')">Domlur Central Hub</div>
+      <div class="dropdown-emerald-item" style="--item-idx: 2;" onclick="this.closest('.dropdown-emerald').querySelector('.dropdown-label').innerText = 'Whitefield Storage Beta'; this.closest('.dropdown-emerald').setAttribute('data-state', 'closed')">Whitefield Storage Beta</div>
+      <div class="dropdown-emerald-item" style="--item-idx: 3;" onclick="this.closest('.dropdown-emerald').querySelector('.dropdown-label').innerText = 'Hubballi Field Terminal'; this.closest('.dropdown-emerald').setAttribute('data-state', 'closed')">Hubballi Field Terminal</div>
+    </div>
+  </div>
+
+  <!-- Sort By Dropdown -->
+  <div class="dropdown-emerald" data-state="closed">
+    <button type="button" class="dropdown-emerald-trigger py-1.5 px-3 bg-slate-50 border border-slate-200 rounded-lg text-xs font-medium text-slate-700">
+      <div class="flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-slate-500 text-[16px]">sort</span>
+        <span class="dropdown-label">Shortest Shelf Life</span>
+      </div>
+      <span class="dropdown-emerald-chevron material-symbols-outlined text-slate-400 text-[16px]">expand_more</span>
+    </button>
+    <div class="dropdown-emerald-menu w-52 shadow-lg" role="listbox">
+      <div class="dropdown-emerald-item active" style="--item-idx: 0;" onclick="this.closest('.dropdown-emerald').querySelector('.dropdown-label').innerText = 'Shortest Shelf Life'; this.closest('.dropdown-emerald').setAttribute('data-state', 'closed')">Shortest Shelf Life</div>
+      <div class="dropdown-emerald-item" style="--item-idx: 1;" onclick="this.closest('.dropdown-emerald').querySelector('.dropdown-label').innerText = 'Largest Stock'; this.closest('.dropdown-emerald').setAttribute('data-state', 'closed')">Largest Stock</div>
+      <div class="dropdown-emerald-item" style="--item-idx: 2;" onclick="this.closest('.dropdown-emerald').querySelector('.dropdown-label').innerText = 'Highest Reservations'; this.closest('.dropdown-emerald').setAttribute('data-state', 'closed')">Highest Reservations</div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="w-full overflow-x-auto table-scroll" tabindex="0" role="region" aria-label="Surplus inventory table; scroll horizontally to view all columns">
+<table class="w-full text-left font-sans text-body-sm table-pin-right table-tight">
+<thead class="bg-slate-50 text-slate-600 font-serif text-[13px] border-b border-slate-200 tracking-wide select-none">
+<tr>
+<th class="py-3.5 px-space-lg font-bold text-navy-deep">Lot &amp; Item Details</th>
+<th class="py-3.5 px-space-md font-bold text-navy-deep">Depot Node</th>
+<th class="py-3.5 px-space-md font-bold text-navy-deep">Total Quantity</th>
+<th class="py-3.5 px-space-md font-bold text-navy-deep">Reservation Lock</th>
+<th class="py-3.5 px-space-md font-bold text-navy-deep">Available</th>
+<th class="py-3.5 px-space-md font-bold text-navy-deep">Expiry / Shelf-Life</th>
+<th class="py-3.5 px-space-md font-bold text-navy-deep">Storage Specs</th>
+<th class="py-3.5 px-space-md font-bold text-navy-deep">Status</th>
+<th class="py-3.5 px-space-lg text-right font-bold text-navy-deep">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<!-- Row 1: Sona Masoori Rice -->
+<tr class="hover:bg-slate-50/70 transition-colors group">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded object-cover border border-slate-200 bg-slate-100 shrink-0" data-alt="Burlap sacks filled with cleaned high grade long grain rice stacked organized on clean warehouse pallets with inventory barcode tag under bright logistics warehouse lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClyLDFf6xkJzGgyem8XjYvZMAXqk18dGWK0XVSJb-139qmUAHr2oPusCdLZ6yF1LLwUCjbDGoiTYShgR5OxwakZek8WaH3S--46zzPo7bbBQVtWwQ-kCbDvh2JIHDDNn7q8A-WZbl9s2KdiDEBzlsCxnNKWMF4SuLb2aS0NJfHE3L1g9rfU1RbRjsmYOlrOWai2EATE7wI0zmSd1VGFTY-gGEJdMRzCV-WBQgk_gXm"/>
+<div class="flex flex-col">
+<span class="font-serif text-[14px] text-navy-deep font-bold">Sona Masoori Rice (Food Grade)</span>
+<div class="flex items-center gap-1.5 text-slate-500 font-mono text-[11px]">
+<span>#LOT-DRY-994</span>
+<span>â€¢</span>
+<span>Batch 08-B</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-slate-700 font-medium">Domlur Central Hub</td>
+<td class="py-3.5 px-space-md font-bold text-navy-deep">500 kg</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col gap-1 w-28">
+<div class="flex justify-between text-slate-500 font-caption text-caption">
+<span class="font-semibold text-slate-700">300 kg</span>
+<span class="font-mono text-[11px]">#TR-8821</span>
+</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-slate-600 h-full rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-bold text-alexandria-blue">200 kg</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col gap-1 w-24">
+<span class="font-label text-label-sm text-slate-700 font-medium">6 Months</span>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-alexandria-blue h-full rounded-full" style="width: 80%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-label text-label-sm border border-slate-200">Moisture-proof</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-blue-50 text-blue-900 border border-blue-200 font-label text-label-sm font-semibold">Partially Pledged</span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="flex items-center justify-end gap-1 opacity-70 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Quick Edit">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Trigger Emergency Broadcast">
+<span class="material-symbols-outlined text-[16px]">campaign</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Options">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Emergency Trauma Kits -->
+<tr class="hover:bg-slate-50/70 transition-colors group">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded object-cover border border-slate-200 bg-slate-100 shrink-0" data-alt="Red canvas field paramedic trauma emergency kits containing sterile dressings, tourniquets, and medical supplies packaged neatly on depot racks in an organized clinic warehouse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1nV9ngQP4AzEkSHIwdNBEPH2DtJpQMszGCFWOySt8Ozp8_PxF40a1CWvxx-hyReM_zZJ3ZzkpeG6Kr_94G0h_Edq-XEQWRuPWFLI3kvjsPWeJPZBr0sqJsNufjDd4mnsMga3EmW7Lg5jZ2bBSUY9rM94r2TKE3qcI1wAu_C5zzNpxwpv1brNAI55pGysKXHFxW15j6cm5XSx6lKE6wEn__m7dJvlTo0TQS0xaelKF"/>
+<div class="flex flex-col">
+<span class="font-serif text-[14px] text-navy-deep font-bold">Trauma First-Aid Field Kits</span>
+<div class="flex items-center gap-1.5 text-slate-500 font-mono text-[11px]">
+<span>#LOT-MED-402</span>
+<span>â€¢</span>
+<span>WHO Standard</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-slate-700 font-medium">Whitefield Beta</td>
+<td class="py-3.5 px-space-md font-bold text-navy-deep">150 units</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col gap-1 w-28">
+<div class="flex justify-between text-slate-500 font-caption text-caption">
+<span class="font-semibold text-slate-700">50 units</span>
+<span class="font-mono text-[11px]">#TR-8819</span>
+</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-slate-600 h-full rounded-full" style="width: 33%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-bold text-alexandria-blue">100 units</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col gap-1 w-24">
+<span class="font-label text-label-sm text-slate-700 font-medium">22 Months</span>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-alexandria-blue h-full rounded-full" style="width: 95%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-label text-label-sm border border-slate-200">Dry / Sterile</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-blue-100 text-navy-deep border border-blue-200 font-label text-label-sm font-semibold">Active Available</span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="flex items-center justify-end gap-1 opacity-70 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Quick Edit">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Trigger Emergency Broadcast">
+<span class="material-symbols-outlined text-[16px]">campaign</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Options">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Heavy Fleece Winter Blankets -->
+<tr class="hover:bg-slate-50/70 transition-colors group">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded object-cover border border-slate-200 bg-slate-100 shrink-0" data-alt="Stacked stacks of thick thermal wool relief blankets bound in plastic wraps on wooden pallets inside an emergency humanitarian storage warehouse" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn7ysR2yPTuMdXcjOYWsRygeMh8EhvgEtZeVyzhQA5j21O2g-Uio0fU8UhkjL225TUeSVfPvZVRUt2EdM6ZucmiMUDOthw08svvvbv-z76I_AaN4C-2hyoBvYtz0SH9ahKUbgGQsY2Oaa4TFPTsQFfgqKf9mzc3O_Dfp0AlHArp_ADxpa65SHWisLn-5UTnHYwsmPjxX-Jpkiw2Q74cJY2Gcnc9FJMX1H1XtwSGQ8l"/>
+<div class="flex flex-col">
+<span class="font-serif text-[14px] text-navy-deep font-bold">Heavy Fleece Thermal Blankets</span>
+<div class="flex items-center gap-1.5 text-slate-500 font-mono text-[11px]">
+<span>#LOT-SHL-119</span>
+<span>â€¢</span>
+<span>UNHCR Spec</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-slate-700 font-medium">Hubballi Terminal</td>
+<td class="py-3.5 px-space-md font-bold text-navy-deep">1,000 units</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col gap-1 w-28">
+<div class="flex justify-between text-slate-500 font-caption text-caption">
+<span class="font-medium text-slate-500">0 units</span>
+<span>Unlocked</span>
+</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-slate-400 h-full rounded-full" style="width: 0%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-bold text-alexandria-blue">1,000 units</td>
+<td class="py-3.5 px-space-md">
+<span class="font-label text-label-sm text-slate-600 font-medium">Non-perishable</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-label text-label-sm border border-slate-200">Palletized</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-blue-100 text-navy-deep border border-blue-200 font-label text-label-sm font-semibold">Active Available</span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="flex items-center justify-end gap-1 opacity-70 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Quick Edit">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Trigger Emergency Broadcast">
+<span class="material-symbols-outlined text-[16px]">campaign</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Options">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Solar Water Purifier -->
+<tr class="hover:bg-slate-50/70 transition-colors group">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded object-cover border border-slate-200 bg-slate-100 shrink-0" data-alt="Industrial portable reverse osmosis and solar powered water purification unit encased in durable green steel casing ready for rapid field deployment in flood areas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP6J2aT41mBc9-yKYSRrMAhT-DCz-NDHUIoC9jWcczAxhPy1b9lc6C3mnWBKP5n0dFZPQj0V7EuGnTXSvQm1wL44Zy9b3enyvdqBX9CNQQ0CNfpIVQCiF_63cpgrDZ8zZYWr92CHU99ukty4YA8RIyCm6OrYFwH2NVW9r0KLgpE4mAvRdznPrlrk-SyX5UK7XuQqataCZIpxInZIQUJ4Q7uu6fKfDOmRaeh-BQoOmM"/>
+<div class="flex flex-col">
+<span class="font-serif text-[14px] text-navy-deep font-bold">Solar Water Purifier (500L/hr)</span>
+<div class="flex items-center gap-1.5 text-slate-500 font-mono text-[11px]">
+<span>#LOT-WSH-034</span>
+<span>â€¢</span>
+<span>Dual Filter Rig</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-slate-700 font-medium">Domlur Central Hub</td>
+<td class="py-3.5 px-space-md font-bold text-navy-deep">4 units</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col gap-1 w-28">
+<div class="flex justify-between text-slate-500 font-caption text-caption">
+<span class="font-semibold text-slate-700">2 units</span>
+<span class="font-mono text-[11px]">Locked</span>
+</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-slate-600 h-full rounded-full" style="width: 50%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-bold text-alexandria-blue">2 units</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col gap-0.5">
+<span class="font-label text-label-sm text-slate-700 font-medium">Inspected Oct '24</span>
+<span class="font-caption text-caption text-slate-500">Filters pristine</span>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-label text-label-sm border border-slate-200">High Security</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-blue-50 text-blue-900 border border-blue-200 font-label text-label-sm font-semibold">Partially Pledged</span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="flex items-center justify-end gap-1 opacity-70 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Quick Edit">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Trigger Emergency Broadcast">
+<span class="material-symbols-outlined text-[16px]">campaign</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Options">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Cold-Chain Tetanus Vaccines (Expiring Soon) -->
+<tr class="hover:bg-red-50/40 transition-colors group bg-red-50/20">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="relative w-10 h-10 rounded overflow-hidden border border-red-200 bg-slate-100 shrink-0">
+<img class="w-full h-full object-cover" data-alt="Glass medical vaccine ampoules arranged carefully inside an illuminated insulated cold chain refrigeration container at medical facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWMI3OaghgyMqcA1J0-7htd8VPhFR64pJGuB5Kt4UZlgUcXobYhebfiNMqpVdBGDLN1EQeM1uWJAKvNyYsphvY189NodR_aQLjEbvu79rzh-HR4kdi5revQBft7ItpSkJ2tbJqpMxFXbdQxYghWmPfuwQpoWu9T8aSDX0PAtUNVcb6atKNtcP9SovJtT6ORgagiWzGlODG-QPcAkPI9NHq0DE9dVvduttldhpqWHK0"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-white"></span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-serif text-[14px] text-navy-deep font-bold">Tetanus Toxoid Vaccines</span>
+<span class="font-mono text-[10px] px-1 py-0.2 rounded bg-red-100 text-red-700 font-bold border border-red-200">4Â°C ALERT</span>
+</div>
+<div class="flex items-center gap-1.5 text-slate-500 font-mono text-[11px]">
+<span>#LOT-MED-098</span>
+<span>â€¢</span>
+<span>300 Doses Total</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-slate-700 font-medium">Whitefield Beta</td>
+<td class="py-3.5 px-space-md font-bold text-navy-deep">300 vials</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col gap-1 w-28">
+<div class="flex justify-between text-slate-500 font-caption text-caption">
+<span class="font-semibold text-slate-700">100 vials</span>
+<span class="font-mono text-[11px]">#TR-8819</span>
+</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-slate-600 h-full rounded-full" style="width: 33%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-bold text-slate-900">200 vials</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col gap-1 w-24">
+<span class="font-label text-label-sm text-error font-bold">45 Days Left</span>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-error h-full rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-blue-50 text-blue-900 border border-blue-200 font-label text-label-sm">Cold-Chain (2-8Â°C)</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-red-100 text-red-800 border border-red-200 font-label text-label-sm font-semibold">Priority Match</span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="flex items-center justify-end gap-1 opacity-70 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Quick Edit">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-red-100 flex items-center justify-center text-error" title="Trigger Emergency Broadcast">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Options">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6: High-GSM Tarpaulins (Fully Pledged) -->
+<tr class="hover:bg-slate-50/70 transition-colors group">
+<td class="py-3.5 px-space-lg">
+<div class="flex items-center gap-space-sm">
+<img class="w-10 h-10 rounded object-cover border border-slate-200 bg-slate-100 shrink-0" data-alt="Heavy duty blue waterproof tarpaulin sheets folded and strapped tightly on industrial loading pallets in an outdoor crisis relief logistics base" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg0Yw8eUuGAYAditT9xTI9NSVqzG_TS857OP62zwFAyQp91BBEnYmSn3F3abC1h43DifWAr6tO5Lji-i1gy-IT-cmCjjzm2h0zr-IvxTyde-B7cNFf0kq3BjOEkSOjv1Pyyug1wLfdvZR_bUPXBoew33O4c8rRZ_rpf1yJP2mhNmXgb6uXhEDTofa8FkpS05OYUAJIOCaq1gFWYaT9zP9fJuMpxUnj_DT9gNji8xAE"/>
+<div class="flex flex-col">
+<span class="font-serif text-[14px] text-navy-deep font-bold">Waterproof Tarpaulins (250 GSM)</span>
+<div class="flex items-center gap-1.5 text-slate-500 font-mono text-[11px]">
+<span>#LOT-SHL-552</span>
+<span>â€¢</span>
+<span>12x18 ft sheets</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md text-slate-700 font-medium">Hubballi Terminal</td>
+<td class="py-3.5 px-space-md font-bold text-navy-deep">400 units</td>
+<td class="py-3.5 px-space-md">
+<div class="flex flex-col gap-1 w-28">
+<div class="flex justify-between text-slate-500 font-caption text-caption">
+<span class="font-bold text-red-700">400 units</span>
+<span class="font-mono text-[11px]">100% Pledged</span>
+</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+<div class="bg-red-600 h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-space-md font-bold text-slate-400">0 units</td>
+<td class="py-3.5 px-space-md">
+<span class="font-label text-label-sm text-slate-600 font-medium">Durable Good</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 font-label text-label-sm border border-slate-200">Palletized</span>
+</td>
+<td class="py-3.5 px-space-md">
+<span class="px-2 py-0.5 rounded bg-slate-200 text-slate-700 font-label text-label-sm font-semibold">Fully Locked</span>
+</td>
+<td class="py-3.5 px-space-lg text-right">
+<div class="flex items-center justify-end gap-1 opacity-70 group-hover:opacity-100 transition-opacity">
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Quick Edit">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Manifest Details">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+<button class="w-7 h-7 rounded hover:bg-slate-200 flex items-center justify-center text-slate-600" title="Options">
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination / Summary Footer -->
+<div class="px-space-lg py-space-md bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-space-md font-label">
+<span class="text-caption text-slate-600 font-medium">
+        Showing 6 of 42 emergency surplus inventory lots across Karnataka hubs
+      </span>
+<div class="flex items-center gap-1">
+<button class="px-2.5 py-1 rounded bg-white border border-slate-300 text-slate-600 hover:bg-slate-100 text-label-sm shadow-sm">Previous</button>
+<button class="px-2.5 py-1 rounded bg-alexandria-blue text-white text-label-sm font-bold shadow-sm">1</button>
+<button class="px-2.5 py-1 rounded bg-white border border-slate-300 text-slate-600 hover:bg-slate-100 text-label-sm shadow-sm">2</button>
+<button class="px-2.5 py-1 rounded bg-white border border-slate-300 text-slate-600 hover:bg-slate-100 text-label-sm shadow-sm">3</button>
+<button class="px-2.5 py-1 rounded bg-white border border-slate-300 text-slate-600 hover:bg-slate-100 text-label-sm shadow-sm">Next</button>
+</div>
+</div>
+</div>
+<!-- Automated Stock Reconciliation Log Section -->
+<div class="flex flex-col bg-white border border-slate-200 rounded p-space-lg shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-md border-b border-slate-100">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded bg-blue-50 border border-blue-100 flex items-center justify-center text-alexandria-blue">
+<span class="material-symbols-outlined text-[20px]">sync_alt</span>
+</div>
+<div class="flex flex-col">
+<h2 class="font-serif text-headline-sm text-navy-deep font-bold">Automated Stock Reconciliation Log</h2>
+<span class="font-caption text-caption text-slate-500">Dual-key consignee receipt verification &amp; cryptographic audit trace</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1.5 font-label text-caption text-alexandria-blue font-semibold">
+<span class="w-2 h-2 rounded-full bg-alexandria-blue"></span> Consensus Ledger Synced
+        </span>
+<button class="px-2.5 py-1 rounded bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 font-label text-label-sm shadow-sm">Export Audit JSON</button>
+</div>
+</div>
+<div class="space-y-space-sm pt-space-md">
+<!-- Ledger Item 1 -->
+<div class="p-space-md rounded bg-slate-50/80 border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-slate-100/60 transition-colors">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="w-1.5 h-10 rounded-full bg-alexandria-blue hidden sm:block shrink-0"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-serif text-[14px] text-navy-deep font-bold">TR-8814: Concluded Deduction</span>
+<span class="font-mono text-label-sm px-1.5 py-0.5 rounded bg-slate-200/80 text-slate-700 font-semibold">Deduction: -450 kg</span>
+</div>
+<span class="font-sans text-caption text-slate-600 mt-0.5">
+              Item: Pulses &amp; High-Protein Legumes Â· Hubballi Field Terminal â†’ Badami Flood Center
+            </span>
+</div>
+</div>
+<div class="flex items-center justify-between md:justify-end gap-space-lg shrink-0">
+<div class="flex flex-col text-right">
+<span class="font-mono text-caption text-slate-700">08:14:22 Zulu (28m ago)</span>
+<span class="font-caption text-caption text-slate-500 truncate max-w-[200px]" title="Sig: 0x8f4d...391a">Node: field-station-karn-04</span>
+</div>
+<div class="flex items-center gap-1 text-alexandria-blue font-label text-label-sm font-semibold shrink-0 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Signed 0x8f4d...</span>
+</div>
+</div>
+</div>
+<!-- Ledger Item 2 -->
+<div class="p-space-md rounded bg-slate-50/80 border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-slate-100/60 transition-colors">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="w-1.5 h-10 rounded-full bg-alexandria-blue hidden sm:block shrink-0"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-serif text-[14px] text-navy-deep font-bold">TR-8812: Dual-Key Handover</span>
+<span class="font-mono text-label-sm px-1.5 py-0.5 rounded bg-slate-200/80 text-slate-700 font-semibold">Deduction: -80 units</span>
+</div>
+<span class="font-sans text-caption text-slate-600 mt-0.5">
+              Item: Sterile Surgical Packs Â· Domlur Central Hub â†’ Red Cross Mobile Unit 3
+            </span>
+</div>
+</div>
+<div class="flex items-center justify-between md:justify-end gap-space-lg shrink-0">
+<div class="flex flex-col text-right">
+<span class="font-mono text-caption text-slate-700">06:48:10 Zulu (2h ago)</span>
+<span class="font-caption text-caption text-slate-500 truncate max-w-[200px]" title="Sig: 0x33b1...7c09">Node: dispatch-blr-alpha</span>
+</div>
+<div class="flex items-center gap-1 text-alexandria-blue font-label text-label-sm font-semibold shrink-0 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Signed 0x33b1...</span>
+</div>
+</div>
+</div>
+<!-- Ledger Item 3 -->
+<div class="p-space-md rounded bg-slate-50/80 border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:bg-slate-100/60 transition-colors">
+<div class="flex items-start md:items-center gap-space-md">
+<div class="w-1.5 h-10 rounded-full bg-amber-500 hidden sm:block shrink-0"></div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-serif text-[14px] text-navy-deep font-bold">TR-8809: Automated Expiry Reroute</span>
+<span class="font-mono text-label-sm px-1.5 py-0.5 rounded bg-slate-200/80 text-slate-700 font-semibold">Deduction: -200 Litres</span>
+</div>
+<span class="font-sans text-caption text-slate-600 mt-0.5">
+              Item: Electrolyte Solutions (Exp &lt; 20d) Â· Auto-assigned to Bagalkot Transit Camp
+            </span>
+</div>
+</div>
+<div class="flex items-center justify-between md:justify-end gap-space-lg shrink-0">
+<div class="flex flex-col text-right">
+<span class="font-mono text-caption text-slate-700">04:12:05 Zulu (4h ago)</span>
+<span class="font-caption text-caption text-slate-500 truncate max-w-[200px]" title="Sig: 0xaa27...904b">Node: expiry-daemon-worker-1</span>
+</div>
+<div class="flex items-center gap-1 text-alexandria-blue font-label text-label-sm font-semibold shrink-0 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Signed 0xaa27...</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+  </div>
+</div>

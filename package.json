@@ -1,0 +1,19 @@
+{
+  "name": "reliefnet-ngo-coordination",
+  "version": "1.0.0",
+  "description": "ReliefNet Decentralized Inter-NGO Humanitarian Resource Coordination Network & Governance OS",
+  "scripts": {
+    "start": "python server.py",
+    "dev": "python server.py",
+    "serve": "python -m http.server 8000"
+  },
+  "keywords": [
+    "reliefnet",
+    "ngo-resource-pooling",
+    "humanitarian",
+    "alexandria-design-system"
+  ],
+  "author": "ReliefNet Consortium",
+  "license": "Apache-2.0"
+}
+

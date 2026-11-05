@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emergency Requests & Shortage Directory — ReliefNet</title>
+  <link rel="stylesheet" href="/static/css/alexandria.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Public+Sans:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: { DEFAULT: "#059669", 50: "#ecfdf5", 100: "#d1fae5", 500: "#10b981", 600: "#059669", 700: "#065f46" },
+            "primary-container": "#ecfdf5",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#065f46",
+            "primary-fixed": "#d1fae5",
+            "secondary-container": "#f0f7f4",
+            "on-secondary-container": "#08211c",
+            surface: "#fbfdfc",
+            "on-surface": "#08211c",
+            "on-surface-variant": "#52645f",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#fbfdfc",
+            "surface-container": "#f0f7f4",
+            "surface-container-high": "#d9e8e2",
+            outline: "#8fa8a1",
+            "outline-variant": "#d9e8e2"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "0.75rem",
+            "space-lg": "1rem",
+            "space-xl": "1.5rem",
+            "margin-desktop": "2rem",
+            "gutter-desktop": "1.5rem"
+          },
+          fontFamily: {
+            serif: ['"Noto Serif"', 'Georgia', 'serif'],
+            sans: ['"Inter"', 'system-ui', 'sans-serif'],
+            label: ['"Public Sans"', '"Inter"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          fontSize: {
+            "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["24px", { lineHeight: "32px", letterSpacing: "-0.015em", fontWeight: "600" }],
+            "headline-md": ["20px", { lineHeight: "28px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-sm": ["16px", { lineHeight: "24px", letterSpacing: "-0.005em", fontWeight: "600" }],
+            "body-lg": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+            "label-lg": ["14px", { lineHeight: "20px", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.01em", fontWeight: "600" }],
+            "label-sm": ["11px", { lineHeight: "14px", letterSpacing: "0.02em", fontWeight: "600" }],
+            "caption": ["12px", { lineHeight: "16px", fontWeight: "400" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-sans antialiased text-slate-900">
+  <div id="global-header"></div>
+  <main class="w-full">
+    
+<div class="flex flex-col w-full">
+<div class="px-6 sm:px-10 py-8 flex flex-col gap-8 max-w-[1560px] mx-auto w-full">
+<!-- Section Header & Breadcrumb -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-1.5 text-slate-500 font-label text-[12px]">
+<a class="hover:text-alexandria-blue transition-colors" href="#">Operations Desk</a>
+<span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span>
+<a class="hover:text-alexandria-blue transition-colors" href="#">Requisitions</a>
+<span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span>
+<span class="text-alexandria-navy font-semibold">Emergency Requisition Directory</span>
+</div>
+<div class="flex flex-col xl:flex-row xl:items-end justify-between gap-6 pt-2">
+<div class="flex flex-col gap-2 max-w-3xl">
+<div class="flex items-center gap-3 flex-wrap">
+<h1 class="font-serif text-[30px] font-bold text-alexandria-navy tracking-tight leading-tight">
+                    Emergency Requisition Directory &amp; Shortage Watch
+                  </h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-error-container text-error font-label text-[11px] font-bold border border-error/20">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+                    REAL-TIME SYNC
+                  </span>
+</div>
+<p class="font-sans text-[14px] text-slate-600 leading-relaxed">
+                  Centralized operational registry of disaster shortage manifests, verified supply requisitions, and unfilled mutual-aid demands across active flood sectors.
+                </p>
+</div>
+<!-- Global Action Group -->
+<div class="flex items-center gap-2.5 flex-wrap shrink-0">
+<button class="h-9 px-4 rounded bg-white hover:bg-slate-50 text-slate-700 font-label text-[12px] font-semibold flex items-center gap-2 border border-slate-300 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-alexandria-blue">file_download</span>
+<span>Export Requisitions CSV</span>
+</button>
+<button class="h-9 px-4 rounded bg-white hover:bg-slate-50 text-slate-700 font-label text-[12px] font-semibold flex items-center gap-2 border border-slate-300 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-alexandria-blue">add_moderator</span>
+<span>+ Request Specialized Service</span>
+</button>
+<button class="h-9 px-4 rounded bg-alexandria-blue hover:bg-[#047857] text-white font-label text-[12px] font-semibold flex items-center gap-2 transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>+ Create Resource Request</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Telemetry & Performance Indicator Cards (Curated Scholarly Metric Cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Stat 1 -->
+<div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label text-[11px] tracking-normal font-bold text-slate-500">Active Unmet Deficits</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-sans text-[32px] font-bold text-alexandria-navy leading-none tracking-tight">14</span>
+<span class="font-label text-[11px] text-error font-semibold">Shortages across 3 zones</span>
+</div>
+</div>
+<div class="p-2 rounded bg-error-container text-error">
+<span class="material-symbols-outlined text-[20px]">crisis_alert</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-slate-500 text-[12px]">
+<span>Net shortage payload</span>
+<span class="font-label text-[11px] text-alexandria-navy font-bold">12,400 kg food • 3,200 kits</span>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-alexandria-blue"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label text-[11px] tracking-normal font-bold text-slate-500">Avg Match Resolution</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-sans text-[32px] font-bold text-alexandria-navy leading-none tracking-tight">34</span>
+<span class="font-label text-[12px] text-alexandria-blue font-semibold">minutes</span>
+</div>
+</div>
+<div class="p-2 rounded bg-blue-50 text-alexandria-blue border border-blue-100">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-slate-500 text-[12px]">
+<span>Submission to 1st peer pledge</span>
+<span class="font-label text-[11px] text-alexandria-blue font-semibold">-12m vs Flood '23</span>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-indigo-600"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label text-[11px] tracking-normal font-bold text-slate-500">Co-Fulfillment Ratio</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-sans text-[32px] font-bold text-alexandria-navy leading-none tracking-tight">72.4%</span>
+<span class="font-label text-[11px] text-indigo-700 font-semibold">↑ 8.1% peer mesh</span>
+</div>
+</div>
+<div class="p-2 rounded bg-indigo-50 text-indigo-600 border border-indigo-100">
+<span class="material-symbols-outlined text-[20px]">share_location</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-slate-500 text-[12px]">
+<span>Multi-NGO consortium resolution</span>
+<span class="font-label text-[11px] text-alexandria-navy font-semibold">2+ NGOs cooperating</span>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="p-5 rounded-lg bg-white border border-slate-200 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-error"></div>
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label text-[11px] tracking-normal font-bold text-slate-500">Priority Escalations</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-sans text-[32px] font-bold text-error leading-none tracking-tight">4</span>
+<span class="font-label text-[11px] text-error font-semibold">State / NDMA Desk</span>
+</div>
+</div>
+<div class="p-2 rounded bg-error-container text-error">
+<span class="material-symbols-outlined text-[20px]">flag_circle</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-slate-500 text-[12px]">
+<span>Tier-1 SDRF Intervention</span>
+<span class="font-label text-[11px] text-error font-bold">Live SDRF Channel</span>
+</div>
+</div>
+</div>
+<!-- Search, Filter & View Controls -->
+<div class="p-4 rounded-lg bg-white border border-slate-200 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<!-- Search Input Container -->
+<div class="relative flex-1 min-w-[280px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-[19px]">filter_alt</span>
+<input class="w-full pl-9 pr-4 py-2 bg-slate-50 text-[13px] text-on-surface rounded border border-slate-200 placeholder:text-slate-400 focus:outline-none focus:border-alexandria-blue focus:bg-white transition-colors" placeholder="Filter by Requisition SKU, medical supply, camp or NGO..." type="text"/>
+</div>
+<!-- Urgency Filter Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 shrink-0">
+<button class="px-3 py-1.5 rounded font-label text-[11px] font-bold bg-alexandria-navy text-white whitespace-nowrap shadow-sm">
+                All Requests (64)
+              </button>
+<button class="px-3 py-1.5 rounded font-label text-[11px] font-bold bg-error-container text-on-error-container hover:bg-red-200 border border-error/20 whitespace-nowrap transition-colors flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                Critical Red-Alert (8)
+              </button>
+<button class="px-3 py-1.5 rounded font-label text-[11px] font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 whitespace-nowrap transition-colors">
+                High Urgency (24)
+              </button>
+<button class="px-3 py-1.5 rounded font-label text-[11px] font-bold bg-slate-100 hover:bg-slate-200 text-slate-700 border border-slate-200 whitespace-nowrap transition-colors">
+                Partially Covered (14)
+              </button>
+<button class="px-3 py-1.5 rounded font-label text-[11px] font-bold bg-slate-100 hover:bg-slate-200 text-slate-500 border border-slate-200 whitespace-nowrap transition-colors">
+                Expired / Closed (18)
+              </button>
+</div>
+</div>
+<!-- Active Requisitions Primary Directory Table -->
+<div class="rounded-lg bg-white border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+<!-- Section Mini Bar -->
+<div class="px-6 py-3.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-alexandria-blue text-[20px]">assignment_turned_in</span>
+<span class="font-serif text-[17px] font-bold text-alexandria-navy">Priority Requisitions Master Ledger</span>
+<span class="hidden md:inline text-[12px] text-slate-500 font-sans">| Showing active requisitions in North Karnataka Theater</span>
+</div>
+<div class="flex items-center gap-2 text-slate-600 text-[12px]">
+<span class="inline-flex items-center gap-1.5 font-label text-[11px] font-medium text-slate-700">
+<span class="w-2 h-2 rounded-full bg-alexandria-blue"></span> Auto-matching enabled
+                </span>
+</div>
+</div>
+<!-- Responsive Table View -->
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-100/70 border-b border-slate-200 text-slate-500 font-label text-[11px] tracking-normal">
+<th class="py-3 px-6 font-bold">Requisition ID &amp; Priority</th>
+<th class="py-3 px-4 font-bold">Item &amp; Deficit Quantity</th>
+<th class="py-3 px-4 font-bold">Requisitioning NGO &amp; Sector</th>
+<th class="py-3 px-4 font-bold">Readiness Window</th>
+<th class="py-3 px-4 font-bold w-72">Allocation Status &amp; Coverage</th>
+<th class="py-3 px-6 font-bold text-right">Operational Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200 text-[13px] text-on-surface">
+<!-- ROW 1: Rice -->
+<tr class="hover:bg-slate-50/80 transition-colors group">
+<td class="py-4 px-6 align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-[14px] font-bold text-alexandria-navy">#REQ-1049</span>
+<span class="material-symbols-outlined text-alexandria-blue text-[15px]" title="Cryptographic Hash Verified">enhanced_encryption</span>
+</div>
+<span class="inline-flex items-center w-fit px-1.5 py-0.5 rounded font-label text-[10px] bg-error-container text-on-error-container font-bold border border-error/20">
+                          CRITICAL RED-ALERT
+                        </span>
+<span class="font-label text-[11px] text-slate-500 mt-0.5">P1 • Food Rations</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-0.5">
+<span class="font-serif text-[15px] font-bold text-alexandria-navy">500 kg Non-Perishable Rice</span>
+<span class="text-slate-600 text-[12px]">Sona Masoori Grade-A • Double Polybagged</span>
+<div class="mt-1 flex items-center gap-1.5 text-slate-500 text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-alexandria-blue">warehouse</span>
+<span>Direct depot delivery or airlift drop ready</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1 font-label text-[12px] text-alexandria-navy font-bold">
+<span>Asha Relief Initiative</span>
+<span class="material-symbols-outlined text-alexandria-blue text-[15px]" title="Govt Verified Tier-1">verified</span>
+</div>
+<span class="text-slate-600 text-[12px]">Bellandur Flood Clinic</span>
+<span class="text-slate-400 font-label text-[11px]">Zone 2 • Grid Ref: NK-048</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1 text-error font-label text-[12px] font-bold">
+<span class="material-symbols-outlined text-[15px]">alarm</span>
+<span>&lt; 12 hrs</span>
+</div>
+<span class="text-slate-600 text-[11px]">Target: 05 Nov 22:00 ZULU</span>
+<span class="text-slate-400 text-[11px] italic">Transit Window: Narrow</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label text-[11px]">
+<span class="text-alexandria-navy font-bold">90% Allocated</span>
+<span class="px-1.5 py-0.5 rounded bg-blue-50 text-alexandria-blue font-bold border border-blue-100">50 kg Deficit</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden flex">
+<div class="bg-alexandria-blue h-full rounded-full transition-all" style="width: 90%;"></div>
+</div>
+<div class="flex flex-col gap-0.5 mt-1 text-[11px] text-slate-500">
+<span class="text-slate-700 font-medium">450 kg pledged by 2 NGOs:</span>
+<span>• XYZ Food Foundation (300 kg)</span>
+<span>• Helping Hands Hub (150 kg)</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 align-top text-right">
+<div class="flex flex-col items-end gap-1.5">
+<button class="h-8 px-3 rounded bg-alexandria-blue text-white font-label text-[11px] font-bold hover:bg-[#047857] transition-colors flex items-center gap-1 shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+<span>View AI Match Plan (94%)</span>
+</button>
+<button class="h-8 px-3 rounded bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-label text-[11px] font-semibold transition-colors flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[15px] text-alexandria-blue">handshake</span>
+<span>Manage Pledges</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 2: Fleece Blankets -->
+<tr class="hover:bg-slate-50/80 transition-colors group">
+<td class="py-4 px-6 align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-[14px] font-bold text-alexandria-navy">#REQ-1052</span>
+</div>
+<span class="inline-flex items-center w-fit px-1.5 py-0.5 rounded font-label text-[10px] bg-slate-100 text-slate-700 font-bold border border-slate-200">
+                          HIGH URGENCY
+                        </span>
+<span class="font-label text-[11px] text-slate-500 mt-0.5">P2 • Shelter Supplies</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-0.5">
+<span class="font-serif text-[15px] font-bold text-alexandria-navy">1,000 Heavy Fleece Blankets</span>
+<span class="text-slate-600 text-[12px]">UNHCR Spec • Thermal Grade-IV • 1.5x2.0m</span>
+<div class="mt-1 flex items-center gap-1.5 text-slate-500 text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-alexandria-blue">inventory_2</span>
+<span>Bulk Bales: 50 units/bundle</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1 font-label text-[12px] text-alexandria-navy font-bold">
+<span>Janahit Coalition</span>
+<span class="px-1 rounded bg-slate-100 text-slate-600 font-label text-[10px]">Tier-2</span>
+</div>
+<span class="text-slate-600 text-[12px]">Bagalkot Evac Camp #4</span>
+<span class="text-slate-400 font-label text-[11px]">Zone 1 • Inundation Sector B</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1 text-slate-800 font-label text-[12px] font-semibold">
+<span class="material-symbols-outlined text-[15px] text-slate-500">schedule</span>
+<span>Within 24 hrs</span>
+</div>
+<span class="text-slate-600 text-[11px]">Camp Temp: 14°C night drop</span>
+<span class="text-slate-400 text-[11px]">Access route: NH-52 Open</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label text-[11px]">
+<span class="text-alexandria-navy font-bold">40% Covered (400/1000)</span>
+<span class="px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 font-bold border border-amber-200">600 Deficit Broadcast</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden flex">
+<div class="bg-alexandria-blue h-full rounded-full transition-all" style="width: 40%;"></div>
+</div>
+<div class="flex flex-col gap-0.5 mt-1 text-[11px] text-slate-500">
+<span class="text-slate-700 font-medium">Pledged by Hubballi Trust (400 units)</span>
+<span>Remaining 600 broadcast to 14 regional nodes</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 align-top text-right">
+<div class="flex flex-col items-end gap-1.5">
+<button class="h-8 px-3 rounded bg-alexandria-navy text-white font-label text-[11px] font-bold hover:bg-slate-800 transition-colors flex items-center gap-1 shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[15px]">volunteer_activism</span>
+<span>Pledge Surplus Stock</span>
+</button>
+<button class="h-8 px-3 rounded bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-label text-[11px] font-semibold transition-colors flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[15px] text-alexandria-blue">explore</span>
+<span>Inspect Matches (88%)</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 3: Snake Antivenom (CRITICAL 0%) -->
+<tr class="bg-red-50/40 hover:bg-red-50/70 transition-colors group">
+<td class="py-4 px-6 align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-[14px] font-bold text-error">#REQ-1055</span>
+<span class="material-symbols-outlined text-error text-[17px] animate-bounce">priority_high</span>
+</div>
+<span class="inline-flex items-center w-fit px-1.5 py-0.5 rounded font-label text-[10px] bg-error text-white font-bold">
+                          CRITICAL RED-ALERT
+                        </span>
+<span class="font-label text-[11px] text-error font-semibold mt-0.5">P0 • Critical Medical</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-0.5">
+<span class="font-serif text-[15px] font-bold text-alexandria-navy">150 Vials Polyvalent Snake Antivenom</span>
+<span class="text-error font-label text-[11px] font-bold">Cold-Chain Strictly Required (2°C - 8°C)</span>
+<div class="mt-1 flex items-center gap-1.5 text-slate-500 text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-error">thermostat</span>
+<span>Requires verified ILR ice-box transit</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1 font-label text-[12px] text-alexandria-navy font-bold">
+<span>MedRelief Coastal</span>
+<span class="material-symbols-outlined text-alexandria-blue text-[15px]" title="Govt Verified Tier-1">verified</span>
+</div>
+<span class="text-slate-600 text-[12px]">Athani Rural Emergency Triage</span>
+<span class="text-error font-label text-[11px] font-medium">Zone 3 • Flash Flood Cutoff Hub</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1 text-error font-label text-[12px] font-bold animate-pulse">
+<span class="material-symbols-outlined text-[15px]">emergency</span>
+<span>IMMEDIATE (&lt; 6 hrs)</span>
+</div>
+<span class="text-error text-[11px] font-medium">Stockout Imminent: 3 doses left</span>
+<span class="text-slate-500 text-[11px]">Triage Casualty Flow: Rising</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label text-[11px]">
+<span class="text-error font-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+                            0% Covered • UNMET
+                          </span>
+<span class="px-1.5 py-0.5 rounded bg-error text-white font-bold text-[10px]">P0 BROADCAST</span>
+</div>
+<div class="w-full bg-error/20 h-2 rounded-full overflow-hidden flex">
+<div class="bg-error h-full rounded-full transition-all" style="width: 2%;"></div>
+</div>
+<div class="flex flex-col gap-0.5 mt-1 text-[11px] text-error font-medium">
+<span>SDRF Emergency Channel Active</span>
+<span class="text-slate-500 font-normal">Belagavi Civil Hospital Depot alerted</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 align-top text-right">
+<div class="flex flex-col items-end gap-1.5">
+<button class="h-8 px-3 rounded bg-error text-white font-label text-[11px] font-bold hover:bg-red-700 transition-colors flex items-center gap-1 shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[15px]">podium</span>
+<span>Emergency Broadcast Dispatch</span>
+</button>
+<button class="h-8 px-3 rounded bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 font-label text-[11px] font-semibold transition-colors flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[15px] text-alexandria-blue">near_me</span>
+<span>Locate Nearest Cold Depot</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 4: Water Filtration (100% Locked) -->
+<tr class="hover:bg-slate-50/80 transition-colors group">
+<td class="py-4 px-6 align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-[14px] font-bold text-alexandria-navy">#REQ-1048</span>
+</div>
+<span class="inline-flex items-center w-fit px-1.5 py-0.5 rounded font-label text-[10px] bg-blue-50 text-alexandria-blue font-bold border border-blue-200">
+                          MEDIUM URGENCY
+                        </span>
+<span class="font-label text-[11px] text-slate-500 mt-0.5">P3 • WASH / Purification</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-0.5">
+<span class="font-serif text-[15px] font-bold text-alexandria-navy">2x Mobile Water Filtration Units</span>
+<span class="text-slate-600 text-[12px]">Capacity: 2,000 L/hr • Diesel Genset Equipped</span>
+<div class="mt-1 flex items-center gap-1.5 text-alexandria-blue text-[11px]">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+<span>Waybill assigned: Dispatch confirmed</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1 font-label text-[12px] text-alexandria-navy font-bold">
+<span>CleanWaters Grassroots</span>
+<span class="px-1 rounded bg-slate-100 text-slate-600 font-label text-[10px]">Grassroots</span>
+</div>
+<span class="text-slate-600 text-[12px]">Raichur Krishna Inundation Node</span>
+<span class="text-slate-400 font-label text-[11px]">Zone 2 • Riverside Cluster #3</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1 text-slate-800 font-label text-[12px] font-semibold">
+<span class="material-symbols-outlined text-[15px] text-slate-500">event_available</span>
+<span>48 hrs window</span>
+</div>
+<span class="text-slate-600 text-[11px]">Target ETA: Tomorrow 09:00</span>
+<span class="text-alexandria-blue font-label text-[11px] font-bold">Truck in Transit (SDRF Escort)</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label text-[11px]">
+<span class="text-alexandria-navy font-bold">100% Pledged</span>
+<span class="px-1.5 py-0.5 rounded bg-blue-100 text-alexandria-blue font-bold">Full Earmark Locked</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden flex">
+<div class="bg-alexandria-blue h-full rounded-full transition-all" style="width: 100%;"></div>
+</div>
+<div class="flex flex-col gap-0.5 mt-1 text-[11px] text-slate-500">
+<span class="text-slate-700 font-medium">Dispatched by Red Cross Karnataka</span>
+<span>Carrier: E-Waybill #KA-TR-8824</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 align-top text-right">
+<div class="flex flex-col items-end gap-1.5">
+<button class="h-8 px-3 rounded bg-white hover:bg-slate-100 text-alexandria-navy border border-slate-300 font-label text-[11px] font-bold transition-colors flex items-center gap-1 shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[15px] text-alexandria-blue">navigation</span>
+<span>Track Waybill #TR-8824</span>
+</button>
+<button class="h-8 px-3 rounded bg-slate-50 hover:bg-slate-100 text-slate-600 font-label text-[11px] font-medium transition-colors flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[15px]">receipt_long</span>
+<span>View Transaction</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- ROW 5: RUTF Maternal Nutrition -->
+<tr class="hover:bg-slate-50/80 transition-colors group">
+<td class="py-4 px-6 align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="font-mono text-[14px] font-bold text-alexandria-navy">#REQ-1044</span>
+</div>
+<span class="inline-flex items-center w-fit px-1.5 py-0.5 rounded font-label text-[10px] bg-slate-100 text-slate-600 font-bold border border-slate-200">
+                          ROUTINE REPLENISHMENT
+                        </span>
+<span class="font-label text-[11px] text-slate-500 mt-0.5">P4 • Clinical Nutrition</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-0.5">
+<span class="font-serif text-[15px] font-bold text-alexandria-navy">2,500 Packs Maternal &amp; Infant RUTF</span>
+<span class="text-slate-600 text-[12px]">Ready-to-Use Therapeutic Food • 92g sachets</span>
+<div class="mt-1 flex items-center gap-1.5 text-slate-500 text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-alexandria-blue">child_care</span>
+<span>Shelf-stable • No clean water reconstitution required</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-0.5">
+<div class="flex items-center gap-1 font-label text-[12px] text-alexandria-navy font-bold">
+<span>Karuna Seva Trust</span>
+<span class="material-symbols-outlined text-alexandria-blue text-[15px]" title="Govt Verified Tier-1">verified</span>
+</div>
+<span class="text-slate-600 text-[12px]">Badami Transit Shelter Center</span>
+<span class="text-slate-400 font-label text-[11px]">Zone 1 • Sector C Primary Health Wing</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-1 text-slate-800 font-label text-[12px] font-semibold">
+<span class="material-symbols-outlined text-[15px] text-slate-500">date_range</span>
+<span>3 days buffer</span>
+</div>
+<span class="text-slate-600 text-[11px]">Runway: 72 hours on hand</span>
+<span class="text-slate-400 text-[11px]">Target Recipient Count: 420 infants</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label text-[11px]">
+<span class="text-alexandria-navy font-bold">60% Pledged (1,500/2,500)</span>
+<span class="px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 font-semibold">1,000 Balance</span>
+</div>
+<div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden flex">
+<div class="bg-slate-400 h-full rounded-full transition-all" style="width: 60%;"></div>
+</div>
+<div class="flex flex-col gap-0.5 mt-1 text-[11px] text-slate-500">
+<span class="text-slate-700 font-medium">1,500 packs pledged by UNICEF Field Reserve</span>
+<span>Pending allocation from Hubli Central Warehouse</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 align-top text-right">
+<div class="flex flex-col items-end gap-1.5">
+<button class="h-8 px-3 rounded bg-white hover:bg-slate-100 text-alexandria-navy border border-slate-300 font-label text-[11px] font-bold transition-colors flex items-center gap-1 shadow-sm whitespace-nowrap">
+<span class="material-symbols-outlined text-[15px] text-alexandria-blue">call_split</span>
+<span>Coordinate Split Dispatch</span>
+</button>
+<button class="h-8 px-3 rounded bg-slate-50 hover:bg-slate-100 text-slate-600 font-label text-[11px] font-medium transition-colors flex items-center gap-1 whitespace-nowrap">
+<span class="material-symbols-outlined text-[15px]">visibility</span>
+<span>Review Requisition</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Ledger Footer & Pagination info -->
+<div class="px-6 py-3.5 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-slate-500 text-[12px] flex-wrap">
+<span>Showing 5 of 64 requisitions</span>
+<span class="text-slate-300">•</span>
+<span>14 items matching current active disaster alert</span>
+<span class="text-slate-300">•</span>
+<span class="text-alexandria-blue font-medium">LEO Relay: Latency 42ms</span>
+</div>
+<div class="flex items-center gap-1.5">
+<button class="h-8 px-3 rounded bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 font-label text-[11px] font-semibold transition-colors disabled:opacity-50" disabled="">
+                  Previous
+                </button>
+<span class="px-2 font-label text-[11px] text-alexandria-navy font-bold">Page 1 of 13</span>
+<button class="h-8 px-3 rounded bg-white border border-slate-300 hover:bg-slate-100 text-slate-700 font-label text-[11px] font-semibold transition-colors">
+                  Next
+                </button>
+</div>
+</div>
+</div>
+<!-- Dual Operational Bento Grid: Live Matching & SOP Compliance -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Bento Card (7 cols): Multi-Provider Allocation Queue -->
+<div class="lg:col-span-7 rounded-lg bg-white border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-alexandria-blue text-[22px]">hub</span>
+<h2 class="font-serif text-[19px] font-bold text-alexandria-navy">Active Multi-Provider Allocation Queue</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded font-label text-[10px] bg-blue-50 text-alexandria-blue border border-blue-200 font-bold tracking-normal">
+                    Algorithmic Consolidation
+                  </span>
+</div>
+<p class="font-sans text-[13px] text-slate-600 leading-relaxed">
+                  Heuristic matching engine aggregating micro-pledges across participating NGOs to resolve full cargo-load thresholds.
+                </p>
+<!-- Consolidation Item 1 -->
+<div class="p-4 rounded-md bg-slate-50 border border-slate-200 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-alexandria-blue"></span>
+<span class="font-label text-[12px] font-bold text-alexandria-navy">Consolidated Manifest #CM-811 • Northern Hub</span>
+</div>
+<span class="font-label text-[11px] text-alexandria-blue font-bold">88% Threshold Met</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-1 py-1 text-[11px] text-slate-600">
+<div>
+<span class="block text-slate-800 font-bold">Target Deficit:</span>
+<span>Water Purification Packs (5,000)</span>
+</div>
+<div>
+<span class="block text-slate-800 font-bold">Contributing Nodes:</span>
+<span>Seva Core (3,000) + HopeAid (1,400)</span>
+</div>
+<div>
+<span class="block text-slate-800 font-bold">Common Carrier:</span>
+<span>Karnataka SDRF Logistics Depot 2</span>
+</div>
+</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden mt-1">
+<div class="bg-alexandria-blue h-full rounded-full" style="width: 88%;"></div>
+</div>
+</div>
+<!-- Consolidation Item 2 -->
+<div class="p-4 rounded-md bg-slate-50 border border-slate-200 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-label text-[12px] font-bold text-alexandria-navy">Consolidated Manifest #CM-814 • Triage Medical Kit</span>
+</div>
+<span class="font-label text-[11px] text-error font-bold">54% Pending Cold-Chain</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-1 py-1 text-[11px] text-slate-600">
+<div>
+<span class="block text-slate-800 font-bold">Target Deficit:</span>
+<span>Insulin &amp; Antivenom Packs</span>
+</div>
+<div>
+<span class="block text-slate-800 font-bold">Contributing Nodes:</span>
+<span>Coastal Med + Red Cross Dharwad</span>
+</div>
+<div>
+<span class="block text-slate-800 font-bold">Carrier Bottleneck:</span>
+<span>Awaiting Solar-Reefer Truck Confirmation</span>
+</div>
+</div>
+<div class="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden mt-1">
+<div class="bg-error h-full rounded-full" style="width: 54%;"></div>
+</div>
+</div>
+</div>
+<div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-slate-500 text-[11px]">
+<span class="material-symbols-outlined text-[16px] text-alexandria-blue">memory</span>
+<span>Optimized via bipartite matching • Minimizes transport footprint</span>
+</div>
+<button class="h-8 px-3 rounded bg-slate-50 hover:bg-slate-100 text-alexandria-navy border border-slate-300 font-label text-[11px] font-bold transition-colors flex items-center gap-1">
+<span>Manage All 4 Queues</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Right Bento Card (5 cols): Emergency Policy & NDMA-SOP-4 -->
+<div class="lg:col-span-5 rounded-lg bg-white border border-slate-200 p-6 shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-3.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-alexandria-blue text-[22px]">policy</span>
+<h2 class="font-serif text-[19px] font-bold text-alexandria-navy">Emergency Broadcast Policy</h2>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-slate-100 text-slate-800 font-label text-[11px] w-fit font-bold border border-slate-200">
+<span class="material-symbols-outlined text-[15px] text-alexandria-blue">gavel</span>
+<span>Standard Operating Procedure: NDMA-SOP-4 Rev.3</span>
+</div>
+<p class="font-sans text-[13px] text-slate-600 leading-relaxed">
+                  All requisitions published through FieldGrid OS are legally governed by the Disaster Mutual-Aid Framework. Adherence is monitored in real time by administrative audits:
+                </p>
+<div class="flex flex-col gap-2.5 mt-1">
+<div class="flex items-start gap-2.5 p-3 rounded bg-slate-50 border border-slate-200/80">
+<span class="material-symbols-outlined text-alexandria-blue text-[18px] shrink-0 mt-0.5">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label text-[12px] text-alexandria-navy font-bold">Zero-Speculation Guarantee</span>
+<span class="text-[11px] text-slate-500 leading-normal">Requisitions must represent directly documented on-ground demand. Stockpiling or intermediary resale triggers immediate blacklisting.</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5 p-3 rounded bg-slate-50 border border-slate-200/80">
+<span class="material-symbols-outlined text-alexandria-blue text-[18px] shrink-0 mt-0.5">radar</span>
+<div class="flex flex-col">
+<span class="font-label text-[12px] text-alexandria-navy font-bold">Automated Broadcast Radius Escalation</span>
+<span class="text-[11px] text-slate-500 leading-normal">Unmet P0 demands automatically scale every 2 hours: Zone radius expands from 25 km to 150 km, escalating to SDRF depot stocks at hour 6.</span>
+</div>
+</div>
+<div class="flex items-start gap-2.5 p-3 rounded bg-slate-50 border border-slate-200/80">
+<span class="material-symbols-outlined text-alexandria-blue text-[18px] shrink-0 mt-0.5">handshake</span>
+<div class="flex flex-col">
+<span class="font-label text-[12px] text-alexandria-navy font-bold">Non-Commercial Earmark Lock</span>
+<span class="text-[11px] text-slate-500 leading-normal">Pledged items are bound to donor-recipient manifests with zero currency mediation under the National Relief Aid Treaty.</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+<span class="text-[11px] text-slate-500 font-semibold">Audited by Karnataka SDMA Liaison</span>
+<button class="font-label text-[11px] text-alexandria-blue hover:underline flex items-center gap-1 font-bold transition-colors">
+<span>Download SOP PDF</span>
+<span class="material-symbols-outlined text-[13px]">open_in_new</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    
+</div>
+
+  </main>
+  <script src="/static/js/screen_catalog.js"></script>
+  <script src="/static/js/mock_data.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

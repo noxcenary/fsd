@@ -1,0 +1,6 @@
+{
+  "files": ["index.html", "static/pages/**/*.html"],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}

@@ -1,0 +1,594 @@
+<!-- Screen: Consignment Collaboration Workspace & Live Handshake | ID: consignment-workspace | UI Source: reliefnet_consignment_collaboration_workspace_live_handshake_alexandria -->
+<div id="screen-consignment-workspace" class="reliefnet-screen-view w-full" data-shell="dashboard">
+  <div class="flex flex-col w-full min-h-[calc(100vh-4rem)]">
+<!-- Top Context Navigation Strip -->
+<div class="w-full bg-surface-container-low px-space-lg py-space-sm flex flex-col md:flex-row md:items-center justify-between gap-space-sm shadow-sm">
+<div class="flex flex-wrap items-center gap-space-xs font-label text-label-sm">
+<span class="text-outline tracking-normal">Operations Desk</span>
+<span class="material-symbols-outlined text-outline text-[14px]">chevron_right</span>
+<span class="text-outline tracking-normal">Messages</span>
+<span class="material-symbols-outlined text-outline text-[14px]">chevron_right</span>
+<span class="text-secondary font-bold">XYZ Food Relief Foundation (#REQ-1049)</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-surface-container font-label text-label-sm text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+        Encrypted Channel [SHA-256 E2E]
+      </span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label text-label-sm">
+<span class="material-symbols-outlined text-[13px]">bolt</span>
+        Low Latency P2P
+      </span>
+</div>
+</div>
+<!-- Primary Channel Header -->
+<div class="w-full bg-surface-container-lowest px-space-lg py-space-md shadow-sm">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-serif text-headline-md text-primary tracking-tight truncate" style="font-family: 'Noto Serif', serif; color: #08211c; font-size: 22px; font-weight: 700;">
+            Channel #DISPATCH-KA-1049: Bellandur Flood Relief Corridor
+          </h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-error-container text-on-error-container font-label text-label-sm tracking-normal animate-pulse">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+            LIVE IN-TRANSIT (&lt; 15 mins ETA)
+          </span>
+</div>
+<p class="font-sans text-body-sm text-on-surface-variant flex items-center gap-2">
+<span>Target Sector: Sector-4 Relief Cluster (Bellandur Lake Outskirts)</span>
+<span class="text-outline">•</span>
+<span>Security Clearance Level: NDMA Tier-1 Sovereign</span>
+</p>
+</div>
+<!-- Action Strip -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-dim text-on-surface font-label text-label-md transition-colors shadow-sm" id="btnTranscript">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Download Chat Transcript (Signed JSON)</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-error text-on-error hover:bg-on-error-container font-label text-label-md transition-colors shadow-sm" id="btnWeighbridge">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Trigger Weighbridge Escalation</span>
+</button>
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-primary-container hover:bg-primary text-on-primary font-label text-label-md transition-colors shadow-sm" href="tel:+919845019283" style="background-color: #059669; color: #ffffff;">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>Call Field Nodal (+91 98450 19283)</span>
+</a>
+</div>
+</div>
+</div>
+<!-- 3-Column Disaster Operations Workspace -->
+<div class="flex-1 w-full p-space-md lg:p-space-lg bg-surface">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN (3 cols on desktop): Mission Partners & Nodal Team -->
+<div class="lg:col-span-3 flex flex-col gap-space-md">
+<!-- Panel Title -->
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label text-label-sm text-outline tracking-normal">Mission Partners &amp; Nodal</span>
+<span class="font-caption text-caption text-secondary font-bold">4 Active Nodes</span>
+</div>
+<!-- Consignor Org Card -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-secondary uppercase font-bold tracking-wider">Consignor Organization</span>
+<h2 class="font-serif text-headline-sm text-primary leading-tight mt-0.5" style="font-family: 'Noto Serif', serif; color: #08211c; font-size: 18px; font-weight: 700;">XYZ Food Relief Foundation</h2>
+</div>
+<span class="material-symbols-outlined text-secondary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label text-label-sm">
+<span class="material-symbols-outlined text-[13px]">shield</span>
+<span>Govt Tier-1 #KA-2018-3109</span>
+</div>
+<!-- Micro Metas -->
+<div class="grid grid-cols-3 gap-space-xs pt-space-xs text-center bg-surface-container-low p-2 rounded">
+<div class="flex flex-col">
+<span class="font-serif text-headline-sm text-primary font-bold">98.8</span>
+<span class="font-caption text-caption text-outline">Trust Index</span>
+</div>
+<div class="flex flex-col">
+<span class="font-serif text-headline-sm text-primary font-bold">58</span>
+<span class="font-caption text-caption text-outline">Manifests</span>
+</div>
+<div class="flex flex-col">
+<span class="font-serif text-headline-sm text-secondary font-bold">0</span>
+<span class="font-caption text-caption text-outline">Disputes</span>
+</div>
+</div>
+</div>
+<!-- Field Personnel On-Channel -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-md">
+<span class="font-caption text-caption text-outline tracking-normal font-bold">Field Personnel On-Channel</span>
+<div class="space-y-space-sm">
+<!-- Trustee -->
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="font-label text-label-sm">AR</span>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label text-label-md text-on-surface truncate">Dr. Arvind Ramanathan</span>
+<span class="font-caption text-caption text-outline truncate">Consignor Logistics Trustee</span>
+</div>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label text-[10px] uppercase font-bold shrink-0">Online</span>
+</div>
+<!-- Receiving Lead -->
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+<span class="font-label text-label-sm">VR</span>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary-fixed-dim"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label text-label-md text-on-surface truncate">Dr. Vinay Rao</span>
+<span class="font-caption text-caption text-outline truncate">Bellandur Camp 04 (Consignee)</span>
+</div>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label text-[10px] uppercase font-bold shrink-0">Online</span>
+</div>
+<!-- Driver Node -->
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="relative w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+<span class="absolute bottom-0 right-0 w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label text-label-md text-on-surface truncate">Driver Ramesh K.</span>
+<span class="font-caption text-caption text-outline truncate">Tata 407 (KA-04-E-2192)</span>
+</div>
+</div>
+<span class="px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label text-[10px] uppercase font-bold shrink-0 flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">gps_fixed</span> GPS Live
+              </span>
+</div>
+</div>
+</div>
+<!-- Emergency Nodal Contacts -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-sm">
+<span class="font-caption text-caption text-outline tracking-normal font-bold">Emergency Nodal Desks</span>
+<div class="flex flex-col gap-2">
+<div class="p-2.5 rounded bg-surface-container-low flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label text-label-md text-primary font-bold">Karnataka SDMA Hotline</span>
+<span class="font-caption text-caption text-outline">State Disaster Mgmt Nodal Desk</span>
+<span class="font-label text-label-sm text-secondary mt-1">1070 / +91 80 2234 0676</span>
+</div>
+<a class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface" href="tel:1070">
+<span class="material-symbols-outlined text-[16px]">call</span>
+</a>
+</div>
+<div class="p-2.5 rounded bg-surface-container-low flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label text-label-md text-primary font-bold">Belagavi Liaison Office</span>
+<span class="font-caption text-caption text-outline">Regional Buffer Supply Dispatch</span>
+<span class="font-label text-label-sm text-secondary mt-1">+91 831 240 7200</span>
+</div>
+<a class="p-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface" href="tel:+918312407200">
+<span class="material-symbols-outlined text-[16px]">call</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Quick Manifest Metric Badge -->
+<div class="p-space-md rounded bg-primary-container text-on-primary flex items-center justify-between shadow-sm" style="background-color: #08211c; color: #ffffff;">
+<div class="flex flex-col">
+<span class="font-label text-label-sm text-on-primary-container uppercase">ReliefNet Ledger Hash</span>
+<span class="font-caption text-caption text-on-primary font-mono truncate max-w-[180px]">#0x49FA...C8821A</span>
+</div>
+<span class="material-symbols-outlined text-secondary-container text-[24px]">verified</span>
+</div>
+</div>
+<!-- CENTER COLUMN (6 cols on desktop): Cryptographic Message Stream & Bilateral Handshake Protocol -->
+<div class="lg:col-span-6 flex flex-col gap-space-md">
+<!-- Pinned Mission SLA Tracker -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<div class="p-1.5 rounded bg-secondary-container text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-[18px]">timelapse</span>
+</div>
+<div>
+<span class="font-caption text-caption text-outline tracking-normal font-bold">Pinned Mission SLA Tracker</span>
+<h3 class="font-serif text-headline-sm text-primary" style="font-family: 'Noto Serif', serif; color: #08211c; font-size: 18px; font-weight: 700;">Bellandur Consignment Allocation (Split A)</h3>
+</div>
+</div>
+<div class="flex items-baseline gap-1 bg-surface-container-low px-space-sm py-1 rounded">
+<span class="font-serif text-headline-sm text-error font-bold">12 mins</span>
+<span class="font-caption text-caption text-outline">ETA window</span>
+</div>
+</div>
+<!-- Progress Bar & Splitting -->
+<div class="space-y-1.5 mt-1">
+<div class="flex justify-between font-label text-label-sm">
+<span class="text-on-surface">This Channel Allocation: <strong class="text-primary font-bold">300 kg (60%)</strong></span>
+<span class="text-outline">Total Mission Target: 500 kg</span>
+</div>
+<div class="w-full bg-surface-container h-2 rounded overflow-hidden">
+<div class="bg-secondary h-full rounded transition-all duration-500" style="width: 60%; background-color: #059669;"></div>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-2 pt-1 font-label text-label-sm text-on-surface-variant bg-surface-container-low p-2 rounded">
+<div>
+<span class="block text-outline font-caption text-[11px]">Dispatch Departure</span>
+<span class="font-bold text-on-surface">13:45 IST</span>
+</div>
+<div>
+<span class="block text-outline font-caption text-[11px]">Est. Arrival</span>
+<span class="font-bold text-on-surface">14:15 IST</span>
+</div>
+<div>
+<span class="block text-outline font-caption text-[11px]">Consolidation</span>
+<span class="font-bold text-on-surface">Split Manifest #1</span>
+</div>
+<div>
+<span class="block text-outline font-caption text-[11px]">Transit Distance</span>
+<span class="font-bold text-on-surface">11.4 km</span>
+</div>
+</div>
+</div>
+<!-- Interactive Stream Container -->
+<div class="bg-surface-container-lowest rounded shadow-sm flex flex-col flex-1 min-h-[580px]">
+<!-- Stream Header -->
+<div class="px-space-md py-space-sm bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[18px]">lock</span>
+<span class="font-label text-label-md text-primary font-bold">Verifiable Event Stream</span>
+</div>
+<div class="flex items-center gap-space-xs text-outline font-caption text-caption">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Ledger Consensus Syncing</span>
+</div>
+</div>
+<!-- Message History List -->
+<div class="p-space-md flex-1 space-y-space-md overflow-y-auto max-h-[500px]" id="messageStream">
+<!-- Audit Event 1 -->
+<div class="flex justify-center">
+<div class="max-w-md w-full bg-surface-container p-space-sm rounded text-center">
+<div class="flex items-center justify-center gap-1.5 text-secondary font-label text-label-sm font-bold">
+<span class="material-symbols-outlined text-[15px]">gavel</span>
+<span>System Sovereign Audit Block</span>
+</div>
+<p class="font-sans text-body-sm text-on-surface-variant mt-1">
+                  Bilateral mutual-aid agreement counter-signed under NDMA Protocol SOP-4. Zero-cash terms locked.
+                </p>
+<span class="font-caption text-[11px] text-outline mt-1 block font-mono">HASH: 0x9a88...c170 | 13:30:12 IST</span>
+</div>
+</div>
+<!-- Consignor Message -->
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center text-label-sm font-bold shrink-0">
+                AR
+              </div>
+<div class="flex flex-col max-w-[85%]">
+<div class="flex items-center gap-space-sm mb-0.5">
+<span class="font-label text-label-sm text-primary font-bold">Dr. Arvind Ramanathan</span>
+<span class="font-caption text-caption text-outline">13:46 IST</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded text-on-surface font-sans text-body-sm space-y-2">
+<p>12 bags inspected, moisture content 11.2%, tamper-evident barcode #KA-LOT-992 affixed. Digital waybill published.</p>
+<div class="p-2 rounded bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified_user</span>
+<span class="font-label text-label-sm font-mono">Lot #KA-LOT-992 [Passed QC]</span>
+</div>
+<span class="font-caption text-caption text-secondary font-bold">Tare: 300.4 kg</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Cryptographic Handshake Interactive Widget -->
+<div class="w-full bg-surface-container-high p-space-md rounded shadow-sm space-y-space-sm" style="background-color: #f0f7f4; border: 1px solid #d9e8e2; border-top: 3px solid #059669;">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="p-1 rounded bg-primary text-on-primary material-symbols-outlined text-[16px]">vpn_key</span>
+<span class="font-label text-label-md text-primary font-bold" style="font-family: 'Noto Serif', serif; color: #08211c; font-size: 14px; font-weight: 700;">Step 2 Handshake: Consignee Pre-Arrival Key Exchange</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label text-label-sm">Signatures 2/2 Complete</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm pt-1">
+<div class="p-2 rounded bg-surface-container-lowest">
+<span class="font-caption text-caption text-outline uppercase font-bold block">SHA-256 Bilateral Token</span>
+<span class="font-mono font-label text-label-sm text-primary select-all">0x8f4cb99201ae77a1</span>
+</div>
+<div class="p-2 rounded bg-surface-container-lowest flex items-center justify-between">
+<div>
+<span class="font-caption text-caption text-outline uppercase font-bold block">Driver OTP Gate Pass</span>
+<span class="font-serif text-headline-sm text-error font-bold font-mono tracking-wider">739-408</span>
+</div>
+<button class="px-2 py-1 bg-surface-container text-on-surface hover:bg-surface-container-high rounded text-label-sm font-label">
+                    Copy
+                  </button>
+</div>
+</div>
+<div class="flex items-center justify-between text-outline font-caption text-caption pt-1">
+<span>Keypair Verified: RSA-4096 / Ed25519</span>
+<span class="text-secondary font-bold">Physical Tare Handshake Ready</span>
+</div>
+</div>
+<!-- Driver Node Ping Telemetry -->
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[16px]">sensors</span>
+</div>
+<div class="flex flex-col max-w-[85%]">
+<div class="flex items-center gap-space-sm mb-0.5">
+<span class="font-label text-label-sm text-secondary font-bold">Automated Telemetry Node</span>
+<span class="font-caption text-caption text-outline">13:58 IST</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded font-sans text-body-sm text-on-surface">
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-[16px] text-primary">route</span>
+<strong class="font-label text-label-sm">Vehicle KA-04-E-2192 passed Outer Ring Road Flyover</strong>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">Speed: 28 km/h • Cargo temperature: Ambient (24°C) • Shock Sensors: Normal</p>
+</div>
+</div>
+</div>
+<!-- Consignee Message with Photo Upload Preview -->
+<div class="flex items-start gap-space-sm justify-end">
+<div class="flex flex-col items-end max-w-[85%]">
+<div class="flex items-center gap-space-sm mb-0.5">
+<span class="font-caption text-caption text-outline">14:02 IST</span>
+<span class="font-label text-label-sm text-primary font-bold">Dr. Vinay Rao (Consignee)</span>
+</div>
+<div class="bg-primary-container text-on-primary p-space-md rounded space-y-space-sm text-left" style="background-color: #08211c; color: #ffffff;">
+<p class="font-sans text-body-sm">Dock team confirmed staging area dry. Forklift on standby at Bay 02.</p>
+<!-- Staging Photo Attachment Preview -->
+<div class="relative rounded overflow-hidden shadow-sm bg-surface-container-lowest">
+<img class="w-full h-36 object-cover" data-alt="A clean, dry concrete humanitarian aid delivery staging bay with a yellow electric forklift on standby, marked with Sector Bay 02 signage under dim warehouse floodlights, documentary logistics photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDodhK5c4ywlk-L88RE8peqh0Repmc_nkhe9J6innefs60F_kx7esmWj6nFgY3-2Adt-AdzMwxTst_MaBLjgBx0RzWCg_xJWhEOQUeFII6GepGhMSOBNCNDuzfZQdzC4VIrcMM5lxFfv1xbMFaKhodlB35_lyoighzNMLD7BUcm782UWyP40_RJCjWdTmPrNyKDyjWCVNpFw3PE8SL2hD8DudF14Kx3EpOXCHsnIGZQ"/>
+<div class="absolute bottom-0 inset-x-0 bg-primary/80 backdrop-blur-sm p-1.5 flex items-center justify-between text-on-primary">
+<span class="font-caption text-[11px] font-mono">BAY-02-STAGING-VERIFIED.JPG</span>
+<span class="font-label text-[10px] bg-secondary px-1.5 py-0.5 rounded">Ready</span>
+</div>
+</div>
+</div>
+</div>
+<div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-label-sm font-bold shrink-0">
+                VR
+              </div>
+</div>
+</div>
+<!-- Console & Fast Field Macros -->
+<div class="p-space-md bg-surface-container-low flex flex-col gap-space-sm">
+<!-- Macros Strip -->
+<div class="flex flex-wrap items-center gap-space-xs">
+<span class="font-caption text-caption text-outline uppercase font-bold mr-1">Fast Field Macros:</span>
+<button class="px-2 py-1 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label text-label-sm transition-colors shadow-sm" onclick="insertMacro('Pre-Arrival Ack: Receiver post is primed and gates are clear.')">
+                Pre-Arrival Ack
+              </button>
+<button class="px-2 py-1 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label text-label-sm transition-colors shadow-sm" onclick="insertMacro('Delay Alert: Heavy local backwater congestion, +15 min adjustment.')">
+                Delay Alert (+15m)
+              </button>
+<button class="px-2 py-1 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label text-label-sm transition-colors shadow-sm" onclick="insertMacro('Dock Route Clear: High-clearance lane verified for vehicle entrance.')">
+                Dock Route Clear
+              </button>
+<button class="px-2 py-1 rounded bg-surface-container-lowest hover:bg-surface-container-high text-on-surface font-label text-label-sm transition-colors shadow-sm" onclick="insertMacro('Request Tare Weigh-in: Pre-staging scale calibrated at 0.00kg zero tare.')">
+                Request Tare Weigh-in
+              </button>
+</div>
+<!-- Message Input Form -->
+<form class="flex items-center gap-space-sm" id="chatForm" onsubmit="handleSend(event)">
+<div class="flex-1 relative bg-surface-container-lowest rounded p-1.5 flex items-center shadow-sm">
+<input class="w-full bg-transparent px-2 font-sans text-body-sm text-on-surface placeholder:text-outline focus:outline-none" id="chatInput" placeholder="Type signed tactical directive or field update..." type="text"/>
+<button class="p-1 hover:bg-surface-container rounded text-outline hover:text-on-surface transition-colors" title="Attach Telemetry or Image" type="button">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+</div>
+<button class="h-10 px-4 rounded bg-primary text-on-primary hover:bg-primary-container font-label text-label-md flex items-center gap-1.5 transition-colors shadow-sm shrink-0" style="background-color: #059669; color: #ffffff;" type="submit">
+<span>Send</span>
+<span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (3 cols on desktop): Consignment Dossier & Live Custody Verification -->
+<div class="lg:col-span-3 flex flex-col gap-space-md">
+<!-- Section Header -->
+<div class="flex items-center justify-between px-space-xs">
+<span class="font-label text-label-sm text-outline tracking-normal">Consignment Dossier</span>
+<span class="font-caption text-caption text-secondary font-bold">WB-2023-8821A</span>
+</div>
+<!-- Waybill Summary Card -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-outline font-bold uppercase">Digital Waybill</span>
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label text-label-sm font-bold">
+              EN ROUTE (State 3 of 6)
+            </span>
+</div>
+<div class="space-y-space-sm pt-space-xs">
+<div>
+<span class="font-caption text-caption text-outline uppercase block">Commodity Manifest</span>
+<p class="font-serif text-headline-sm text-primary" style="font-family: 'Noto Serif', serif; color: #08211c; font-size: 17px; font-weight: 700;">300 kg Sona Masoori Rice</p>
+<span class="font-caption text-caption text-secondary">Batch 08-B (A-Grade Non-Perishable)</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low space-y-1.5 font-label text-label-sm">
+<div class="flex justify-between">
+<span class="text-outline">Vehicle</span>
+<span class="text-on-surface font-bold">Tata 407 (KA-04-E-2192)</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Departure</span>
+<span class="text-on-surface font-bold">Domlur Central Hub</span>
+</div>
+<div class="flex justify-between">
+<span class="text-outline">Destination</span>
+<span class="text-on-surface font-bold">Bellandur Outpost Bay 02</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chain-of-Custody Stepper -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-outline tracking-normal font-bold">Chain-of-Custody Stepper</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+</div>
+<!-- Stepper vertical lines -->
+<div class="relative pl-6 space-y-space-md">
+<!-- Step 1: Completed -->
+<div class="relative">
+<div class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-on-secondary" style="background-color: #059669; color: #ffffff;">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm text-primary font-bold">1. Pledged &amp; Allocated</span>
+<span class="font-caption text-caption text-outline">10:35 IST • Completed &amp; Locked</span>
+</div>
+</div>
+<!-- Step 2: Completed -->
+<div class="relative">
+<div class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-on-secondary" style="background-color: #059669; color: #ffffff;">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm text-primary font-bold">2. Waybill Sealed</span>
+<span class="font-caption text-caption text-outline">13:15 IST • SHA-256 Token Signed</span>
+</div>
+</div>
+<!-- Step 3: Completed (Current Active Stage) -->
+<div class="relative">
+<div class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-secondary flex items-center justify-center text-on-secondary" style="background-color: #059669; color: #ffffff;">
+<span class="material-symbols-outlined text-[10px]">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm text-primary font-bold">3. Gate Departure</span>
+<span class="font-caption text-caption text-outline">13:45 IST • Manifest Active</span>
+</div>
+</div>
+<!-- Step 4: Pending Current -->
+<div class="relative">
+<div class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-error flex items-center justify-center text-on-error animate-pulse">
+<span class="material-symbols-outlined text-[10px]">navigation</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm text-error font-bold">4. Geofence Arrival Check</span>
+<span class="font-caption text-caption text-outline">Pending (&lt; 15m radius)</span>
+</div>
+</div>
+<!-- Step 5: Future -->
+<div class="relative opacity-60">
+<div class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-surface-container-high flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[10px]">hourglass_empty</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm text-on-surface">5. Physical Tare &amp; Moisture Check</span>
+<span class="font-caption text-caption text-outline">Pending Bay 02 arrival</span>
+</div>
+</div>
+<!-- Step 6: Future Final -->
+<div class="relative opacity-60">
+<div class="absolute -left-6 top-0 w-4 h-4 rounded-full bg-surface-container-high flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[10px]">lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-label-sm text-on-surface">6. Consignee Dual-Key Release</span>
+<span class="font-caption text-caption text-outline">Zero-Cash release release token</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Telemetry Map Snapshot Card -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption text-caption text-outline uppercase font-bold">Telemetry Radar</span>
+<span class="font-caption text-caption text-secondary font-mono">LAT: 12.9352 | LNG: 77.6245</span>
+</div>
+<div class="w-full h-36 bg-cover bg-center rounded relative overflow-hidden" data-location="Outer Ring Road, Bellandur, Bengaluru" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuACQ64YDKmlfJ4feflas-X_fPVhAlR6EqER3jyRQfKIRFDOc9JwAi9cYGYv8Paho_QZM_rz2VgBw8Hyxf7GSgwaS0z2GlaDt1B7qeF_-BO1FIBEofZwXwhvLYIjgwdkzk4g8SeHPLWcDE2wH8fPxfHyQnAdmqv7-sZM5W7qhuYEaw0PcLBy0m6POb_2Fu8gKtLLqBZISQqYMCMFawn1KJOSRdm9u7fySUNla2uIeYFm')">
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[1px] flex items-center justify-center">
+<div class="p-2 rounded bg-surface-container-lowest/90 backdrop-blur-md shadow-md flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[18px] animate-bounce">location_on</span>
+<span class="font-label text-label-sm font-bold text-primary">KA-04-E-2192 En Route</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Strip Bottom -->
+<div class="flex flex-col gap-space-sm">
+<button class="w-full py-2 px-space-md rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label text-label-md flex items-center justify-center gap-1.5 transition-colors shadow-sm" id="btnViewWaybill">
+<span class="material-symbols-outlined text-[18px]">description</span>
+<span>View Full Digital Waybill Document</span>
+</button>
+<button class="w-full py-2 px-space-md rounded bg-surface-container-low hover:bg-surface-container text-secondary font-label text-label-md flex items-center justify-center gap-1.5 transition-colors shadow-sm" id="btnShareTelemetry">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span>Share Telemetry Link</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Macro Insertion Helper
+  function insertMacro(text) {
+    const input = document.getElementById('chatInput');
+    if (input) {
+      input.value = text;
+      input.focus();
+    }
+  }
+
+  // Handle send message micro-interaction
+  function handleSend(e) {
+    e.preventDefault();
+    const input = document.getElementById('chatInput');
+    const stream = document.getElementById('messageStream');
+    if (!input || !stream || !input.value.trim()) return;
+
+    const val = input.value.trim();
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const mins = String(now.getMinutes()).padStart(2, '0');
+    const timeStr = `${hours}:${mins} IST`;
+
+    const newMsg = document.createElement('div');
+    newMsg.className = 'flex items-start gap-space-sm justify-end';
+    newMsg.innerHTML = `
+      <div class="flex flex-col items-end max-w-[85%]">
+        <div class="flex items-center gap-space-sm mb-0.5">
+          <span class="font-caption text-caption text-outline">${timeStr}</span>
+          <span class="font-label text-label-sm text-primary font-bold">You (Consignee Lead)</span>
+        </div>
+        <div class="bg-primary-container text-on-primary p-space-md rounded text-left">
+          <p class="font-sans text-body-sm">${val}</p>
+        </div>
+      </div>
+      <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center text-label-sm font-bold shrink-0">
+        ME
+      </div>
+    `;
+
+    stream.appendChild(newMsg);
+    input.value = '';
+    stream.scrollTop = stream.scrollHeight;
+  }
+
+  // Visual Confirmation Micro-interactions for buttons
+  document.getElementById('btnTranscript')?.addEventListener('click', function() {
+    const originalText = this.innerHTML;
+    this.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span><span>Transcript Exported!</span>';
+    setTimeout(() => { this.innerHTML = originalText; }, 2000);
+  });
+
+  document.getElementById('btnWeighbridge')?.addEventListener('click', function() {
+    if (confirm('Initiate critical weighbridge discrepancy escalation alert to Karnataka SDMA nodal desk?')) {
+      alert('Weighbridge Escalation Signal Published with Token HASH #0x821-ESC-WB');
+    }
+  });
+
+  document.getElementById('btnViewWaybill')?.addEventListener('click', function() {
+    alert('Displaying Verifiable Digital Waybill #WB-2023-8821A cryptographic proof manifest.');
+  });
+
+  document.getElementById('btnShareTelemetry')?.addEventListener('click', function() {
+    const originalText = this.innerHTML;
+    this.innerHTML = '<span class="material-symbols-outlined text-[18px]">done</span><span>Link Copied!</span>';
+    setTimeout(() => { this.innerHTML = originalText; }, 2000);
+  });
+</script>
+  </div>
+</div>
