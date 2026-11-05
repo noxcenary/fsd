@@ -1,0 +1,84 @@
+:root {
+  --surface-canvas: #f7f7f2;
+  --surface-card: #ffffff;
+  --surface-secondary: #eef1e8;
+  --surface-dim: #e4e5dc;
+  --chrome-dark: #342b25;
+  --chrome-navy: #5a3e2b;
+  --primary: #87a96b;
+  --primary-hover: #7fa164;
+  --primary-light: #eef1e8;
+  --primary-border: #d5ddcb;
+  --text-primary: #342b25;
+  --text-secondary: #5a3e2b;
+  --text-tertiary: #77766f;
+  --text-inverse: #ffffff;
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--surface-canvas);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  body {
+    overscroll-behavior: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Noto Serif', Georgia, serif;
+    color: var(--text-primary);
+  }
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Material Symbols Outlined Icon alignment helper */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+/* Operational Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-dim);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}

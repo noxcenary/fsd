@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NGO ResourceLink — AI-Assisted NGO Resource Sharing & Management</title>
+    <!-- Google Fonts & Material Symbols -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Serif:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS (RELINK humanitarian palette) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                primary: "#87A96B",
+                "primary-hover": "#7FA164",
+                "primary-light": "#EEF1E8",
+                "primary-border": "#D5DDCB",
+                canvas: "#F7F7F2",
+                card: "#ffffff",
+                secondary: "#EEF1E8",
+                dim: "#E4E5DC",
+                dark: "#5A3E2B",
+                navy: "#342B25",
+                text: "#342B25",
+                "text-secondary": "#77766F",
+                "text-tertiary": "#77766F",
+                "text-inverse": "#ffffff",
+                sage: "#87A96B",
+                "sage-dark": "#6F8F55",
+                "sage-light": "#EEF1E8",
+                walnut: "#5A3E2B",
+                "walnut-dark": "#342B25",
+                "walnut-light": "#77766F",
+                amber: "#D5851F",
+                "amber-light": "#fefce8",
+                ivory: "#F7F7F2",
+                "ivory-dark": "#EEF1E8",
+                border: "#E4E5DC",
+                "border-subtle": "#EEF1E8"
+              }
+            },
+            fontFamily: {
+              sans: ['"Inter"', 'system-ui', 'sans-serif'],
+              display: ['"Noto Serif"', 'Georgia', 'serif'],
+              mono: ['"JetBrains Mono"', 'monospace']
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="bg-brand-ivory font-sans text-brand-walnut antialiased selection:bg-brand-sage/30">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

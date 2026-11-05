@@ -1,0 +1,582 @@
+np_id,organization,focus_area,keyword_hits
+NP001,A.P.J. Abdul Kalam Centre,Education,10
+NP001,A.P.J. Abdul Kalam Centre,Children & Youth,7
+NP001,A.P.J. Abdul Kalam Centre,Rural Development & Livelihood,3
+NP001,A.P.J. Abdul Kalam Centre,Human Rights & Governance,3
+NP001,A.P.J. Abdul Kalam Centre,Science & Technology,8
+NP002,Adhya Educational Society,Education,8
+NP002,Adhya Educational Society,Children & Youth,5
+NP003,Aeronautical Society of India,Education,11
+NP003,Aeronautical Society of India,Science & Technology,22
+NP003,Aeronautical Society of India,Professional / Industry Body,13
+NP004,Agastya International Foundation,Education,6
+NP004,Agastya International Foundation,Children & Youth,4
+NP004,Agastya International Foundation,Rural Development & Livelihood,2
+NP004,Agastya International Foundation,Arts & Culture,2
+NP004,Agastya International Foundation,Science & Technology,12
+NP005,Ahmedabad Education Society,Education,15
+NP005,Ahmedabad Education Society,Science & Technology,3
+NP006,Akancha Srivastava Foundation,Education,4
+NP007,All India Federation of Tax Practitioners,Food & Nutrition,2
+NP007,All India Federation of Tax Practitioners,Professional / Industry Body,6
+NP008,All India Management Association,Education,4
+NP009,Amalthea (technical summit),Disaster Relief,2
+NP009,Amalthea (technical summit),Science & Technology,29
+NP009,Amalthea (technical summit),Professional / Industry Body,4
+NP010,Animal Aid Unlimited,Health,2
+NP010,Animal Aid Unlimited,Animal Welfare,8
+NP012,Association for Democratic Reforms,Education,5
+NP012,Association for Democratic Reforms,Children & Youth,3
+NP012,Association for Democratic Reforms,Human Rights & Governance,25
+NP012,Association for Democratic Reforms,Professional / Industry Body,4
+NP013,Association for Social and Environmental Development,Education,11
+NP013,Association for Social and Environmental Development,Children & Youth,3
+NP013,Association for Social and Environmental Development,Environment & Wildlife,10
+NP014,Audit Bureau of Circulations (India),Professional / Industry Body,3
+NP016,Bal Bharati Public School,Education,21
+NP016,Bal Bharati Public School,Children & Youth,2
+NP017,Balala Hakkula Sangham,Women & Girls,2
+NP017,Balala Hakkula Sangham,Children & Youth,5
+NP018,Bangalore Astronomical Society,Science & Technology,5
+NP018,Bangalore Astronomical Society,Professional / Industry Body,4
+NP019,Bell Bajao,Health,2
+NP019,Bell Bajao,Women & Girls,6
+NP019,Bell Bajao,Children & Youth,2
+NP019,Bell Bajao,Food & Nutrition,4
+NP019,Bell Bajao,Human Rights & Governance,6
+NP019,Bell Bajao,Arts & Culture,3
+NP020,Bharatiya Bhasha Parishad,Arts & Culture,3
+NP021,Bharatiya Jain Sanghatana,Education,2
+NP021,Bharatiya Jain Sanghatana,Disaster Relief,9
+NP022,Bharatiya Jnanpith,Science & Technology,3
+NP015,BHUMI (organisation),Education,14
+NP015,BHUMI (organisation),Children & Youth,25
+NP015,BHUMI (organisation),Environment & Wildlife,2
+NP015,BHUMI (organisation),Rural Development & Livelihood,3
+NP015,BHUMI (organisation),Animal Welfare,2
+NP015,BHUMI (organisation),Arts & Culture,5
+NP015,BHUMI (organisation),Science & Technology,10
+NP015,BHUMI (organisation),Professional / Industry Body,2
+NP024,Broadcast Audience Research Council,Environment & Wildlife,2
+NP024,Broadcast Audience Research Council,Food & Nutrition,3
+NP024,Broadcast Audience Research Council,Human Rights & Governance,8
+NP024,Broadcast Audience Research Council,Science & Technology,9
+NP024,Broadcast Audience Research Council,Professional / Industry Body,12
+NP025,Byrraju Foundation,Rural Development & Livelihood,2
+NP027,Cellular Operators Association of India,Professional / Industry Body,10
+NP029,Centre for Science and Environment,Environment & Wildlife,3
+NP029,Centre for Science and Environment,Science & Technology,2
+NP030,Centre for Social Research,Education,11
+NP030,Centre for Social Research,Women & Girls,22
+NP030,Centre for Social Research,Children & Youth,2
+NP030,Centre for Social Research,Human Rights & Governance,10
+NP031,Citizens Foundation India,Education,7
+NP031,Citizens Foundation India,Health,58
+NP031,Citizens Foundation India,Women & Girls,4
+NP031,Citizens Foundation India,Children & Youth,12
+NP031,Citizens Foundation India,Environment & Wildlife,41
+NP031,Citizens Foundation India,Rural Development & Livelihood,30
+NP031,Citizens Foundation India,Disaster Relief,4
+NP031,Citizens Foundation India,Food & Nutrition,14
+NP031,Citizens Foundation India,Human Rights & Governance,3
+NP031,Citizens Foundation India,Arts & Culture,5
+NP032,Comprehensive Rural Health Project,Education,11
+NP032,Comprehensive Rural Health Project,Health,113
+NP032,Comprehensive Rural Health Project,Women & Girls,33
+NP032,Comprehensive Rural Health Project,Children & Youth,22
+NP032,Comprehensive Rural Health Project,Environment & Wildlife,5
+NP032,Comprehensive Rural Health Project,Rural Development & Livelihood,63
+NP032,Comprehensive Rural Health Project,Food & Nutrition,12
+NP032,Comprehensive Rural Health Project,Human Rights & Governance,2
+NP032,Comprehensive Rural Health Project,Science & Technology,3
+NP032,Comprehensive Rural Health Project,Professional / Industry Body,8
+NP033,Confederation of Indian Industry,Health,3
+NP033,Confederation of Indian Industry,Women & Girls,2
+NP033,Confederation of Indian Industry,Environment & Wildlife,3
+NP033,Confederation of Indian Industry,Food & Nutrition,2
+NP033,Confederation of Indian Industry,Professional / Industry Body,27
+NP026,CUTS International,Food & Nutrition,2
+NP035,Data Security Council of India,Professional / Industry Body,8
+NP036,Deepak Foundation,Education,4
+NP036,Deepak Foundation,Health,12
+NP036,Deepak Foundation,Women & Girls,5
+NP036,Deepak Foundation,Children & Youth,6
+NP036,Deepak Foundation,Rural Development & Livelihood,10
+NP036,Deepak Foundation,Disaster Relief,8
+NP036,Deepak Foundation,Food & Nutrition,2
+NP037,Delhi Greens,Education,2
+NP037,Delhi Greens,Women & Girls,2
+NP037,Delhi Greens,Children & Youth,2
+NP037,Delhi Greens,Environment & Wildlife,17
+NP037,Delhi Greens,Arts & Culture,2
+NP038,Delhi Public School Society,Education,14
+NP040,Empowering the Vision Project,Education,6
+NP040,Empowering the Vision Project,Children & Youth,2
+NP040,Empowering the Vision Project,Rural Development & Livelihood,2
+NP040,Empowering the Vision Project,Food & Nutrition,2
+NP040,Empowering the Vision Project,Professional / Industry Body,4
+NP041,Environmentalist Foundation of India,Education,10
+NP041,Environmentalist Foundation of India,Health,2
+NP041,Environmentalist Foundation of India,Environment & Wildlife,59
+NP041,Environmentalist Foundation of India,Rural Development & Livelihood,4
+NP041,Environmentalist Foundation of India,Disaster Relief,2
+NP041,Environmentalist Foundation of India,Food & Nutrition,28
+NP041,Environmentalist Foundation of India,Animal Welfare,2
+NP041,Environmentalist Foundation of India,Arts & Culture,2
+NP042,Equitable Tourism Options,Women & Girls,2
+NP042,Equitable Tourism Options,Children & Youth,7
+NP042,Equitable Tourism Options,Environment & Wildlife,3
+NP042,Equitable Tourism Options,Rural Development & Livelihood,3
+NP042,Equitable Tourism Options,Human Rights & Governance,9
+NP042,Equitable Tourism Options,Science & Technology,4
+NP042,Equitable Tourism Options,Professional / Industry Body,3
+NP044,Federation of Indian Chambers of Commerce & Industry,Food & Nutrition,10
+NP044,Federation of Indian Chambers of Commerce & Industry,Science & Technology,7
+NP044,Federation of Indian Chambers of Commerce & Industry,Professional / Industry Body,15
+NP043,FIE Foundation,Arts & Culture,4
+NP043,FIE Foundation,Science & Technology,6
+NP043,FIE Foundation,Professional / Industry Body,2
+NP045,Foundation for Democratic Reforms,Human Rights & Governance,2
+NP045,Foundation for Democratic Reforms,Science & Technology,5
+NP046,Foundation for Ecological Security,Education,2
+NP046,Foundation for Ecological Security,Environment & Wildlife,55
+NP046,Foundation for Ecological Security,Rural Development & Livelihood,35
+NP046,Foundation for Ecological Security,Food & Nutrition,11
+NP046,Foundation for Ecological Security,Human Rights & Governance,18
+NP046,Foundation for Ecological Security,Arts & Culture,2
+NP047,Foundation for Universal Responsibility of His Holiness the Dalai Lama,Women & Girls,2
+NP048,Friends of Tribals Society,Education,14
+NP048,Friends of Tribals Society,Rural Development & Livelihood,2
+NP049,Friends2support,Health,6
+NP049,Friends2support,Science & Technology,2
+NP050,Gender and Trade Initiative,Women & Girls,9
+NP050,Gender and Trade Initiative,Human Rights & Governance,6
+NP050,Gender and Trade Initiative,Science & Technology,5
+NP050,Gender and Trade Initiative,Professional / Industry Body,7
+NP051,GiveIndia,Education,3
+NP051,GiveIndia,Children & Youth,2
+NP051,GiveIndia,Food & Nutrition,2
+NP051,GiveIndia,Human Rights & Governance,2
+NP051,GiveIndia,Professional / Industry Body,3
+NP053,Going to School,Education,12
+NP053,Going to School,Women & Girls,5
+NP053,Going to School,Children & Youth,10
+NP053,Going to School,Science & Technology,2
+NP052,GoSports Foundation,Education,4
+NP052,GoSports Foundation,Food & Nutrition,2
+NP052,GoSports Foundation,Professional / Industry Body,4
+NP054,Gram Vikas,Education,3
+NP054,Gram Vikas,Women & Girls,3
+NP054,Gram Vikas,Environment & Wildlife,6
+NP054,Gram Vikas,Rural Development & Livelihood,12
+NP054,Gram Vikas,Disaster Relief,4
+NP054,Gram Vikas,Food & Nutrition,2
+NP055,Greenvein,Education,5
+NP055,Greenvein,Environment & Wildlife,7
+NP056,Gujarat Vidhya Sabha,Education,10
+NP056,Gujarat Vidhya Sabha,Women & Girls,4
+NP056,Gujarat Vidhya Sabha,Professional / Industry Body,3
+NP057,Gujarati Sahitya Parishad,Arts & Culture,4
+NP058,Haji Public School,Education,85
+NP058,Haji Public School,Women & Girls,3
+NP058,Haji Public School,Children & Youth,10
+NP058,Haji Public School,Rural Development & Livelihood,25
+NP058,Haji Public School,Food & Nutrition,7
+NP058,Haji Public School,Professional / Industry Body,3
+NP059,Harijan Sevak Sangh,Education,3
+NP059,Harijan Sevak Sangh,Arts & Culture,4
+NP060,Health and Education for All,Education,6
+NP060,Health and Education for All,Health,5
+NP060,Health and Education for All,Children & Youth,9
+NP061,HelpAge India,Education,9
+NP061,HelpAge India,Health,22
+NP061,HelpAge India,Rural Development & Livelihood,5
+NP061,HelpAge India,Food & Nutrition,6
+NP061,HelpAge India,Professional / Industry Body,2
+NP062,Helpingminds,Education,6
+NP062,Helpingminds,Health,3
+NP062,Helpingminds,Science & Technology,2
+NP062,Helpingminds,Professional / Industry Body,2
+NP063,Hitkarini Sabha,Education,5
+NP063,Hitkarini Sabha,Professional / Industry Body,2
+NP064,ICT Academy,Education,2
+NP064,ICT Academy,Rural Development & Livelihood,4
+NP064,ICT Academy,Professional / Industry Body,5
+NP065,Immagine,Professional / Industry Body,2
+NP066,India Foundation for the Arts,Education,7
+NP066,India Foundation for the Arts,Health,3
+NP066,India Foundation for the Arts,Arts & Culture,19
+NP066,India Foundation for the Arts,Science & Technology,7
+NP066,India Foundation for the Arts,Professional / Industry Body,6
+NP067,India Photo Archive Foundation,Health,12
+NP067,India Photo Archive Foundation,Food & Nutrition,5
+NP067,India Photo Archive Foundation,Arts & Culture,5
+NP068,Indiability Foundation,Education,8
+NP068,Indiability Foundation,Women & Girls,2
+NP068,Indiability Foundation,Children & Youth,5
+NP068,Indiability Foundation,Rural Development & Livelihood,2
+NP068,Indiability Foundation,Professional / Industry Body,5
+NP069,Indian Cancer Society,Health,15
+NP069,Indian Cancer Society,Disaster Relief,2
+NP070,Indian Liberal Group,Education,4
+NP070,Indian Liberal Group,Professional / Industry Body,2
+NP071,Indus Trust,Education,72
+NP071,Indus Trust,Children & Youth,5
+NP071,Indus Trust,Rural Development & Livelihood,2
+NP071,Indus Trust,Arts & Culture,12
+NP071,Indus Trust,Science & Technology,5
+NP071,Indus Trust,Professional / Industry Body,2
+NP072,International Resources for Fairer Trade,Health,3
+NP072,International Resources for Fairer Trade,Women & Girls,2
+NP072,International Resources for Fairer Trade,Environment & Wildlife,4
+NP072,International Resources for Fairer Trade,Rural Development & Livelihood,12
+NP072,International Resources for Fairer Trade,Professional / Industry Body,6
+NP073,Isha Foundation,Education,8
+NP073,Isha Foundation,Health,9
+NP073,Isha Foundation,Environment & Wildlife,12
+NP073,Isha Foundation,Rural Development & Livelihood,6
+NP073,Isha Foundation,Food & Nutrition,2
+NP073,Isha Foundation,Arts & Culture,2
+NP073,Isha Foundation,Professional / Industry Body,3
+NP074,Janaagraha,Environment & Wildlife,2
+NP074,Janaagraha,Human Rights & Governance,2
+NP075,"Kaliyuva Mane School, Mysore",Education,8
+NP075,"Kaliyuva Mane School, Mysore",Children & Youth,3
+NP075,"Kaliyuva Mane School, Mysore",Environment & Wildlife,4
+NP076,Kalvialaya,Education,9
+NP076,Kalvialaya,Children & Youth,3
+NP076,Kalvialaya,Rural Development & Livelihood,7
+NP077,Kamal Kumari Foundation,Arts & Culture,2
+NP077,Kamal Kumari Foundation,Science & Technology,2
+NP078,Kannada Sahitya Parishat,Arts & Culture,5
+NP079,Kerala Brahmana Sabha,Women & Girls,6
+NP079,Kerala Brahmana Sabha,Children & Youth,5
+NP079,Kerala Brahmana Sabha,Rural Development & Livelihood,4
+NP079,Kerala Brahmana Sabha,Food & Nutrition,4
+NP079,Kerala Brahmana Sabha,Human Rights & Governance,2
+NP079,Kerala Brahmana Sabha,Professional / Industry Body,15
+NP080,Kerala Sahitya Akademi,Arts & Culture,4
+NP081,Kerala Sasthra Sahithya Parishad,Education,7
+NP081,Kerala Sasthra Sahithya Parishad,Environment & Wildlife,5
+NP081,Kerala Sasthra Sahithya Parishad,Rural Development & Livelihood,2
+NP081,Kerala Sasthra Sahithya Parishad,Arts & Culture,2
+NP081,Kerala Sasthra Sahithya Parishad,Science & Technology,16
+NP081,Kerala Sasthra Sahithya Parishad,Professional / Industry Body,3
+NP082,Khel Khel Mein Foundation,Education,8
+NP082,Khel Khel Mein Foundation,Children & Youth,2
+NP082,Khel Khel Mein Foundation,Rural Development & Livelihood,2
+NP083,Kherwadi Social Welfare Association,Education,9
+NP083,Kherwadi Social Welfare Association,Health,2
+NP083,Kherwadi Social Welfare Association,Women & Girls,2
+NP083,Kherwadi Social Welfare Association,Children & Youth,10
+NP083,Kherwadi Social Welfare Association,Rural Development & Livelihood,29
+NP083,Kherwadi Social Welfare Association,Food & Nutrition,5
+NP083,Kherwadi Social Welfare Association,Arts & Culture,2
+NP083,Kherwadi Social Welfare Association,Professional / Industry Body,2
+NP084,Kheti Virasat Mission,Environment & Wildlife,2
+NP085,Kunpan Cultural School,Education,60
+NP085,Kunpan Cultural School,Women & Girls,3
+NP085,Kunpan Cultural School,Rural Development & Livelihood,3
+NP085,Kunpan Cultural School,Food & Nutrition,2
+NP085,Kunpan Cultural School,Professional / Industry Body,5
+NP086,Kutumb Foundation,Education,5
+NP087,Kyun Ki Shahar Hai Aapka,Professional / Industry Body,2
+NP088,Lok Satta Movement,Human Rights & Governance,6
+NP088,Lok Satta Movement,Professional / Industry Body,2
+NP091,Mahratta Education Fund,Education,3
+NP092,Make Love Not Scars,Education,3
+NP092,Make Love Not Scars,Health,2
+NP092,Make Love Not Scars,Disaster Relief,3
+NP092,Make Love Not Scars,Food & Nutrition,2
+NP093,Malcha Kalyan Samiti,Education,2
+NP093,Malcha Kalyan Samiti,Children & Youth,4
+NP093,Malcha Kalyan Samiti,Environment & Wildlife,2
+NP093,Malcha Kalyan Samiti,Rural Development & Livelihood,5
+NP094,Maximising Employment to Serve the Handicapped,Professional / Industry Body,2
+NP095,Meer Foundation,Education,2
+NP095,Meer Foundation,Health,12
+NP095,Meer Foundation,Women & Girls,6
+NP095,Meer Foundation,Children & Youth,4
+NP095,Meer Foundation,Rural Development & Livelihood,2
+NP095,Meer Foundation,Disaster Relief,4
+NP095,Meer Foundation,Food & Nutrition,2
+NP095,Meer Foundation,Human Rights & Governance,2
+NP096,Micro Tech Global Foundation,Arts & Culture,2
+NP096,Micro Tech Global Foundation,Science & Technology,3
+NP097,MigrantWatch,Food & Nutrition,2
+NP097,MigrantWatch,Science & Technology,3
+NP098,Mind Champions Academy,Education,11
+NP099,MissingGirls,Education,6
+NP099,MissingGirls,Women & Girls,22
+NP099,MissingGirls,Children & Youth,4
+NP099,MissingGirls,Rural Development & Livelihood,7
+NP099,MissingGirls,Food & Nutrition,2
+NP099,MissingGirls,Arts & Culture,2
+NP100,Mizoram College Teachers' Association,Education,10
+NP100,Mizoram College Teachers' Association,Professional / Industry Body,4
+NP101,Moinee Foundation,Education,17
+NP101,Moinee Foundation,Rural Development & Livelihood,3
+NP101,Moinee Foundation,Science & Technology,2
+NP101,Moinee Foundation,Professional / Industry Body,2
+NP089,MS Swaminathan Research Foundation,Women & Girls,2
+NP089,MS Swaminathan Research Foundation,Environment & Wildlife,2
+NP089,MS Swaminathan Research Foundation,Rural Development & Livelihood,2
+NP089,MS Swaminathan Research Foundation,Food & Nutrition,4
+NP089,MS Swaminathan Research Foundation,Science & Technology,8
+NP090,MTHR Global,Education,5
+NP090,MTHR Global,Rural Development & Livelihood,2
+NP090,MTHR Global,Food & Nutrition,2
+NP090,MTHR Global,Professional / Industry Body,18
+NP103,National Institute of Speech and Hearing,Education,8
+NP103,National Institute of Speech and Hearing,Science & Technology,2
+NP105,National Skill Development Corporation,Education,2
+NP105,National Skill Development Corporation,Rural Development & Livelihood,20
+NP105,National Skill Development Corporation,Food & Nutrition,7
+NP105,National Skill Development Corporation,Human Rights & Governance,2
+NP105,National Skill Development Corporation,Science & Technology,2
+NP105,National Skill Development Corporation,Professional / Industry Body,6
+NP106,Nature Conservation Foundation,Environment & Wildlife,21
+NP106,Nature Conservation Foundation,Science & Technology,4
+NP107,Natyoshala,Arts & Culture,3
+NP108,Navsarjan Trust,Women & Girls,2
+NP108,Navsarjan Trust,Rural Development & Livelihood,3
+NP108,Navsarjan Trust,Human Rights & Governance,2
+NP109,New Life College at Bangalore,Education,13
+NP109,New Life College at Bangalore,Arts & Culture,6
+NP110,Nimmagadda Foundation,Education,3
+NP110,Nimmagadda Foundation,Health,4
+NP110,Nimmagadda Foundation,Rural Development & Livelihood,2
+NP112,Northwest College for Advanced Learning,Education,6
+NP104,National Resource Centre for Free/Open Source Software,Education,3
+NP104,National Resource Centre for Free/Open Source Software,Health,2
+NP104,National Resource Centre for Free/Open Source Software,Science & Technology,4
+NP113,Nudge Foundation,Rural Development & Livelihood,4
+NP113,Nudge Foundation,Science & Technology,3
+NP114,Odanadi Seva Trust,Education,5
+NP114,Odanadi Seva Trust,Women & Girls,7
+NP114,Odanadi Seva Trust,Children & Youth,7
+NP114,Odanadi Seva Trust,Rural Development & Livelihood,3
+NP114,Odanadi Seva Trust,Disaster Relief,4
+NP114,Odanadi Seva Trust,Food & Nutrition,4
+NP114,Odanadi Seva Trust,Professional / Industry Body,3
+NP117,Our Children Foundation,Education,23
+NP117,Our Children Foundation,Health,2
+NP117,Our Children Foundation,Children & Youth,13
+NP117,Our Children Foundation,Rural Development & Livelihood,7
+NP117,Our Children Foundation,Food & Nutrition,6
+NP117,Our Children Foundation,Arts & Culture,2
+NP121,Paani Foundation,Environment & Wildlife,31
+NP121,Paani Foundation,Rural Development & Livelihood,21
+NP122,Palluruthy Relief Settlement,Health,3
+NP122,Palluruthy Relief Settlement,Disaster Relief,3
+NP123,Panchkula Welfare Trust,Education,2
+NP123,Panchkula Welfare Trust,Health,2
+NP123,Panchkula Welfare Trust,Animal Welfare,4
+NP123,Panchkula Welfare Trust,Professional / Industry Body,2
+NP124,Parinamika,Education,3
+NP134,Rashtrottahana Parishat,Health,7
+NP125,Parivartan Sandesh Foundation,Education,5
+NP125,Parivartan Sandesh Foundation,Women & Girls,2
+NP125,Parivartan Sandesh Foundation,Children & Youth,4
+NP125,Parivartan Sandesh Foundation,Rural Development & Livelihood,6
+NP118,PHDCCI-Rajasthan,Professional / Industry Body,15
+NP119,PILSARC,Human Rights & Governance,5
+NP119,PILSARC,Science & Technology,2
+NP127,Pondicherry Science Forum,Education,8
+NP127,Pondicherry Science Forum,Health,5
+NP127,Pondicherry Science Forum,Women & Girls,3
+NP127,Pondicherry Science Forum,Environment & Wildlife,3
+NP127,Pondicherry Science Forum,Rural Development & Livelihood,3
+NP127,Pondicherry Science Forum,Food & Nutrition,3
+NP127,Pondicherry Science Forum,Science & Technology,33
+NP127,Pondicherry Science Forum,Professional / Industry Body,3
+NP128,Prajwala,Education,7
+NP128,Prajwala,Health,9
+NP128,Prajwala,Women & Girls,16
+NP128,Prajwala,Children & Youth,17
+NP128,Prajwala,Rural Development & Livelihood,7
+NP128,Prajwala,Disaster Relief,12
+NP128,Prajwala,Food & Nutrition,12
+NP128,Prajwala,Human Rights & Governance,6
+NP128,Prajwala,Science & Technology,4
+NP128,Prajwala,Professional / Industry Body,12
+NP129,Prathama Blood Centre,Health,20
+NP130,Prime Point Foundation,Education,5
+NP130,Prime Point Foundation,Rural Development & Livelihood,2
+NP130,Prime Point Foundation,Human Rights & Governance,3
+NP130,Prime Point Foundation,Science & Technology,2
+NP130,Prime Point Foundation,Professional / Industry Body,5
+NP120,PRS Legislative Research,Human Rights & Governance,2
+NP120,PRS Legislative Research,Arts & Culture,2
+NP120,PRS Legislative Research,Science & Technology,10
+NP120,PRS Legislative Research,Professional / Industry Body,4
+NP131,Pune District Education Association,Education,15
+NP133,Rashtriya Life Saving Society (India),Education,3
+NP133,Rashtriya Life Saving Society (India),Rural Development & Livelihood,2
+NP133,Rashtriya Life Saving Society (India),Food & Nutrition,4
+NP135,Read India,Education,41
+NP135,Read India,Children & Youth,27
+NP135,Read India,Rural Development & Livelihood,9
+NP136,Rehabilitation Council of India,Education,3
+NP136,Rehabilitation Council of India,Disaster Relief,7
+NP136,Rehabilitation Council of India,Professional / Industry Body,5
+NP137,Rehwa Society,Women & Girls,2
+NP111,Non-profit laws of India,Education,4
+NP111,Non-profit laws of India,Disaster Relief,2
+NP111,Non-profit laws of India,Food & Nutrition,6
+NP111,Non-profit laws of India,Arts & Culture,4
+NP111,Non-profit laws of India,Science & Technology,3
+NP111,Non-profit laws of India,Professional / Industry Body,6
+NP138,Robin Hood Army,Education,10
+NP138,Robin Hood Army,Health,2
+NP138,Robin Hood Army,Children & Youth,4
+NP138,Robin Hood Army,Food & Nutrition,10
+NP177,Sálim Ali Centre for Ornithology and Natural History,Education,23
+NP177,Sálim Ali Centre for Ornithology and Natural History,Children & Youth,3
+NP177,Sálim Ali Centre for Ornithology and Natural History,Environment & Wildlife,30
+NP177,Sálim Ali Centre for Ornithology and Natural History,Food & Nutrition,5
+NP177,Sálim Ali Centre for Ornithology and Natural History,Science & Technology,13
+NP177,Sálim Ali Centre for Ornithology and Natural History,Professional / Industry Body,2
+NP142,Samata (NGO),Education,5
+NP142,Samata (NGO),Health,3
+NP142,Samata (NGO),Environment & Wildlife,17
+NP142,Samata (NGO),Rural Development & Livelihood,13
+NP142,Samata (NGO),Food & Nutrition,3
+NP142,Samata (NGO),Human Rights & Governance,26
+NP142,Samata (NGO),Arts & Culture,3
+NP142,Samata (NGO),Science & Technology,2
+NP142,Samata (NGO),Professional / Industry Body,5
+NP143,Sambhali Trust,Education,9
+NP143,Sambhali Trust,Women & Girls,18
+NP143,Sambhali Trust,Children & Youth,4
+NP143,Sambhali Trust,Rural Development & Livelihood,6
+NP144,Sampark Foundation,Education,7
+NP144,Sampark Foundation,Children & Youth,3
+NP145,Sanatan Sangeet Sanskriti,Arts & Culture,26
+NP146,Sanket Trust,Arts & Culture,7
+NP147,Sarathi Socio Cultural Trust,Education,2
+NP147,Sarathi Socio Cultural Trust,Food & Nutrition,2
+NP147,Sarathi Socio Cultural Trust,Arts & Culture,5
+NP148,Sarvodaya Sanskrit Ashram,Arts & Culture,2
+NP149,Save the Children India,Education,2
+NP149,Save the Children India,Health,2
+NP149,Save the Children India,Children & Youth,45
+NP149,Save the Children India,Disaster Relief,8
+NP149,Save the Children India,Food & Nutrition,7
+NP149,Save the Children India,Human Rights & Governance,9
+NP150,Sawan Kirpal Ruhani Mission,Science & Technology,5
+NP151,Schools of Equality,Education,17
+NP151,Schools of Equality,Women & Girls,4
+NP151,Schools of Equality,Children & Youth,3
+NP151,Schools of Equality,Rural Development & Livelihood,2
+NP151,Schools of Equality,Human Rights & Governance,3
+NP139,SERUDS,Education,8
+NP139,SERUDS,Women & Girls,4
+NP139,SERUDS,Children & Youth,8
+NP139,SERUDS,Rural Development & Livelihood,5
+NP139,SERUDS,Food & Nutrition,5
+NP139,SERUDS,Science & Technology,2
+NP152,Servants of the People Society,Education,3
+NP152,Servants of the People Society,Rural Development & Livelihood,2
+NP153,Sevalaya,Education,21
+NP153,Sevalaya,Health,12
+NP153,Sevalaya,Women & Girls,9
+NP153,Sevalaya,Children & Youth,21
+NP153,Sevalaya,Rural Development & Livelihood,17
+NP153,Sevalaya,Food & Nutrition,3
+NP140,SEWA Rural,Health,8
+NP140,SEWA Rural,Rural Development & Livelihood,8
+NP140,SEWA Rural,Science & Technology,2
+NP154,Shanti Bhavan,Education,57
+NP154,Shanti Bhavan,Health,2
+NP154,Shanti Bhavan,Women & Girls,3
+NP154,Shanti Bhavan,Children & Youth,9
+NP154,Shanti Bhavan,Rural Development & Livelihood,9
+NP154,Shanti Bhavan,Food & Nutrition,6
+NP155,Shantmanas,Education,13
+NP155,Shantmanas,Health,20
+NP155,Shantmanas,Rural Development & Livelihood,10
+NP156,Sherab Gatsel Lobling School,Education,20
+NP156,Sherab Gatsel Lobling School,Rural Development & Livelihood,3
+NP158,Shoshit Seva Sangh,Education,2
+NP158,Shoshit Seva Sangh,Rural Development & Livelihood,10
+NP159,Shraddha Rehabilitation Foundation,Disaster Relief,2
+NP160,Shram Sadhana Trust,Women & Girls,3
+NP160,Shram Sadhana Trust,Science & Technology,2
+NP161,Shramik Bharti,Education,2
+NP161,Shramik Bharti,Women & Girls,2
+NP161,Shramik Bharti,Rural Development & Livelihood,4
+NP162,Shri Ram Chandra Mission,Education,8
+NP163,Simply Blood,Education,3
+NP163,Simply Blood,Health,18
+NP164,Sivamathiyin Jeevayoga Jothimayam,Education,4
+NP164,Sivamathiyin Jeevayoga Jothimayam,Science & Technology,14
+NP165,"Societies Registration Act, 1860",Food & Nutrition,6
+NP165,"Societies Registration Act, 1860",Professional / Industry Body,2
+NP167,South Asian Management Technologies Foundation,Education,2
+NP167,South Asian Management Technologies Foundation,Rural Development & Livelihood,2
+NP167,South Asian Management Technologies Foundation,Science & Technology,2
+NP168,South Indian Federation of Fishermen Societies,Disaster Relief,4
+NP168,South Indian Federation of Fishermen Societies,Food & Nutrition,2
+NP168,South Indian Federation of Fishermen Societies,Science & Technology,3
+NP169,Southern Indian Chamber of Commerce and Industry,Professional / Industry Body,13
+NP141,SPIC MACAY,Education,4
+NP141,SPIC MACAY,Children & Youth,2
+NP141,SPIC MACAY,Arts & Culture,10
+NP170,Sree Pushpakabrahmana Seva Sangham,Food & Nutrition,2
+NP171,Srujanika,Education,3
+NP171,Srujanika,Science & Technology,10
+NP172,Startup Village,Rural Development & Livelihood,16
+NP172,Startup Village,Science & Technology,3
+NP182,The Stenographers' Guild,Education,4
+NP182,The Stenographers' Guild,Rural Development & Livelihood,2
+NP182,The Stenographers' Guild,Food & Nutrition,2
+NP182,The Stenographers' Guild,Science & Technology,2
+NP173,Sugam Vedashram,Children & Youth,2
+NP174,Sultan-ul-Uloom Education Society,Education,4
+NP175,Swecha,Education,17
+NP175,Swecha,Science & Technology,16
+NP178,Tamil Nadu Technology Development and Promotion Centre,Science & Technology,3
+NP178,Tamil Nadu Technology Development and Promotion Centre,Professional / Industry Body,2
+NP179,Teach For India,Education,7
+NP181,The Southern India Mills Association,Professional / Industry Body,4
+NP186,Tibetan Nuns Project,Education,8
+NP186,Tibetan Nuns Project,Women & Girls,9
+NP186,Tibetan Nuns Project,Arts & Culture,2
+NP185,TiE Rajasthan,Professional / Industry Body,3
+NP187,Vandrevala Foundation,Health,3
+NP188,Vigil India Movement,Human Rights & Governance,6
+NP189,Vijnana Bharati,Education,9
+NP189,Vijnana Bharati,Health,5
+NP189,Vijnana Bharati,Children & Youth,2
+NP189,Vijnana Bharati,Environment & Wildlife,2
+NP189,Vijnana Bharati,Arts & Culture,3
+NP189,Vijnana Bharati,Science & Technology,41
+NP189,Vijnana Bharati,Professional / Industry Body,3
+NP190,Vikalp,Professional / Industry Body,2
+NP192,Wildlife SOS,Education,8
+NP192,Wildlife SOS,Health,8
+NP192,Wildlife SOS,Environment & Wildlife,101
+NP192,Wildlife SOS,Rural Development & Livelihood,14
+NP192,Wildlife SOS,Disaster Relief,14
+NP192,Wildlife SOS,Food & Nutrition,5
+NP192,Wildlife SOS,Animal Welfare,27
+NP192,Wildlife SOS,Arts & Culture,3
+NP192,Wildlife SOS,Science & Technology,3
+NP192,Wildlife SOS,Professional / Industry Body,9
+NP193,Workers Development Union,Health,2
+NP193,Workers Development Union,Women & Girls,2
+NP194,Xomidhan,Education,8
+NP194,Xomidhan,Food & Nutrition,2
+NP183,The Yoga Institute,Education,9
+NP183,The Yoga Institute,Health,14
+NP183,The Yoga Institute,Women & Girls,3
+NP183,The Yoga Institute,Arts & Culture,4
+NP183,The Yoga Institute,Science & Technology,14
+NP183,The Yoga Institute,Professional / Industry Body,2
+NP184,The Youth Parliament,Children & Youth,5
+NP184,The Youth Parliament,Science & Technology,2
+NP195,Youth United,Education,4
+NP195,Youth United,Children & Youth,13
+NP195,Youth United,Rural Development & Livelihood,2
+NP195,Youth United,Food & Nutrition,3

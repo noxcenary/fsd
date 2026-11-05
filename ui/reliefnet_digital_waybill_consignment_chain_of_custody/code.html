@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-container":"#0f392b","inverse-primary":"#a5d0bc","error":"#ba1a1a","on-primary-fixed":"#002116","surface-bright":"#f8faf8","tertiary-fixed":"#6ffbbe","tertiary-container":"#003a25","tertiary":"#002215","outline-variant":"#c1c8c3","on-primary":"#ffffff","on-surface":"#191c1b","surface":"#f8faf8","surface-container-high":"#e6e9e7","on-secondary-container":"#3d6d5d","surface-dim":"#d8dad9","primary":"#002318","surface-container-lowest":"#ffffff","on-error":"#ffffff","error-container":"#ffdad6","on-tertiary-container":"#00af79","on-tertiary":"#ffffff","surface-container-highest":"#e1e3e1","on-tertiary-fixed-variant":"#005236","on-secondary-fixed":"#002117","background":"#f8faf8","on-error-container":"#93000a","surface-variant":"#e1e3e1","secondary":"#376757","on-primary-fixed-variant":"#264e3f","outline":"#717974","inverse-surface":"#2e3130","surface-tint":"#3e6656","on-primary-container":"#7aa391","tertiary-fixed-dim":"#4edea3","on-secondary":"#ffffff","on-tertiary-fixed":"#002113","primary-fixed":"#c0ecd7","surface-container-low":"#f2f4f2","on-secondary-fixed-variant":"#1d4f40","surface-container":"#eceeec","secondary-fixed-dim":"#9ed1bd","secondary-container":"#baeed9","primary-fixed-dim":"#a5d0bc","on-background":"#191c1b","secondary-fixed":"#baeed9","on-surface-variant":"#414844","inverse-on-surface":"#eff1ef"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter-tablet":"1rem","margin":"1rem","margin-desktop":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"1.5rem","gutter-desktop":"1.5rem","gutter":"1rem","space-lg":"1rem","margin-tablet":"1.5rem","space-md":"0.75rem"},"fontFamily":{"label-lg":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"caption":["Inter"],"display-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Inter"]},"fontSize":{"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"600"}],"display-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"400"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center rounded"><span class="material-symbols-outlined text-on-primary text-[18px]">grid_view</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ReliefNet</span><span class="font-label-sm text-label-sm text-secondary uppercase">FieldGrid Relief OS</span></div></div><span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase">v4.2</span></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm space-y-space-lg"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Operations Desk</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="discover-ngos" href="#"><span class="material-symbols-outlined text-[20px]">corporate_fare</span><span>Discover NGOs</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="resources" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Resources</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="requests" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Requests</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ai-matching" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span>AI Matching</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="services" href="#"><span class="material-symbols-outlined text-[20px]">medical_services</span><span>Services</span></a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Coordination</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="activity-feed" href="#"><span class="material-symbols-outlined text-[20px]">dynamic_feed</span><span>Activity Feed</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="messages" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">forum</span><span>Messages</span></div><span class="px-space-xs py-0.5 rounded bg-error text-on-error font-label-sm text-label-sm">3</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="transactions-transfers" href="#"><span class="material-symbols-outlined text-[20px]">swap_horiz</span><span>Transactions &amp; Transfers</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dispute-escalations" href="#"><span class="material-symbols-outlined text-[20px]">gavel</span><span>Dispute Escalations</span></a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Governance</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="org-profile-trust" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Org Profile &amp; Trust</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings</span></a></nav></div></div><div class="p-space-md bg-surface-container"><div class="flex items-center justify-between p-space-sm rounded bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-[18px]">satellite_alt</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-bold">Mesh Uplink</span><span class="font-caption text-caption text-secondary">99.8% Online</span></div></div><div class="w-2 h-2 rounded-full bg-secondary-container flex items-center justify-center"><div class="w-1.5 h-1.5 rounded-full bg-secondary"></div></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md overflow-hidden"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-error-container text-on-error-container font-label-sm text-label-sm uppercase tracking-wide shrink-0"><span class="material-symbols-outlined text-[14px]">warning</span><span class="font-bold">CRISIS ACTIVE:</span><span>FLOOD RELIEF - NORTH KARNATAKA</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant shrink-0"><span class="material-symbols-outlined text-[14px] text-outline">schedule</span><span>Zulu: 14:32:08 UTC</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="relative flex items-center w-64 md:w-80 bg-surface-container-low rounded px-space-sm py-1.5"><span class="material-symbols-outlined text-[18px] text-outline mr-space-xs">emergency</span><input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none" placeholder="Search ops, manifest, coords..." type="text"/></div><div class="relative p-1.5 rounded bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer"><span class="material-symbols-outlined text-on-surface-variant text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></div><div class="flex items-center gap-space-sm pl-space-xs py-1 pr-space-sm bg-surface-container-low rounded hover:bg-surface-container-high transition-colors cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-bold leading-tight">Dr. V. Rao</span><span class="font-caption text-caption text-secondary leading-tight truncate max-w-[190px]">Asha Relief (Govt Verified)</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Waybill Viewport -->
+<div class="p-space-lg md:p-margin-desktop space-y-space-xl max-w-[1560px] mx-auto w-full">
+<!-- Breadcrumbs & Quick State Metadata -->
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">
+<span>Operations Desk</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Transactions &amp; Transfers</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-on-surface font-bold">Waybill #WB-2023-8821A</span>
+</nav>
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] text-secondary">encrypted</span>
+<span>SHA-256 LEDGER WITNESSED</span>
+</span>
+<span class="inline-flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-amber-100 text-amber-900 font-label-sm text-label-sm font-bold animate-pulse">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
+<span>STATE 03: IN PROGRESS / IN TRANSIT</span>
+</span>
+</div>
+</div>
+<!-- Header & Action Ribbon -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+<div class="space-y-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[24px]">local_shipping</span>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Digital Waybill &amp; Custody Verification: #WB-2023-8821A</h1>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">
+          Sovereign humanitarian mutual-aid transfer token under Karnataka SDMA Disaster Protocol. Immediate cargo transfer validation with real-time biometric and cryptographic custody verification.
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors shadow-sm" onclick="window.print()">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Field Waybill (.PDF)</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors shadow-sm" id="showQrBtn">
+<span class="material-symbols-outlined text-[18px]">qr_code_2</span>
+<span>Generate Consignee Receipt QR</span>
+</button>
+<button class="inline-flex items-center gap-space-xs px-space-md py-2 rounded bg-error text-on-error hover:bg-error-container hover:text-on-error-container font-label-md text-label-md transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">crisis_alert</span>
+<span>Declare Consignment Dispute</span>
+</button>
+</div>
+</div>
+<!-- Top Metrics Banner (Dense Utilitarian Bento Grid) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Metric 1: Commodity -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Commodity Spec</span>
+<span class="material-symbols-outlined text-[18px]">warehouse</span>
+</div>
+<div class="mt-space-sm space-y-0.5">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">500 kg Non-Perishable Rice</div>
+<div class="font-caption text-caption text-on-surface-variant">Consignment Sub-Lot: 300 kg (60%)</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Batch Grade-A</span>
+<span class="text-on-surface font-semibold">12x 25kg Palletized</span>
+</div>
+</div>
+<!-- Metric 2: Earmark Source -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Earmark / Crisis Tag</span>
+<span class="material-symbols-outlined text-[18px]">hub</span>
+</div>
+<div class="mt-space-sm space-y-0.5">
+<div class="font-headline-sm text-headline-sm text-primary font-bold truncate">Requisition #REQ-1049</div>
+<div class="font-caption text-caption text-on-surface-variant truncate">Bellandur Flood Hub Sector-3</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Priority Code</span>
+<span class="px-1.5 py-0.2 rounded bg-error-container text-on-error-container font-bold text-[10px]">ALPHA-CRITICAL</span>
+</div>
+</div>
+<!-- Metric 3: Haul Distance & ETA -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Corridor Transit</span>
+<span class="material-symbols-outlined text-[18px]">navigation</span>
+</div>
+<div class="mt-space-sm space-y-0.5">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">4.8 km <span class="font-body-sm text-body-sm text-outline font-normal">/ ETA 14 mins</span></div>
+<div class="font-caption text-caption text-on-surface-variant">Speed: 21 km/h • Domlur to Bellandur Outpost</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Telemetry Status</span>
+<span class="inline-flex items-center gap-1 text-on-tertiary-container font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed-dim"></span> Live GPS Ping (12s ago)
+          </span>
+</div>
+</div>
+<!-- Metric 4: Valuation Protocol -->
+<div class="bg-surface-container-lowest p-space-md rounded-lg shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between text-outline">
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Sovereign Audit Value</span>
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="mt-space-sm space-y-0.5">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">₹0.00 <span class="font-body-sm text-body-sm text-secondary font-normal">(Mutual-Aid)</span></div>
+<div class="font-caption text-caption text-on-surface-variant">Non-Monetary Mutual-Aid Protocol</div>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Fiscal Exemption</span>
+<span class="text-on-surface font-semibold">GST Relief Section 12-A</span>
+</div>
+</div>
+</div>
+<!-- Main Content Layout (2-Column Asymmetric) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left Column (8 cols): Cargo Manifest, Fleet Telemetry, Custody Chain -->
+<div class="lg:col-span-8 space-y-space-xl">
+<!-- SECTION 1: Legal Consignment Manifest & Cargo Specification -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-space-lg bg-surface-container-low flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">inventory</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">1. Legal Consignment Manifest &amp; Cargo Specification</span>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-semibold">Manifest ID: #MNF-99812-KA</span>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead class="bg-surface-container font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<tr>
+<th class="py-space-sm px-space-md">Lot Code</th>
+<th class="py-space-sm px-space-md">Cargo Specification &amp; Description</th>
+<th class="py-space-sm px-space-md text-right">Pledged Qty</th>
+<th class="py-space-sm px-space-md text-right">Net / Gross Tare</th>
+<th class="py-space-sm px-space-md">Expiry Mandate</th>
+<th class="py-space-sm px-space-md text-center">Quality Standard</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high">
+<tr class="hover:bg-surface-container-low/70 transition-colors">
+<td class="py-space-md px-space-md font-label-md text-label-md text-primary font-bold">#LOT-DRY-994</td>
+<td class="py-space-md px-space-md">
+<div class="font-label-md text-label-md text-on-surface font-semibold">Sona Masoori Rice Grade-A</div>
+<div class="font-caption text-caption text-on-surface-variant">Double polybagged, vacuum nitrogen-sealed, food-grade outer PP sack.</div>
+</td>
+<td class="py-space-md px-space-md text-right font-label-md text-label-md text-on-surface font-semibold">
+                    300.0 kg
+                    <span class="block font-caption text-caption text-outline font-normal">12 Bags × 25 kg</span>
+</td>
+<td class="py-space-md px-space-md text-right font-label-md text-label-md text-on-surface font-semibold">
+                    306.4 kg
+                    <span class="block font-caption text-caption text-outline font-normal">EUR-Wood Pallet (6.4kg)</span>
+</td>
+<td class="py-space-md px-space-md font-label-sm text-label-sm text-on-surface">
+                    14 Oct 2025
+                    <span class="block font-caption text-caption text-secondary">Harvest: Q4 2024</span>
+</td>
+<td class="py-space-md px-space-md text-center">
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">verified</span> FSSAI Pass
+                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Manifest Footer Metas -->
+<div class="p-space-md bg-surface-container-lowest grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<div class="flex items-start gap-space-sm p-space-sm bg-surface-container-low rounded">
+<span class="material-symbols-outlined text-outline text-[18px] mt-0.5">water_drop</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold block">Storage Mandate</span>
+<span class="font-caption text-caption text-on-surface-variant">Dry Storage, Ambient Moisture &lt;12%, Palletized off-ground min 15cm.</span>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm bg-surface-container-low rounded">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">assignment_turned_in</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold block">Quality Test Report</span>
+<span class="font-caption text-caption text-on-surface-variant truncate block">#QA-KA-9882 (Lab verified clean)</span>
+<a class="font-label-sm text-label-sm text-secondary hover:underline inline-flex items-center gap-0.5 mt-0.5" href="#">
+                  View Laboratory Certificate <span class="material-symbols-outlined text-[12px]">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="flex items-start gap-space-sm p-space-sm bg-surface-container-low rounded">
+<span class="material-symbols-outlined text-outline text-[18px] mt-0.5">qr_code</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold block">Bag Seal Sequence</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono text-[11px]">#SL-99812-01 to #SL-99812-12</span>
+<span class="font-caption text-caption text-secondary block">Tamper Evident Cyan Poly-bands</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 2: Logistics & Transportation Vehicle Node -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">rv_hookup</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">2. Logistics &amp; Transportation Vehicle Node</span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container bg-surface-container px-space-xs py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Active Telematics
+            </span>
+</div>
+<div class="p-space-lg grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- Vehicle & Driver Card -->
+<div class="space-y-space-md p-space-md bg-surface-container-low rounded-lg">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Assigned Dispatch Unit</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold mt-0.5 block">Tata 407 SF (High-Clearance)</span>
+<span class="font-label-md text-label-md font-mono text-on-surface bg-surface-container px-2 py-0.5 rounded mt-1 inline-block">KA-04-E-2192</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">local_shipping</span>
+</div>
+</div>
+<!-- Driver Meta -->
+<div class="pt-space-sm flex items-center gap-space-md bg-surface-container-lowest p-space-sm rounded">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-label-md shrink-0">
+                  RK
+                </div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface truncate">Ramesh Kumar</span>
+<span class="inline-flex items-center gap-0.5 text-secondary text-[11px] font-semibold">
+<span class="material-symbols-outlined text-[13px]">verified</span> Bio-ID
+                    </span>
+</div>
+<div class="font-caption text-caption text-on-surface-variant flex items-center gap-space-sm mt-0.5">
+<span>+91 98450 19283</span>
+<span>•</span>
+<span class="truncate">Lic: #DL-KA-04-2019-8812</span>
+</div>
+</div>
+</div>
+<!-- Transit Safety Specs -->
+<div class="grid grid-cols-2 gap-space-sm text-caption">
+<div class="p-space-xs bg-surface-container-lowest rounded">
+<span class="text-outline block">Water Wading Capacity:</span>
+<span class="font-bold text-on-surface">650 mm Axle Clearance</span>
+</div>
+<div class="p-space-xs bg-surface-container-lowest rounded">
+<span class="text-outline block">SDRF Escort Clearance:</span>
+<span class="font-bold text-on-surface">Pass #SEC-BLR-089</span>
+</div>
+</div>
+</div>
+<!-- Route Coordinates & Transit Corridor -->
+<div class="space-y-space-md p-space-md bg-surface-container-low rounded-lg flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Corridor Staging Nodes</span>
+<div class="mt-space-md space-y-space-md relative pl-6 before:content-[''] before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-outline-variant">
+<!-- Origin Node -->
+<div class="relative">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-outline block">ORIGIN DEPOT (BAY 04)</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Domlur 4th Cross Central Warehouse</span>
+<span class="font-caption text-caption text-on-surface-variant">Bengaluru Hub (12.9610° N, 77.6387° E)</span>
+</div>
+<!-- Destination Node -->
+<div class="relative">
+<span class="absolute -left-6 top-1 w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="font-label-sm text-label-sm text-outline block">DESTINATION OUTPOST (CAMP ZONE BETA)</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Bellandur Flood Relief Outpost</span>
+<span class="font-caption text-caption text-on-surface-variant">Command Point 3 (GPS: 12.9352° N, 77.6772° E)</span>
+</div>
+</div>
+</div>
+<!-- Transit Vector / Live Telemetry Pill -->
+<div class="p-space-sm bg-surface-container-lowest rounded flex items-center justify-between font-caption text-caption">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">satellite_alt</span>
+<span class="text-on-surface font-semibold">NavIC Constellation Beacon</span>
+</div>
+<span class="text-outline font-mono">HDOP: 0.8 • 11 Sats</span>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION 3: Interactive Chain-of-Custody 6-State Lifecycle -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="p-space-lg bg-surface-container-low flex flex-wrap items-center justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">account_tree</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">3. Chain-of-Custody 6-State Lifecycle Audit</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">
+                Cryptographic multi-party state machine. Each milestone requires asymmetric dual-key assertion.
+              </p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm">
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface font-semibold">Milestone 3 of 6 Cleared</span>
+</div>
+</div>
+<div class="p-space-lg space-y-space-md">
+<!-- State 01 (Completed) -->
+<div class="flex items-start gap-space-md p-space-md bg-surface-container-low rounded-lg transition-all hover:bg-surface-container">
+<div class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-on-surface">STATE 01: REQUESTED &amp; MATCHED</span>
+<span class="px-space-xs py-0.2 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-[10px] uppercase">Validated</span>
+</div>
+<span class="font-caption text-caption text-outline font-mono">10:22:14 IST (T-3h 10m)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Algorithmic allocation initiated by Crisis Requisition #REQ-1049. Automated supply partition split 300 kg to Asha Relief from XYZ Warehouses.
+                </p>
+<div class="mt-space-xs font-caption text-caption text-outline font-mono truncate">
+                  Tx: 0x4a9b...773e • Algorithm: ReliefNet-GreedyAlloc-v4
+                </div>
+</div>
+</div>
+<!-- State 02 (Completed) -->
+<div class="flex items-start gap-space-md p-space-md bg-surface-container-low rounded-lg transition-all hover:bg-surface-container">
+<div class="w-8 h-8 rounded bg-primary-container text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">key</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-on-surface">STATE 02: ACCEPTED &amp; BILATERAL HANDSHAKE</span>
+<span class="px-space-xs py-0.2 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-[10px] uppercase">ECDSA Countersigned</span>
+</div>
+<span class="font-caption text-caption text-outline font-mono">11:05:49 IST (T-2h 27m)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Dual agreement finalized between XYZ Food Relief Foundation and Asha Relief Initiative. Mutual-Aid Zero-Cost Covenant #COV-991 signed with hardware token.
+                </p>
+<div class="mt-space-xs flex flex-wrap gap-space-sm font-caption text-caption text-secondary">
+<span>Signer A: pk_xyz_darpan3109 (OK)</span>
+<span>•</span>
+<span>Signer B: pk_asha_govt9842 (OK)</span>
+</div>
+</div>
+</div>
+<!-- State 03 (Active / In-Transit) -->
+<div class="flex items-start gap-space-md p-space-md bg-amber-50/80 rounded-lg shadow-sm">
+<div class="w-8 h-8 rounded bg-amber-600 text-on-primary flex items-center justify-center shrink-0 animate-bounce">
+<span class="material-symbols-outlined text-[18px]">local_shipping</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold text-amber-950">STATE 03: IN PROGRESS / DISPATCHED</span>
+<span class="px-space-xs py-0.2 rounded bg-amber-200 text-amber-900 font-label-sm text-[10px] uppercase font-bold">Active Live</span>
+</div>
+<span class="font-caption text-caption text-amber-800 font-mono">13:45:00 IST (Dispatched)</span>
+</div>
+<p class="font-body-sm text-body-sm text-amber-900 mt-1">
+                  Vehicle Tata 407 (KA-04-E-2192) cleared Domlur Dock Bay 04. Tamper-evident cable seal #SL-99812 verified intact by Depot Officer S. Nair. Real-time GPS ping active on HAL Airport Road corridor.
+                </p>
+<div class="mt-space-sm flex items-center gap-space-md font-caption text-caption text-amber-950 font-semibold">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock</span> Seal Verified: #SL-99812
+                  </span>
+<span>•</span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">speed</span> 21 km/h Heading South-East
+                  </span>
+</div>
+</div>
+</div>
+<!-- State 04 (Pending Delivery) -->
+<div class="flex items-start gap-space-md p-space-md bg-surface-container-low/60 rounded-lg opacity-85">
+<div class="w-8 h-8 rounded bg-surface-container-high text-outline flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">pin_drop</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface">STATE 04: DELIVERED AT DOCK</span>
+<span class="px-space-xs py-0.2 rounded bg-surface-container text-outline font-label-sm text-[10px] uppercase">Awaiting Arrival</span>
+</div>
+<span class="font-caption text-caption text-outline font-mono">ETA ~14:46 IST</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Pending physical entry at Bellandur Camp Gate 2. Physical checkpoint scan will verify uncompromised seal before unloading commences.
+                </p>
+</div>
+</div>
+<!-- State 05 (Pending Inspection) -->
+<div class="flex items-start gap-space-md p-space-md bg-surface-container-low/60 rounded-lg opacity-75">
+<div class="w-8 h-8 rounded bg-surface-container-high text-outline flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">fact_check</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface">STATE 05: RECEIVED &amp; INSPECTED</span>
+<span class="px-space-xs py-0.2 rounded bg-surface-container text-outline font-label-sm text-[10px] uppercase">Pending Tare</span>
+</div>
+<span class="font-caption text-caption text-outline font-mono">Stage 5 Gate</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Dual Consignee Field Officer (Asha Relief) + Driver gross weight verification. Moisture meter test threshold must certify &lt;12%.
+                </p>
+</div>
+</div>
+<!-- State 06 (Pending Settlement) -->
+<div class="flex items-start gap-space-md p-space-md bg-surface-container-low/60 rounded-lg opacity-60">
+<div class="w-8 h-8 rounded bg-surface-container-high text-outline flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-semibold text-on-surface">STATE 06: COMPLETED &amp; SETTLED</span>
+<span class="px-space-xs py-0.2 rounded bg-surface-container text-outline font-label-sm text-[10px] uppercase">Final Ledger</span>
+</div>
+<span class="font-caption text-caption text-outline font-mono">Terminal Anchor</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Automatic stock deduction committed from Domlur stock ledger, and inventory credits allocated to Bellandur Outpost distribution queue.
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (4 cols): Consignor/Consignee Cards, QR Proof, Action Panel -->
+<div class="lg:col-span-4 space-y-space-xl">
+<!-- Entity Cards: Consignor & Consignee -->
+<div class="space-y-space-md">
+<!-- Consignor Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Consignor (Dispatching Entity)</span>
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-[10px] uppercase">Tier-1 Sovereign</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">
+              XYZ Food Relief Foundation
+            </div>
+<div class="font-caption text-caption text-on-surface-variant">
+              Central Karnataka Logistics Sector • DARPAN #KA-2018-3109
+            </div>
+<div class="pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Custody Signer: S. Nair (Depot Mgr)</span>
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">check_circle</span>
+</div>
+</div>
+<!-- Consignee Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Consignee (Receiving Entity)</span>
+<span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-[10px] uppercase">Govt Verified NGO</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">
+              Asha Relief Initiative
+            </div>
+<div class="font-caption text-caption text-on-surface-variant">
+              Bellandur Flood Relief Command • Outpost Beta In-Charge
+            </div>
+<div class="pt-space-xs flex items-center justify-between font-label-sm text-label-sm text-secondary">
+<span>Field Officer: Dr. V. Rao</span>
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Cryptographic Proof & QR Verification Card -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">qr_code_scanner</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Cryptographic Proof &amp; QR</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-[11px] font-mono">v4.2 PROOF</span>
+</div>
+<!-- QR Graphic Container (Tailwind + Inline SVG pattern) -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col items-center justify-center text-center space-y-space-sm">
+<div class="w-44 h-44 bg-surface-container-lowest p-2 rounded shadow-inner flex items-center justify-center relative group">
+<!-- SVG QR Symbol Mock with Authentic Functional Pattern Appearance -->
+<svg class="w-full h-full text-primary" fill="currentColor" viewbox="0 0 100 100">
+<!-- QR Position Detection Patterns (Top-Left) -->
+<rect height="28" width="28" x="5" y="5"></rect>
+<rect fill="#ffffff" height="20" width="20" x="9" y="9"></rect>
+<rect height="12" width="12" x="13" y="13"></rect>
+<!-- (Top-Right) -->
+<rect height="28" width="28" x="67" y="5"></rect>
+<rect fill="#ffffff" height="20" width="20" x="71" y="9"></rect>
+<rect height="12" width="12" x="75" y="13"></rect>
+<!-- (Bottom-Left) -->
+<rect height="28" width="28" x="5" y="67"></rect>
+<rect fill="#ffffff" height="20" width="20" x="9" y="71"></rect>
+<rect height="12" width="12" x="13" y="75"></rect>
+<!-- Grid Data Points -->
+<rect height="4" width="4" x="37" y="8"></rect>
+<rect height="4" width="4" x="45" y="8"></rect>
+<rect height="4" width="4" x="53" y="8"></rect>
+<rect height="4" width="4" x="37" y="16"></rect>
+<rect height="4" width="8" x="49" y="16"></rect>
+<rect height="4" width="4" x="37" y="24"></rect>
+<rect height="4" width="4" x="45" y="24"></rect>
+<rect height="4" width="4" x="57" y="24"></rect>
+<rect height="4" width="4" x="8" y="37"></rect>
+<rect height="4" width="4" x="16" y="37"></rect>
+<rect height="4" width="4" x="24" y="37"></rect>
+<rect height="8" width="8" x="37" y="37"></rect>
+<rect height="4" width="4" x="49" y="37"></rect>
+<rect height="4" width="8" x="57" y="37"></rect>
+<rect height="4" width="4" x="69" y="37"></rect>
+<rect height="4" width="16" x="77" y="37"></rect>
+<rect height="4" width="8" x="8" y="45"></rect>
+<rect height="4" width="4" x="20" y="45"></rect>
+<rect height="4" width="8" x="49" y="45"></rect>
+<rect height="4" width="4" x="65" y="45"></rect>
+<rect height="4" width="8" x="73" y="45"></rect>
+<rect height="4" width="8" x="85" y="45"></rect>
+<rect height="4" width="4" x="8" y="53"></rect>
+<rect height="4" width="8" x="20" y="53"></rect>
+<rect height="12" width="4" x="37" y="49"></rect>
+<rect height="4" width="4" x="45" y="53"></rect>
+<rect height="4" width="8" x="57" y="53"></rect>
+<rect height="4" width="4" x="69" y="53"></rect>
+<rect height="4" width="4" x="81" y="53"></rect>
+<rect height="4" width="4" x="37" y="69"></rect>
+<rect height="4" width="8" x="45" y="69"></rect>
+<rect height="4" width="4" x="57" y="69"></rect>
+<rect height="8" width="8" x="65" y="69"></rect>
+<rect height="4" width="4" x="77" y="69"></rect>
+<rect height="4" width="8" x="85" y="69"></rect>
+<rect height="4" width="8" x="37" y="77"></rect>
+<rect height="4" width="4" x="49" y="77"></rect>
+<rect height="4" width="4" x="57" y="77"></rect>
+<rect height="4" width="8" x="77" y="81"></rect>
+<rect height="8" width="4" x="89" y="77"></rect>
+<rect height="4" width="4" x="37" y="85"></rect>
+<rect height="4" width="4" x="45" y="85"></rect>
+<rect height="4" width="8" x="53" y="85"></rect>
+<rect height="8" width="4" x="65" y="81"></rect>
+<rect height="4" width="8" x="73" y="89"></rect>
+</svg>
+<div class="absolute inset-0 bg-primary/90 opacity-0 group-hover:opacity-100 transition-opacity rounded flex items-center justify-center p-2">
+<span class="text-on-primary font-label-sm text-[11px] text-center">Click to Enlarge Waybill Offline QR</span>
+</div>
+</div>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-on-surface font-bold">Scannable Field Handshake Token</span>
+<p class="font-caption text-caption text-outline">Scan via Asha Relief Field Tab to complete dock tare</p>
+</div>
+</div>
+<!-- Hash & Ledger Data -->
+<div class="space-y-space-xs font-body-sm text-body-sm">
+<div class="p-space-xs bg-surface-container-low rounded">
+<span class="font-caption text-caption text-outline uppercase block">Manifest Hash (SHA-256)</span>
+<span class="font-mono text-[11px] text-on-surface break-all select-all font-semibold">
+                0x9f18b4e7201c8091dd7a43f88029d2c0ee78c3b1a2
+              </span>
+</div>
+<div class="p-space-xs bg-surface-container-low rounded">
+<span class="font-caption text-caption text-outline uppercase block">Merkle Root Anchor</span>
+<span class="font-mono text-[11px] text-secondary font-semibold">
+                Block #4,882,109 (Karnataka SDMA State Node)
+              </span>
+</div>
+<div class="p-space-xs bg-surface-container-low rounded flex items-center justify-between">
+<div>
+<span class="font-caption text-caption text-outline uppercase block">Driver Entry PIN Code</span>
+<span class="font-caption text-caption text-on-surface-variant">Gate sentry challenge</span>
+</div>
+<span class="font-mono text-headline-sm text-headline-sm text-primary font-bold tracking-widest bg-surface-container px-2 py-0.5 rounded">
+                739-408
+              </span>
+</div>
+</div>
+</div>
+<!-- Consignee Field Action Panel -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">assignment_turned_in</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Consignee Field Action Panel</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Authorized gatekeeper actions for Camp Zone Beta outpost lead officer.
+          </p>
+<div class="space-y-space-sm pt-space-xs">
+<!-- Primary Action -->
+<button class="w-full flex items-center justify-center gap-space-sm px-space-md py-3 rounded bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-all shadow-sm" id="dockArrivalBtn">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Confirm Dock Arrival &amp; Start Inspection</span>
+</button>
+<!-- Discrepancy Action -->
+<button class="w-full flex items-center justify-center gap-space-sm px-space-md py-2.5 rounded bg-surface-container hover:bg-surface-container-high text-amber-900 font-label-md text-label-md transition-colors shadow-sm" id="flagDiscrepancyBtn">
+<span class="material-symbols-outlined text-[18px] text-amber-700">balance</span>
+<span>Flag Discrepancy / Tare Mismatch</span>
+</button>
+</div>
+<!-- Hotline to SDRF Corridor Escort Desk -->
+<div class="p-space-md bg-surface-container-low rounded-lg mt-space-md space-y-space-xs">
+<div class="flex items-center gap-space-xs text-error font-label-sm text-label-sm font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">support_agent</span>
+<span>SDRF Corridor Escort Desk</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">
+              In case of waterlogged routes, road bloc, or vehicle breakdown along Domlur–Bellandur corridor:
+            </p>
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm">
+<span class="font-mono text-on-surface font-bold">VHF Ch 14 / Tel: 1070</span>
+<a class="inline-flex items-center gap-1 text-primary hover:underline font-semibold" href="tel:1070">
+                Direct Patch <span class="material-symbols-outlined text-[13px]">call</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification / Micro-Interaction Modal Toast (Hidden by default) -->
+<div class="fixed bottom-6 right-6 max-w-md bg-primary text-on-primary p-space-md rounded-lg shadow-xl translate-y-20 opacity-0 pointer-events-none transition-all duration-300 z-50 flex items-start gap-space-md" id="toastNotification">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed-dim text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">cloud_sync</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="font-label-md text-label-md font-bold" id="toastTitle">System Broadcast</div>
+<p class="font-body-sm text-body-sm text-inverse-primary mt-0.5" id="toastBody">Action has been witnessed on the local mesh.</p>
+</div>
+<button class="text-on-primary hover:text-surface-variant" onclick="dismissToast()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Interactive Scripting -->
+<script>
+    function triggerToast(title, message) {
+      const toast = document.getElementById('toastNotification');
+      const toastTitle = document.getElementById('toastTitle');
+      const toastBody = document.getElementById('toastBody');
+      
+      toastTitle.textContent = title;
+      toastBody.textContent = message;
+      
+      toast.classList.remove('translate-y-20', 'opacity-0', 'pointer-events-none');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      
+      setTimeout(() => {
+        dismissToast();
+      }, 5000);
+    }
+
+    function dismissToast() {
+      const toast = document.getElementById('toastNotification');
+      toast.classList.add('translate-y-20', 'opacity-0', 'pointer-events-none');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }
+
+    document.getElementById('dockArrivalBtn')?.addEventListener('click', () => {
+      triggerToast(
+        'Arrival Logged at Gate Beta',
+        'Dock Gate entry timestamp #14:38:12 IST recorded. Biometric Tare form opened for Ramesh Kumar (KA-04-E-2192).'
+      );
+    });
+
+    document.getElementById('flagDiscrepancyBtn')?.addEventListener('click', () => {
+      triggerToast(
+        'Discrepancy Flow Triggered',
+        'Tare mismatch workflow initiated. State 03 paused pending calibrated weighbridge re-evaluation.'
+      );
+    });
+
+    document.getElementById('showQrBtn')?.addEventListener('click', () => {
+      triggerToast(
+        'Receipt Handshake Token Generated',
+        'QR manifest refreshed with 256-bit dynamic salt valid for 15 minutes.'
+      );
+    });
+  </script>
+</div></main></div></body></html>

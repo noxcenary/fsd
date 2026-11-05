@@ -1,0 +1,64 @@
+Organizations: 195
+
+Platform relevance:
+platform_relevance
+High                                98
+Medium                              82
+Low (industry/professional body)    12
+Exclude (not an organization)        3
+
+Primary focus:
+primary_focus
+Education                         53
+Science & Technology              19
+Professional / Industry Body      18
+Health                            18
+Unclassified                      15
+Arts & Culture                    13
+Rural Development & Livelihood    12
+Environment & Wildlife            12
+Women & Girls                     10
+Children & Youth                   8
+Human Rights & Governance          6
+Food & Nutrition                   5
+Disaster Relief                    4
+Animal Welfare                     2
+
+Orgs with disaster experience: 9
+Orgs operating pan-India: 44
+Founded year found: 157 / 195
+
+By primary state (guess):
+primary_state_guess
+Delhi             33
+Karnataka         21
+Maharashtra       21
+Tamil Nadu        17
+Kerala            14
+Gujarat           11
+Telangana          9
+Andhra Pradesh     8
+Rajasthan          8
+West Bengal        6
+
+Resource types mentioned:
+resource_types_mentioned
+Funds        53
+Books        37
+Food         19
+Shelter      18
+Medicines    10
+Water         7
+Blood         5
+Clothing      4
+
+Disaster-experienced orgs:
+Amalthea (technical summit)
+Bharatiya Jain Sanghatana
+Deepak Foundation
+Environmentalist Foundation of India
+Gram Vikas
+Prajwala
+Save the Children India
+South Indian Federation of Fishermen Societies
+Sugam Vedashram
