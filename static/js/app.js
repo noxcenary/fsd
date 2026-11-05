@@ -118,7 +118,7 @@ class ReliefNetApp {
       label.textContent = options[select.selectedIndex]?.text || options[0].text;
 
       const chevron = document.createElement("span");
-      chevron.className = "dropdown-emerald-chevron material-symbols-outlined text-[18px] text-slate-400";
+      chevron.className = "dropdown-emerald-chevron material-symbols-outlined text-[18px] text-slate-500";
       chevron.textContent = "expand_more";
 
       trigger.appendChild(label);
@@ -250,7 +250,7 @@ class ReliefNetApp {
       });
       wsItem.classList.add("active");
       const checkSpan = document.createElement("span");
-      checkSpan.className = "material-symbols-outlined text-emerald-400 text-[16px]";
+      checkSpan.className = "material-symbols-outlined text-emerald-700 text-[16px]";
       checkSpan.innerText = "check";
       wsItem.appendChild(checkSpan);
 
@@ -441,18 +441,18 @@ class ReliefNetApp {
 
     let html = "";
     if (matchedScreens.length > 0) {
-      html += `<div class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">Screen Dockets (${matchedScreens.length})</div>`;
+      html += `<div class="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">Screen Dockets (${matchedScreens.length})</div>`;
       matchedScreens.slice(0, 8).forEach(s => {
         html += `
           <a href="${s.route}" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-100 transition-colors group" onclick="document.getElementById('command-palette-backdrop').classList.add('hidden')">
             <div class="flex items-center gap-2.5">
-              <span class="material-symbols-outlined text-slate-400 group-hover:text-emerald-600 text-[18px]">terminal</span>
+              <span class="material-symbols-outlined text-slate-500 group-hover:text-zinc-900 text-[18px]">terminal</span>
               <div>
                 <span class="font-semibold text-slate-900 block text-xs">${s.title}</span>
                 <span class="text-[11px] text-slate-500">${s.stage}</span>
               </div>
             </div>
-            <span class="font-mono text-[10px] text-slate-400 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">${s.route}</span>
+            <span class="font-mono text-[10px] text-slate-500 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">${s.route}</span>
           </a>
         `;
       });
@@ -463,18 +463,18 @@ class ReliefNetApp {
       const mockNgos = (window.RELIEFNET_MOCK && window.RELIEFNET_MOCK.ngos) || [];
       const matchedNgos = mockNgos.filter(n => n.name.toLowerCase().includes(q) || n.district.toLowerCase().includes(q));
       if (matchedNgos.length > 0) {
-        html += `<div class="px-2 py-1 mt-2 text-[10px] font-bold uppercase tracking-wider text-slate-400">Matching Organizations</div>`;
+        html += `<div class="px-2 py-1 mt-2 text-[10px] font-bold uppercase tracking-wider text-slate-500">Matching Organizations</div>`;
         matchedNgos.slice(0, 4).forEach(n => {
           html += `
             <a href="#/directory" class="flex items-center justify-between p-2 rounded-lg hover:bg-slate-100 transition-colors" onclick="document.getElementById('command-palette-backdrop').classList.add('hidden')">
               <div class="flex items-center gap-2.5">
-                <span class="material-symbols-outlined text-emerald-600 text-[18px]">verified</span>
+                <span class="material-symbols-outlined text-emerald-700 text-[18px]">verified</span>
                 <div>
                   <span class="font-semibold text-slate-900 block text-xs">${n.name}</span>
                   <span class="text-[11px] text-slate-500">${n.district}, Karnataka • ${n.verification_tier}</span>
                 </div>
               </div>
-              <span class="text-emerald-600 text-xs font-semibold">View →</span>
+              <span class="text-zinc-900 text-xs font-semibold">View →</span>
             </a>
           `;
         });
@@ -482,7 +482,7 @@ class ReliefNetApp {
     }
 
     if (!html) {
-      html = `<div class="p-8 text-center text-slate-400 text-xs">No matching screens or organizations found for "${query}"</div>`;
+      html = `<div class="p-8 text-center text-slate-500 text-xs">No matching screens or organizations found for "${query}"</div>`;
     }
 
     container.innerHTML = html;
@@ -508,9 +508,9 @@ class ReliefNetApp {
       document.body.appendChild(container);
     }
     const toast = document.createElement("div");
-    toast.className = `toast ${type === "error" ? "bg-red-950 text-red-200 border border-red-800" : "bg-[#090d16] text-white border border-slate-700"}`;
+    toast.className = `toast ${type === "error" ? "bg-red-50 text-red-800 border border-red-200" : "bg-[#18181b] text-white border border-[#27272a]"}`;
     toast.innerHTML = `
-      <span class="material-symbols-outlined text-[18px] ${type === "error" ? "text-red-400" : "text-emerald-300"}">${type === "error" ? "warning" : "info"}</span>
+      <span class="material-symbols-outlined text-[18px] ${type === "error" ? "text-red-700" : "text-zinc-300"}">${type === "error" ? "warning" : "info"}</span>
       <span class="text-xs font-medium">${message}</span>
     `;
     container.appendChild(toast);
@@ -595,9 +595,9 @@ class ReliefNetApp {
     links.forEach(link => {
       const target = link.getAttribute("data-sidebar-link");
       if (this.currentRoute === target || (target !== "#/dashboard" && this.currentRoute.startsWith(target))) {
-        link.className = "flex items-center gap-2.5 px-3 py-2 rounded-lg bg-emerald-500/15 text-emerald-300 font-semibold border-r-2 border-emerald-400 transition-colors";
+        link.className = "flex items-center justify-between gap-2.5 px-3 py-2 rounded-lg bg-[#ececee] text-zinc-900 font-semibold border-r-2 border-zinc-900 transition-colors";
       } else {
-        link.className = "flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors";
+        link.className = "flex items-center justify-between gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors";
       }
     });
   }
@@ -635,9 +635,9 @@ class ReliefNetApp {
 
     try {
       container.innerHTML = `
-        <div class="flex items-center justify-center p-24 text-slate-400">
+        <div class="flex items-center justify-center p-24 text-slate-500">
           <div class="flex items-center gap-3">
-            <span class="w-5 h-5 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin"></span>
+            <span class="w-5 h-5 border-2 border-zinc-400 border-t-transparent rounded-full animate-spin"></span>
             <span class="font-label text-sm text-slate-600 font-medium">Loading ${screen.title}...</span>
           </div>
         </div>
@@ -716,10 +716,10 @@ class ReliefNetApp {
         emeraldDropdownHtml += `
           <a href="${s.route}" class="dropdown-emerald-item ${isSelected ? 'active' : ''}" style="--item-idx: ${itemIdx++};" role="option" aria-selected="${isSelected}" onclick="app.closeAllDropdowns()">
             <div class="flex items-center gap-2 min-w-0">
-              <span class="material-symbols-outlined text-[15px] ${isSelected ? 'text-emerald-600' : 'text-slate-400'}">terminal</span>
+              <span class="material-symbols-outlined text-[15px] ${isSelected ? 'text-emerald-700' : 'text-slate-500'}">terminal</span>
               <span class="truncate font-medium">${s.title}</span>
             </div>
-            ${isSelected ? '<span class="material-symbols-outlined text-emerald-600 text-[14px]">check</span>' : ''}
+            ${isSelected ? '<span class="material-symbols-outlined text-emerald-700 text-[14px]">check</span>' : ''}
           </a>
         `;
       });
@@ -737,7 +737,7 @@ class ReliefNetApp {
           </button>
 
           <a href="#/portal" class="flex items-center gap-2.5 shrink-0 group">
-            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 text-white flex items-center justify-center font-serif font-bold text-base shadow-sm group-hover:shadow-emerald-500/40 group-hover:scale-105 transition-all duration-300">R</div>
+            <div class="w-8 h-8 rounded-lg bg-[#18181b] text-white flex items-center justify-center font-serif font-bold text-base shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all duration-300">R</div>
             <div class="hidden sm:flex flex-col">
               <span class="font-serif font-bold text-sm tracking-tight text-slate-900 leading-none">ReliefNet</span>
               <span class="font-label text-[11px] text-slate-500 mt-0.5">Coordination OS</span>
@@ -749,7 +749,7 @@ class ReliefNetApp {
           <!-- Dynamic Breadcrumbs -->
           <nav class="hidden md:flex items-center gap-1.5 text-xs text-slate-500 min-w-0">
             ${breadcrumbs.map((b, idx) => `
-              ${idx > 0 ? `<span class="material-symbols-outlined text-[14px] text-slate-400">chevron_right</span>` : ''}
+              ${idx > 0 ? `<span class="material-symbols-outlined text-[14px] text-slate-500">chevron_right</span>` : ''}
               ${b.active ? `
                 <span class="font-semibold text-slate-900 truncate max-w-[200px] xl:max-w-xs">${b.label}</span>
               ` : `
@@ -761,9 +761,9 @@ class ReliefNetApp {
 
         <!-- Center: Command Palette Trigger (⌘K) -->
         <div class="flex-1 max-w-xs lg:max-w-md mx-3 hidden sm:block">
-          <button id="command-trigger-btn" class="w-full flex items-center justify-between px-3 py-1.5 rounded-lg bg-white/70 hover:bg-white border border-slate-200/80 hover:border-emerald-300 text-xs text-slate-500 transition-all duration-300 shadow-inner group">
+          <button id="command-trigger-btn" class="w-full flex items-center justify-between px-3 py-1.5 rounded-lg bg-white/70 hover:bg-white border border-slate-200/80 hover:border-zinc-300 text-xs text-slate-500 transition-all duration-300 shadow-inner group">
             <div class="flex items-center gap-2">
-              <span class="material-symbols-outlined text-[16px] text-slate-400 group-hover:text-emerald-600 transition-colors">search</span>
+              <span class="material-symbols-outlined text-[16px] text-slate-500 group-hover:text-zinc-900 transition-colors">search</span>
               <span>Search screens & NGOs...</span>
             </div>
             <kbd class="px-1.5 py-0.5 rounded bg-white border border-slate-200 font-mono text-[10px] text-slate-500 font-semibold shadow-xs">⌘K</kbd>
@@ -780,7 +780,7 @@ class ReliefNetApp {
                 <span class="material-symbols-outlined text-[16px] text-amber-600">bookmark</span>
                 <span class="truncate max-w-[150px] font-medium" id="screen-dropdown-title">${currentScreen.title}</span>
               </div>
-              <span class="dropdown-emerald-chevron material-symbols-outlined text-[18px] text-slate-400">expand_more</span>
+              <span class="dropdown-emerald-chevron material-symbols-outlined text-[18px] text-slate-500">expand_more</span>
             </button>
             <div class="dropdown-emerald-menu align-right w-80 shadow-2xl" id="screen-emerald-menu" role="listbox">
               ${emeraldDropdownHtml}
@@ -796,14 +796,14 @@ class ReliefNetApp {
           <!-- Notifications Bell Trigger -->
           <button id="notifications-trigger-btn" aria-haspopup="dialog" aria-controls="notifications-drawer" aria-expanded="false" class="relative p-1.5 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors">
             <span class="material-symbols-outlined text-[20px]">notifications</span>
-            <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-emerald-500 ring-2 ring-emerald-500/20 animate-pulse"></span>
+            <span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-zinc-900 ring-2 ring-zinc-900/10 animate-pulse"></span>
           </button>
 
           <div class="h-5 w-px bg-slate-200 hidden sm:block"></div>
 
           <!-- Organization Profile Pill -->
           <a href="#/dashboard" class="flex items-center gap-2 pl-1.5 pr-2.5 py-1 rounded-lg hover:bg-slate-100 transition-colors group">
-            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">GS</div>
+            <div class="w-7 h-7 rounded-full bg-[#18181b] text-white flex items-center justify-center font-bold text-xs shadow-xs">GS</div>
             <div class="hidden lg:flex flex-col text-left">
               <span class="text-xs font-semibold text-slate-900 leading-tight">Grama Seva</span>
               <span class="text-[10px] text-emerald-700 font-mono font-medium">KA/2021/8841</span>
@@ -862,7 +862,7 @@ class ReliefNetApp {
     if (viewGridBtn && viewTableBtn) {
       viewGridBtn.addEventListener("click", () => {
         this.state.directoryView = "grid";
-        viewGridBtn.className = "flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white text-emerald-600 shadow-sm font-label text-xs font-semibold transition-colors";
+        viewGridBtn.className = "flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white text-zinc-900 shadow-sm font-label text-xs font-semibold transition-colors";
         viewTableBtn.className = "flex items-center gap-1 px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 font-label text-xs transition-colors";
         if (viewMapBtn) viewMapBtn.className = "flex items-center gap-1 px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 font-label text-xs transition-colors";
         this.renderNgoCards(this.state.cachedNgos || []);
@@ -870,7 +870,7 @@ class ReliefNetApp {
 
       viewTableBtn.addEventListener("click", () => {
         this.state.directoryView = "table";
-        viewTableBtn.className = "flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white text-emerald-600 shadow-sm font-label text-xs font-semibold transition-colors";
+        viewTableBtn.className = "flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white text-zinc-900 shadow-sm font-label text-xs font-semibold transition-colors";
         viewGridBtn.className = "flex items-center gap-1 px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 font-label text-xs transition-colors";
         if (viewMapBtn) viewMapBtn.className = "flex items-center gap-1 px-3 py-1.5 rounded-lg text-slate-600 hover:text-slate-900 font-label text-xs transition-colors";
         this.renderNgoTable(this.state.cachedNgos || []);
@@ -984,12 +984,12 @@ class ReliefNetApp {
           ${ngos.map(n => `
             <tr>
               <td>
-                <div class="font-serif font-bold text-slate-900 text-sm hover:text-emerald-600 cursor-pointer" onclick="window.app.openDossier('${n.id}')">${n.name}</div>
+                <div class="font-serif font-bold text-slate-900 text-sm hover:text-zinc-700 cursor-pointer" onclick="window.app.openDossier('${n.id}')">${n.name}</div>
                 <div class="text-[11px] text-slate-500">${n.contact_officer || 'Chief Functionary'}, Est. ${n.established_year || 2012}</div>
               </td>
               <td>
                 <div class="text-xs text-slate-700 font-medium">${n.district || 'Bengaluru Urban'}</div>
-                <div class="text-[10px] text-slate-400">Karnataka Region</div>
+                <div class="text-[10px] text-slate-500">Karnataka Region</div>
               </td>
               <td>
                 <span class="${n.tier_code === 'tier_1' ? 'badge-tier1' : (n.tier_code === 'tier_2' ? 'badge-tier2' : 'badge-warning')}">
@@ -1001,7 +1001,7 @@ class ReliefNetApp {
               </td>
               <td>
                 <div class="font-mono text-xs font-bold text-slate-800">${n.trust_score || 95}%</div>
-                <div class="text-[10px] text-emerald-600 font-semibold">${n.sla_adherence || '98.2%'} SLA</div>
+                <div class="text-[10px] text-emerald-700 font-semibold">${n.sla_adherence || '98.2%'} SLA</div>
               </td>
               <td class="text-right">
                 <button class="btn-saas-secondary text-xs px-2.5 py-1" onclick="window.app.openDossier('${n.id}')">View dossier</button>
@@ -1052,11 +1052,11 @@ class ReliefNetApp {
             <span class="${n.tier_code === 'tier_1' ? 'badge-tier1' : (n.tier_code === 'tier_2' ? 'badge-tier2' : 'badge-warning')}">
               ${n.verification_tier || 'Tier-1 Sovereign Verified'}
             </span>
-            <span class="font-mono text-[11px] text-slate-400 font-semibold">${n.darpan_id || 'KA/2021/8841'}</span>
+            <span class="font-mono text-[11px] text-slate-500 font-semibold">${n.darpan_id || 'KA/2021/8841'}</span>
           </div>
-          <h3 class="font-serif font-bold text-base text-slate-900 group-hover:text-emerald-600 transition-colors mb-1.5 leading-snug cursor-pointer" onclick="window.app.openDossier('${n.id}')">${n.name}</h3>
+          <h3 class="font-serif font-bold text-base text-slate-900 group-hover:text-zinc-700 transition-colors mb-1.5 leading-snug cursor-pointer" onclick="window.app.openDossier('${n.id}')">${n.name}</h3>
           <p class="text-xs text-slate-500 flex items-center gap-1.5 mb-3">
-            <span class="material-symbols-outlined text-[15px] text-slate-400">location_on</span>
+            <span class="material-symbols-outlined text-[15px] text-slate-500">location_on</span>
             <span>${n.district || 'Bengaluru Urban'}, Karnataka</span>
             <span class="text-slate-300">/</span>
             <span>Est. ${n.established_year || 2012}</span>
@@ -1075,10 +1075,10 @@ class ReliefNetApp {
           <!-- Bottom Footer Metrics -->
           <div class="pt-3 border-t border-slate-100 flex items-center justify-between">
             <div class="flex items-center gap-1.5 text-xs font-semibold text-slate-700 font-mono">
-              <span class="material-symbols-outlined text-emerald-600 text-[16px]">verified</span>
+              <span class="material-symbols-outlined text-emerald-700 text-[16px]">verified</span>
               <span>Trust: ${n.trust_score || 95}%</span>
             </div>
-            <button class="text-xs font-semibold text-emerald-600 hover:text-emerald-800 flex items-center gap-0.5" onclick="window.app.openDossier('${n.id}')">
+            <button class="text-xs font-semibold text-zinc-900 hover:text-zinc-600 flex items-center gap-0.5" onclick="window.app.openDossier('${n.id}')">
               <span>View Dossier</span>
               <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
             </button>
@@ -1195,11 +1195,11 @@ class ReliefNetApp {
           this.showToast("Message cryptographically signed & broadcasted", "info");
           if (messagesBox) {
             const newMsg = document.createElement("div");
-            newMsg.className = "flex flex-col gap-1 p-3 bg-emerald-50 border border-emerald-200 rounded-lg self-end max-w-lg mb-2";
+            newMsg.className = "flex flex-col gap-1 p-3 bg-zinc-50 border border-zinc-200 rounded-lg self-end max-w-lg mb-2";
             newMsg.innerHTML = `
-              <div class="flex items-center justify-between text-xs font-semibold text-emerald-900">
+              <div class="flex items-center justify-between text-xs font-semibold text-zinc-900">
                 <span>${this.state.userOrg}</span>
-                <span class="font-mono text-slate-400">Just now</span>
+                <span class="font-mono text-slate-500">Just now</span>
               </div>
               <p class="text-xs text-slate-800">${text}</p>
             `;
@@ -1226,7 +1226,7 @@ class ReliefNetApp {
               <span class="badge-crisis mb-1">Priority Allocation</span>
               <h3 class="font-serif font-bold text-lg text-slate-900">Pledge Verified Surplus Stock</h3>
             </div>
-            <button class="text-slate-400 hover:text-slate-700" onclick="document.getElementById('app-pledge-modal').remove()">
+            <button class="text-slate-500 hover:text-slate-700" onclick="document.getElementById('app-pledge-modal').remove()">
               <span class="material-symbols-outlined text-[20px]">close</span>
             </button>
           </div>

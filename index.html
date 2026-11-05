@@ -23,91 +23,202 @@
       theme: {
         extend: {
           colors: {
-            primary: {
-              DEFAULT: "#059669",
-              50: "#ecfdf5",
-              100: "#d1fae5",
-              200: "#a7f3d0",
-              300: "#6ee7b7",
-              400: "#34d399",
-              500: "#10b981",
-              600: "#059669",
-              700: "#047857",
-              800: "#065f46",
-              900: "#064e3b",
-              950: "#022c22"
+            slate: {
+              50: "#fafafa",
+              100: "#f4f4f5",
+              200: "#e4e4e7",
+              300: "#d4d4d8",
+              400: "#a1a1aa",
+              500: "#71717a",
+              600: "#52525b",
+              700: "#3f3f46",
+              800: "#27272a",
+              900: "#18181b",
+              950: "#09090b"
             },
-            "primary-container": "#ecfdf5",
+            primary: {
+              DEFAULT: "#18181b",
+              50: "#fafafa",
+              100: "#f4f4f5",
+              200: "#e4e4e7",
+              300: "#d4d4d8",
+              400: "#a1a1aa",
+              500: "#71717a",
+              600: "#18181b",
+              700: "#09090b",
+              800: "#09090b",
+              900: "#09090b",
+              950: "#09090b"
+            },
+            "primary-container": "#f4f4f5",
             "on-primary": "#ffffff",
-            "on-primary-container": "#065f46",
-            "primary-fixed": "#d1fae5",
-            "on-primary-fixed": "#064e3b",
-            "primary-fixed-dim": "#a7f3d0",
+            "on-primary-container": "#3f3f46",
+            "primary-fixed": "#e4e4e7",
+            "on-primary-fixed": "#18181b",
+            "primary-fixed-dim": "#d4d4d8",
 
             secondary: {
-              DEFAULT: "#334155",
-              50: "#f8fafc",
-              100: "#f1f5f9",
-              200: "#e2e8f0",
-              500: "#64748b",
-              600: "#475569",
-              700: "#334155",
-              800: "#1e293b",
-              900: "#0f172a"
+              DEFAULT: "#52525b",
+              50: "#fafafa",
+              100: "#f4f4f5",
+              200: "#e4e4e7",
+              500: "#71717a",
+              600: "#52525b",
+              700: "#3f3f46",
+              800: "#27272a",
+              900: "#18181b"
             },
-            "secondary-container": "#eef4f2",
+            "secondary-container": "#f4f4f5",
             "on-secondary": "#ffffff",
-            "on-secondary-container": "#08211c",
-            "secondary-fixed": "#dfe9e5",
-            "on-secondary-fixed": "#0b1f1c",
+            "on-secondary-container": "#27272a",
+            "secondary-fixed": "#e4e4e7",
+            "on-secondary-fixed": "#18181b",
 
-            tertiary: "#b45309",
-            "tertiary-container": "#fef3c7",
-            "on-tertiary-container": "#78350f",
-            "tertiary-fixed": "#fde68a",
-            "on-tertiary-fixed": "#78350f",
+            tertiary: "#8a5a1f",
+            "tertiary-container": "#f8f5ee",
+            "on-tertiary-container": "#6b4a1c",
+            "tertiary-fixed": "#e7d9c0",
+            "on-tertiary-fixed": "#6b4a1c",
 
-            error: "#e11d48",
-            "error-container": "#fff1f2",
+            error: "#9f3a3a",
+            "error-container": "#f9f1f1",
             "on-error": "#ffffff",
-            "on-error-container": "#9f1239",
+            "on-error-container": "#7a2e2e",
 
-            surface: "#f6faf8",
-            "on-surface": "#08211c",
-            "on-surface-variant": "#52645f",
-            "surface-variant": "#dfeae5",
-            "surface-dim": "#dfeae5",
+            surface: "#fafafa",
+            "on-surface": "#18181b",
+            "on-surface-variant": "#52525b",
+            "surface-variant": "#e4e4e7",
+            "surface-dim": "#e4e4e7",
             "surface-bright": "#ffffff",
             "surface-container-lowest": "#ffffff",
-            "surface-container-low": "#fbfdfc",
-            "surface-container": "#f0f7f4",
-            "surface-container-high": "#e3efe9",
-            "surface-container-highest": "#d2e5de",
-            "inverse-surface": "#071c16",
-            "inverse-on-surface": "#f6faf8",
+            "surface-container-low": "#fcfcfc",
+            "surface-container": "#f4f4f5",
+            "surface-container-high": "#ececee",
+            "surface-container-highest": "#e4e4e7",
+            "inverse-surface": "#18181b",
+            "inverse-on-surface": "#fafafa",
 
-            outline: "#8fa8a1",
-            "outline-variant": "#d9e8e2",
+            outline: "#a1a1aa",
+            "outline-variant": "#e4e4e7",
 
             blue: {
-              50: "#ecfdf5",
-              100: "#d1fae5",
-              200: "#a7f3d0",
-              300: "#6ee7b7",
-              400: "#34d399",
-              500: "#10b981",
-              600: "#059669",
-              700: "#047857",
-              800: "#065f46",
-              900: "#064e3b",
-              950: "#022c22"
+              50: "#f4f4f5",
+              100: "#e4e4e7",
+              200: "#d4d4d8",
+              300: "#a1a1aa",
+              400: "#71717a",
+              500: "#52525b",
+              600: "#27272a",
+              700: "#18181b",
+              800: "#09090b",
+              900: "#09090b",
+              950: "#09090b"
+            },
+
+            red: {
+              50: "#f9f1f1",
+              100: "#f3e2e2",
+              200: "#e6cccc",
+              300: "#d6b0b0",
+              400: "#c48d8d",
+              500: "#b06a6a",
+              600: "#9f4f4f",
+              700: "#8f3a3a",
+              800: "#7a2e2e",
+              900: "#642626",
+              950: "#3d1717"
+            },
+
+            amber: {
+              50: "#f8f5ee",
+              100: "#f1eadc",
+              200: "#e7d9c0",
+              300: "#d9c39e",
+              400: "#c6a676",
+              500: "#b0834a",
+              600: "#9a6c30",
+              700: "#8a5a1f",
+              800: "#6b4a1c",
+              900: "#573d1c",
+              950: "#2f2110"
+            },
+
+            yellow: {
+              50: "#f8f5ee",
+              100: "#f1eadc",
+              200: "#e7d9c0",
+              300: "#d9c39e",
+              400: "#c6a676",
+              500: "#b0834a",
+              600: "#9a6c30",
+              700: "#8a5a1f",
+              800: "#6b4a1c",
+              900: "#573d1c",
+              950: "#2f2110"
+            },
+
+            emerald: {
+              50: "#f2f6f2",
+              100: "#e5eee7",
+              200: "#d5e1d8",
+              300: "#b9ccbe",
+              400: "#94b09c",
+              500: "#6f8f7c",
+              600: "#57765f",
+              700: "#3f5f4b",
+              800: "#344e3e",
+              900: "#2c4135",
+              950: "#17241d"
+            },
+
+            green: {
+              50: "#f2f6f2",
+              100: "#e5eee7",
+              200: "#d5e1d8",
+              300: "#b9ccbe",
+              400: "#94b09c",
+              500: "#6f8f7c",
+              600: "#57765f",
+              700: "#3f5f4b",
+              800: "#344e3e",
+              900: "#2c4135",
+              950: "#17241d"
+            },
+
+            rose: {
+              50: "#f9f1f1",
+              100: "#f3e2e2",
+              200: "#e6cccc",
+              300: "#d6b0b0",
+              400: "#c48d8d",
+              500: "#b06a6a",
+              600: "#9f4f4f",
+              700: "#8f3a3a",
+              800: "#7a2e2e",
+              900: "#642626",
+              950: "#3d1717"
+            },
+
+            indigo: {
+              50: "#f4f4f5",
+              100: "#e4e4e7",
+              200: "#d4d4d8",
+              300: "#a1a1aa",
+              400: "#71717a",
+              500: "#52525b",
+              600: "#27272a",
+              700: "#18181b",
+              800: "#09090b",
+              900: "#09090b",
+              950: "#09090b"
             },
 
             chrome: {
-              dark: "#04120e",
-              navy: "#071c16",
-              sidebar: "#061a14",
-              border: "#143a30"
+              dark: "#fafafa",
+              navy: "#f7f7f8",
+              sidebar: "#f7f7f8",
+              border: "#e4e4e7"
             }
           },
           spacing: {
@@ -167,7 +278,7 @@
   <div id="command-palette-backdrop" class="hidden command-backdrop" onclick="if(event.target === this) this.classList.add('hidden')">
     <div class="command-dialog">
       <div class="p-3 border-b border-slate-200 flex items-center gap-3">
-        <span class="material-symbols-outlined text-slate-400 text-[20px]">search</span>
+        <span class="material-symbols-outlined text-slate-500 text-[20px]">search</span>
         <input type="text" id="command-search-input" placeholder="Type a screen, NGO name, or action (e.g. 'Waybill', 'Rice', 'Belagavi')..." class="w-full text-sm outline-none bg-transparent placeholder-slate-400 font-sans"/>
         <kbd class="px-2 py-0.5 rounded bg-slate-100 text-[11px] font-mono text-slate-500 border border-slate-200">ESC</kbd>
       </div>
@@ -248,53 +359,53 @@
   <!-- Main Viewport Layout -->
   <div class="flex-1 flex w-full relative">
 
-    <!-- Unified Shadcn-Style Dark Sidebar -->
-    <aside id="operations-sidebar" class="hidden fixed left-0 top-16 bottom-0 w-64 bg-[#0b1120] text-slate-300 z-30 flex flex-col border-r border-[#1e293b] shadow-xl overflow-hidden">
+    <!-- Unified Shadcn-Style Light Sidebar -->
+    <aside id="operations-sidebar" class="hidden fixed left-0 top-16 bottom-0 w-64 bg-[#f7f7f8] text-zinc-600 z-30 flex flex-col border-r border-[#e4e4e7] shadow-sm overflow-hidden">
       
-      <!-- Workspace Selector Header (Dropdown Style 1: Emerald UI Animated Flyout Dropdown) -->
+      <!-- Workspace Selector Header (Dropdown Style 1: Animated Flyout Dropdown) -->
       <div class="dropdown-emerald w-full" id="workspace-dropdown" data-state="closed">
-        <div class="p-3.5 border-b border-[#1e293b] flex items-center justify-between bg-[#080d19] cursor-pointer hover:bg-[#0c1324] transition-colors" id="workspace-dropdown-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
+        <div class="p-3.5 border-b border-[#e4e4e7] flex items-center justify-between bg-[#f7f7f8] cursor-pointer hover:bg-[#ececee] transition-colors" id="workspace-dropdown-trigger" role="button" tabindex="0" aria-haspopup="listbox" aria-expanded="false">
           <div class="flex items-center gap-2.5 min-w-0">
-            <div class="w-7 h-7 rounded bg-blue-600 text-white flex items-center justify-center font-serif font-bold text-sm shrink-0" id="workspace-badge">GS</div>
+            <div class="w-7 h-7 rounded bg-[#18181b] text-white flex items-center justify-center font-serif font-bold text-sm shrink-0" id="workspace-badge">GS</div>
             <div class="min-w-0">
-              <span class="font-semibold text-xs text-white block truncate" id="workspace-title">Grama Seva Federation</span>
+              <span class="font-semibold text-xs text-zinc-900 block truncate" id="workspace-title">Grama Seva Federation</span>
               <div class="flex items-center gap-1.5 mt-0.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                <span class="text-[11px] font-mono text-emerald-400 font-medium" id="workspace-tier">Tier-1 Sovereign</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                <span class="text-[11px] font-mono text-emerald-700 font-medium" id="workspace-tier">Tier-1 Sovereign</span>
               </div>
             </div>
           </div>
-          <span class="dropdown-emerald-chevron material-symbols-outlined text-slate-400 text-[18px]">expand_more</span>
+          <span class="dropdown-emerald-chevron material-symbols-outlined text-zinc-500 text-[18px]">expand_more</span>
         </div>
 
         <!-- Animated Menu (Dropdown 1) -->
-        <div class="dropdown-emerald-menu left-0 w-full bg-[#0b1120] border-[#1e293b] shadow-2xl" id="workspace-dropdown-menu" role="listbox">
+        <div class="dropdown-emerald-menu left-0 w-full bg-white border-[#e4e4e7] shadow-2xl" id="workspace-dropdown-menu" role="listbox">
           <div class="dropdown-emerald-group">Active Node Workspaces</div>
           <div class="dropdown-emerald-item active" style="--item-idx: 0;" data-workspace="Grama Seva Federation" data-tier="Tier-1 Sovereign" data-tag="GS">
             <div class="flex items-center gap-2">
-              <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold">GS</span>
+              <span class="w-5 h-5 rounded bg-[#18181b] text-white flex items-center justify-center text-[10px] font-bold">GS</span>
               <div class="text-left">
-                <div class="text-xs font-semibold text-white">Grama Seva Federation</div>
-                <div class="text-[10px] text-emerald-400 font-mono">KA/2021/8841 (Active)</div>
+                <div class="text-xs font-semibold text-zinc-900">Grama Seva Federation</div>
+                <div class="text-[10px] text-emerald-700 font-mono">KA/2021/8841 (Active)</div>
               </div>
             </div>
-            <span class="material-symbols-outlined text-emerald-400 text-[16px]">check</span>
+            <span class="material-symbols-outlined text-emerald-700 text-[16px]">check</span>
           </div>
           <div class="dropdown-emerald-item" style="--item-idx: 1;" data-workspace="Karnataka SDRF Command" data-tier="Apex Sovereign" data-tag="SD">
             <div class="flex items-center gap-2">
-              <span class="w-5 h-5 rounded bg-purple-600 text-white flex items-center justify-center text-[10px] font-bold">SD</span>
+              <span class="w-5 h-5 rounded bg-[#3f3f46] text-white flex items-center justify-center text-[10px] font-bold">SD</span>
               <div class="text-left">
-                <div class="text-xs font-semibold text-slate-300">Karnataka SDRF Command</div>
-                <div class="text-[10px] text-slate-400 font-mono">State Apex Node</div>
+                <div class="text-xs font-semibold text-zinc-700">Karnataka SDRF Command</div>
+                <div class="text-[10px] text-zinc-500 font-mono">State Apex Node</div>
               </div>
             </div>
           </div>
           <div class="dropdown-emerald-item" style="--item-idx: 2;" data-workspace="Belagavi Flood Relief Cell" data-tier="Tier-2 Field Node" data-tag="BL">
             <div class="flex items-center gap-2">
-              <span class="w-5 h-5 rounded bg-amber-600 text-white flex items-center justify-center text-[10px] font-bold">BL</span>
+              <span class="w-5 h-5 rounded bg-[#71717a] text-white flex items-center justify-center text-[10px] font-bold">BL</span>
               <div class="text-left">
-                <div class="text-xs font-semibold text-slate-300">Belagavi Relief Cell</div>
-                <div class="text-[10px] text-slate-400 font-mono">Field Sector 4</div>
+                <div class="text-xs font-semibold text-zinc-700">Belagavi Relief Cell</div>
+                <div class="text-[10px] text-zinc-500 font-mono">Field Sector 4</div>
               </div>
             </div>
           </div>
@@ -306,28 +417,28 @@
         
         <!-- SECTION 1: OPERATIONS -->
         <div>
-          <p class="px-3 py-1 text-[11px] font-medium text-slate-400 capitalize">Mission operations</p>
+          <p class="px-3 py-1 text-[11px] font-medium text-slate-500 capitalize">Mission operations</p>
           <div class="mt-1 space-y-0.5">
-            <a href="#/dashboard" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/dashboard">
+            <a href="#/dashboard" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/dashboard">
               <span class="material-symbols-outlined text-[18px] text-blue-400">space_dashboard</span>
               <span>Mission Console</span>
             </a>
-            <a href="#/requests" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/requests">
+            <a href="#/requests" class="flex items-center justify-between px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/requests">
               <div class="flex items-center gap-2.5">
-                <span class="material-symbols-outlined text-[18px] text-red-400">emergency</span>
+                <span class="material-symbols-outlined text-[18px] text-error">emergency</span>
                 <span>Shortage Watch</span>
               </div>
-              <span class="px-1.5 py-0.2 rounded bg-red-950 text-red-400 border border-red-800 text-[10px] font-bold">2 Open</span>
+              <span class="px-1.5 py-0.2 rounded bg-red-50 text-red-700 border border-red-200 text-[10px] font-bold">2 Open</span>
             </a>
-            <a href="#/inventory/surplus" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/inventory/surplus">
+            <a href="#/inventory/surplus" class="flex items-center justify-between px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/inventory/surplus">
               <div class="flex items-center gap-2.5">
-                <span class="material-symbols-outlined text-[18px] text-amber-400">timer</span>
+                <span class="material-symbols-outlined text-[18px] text-amber-700">timer</span>
                 <span>Surplus Watchtower</span>
               </div>
-              <span class="text-amber-400 text-[10px] font-mono">18d</span>
+              <span class="text-amber-700 text-[10px] font-mono">18d</span>
             </a>
-            <a href="#/inventory/publish" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/inventory/publish">
-              <span class="material-symbols-outlined text-[18px] text-emerald-400">add_box</span>
+            <a href="#/inventory/publish" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/inventory/publish">
+              <span class="material-symbols-outlined text-[18px] text-emerald-700">add_box</span>
               <span>Publish Surplus</span>
             </a>
           </div>
@@ -335,29 +446,29 @@
 
         <!-- SECTION 2: COORDINATION & SOLVERS -->
         <div>
-          <p class="px-3 py-1 text-[11px] font-medium text-slate-400 capitalize">Coordination & solvers</p>
+          <p class="px-3 py-1 text-[11px] font-medium text-slate-500 capitalize">Coordination & solvers</p>
           <div class="mt-1 space-y-0.5">
-            <a href="#/directory" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/directory">
+            <a href="#/directory" class="flex items-center justify-between px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/directory">
               <div class="flex items-center gap-2.5">
                 <span class="material-symbols-outlined text-[18px] text-indigo-400">hub</span>
                 <span>NGO Directory</span>
               </div>
               <span class="text-slate-500 font-mono text-[10px]">196</span>
             </a>
-            <a href="#/resources" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/resources">
-              <span class="material-symbols-outlined text-[18px] text-teal-400">inventory_2</span>
+            <a href="#/resources" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/resources">
+              <span class="material-symbols-outlined text-[18px] text-zinc-500">inventory_2</span>
               <span>Resource Exchange</span>
             </a>
-            <a href="#/services" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/services">
-              <span class="material-symbols-outlined text-[18px] text-cyan-400">medical_services</span>
+            <a href="#/services" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/services">
+              <span class="material-symbols-outlined text-[18px] text-zinc-500">medical_services</span>
               <span>Deployed Services</span>
             </a>
-            <a href="#/matching" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/matching">
-              <span class="material-symbols-outlined text-[18px] text-purple-400">auto_awesome</span>
+            <a href="#/matching" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/matching">
+              <span class="material-symbols-outlined text-[18px] text-zinc-500">auto_awesome</span>
               <span>AI Matching Engine</span>
             </a>
-            <a href="#/matching/explainability" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/matching/explainability">
-              <span class="material-symbols-outlined text-[18px] text-fuchsia-400">functions</span>
+            <a href="#/matching/explainability" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/matching/explainability">
+              <span class="material-symbols-outlined text-[18px] text-zinc-500">functions</span>
               <span>Math Explainability</span>
             </a>
           </div>
@@ -365,29 +476,29 @@
 
         <!-- SECTION 3: LOGISTICS & COMMS -->
         <div>
-          <p class="px-3 py-1 text-[11px] font-medium text-slate-400 capitalize">Logistics & comms</p>
+          <p class="px-3 py-1 text-[11px] font-medium text-slate-500 capitalize">Logistics & comms</p>
           <div class="mt-1 space-y-0.5">
-            <a href="#/transfers/workspace" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/transfers/workspace">
-              <span class="material-symbols-outlined text-[18px] text-emerald-400">handshake</span>
+            <a href="#/transfers/workspace" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/transfers/workspace">
+              <span class="material-symbols-outlined text-[18px] text-emerald-700">handshake</span>
               <span>Live Handshake</span>
             </a>
-            <a href="#/transfers/waybill" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/transfers/waybill">
-              <span class="material-symbols-outlined text-[18px] text-sky-400">qr_code_2</span>
+            <a href="#/transfers/waybill" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/transfers/waybill">
+              <span class="material-symbols-outlined text-[18px] text-zinc-500">qr_code_2</span>
               <span>Digital Waybill</span>
             </a>
-            <a href="#/transfers" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/transfers">
+            <a href="#/transfers" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/transfers">
               <span class="material-symbols-outlined text-[18px] text-blue-400">sync_alt</span>
               <span>Transfer Lifecycle</span>
             </a>
-            <a href="#/disputes/weighbridge" class="flex items-center justify-between px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/disputes/weighbridge">
+            <a href="#/disputes/weighbridge" class="flex items-center justify-between px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/disputes/weighbridge">
               <div class="flex items-center gap-2.5">
-                <span class="material-symbols-outlined text-[18px] text-rose-400">scale</span>
+                <span class="material-symbols-outlined text-[18px] text-rose-700">scale</span>
                 <span>Weighbridge Dispute</span>
               </div>
-              <span class="px-1.5 py-0.2 rounded bg-rose-950 text-rose-400 border border-rose-800 text-[10px] font-mono font-bold">-620kg</span>
+              <span class="px-1.5 py-0.2 rounded bg-rose-50 text-rose-700 border border-rose-200 text-[10px] font-mono font-bold">-620kg</span>
             </a>
-            <a href="#/comms" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/comms">
-              <span class="material-symbols-outlined text-[18px] text-amber-400">forum</span>
+            <a href="#/comms" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/comms">
+              <span class="material-symbols-outlined text-[18px] text-amber-700">forum</span>
               <span>Operational Comms</span>
             </a>
           </div>
@@ -395,22 +506,22 @@
 
         <!-- SECTION 4: GOVERNANCE & ADMIN -->
         <div>
-          <p class="px-3 py-1 text-[11px] font-medium text-slate-400 capitalize">State governance</p>
+          <p class="px-3 py-1 text-[11px] font-medium text-slate-500 capitalize">State governance</p>
           <div class="mt-1 space-y-0.5">
-            <a href="#/admin/triage" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/admin/triage">
+            <a href="#/admin/triage" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/admin/triage">
               <span class="material-symbols-outlined text-[18px] text-blue-400">fact_check</span>
               <span>Verification Triage</span>
             </a>
-            <a href="#/admin/sybil-risk" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/admin/sybil-risk">
-              <span class="material-symbols-outlined text-[18px] text-rose-400">hub</span>
+            <a href="#/admin/sybil-risk" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/admin/sybil-risk">
+              <span class="material-symbols-outlined text-[18px] text-rose-700">hub</span>
               <span>Sybil Graph Intel</span>
             </a>
-            <a href="#/admin/arbitration" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/admin/arbitration">
-              <span class="material-symbols-outlined text-[18px] text-amber-400">gavel</span>
+            <a href="#/admin/arbitration" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/admin/arbitration">
+              <span class="material-symbols-outlined text-[18px] text-amber-700">gavel</span>
               <span>Cargo Arbitration</span>
             </a>
-            <a href="#/admin/ledger" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800/80 hover:text-white transition-colors" data-sidebar-link="#/admin/ledger">
-              <span class="material-symbols-outlined text-[18px] text-emerald-400">history_edu</span>
+            <a href="#/admin/ledger" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-zinc-600 hover:bg-[#ececee] hover:text-zinc-900 transition-colors" data-sidebar-link="#/admin/ledger">
+              <span class="material-symbols-outlined text-[18px] text-emerald-700">history_edu</span>
               <span>Ledger Consensus</span>
             </a>
           </div>
@@ -419,14 +530,14 @@
       </nav>
 
       <!-- Bottom Accreditation Card -->
-      <div class="p-3 border-t border-[#1e293b] bg-[#070b14] mt-auto">
-        <div class="p-2.5 rounded-lg bg-[#0f172a] border border-[#1e293b]">
+      <div class="p-3 border-t border-[#e4e4e7] bg-[#f7f7f8] mt-auto">
+        <div class="p-2.5 rounded-lg bg-white border border-[#e4e4e7]">
           <div class="flex items-center justify-between mb-1">
-            <span class="text-[11px] font-medium text-slate-400">DARPAN accreditation</span>
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="text-[11px] font-medium text-zinc-500">DARPAN accreditation</span>
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           </div>
-          <p class="font-mono text-[11px] text-emerald-300 font-semibold truncate">KA/2021/8841</p>
-          <p class="text-[10px] text-slate-500 mt-0.5">SDRF Staging Partner</p>
+          <p class="font-mono text-[11px] text-emerald-700 font-semibold truncate">KA/2021/8841</p>
+          <p class="text-[10px] text-zinc-500 mt-0.5">SDRF Staging Partner</p>
         </div>
       </div>
     </aside>
