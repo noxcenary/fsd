@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-on-surface": "#eff1ef", "outline": "#717974", "surface-container-high": "#e6e9e7", "on-tertiary": "#ffffff", "inverse-primary": "#a5d0bc", "secondary-fixed-dim": "#9ed1bd", "on-surface-variant": "#414844", "on-tertiary-container": "#00af79", "secondary-container": "#baeed9", "surface-dim": "#d8dad9", "outline-variant": "#c1c8c3", "tertiary-fixed-dim": "#4edea3", "surface-variant": "#e1e3e1", "surface-container-highest": "#e1e3e1", "on-background": "#191c1b", "inverse-surface": "#2e3130", "on-secondary-fixed-variant": "#1d4f40", "on-tertiary-fixed-variant": "#005236", "on-secondary-container": "#3d6d5d", "error-container": "#ffdad6", "on-surface": "#191c1b", "primary-fixed-dim": "#a5d0bc", "primary-fixed": "#c0ecd7", "surface-tint": "#3e6656", "on-primary-container": "#7aa391", "on-secondary": "#ffffff", "background": "#f8faf8", "surface-bright": "#f8faf8", "secondary-fixed": "#baeed9", "primary-container": "#0f392b", "on-tertiary-fixed": "#002113", "on-primary-fixed-variant": "#264e3f", "primary": "#002318", "on-error-container": "#93000a", "on-secondary-fixed": "#002117", "on-error": "#ffffff", "tertiary-container": "#003a25", "on-primary-fixed": "#002116", "tertiary-fixed": "#6ffbbe", "on-primary": "#ffffff", "secondary": "#376757", "surface": "#f8faf8", "tertiary": "#002215", "error": "#ba1a1a", "surface-container-low": "#f2f4f2", "surface-container": "#eceeec", "surface-container-lowest": "#ffffff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-tablet": "1rem", "space-sm": "0.5rem", "space-md": "0.75rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-lg": "1rem", "margin-tablet": "1.5rem", "gutter": "1rem", "space-xl": "1.5rem", "margin-desktop": "2rem" }, "fontFamily": { "label-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "caption": ["Inter"], "display-lg-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"] }, "fontSize": { "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "display-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-primary-fixed text-[20px]">grid_view</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">ReliefNet</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">FieldGrid OS</span></div></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-semibold">v2.4</span></div><div class="px-space-md py-space-sm"><div class="bg-surface-container rounded-xl p-space-sm flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-secondary text-[16px]">corporate_fare</span></div><div class="flex flex-col min-w-0 flex-1"><div class="flex items-center gap-1"><span class="font-label-md text-label-md text-on-surface truncate">Asha Relief</span><span class="material-symbols-outlined text-on-tertiary-container text-[14px]">verified</span></div><span class="font-caption text-caption text-on-surface-variant truncate">Govt Verified NGO</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px] cursor-pointer hover:text-on-surface">unfold_more</span></div></div><div class="px-space-md pt-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant px-space-sm font-semibold">Operations</span></div><nav class="px-space-md pt-space-xs space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="directory" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-label-lg text-label-lg">Discover NGOs</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="resources" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-label-lg text-label-lg">Resources</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="requests" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span class="font-label-lg text-label-lg">Requests</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="matching" href="#"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span class="font-label-lg text-label-lg">AI Matching</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="services" href="#"><span class="material-symbols-outlined text-[20px]">medical_services</span><span class="font-label-lg text-label-lg">Services</span></a></nav><div class="px-space-md pt-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant px-space-sm font-semibold">Coordination</span></div><nav class="px-space-md pt-space-xs space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="feed" href="#"><span class="material-symbols-outlined text-[20px]">dynamic_feed</span><span class="font-label-lg text-label-lg">Activity Feed</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="messages" href="#"><span class="material-symbols-outlined text-[20px]">forum</span><span class="font-label-lg text-label-lg">Messages</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="transactions" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-label-lg text-label-lg">Transactions</span></a></nav></div><div class="px-space-md pb-space-lg flex flex-col gap-1"><div class="pt-space-sm mb-1"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant px-space-sm font-semibold">Governance</span></div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="trust" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-label-lg text-label-lg">Org Profile &amp; Trust</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-lg text-label-lg">Settings</span></a></nav><div class="mt-space-sm pt-space-sm bg-surface-container rounded-xl p-space-sm flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></div><span class="font-label-sm text-label-sm text-on-surface-variant">Satellite Uplink Active</span></div><span class="material-symbols-outlined text-secondary text-[16px]">wifi_tethering</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-xl flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-space-md py-1.5 rounded-full bg-error-container text-on-error-container"><span class="w-2 h-2 rounded-full bg-error animate-ping"></span><span class="font-label-sm text-label-sm font-bold uppercase tracking-wide">Crisis Active:</span><span class="font-label-sm text-label-sm font-semibold">Flood Relief · North Karnataka</span></div><div class="h-4 w-px bg-outline-variant"></div><div class="flex items-center gap-1.5 text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">schedule</span><span class="font-caption text-caption">Zulu 08:42</span></div></div><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span><input class="w-80 pl-10 pr-4 py-1.5 rounded-xl bg-surface-container-high text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary-container transition-all" placeholder="Search emergency resources, manifests, requests..." type="text"/></div><div class="flex items-center gap-space-sm"><button class="relative w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><button class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">help_center</span></button><div class="h-6 w-px bg-outline-variant mx-1"></div><div class="flex items-center gap-space-sm pl-1"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Dr. V. Rao</span><span class="font-label-sm text-label-sm text-on-surface-variant">Field Lead</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="relative pt-16 w-full px-8 bg-surface min-h-screen"><div class="flex flex-col w-full pb-16">
+<!-- Top Meta / Breadcrumb & Status Indicator -->
+<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 py-4">
+<div class="flex flex-col gap-1">
+<nav class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">home</span>
+<span>Operations</span>
+</a>
+<span class="text-outline-variant">/</span>
+<span class="hover:text-primary transition-colors">Field Grid</span>
+<span class="text-outline-variant">/</span>
+<span class="text-on-surface font-semibold">Discover NGOs</span>
+</nav>
+<div class="flex items-baseline gap-3 mt-1">
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight" style="font-family: 'Noto Serif', Georgia, serif;">Verified Humanitarian Organizations</h1>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">1,842 Active Hubs</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-3xl">
+        Inter-agency NGO registry cross-referenced with DARPAN IDs, logistics node telemetry, and real-time depot surplus declarations across regional crisis theaters.
+      </p>
+</div>
+<!-- Quick Action Toolset -->
+<div class="flex items-center gap-2 self-start md:self-auto shrink-0">
+<!-- View Segmented Switch -->
+<div class="p-1 rounded-xl bg-surface-container flex items-center shadow-sm">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary shadow-sm font-label-md text-label-md transition-all" id="viewGridBtn">
+<span class="material-symbols-outlined text-[16px]">grid_view</span>
+<span class="hidden sm:inline">Grid</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" id="viewTableBtn">
+<span class="material-symbols-outlined text-[16px]">table_rows</span>
+<span class="hidden sm:inline">Table</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-all" id="viewMapBtn">
+<span class="material-symbols-outlined text-[16px]">map</span>
+<span class="hidden sm:inline">Map</span>
+</button>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Export CSV</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-primary text-on-primary hover:bg-primary-container transition-colors font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[18px]">person_add</span>
+<span>Invite Peer NGO</span>
+</button>
+</div>
+</div>
+<!-- Regional Context Alert Strip -->
+<div class="w-full mt-2 mb-6 p-3.5 rounded-xl bg-surface-container-low shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[20px]">share_location</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Active Staging Focal: Belagavi Forward Depot (Zone 4)</span>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">High Urgency Grid</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">Real-time matching active. Mutual-aid mutual authentication tokens enabled for automated gate access.</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2.5 py-1 rounded-lg">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<span>Mesh Relays Synced: 28 Nodes</span>
+</div>
+</div>
+</div>
+<!-- 12-Column Responsive Workspace Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full items-start">
+<!-- LEFT FACETED FILTER SIDEBAR (3 cols on desktop) -->
+<aside class="lg:col-span-4 xl:col-span-3 flex flex-col gap-4">
+<!-- Primary Filter Card Container -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex flex-col gap-5">
+<div class="flex items-center justify-between pb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">tune</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" style="font-family: 'Noto Serif', Georgia, serif;">Faceted Filters</span>
+</div>
+<button class="font-label-sm text-label-sm text-on-surface-variant hover:text-error transition-colors flex items-center gap-0.5" id="resetFilters">
+<span class="material-symbols-outlined text-[14px]">restart_alt</span>
+<span>Reset</span>
+</button>
+</div>
+<!-- Quick Live Search -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Direct Query</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-2 rounded-xl bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:bg-surface-container transition-all" placeholder="DARPAN ID, Lead, or City..." type="text"/>
+</div>
+</div>
+<!-- Verification Tier Facet -->
+<div class="flex flex-col gap-2 pt-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Verification Level</span>
+<div class="flex flex-col gap-1.5">
+<label class="flex items-center justify-between p-2 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex items-center gap-2.5">
+<input class="accent-primary" name="verification_tier" type="radio"/>
+<span class="font-label-md text-label-md text-on-surface">All Organizations</span>
+</div>
+<span class="font-caption text-caption px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">1,842</span>
+</label>
+<label class="flex items-center justify-between p-2 rounded-xl bg-secondary-container/30 hover:bg-secondary-container/50 transition-colors cursor-pointer">
+<div class="flex items-center gap-2.5">
+<input checked="" class="accent-secondary" name="verification_tier" type="radio"/>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Govt Tier-1 (DARPAN)</span>
+</div>
+</div>
+<span class="font-caption text-caption px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold">1,120</span>
+</label>
+<label class="flex items-center justify-between p-2 rounded-xl hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-2.5">
+<input class="accent-primary" name="verification_tier" type="radio"/>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-outline text-[16px]">workspace_premium</span>
+<span class="font-label-md text-label-md text-on-surface">Tier-2 Peer Attested</span>
+</div>
+</div>
+<span class="font-caption text-caption px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">722</span>
+</label>
+</div>
+</div>
+<!-- Theater & Proximity Radius -->
+<div class="flex flex-col gap-3 pt-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Operational Proximity</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container font-bold text-primary" id="radiusValue">50 km</span>
+</div>
+<input class="w-full accent-primary h-1.5 bg-surface-container-high rounded-lg cursor-pointer" id="radiusRange" max="250" min="10" type="range" value="50"/>
+<div class="flex flex-col gap-1.5 mt-1">
+<label class="font-label-sm text-label-sm text-on-surface-variant">Target Crisis Sector</label>
+<select class="w-full px-3 py-2 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container transition-all">
+<option selected="">North Karnataka Flood Grid (Active)</option>
+<option>Bengaluru Metropolitan Corridor</option>
+<option>Coastal Command - Mangaluru Sector</option>
+<option>Wayanad-Mysuru Relief Corridor</option>
+</select>
+</div>
+</div>
+<!-- Supply & Capability Verticals -->
+<div class="flex flex-col gap-2 pt-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Specialized Capabilities</span>
+<span class="font-caption text-caption text-on-surface-variant">Select Multi</span>
+</div>
+<div class="space-y-1.5">
+<label class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-2">
+<input checked="" class="rounded accent-primary" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">Bulk Rations &amp; Grain Storage</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">842</span>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-2">
+<input checked="" class="rounded accent-primary" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">Cold-Chain Trauma Pharma</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">410</span>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-2">
+<input class="rounded accent-primary" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">Water Purification &amp; Desal</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">290</span>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-2">
+<input class="rounded accent-primary" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">Heavy Flood Rescue &amp; Boats</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">185</span>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-2">
+<input class="rounded accent-primary" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">Temporary Shelter Units</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">640</span>
+</label>
+<label class="flex items-center justify-between p-2 rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-2">
+<input class="rounded accent-primary" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">Mobile Triage &amp; Diagnostic Fleet</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">142</span>
+</label>
+</div>
+</div>
+<!-- Dispatch Readiness Speed -->
+<div class="flex flex-col gap-2 pt-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Mobilization SLA</span>
+<div class="grid grid-cols-1 gap-1.5">
+<button class="p-2.5 rounded-xl bg-secondary-container text-on-secondary-container text-left flex items-center justify-between font-label-md text-label-md font-semibold shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Immediate Dispatch (&lt; 2h)</span>
+</div>
+<span class="material-symbols-outlined text-[16px]">check</span>
+</button>
+<button class="p-2.5 rounded-xl bg-surface-container-low text-on-surface text-left flex items-center justify-between font-label-md text-label-md hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">warehouse</span>
+<span>Standby Depot (&lt; 12h)</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">321</span>
+</button>
+<button class="p-2.5 rounded-xl bg-surface-container-low text-on-surface text-left flex items-center justify-between font-label-md text-label-md hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">event_repeat</span>
+<span>Scheduled Batching (&gt; 24h)</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">520</span>
+</button>
+</div>
+</div>
+<!-- Bottom Quick Trust Stat Mini-widget -->
+<div class="p-3.5 rounded-xl bg-surface-container-low mt-2 flex flex-col gap-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Audit Compliance Rate</span>
+<span class="font-bold text-on-tertiary-container">99.4%</span>
+</div>
+<div class="w-full h-1.5 bg-surface-container-high rounded-full overflow-hidden">
+<div class="bg-on-tertiary-container h-full rounded-full" style="width: 99.4%"></div>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">DARPAN sync frequency: hourly Zulu cycles.</span>
+</div>
+</div>
+<!-- Live Broadcast Notice Card -->
+<div class="p-4 rounded-2xl bg-primary-container text-on-primary-container shadow-sm flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary-fixed">
+<span class="material-symbols-outlined text-[18px]">radar</span>
+<span class="font-label-md text-label-md font-bold uppercase tracking-wider">Mesh Uplink Monitor</span>
+</div>
+<p class="font-body-sm text-body-sm text-surface-container-high">
+          14 Hubs are operating via offline store-and-forward satellite nodes. Manifest updates reconcile at 15-minute bursts.
+        </p>
+</div>
+</aside>
+<!-- RIGHT RESULTS CANVAS (9 cols on desktop) -->
+<main class="lg:col-span-8 xl:col-span-9 flex flex-col gap-5">
+<!-- Filter Tags Bar & Summary Count -->
+<div class="flex flex-wrap items-center justify-between gap-3 p-3.5 rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Active Criteria:</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span>Tier-1 Govt Verified</span>
+<button class="hover:text-error transition-colors flex items-center"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span>Bulk Rations</span>
+<button class="hover:text-error transition-colors flex items-center"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span>Within 50 km</span>
+<button class="hover:text-error transition-colors flex items-center"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span>Immediate Dispatch (&lt; 2h)</span>
+<button class="hover:text-error transition-colors flex items-center"><span class="material-symbols-outlined text-[14px]">close</span></button>
+</span>
+<button class="text-secondary font-label-sm text-label-sm hover:underline ml-1">Clear all</button>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing <span class="font-bold text-on-surface">6</span> of 842 matches</span>
+<div class="h-4 w-px bg-outline-variant mx-1"></div>
+<select class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm focus:outline-none">
+<option>Sort: Nearest Depot First</option>
+<option>Sort: Highest Trust Score</option>
+<option>Sort: Inventory Volume</option>
+<option>Sort: Fastest SLA</option>
+</select>
+</div>
+</div>
+<!-- MAIN RESULTS GRID (2 Columns on large desktop) -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-4" id="resultsGrid">
+<!-- CARD 1: Red Cross Karnataka Disaster Wing -->
+<article class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-4 group">
+<div class="flex flex-col gap-3">
+<!-- Header Row: Identity, Badge, Distance -->
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-fixed text-[26px]">medical_services</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate" style="font-family: 'Noto Serif', Georgia, serif;">Red Cross Karnataka Disaster Wing</h3>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+<span>Govt Tier-1</span>
+</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-caption text-caption">
+<span class="font-mono text-on-surface font-medium">DARPAN #KA-2018-3109</span>
+<span>•</span>
+<span>Bengaluru Hub 4 Depot</span>
+</div>
+</div>
+</div>
+<!-- Distance & SLA Badge -->
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-md text-label-md font-bold text-primary">12.4 km</span>
+<span class="font-caption text-caption text-on-tertiary-container flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">bolt</span>
+                  45m response
+                </span>
+</div>
+</div>
+<!-- Reliability & Metrics Triple Column -->
+<div class="grid grid-cols-3 gap-2 p-2.5 rounded-xl bg-surface-container-low text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Trust Index</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex items-center justify-center gap-0.5">
+<span>98.8</span>
+<span class="text-[10px] text-on-tertiary-container font-bold">/100</span>
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dispatches</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">48 Done</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dispute Rate</span>
+<span class="font-label-lg text-label-lg font-bold text-secondary">0.0%</span>
+</div>
+</div>
+<!-- Inventory Surplus Breakdown -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface-variant font-semibold">Declared Depot Surplus</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">bed</span>
+<span>1,200 Thermal Blankets</span>
+</span>
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">medication</span>
+<span>400 Trauma Field Packs</span>
+</span>
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">water_drop</span>
+<span>5,000 ORS Sachets</span>
+</span>
+</div>
+</div>
+<!-- Urgent Depot Needs Tag -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-error-container/40 text-on-error-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-error">priority_high</span>
+<span class="font-semibold">Current Urgency Need:</span>
+<span>4x High-Capacity Diesel Water Pumps (3-inch)</span>
+</div>
+</div>
+<!-- Bottom Action Buttons & Drawer Invoker -->
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-2 px-3 rounded-xl bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors text-center shadow-sm" onclick="openDossier('Red Cross Karnataka Disaster Wing', 'KA-2018-3109', 'Govt Tier-1', '98.8', 'Bengaluru Hub 4', '48 Dispatches', 'Specialized in trauma surgical kits, cold-chain antivenom, and mass thermal rationing.')">
+              Coordinate Aid
+            </button>
+<button class="py-2 px-3 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors flex items-center justify-center gap-1" onclick="openDossier('Red Cross Karnataka Disaster Wing', 'KA-2018-3109', 'Govt Tier-1', '98.8', 'Bengaluru Hub 4', '48 Dispatches', 'Specialized in trauma surgical kits, cold-chain antivenom, and mass thermal rationing.')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Dossier</span>
+</button>
+<button class="w-9 h-9 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+</button>
+</div>
+</article>
+<!-- CARD 2: Hubballi Community Mutual Aid Trust -->
+<article class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-4 group">
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[26px]">sailing</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate" style="font-family: 'Noto Serif', Georgia, serif;">Hubballi Mutual Aid Trust</h3>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">workspace_premium</span>
+<span>Tier-2 Peer Attested</span>
+</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-caption text-caption">
+<span>3 Sign-off Peer Seals</span>
+<span>•</span>
+<span>Dharwad / Hubballi Logistics Yard</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-md text-label-md font-bold text-primary">18.2 km</span>
+<span class="font-caption text-caption text-on-tertiary-container flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">bolt</span>
+                  1h 15m response
+                </span>
+</div>
+</div>
+<!-- Reliability & Metrics Triple Column -->
+<div class="grid grid-cols-3 gap-2 p-2.5 rounded-xl bg-surface-container-low text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Trust Index</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex items-center justify-center gap-0.5">
+<span>94.2</span>
+<span class="text-[10px] text-on-tertiary-container font-bold">/100</span>
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dispatches</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">32 Done</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Volunteers</span>
+<span class="font-label-lg text-label-lg font-bold text-primary">85 Muster</span>
+</div>
+</div>
+<!-- Inventory Surplus Breakdown -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface-variant font-semibold">Declared Depot Surplus</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">kayaking</span>
+<span>8 Inflatable Swiftwater Rafts</span>
+</span>
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">safety_divider</span>
+<span>140 Life Jackets (Adult/Child)</span>
+</span>
+</div>
+</div>
+<!-- Urgent Depot Needs Tag -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">info</span>
+<span class="font-semibold">Current Urgency Need:</span>
+<span>Outboard Marine Motor fuel (200L Petrol)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-2 px-3 rounded-xl bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors text-center shadow-sm" onclick="openDossier('Hubballi Community Mutual Aid Trust', 'KA-MUTUAL-8821', 'Tier-2 Peer Attested', '94.2', 'Hubballi Logistics Yard', '32 Dispatches', 'Rapid aquatic rescue squads, local river navigators, and dry food packaging volunteers.')">
+              Coordinate Aid
+            </button>
+<button class="py-2 px-3 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors flex items-center justify-center gap-1" onclick="openDossier('Hubballi Community Mutual Aid Trust', 'KA-MUTUAL-8821', 'Tier-2 Peer Attested', '94.2', 'Hubballi Logistics Yard', '32 Dispatches', 'Rapid aquatic rescue squads, local river navigators, and dry food packaging volunteers.')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Dossier</span>
+</button>
+<button class="w-9 h-9 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+</button>
+</div>
+</article>
+<!-- CARD 3: MedRelief Coastal Response -->
+<article class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-4 group">
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-fixed text-[26px]">emergency</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate" style="font-family: 'Noto Serif', Georgia, serif;">MedRelief Coastal Response</h3>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+<span>Govt Tier-1</span>
+</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-caption text-caption">
+<span class="font-mono text-on-surface font-medium">DARPAN #KA-2015-0941</span>
+<span>•</span>
+<span>Mangaluru Coastal Depot</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-md text-label-md font-bold text-primary">27.6 km</span>
+<span class="font-caption text-caption text-on-tertiary-container flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">bolt</span>
+                  30m response
+                </span>
+</div>
+</div>
+<!-- Reliability & Metrics -->
+<div class="grid grid-cols-3 gap-2 p-2.5 rounded-xl bg-surface-container-low text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Trust Index</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex items-center justify-center gap-0.5">
+<span>99.1</span>
+<span class="text-[10px] text-on-tertiary-container font-bold">/100</span>
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dispatches</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">114 Done</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fleet</span>
+<span class="font-label-lg text-label-lg font-bold text-secondary">6 Vans Active</span>
+</div>
+</div>
+<!-- Inventory Surplus Breakdown -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface-variant font-semibold">Declared Depot Surplus</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">vaccines</span>
+<span>180 Vials Polyvalent Antivenom</span>
+</span>
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">ac_unit</span>
+<span>Cold-Chain Battery Coolers (4x)</span>
+</span>
+</div>
+</div>
+<!-- Urgent Depot Needs Tag -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">info</span>
+<span class="font-semibold">Current Urgency Need:</span>
+<span>Portable ECG units and pediatric cannula packs</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-2 px-3 rounded-xl bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors text-center shadow-sm" onclick="openDossier('MedRelief Coastal Response', 'KA-2015-0941', 'Govt Tier-1', '99.1', 'Mangaluru Coastal Depot', '114 Dispatches', 'Operates 24/7 Mobile Intensive Care Triage Vans equipped with solar-backed deep-freeze cold chains.')">
+              Coordinate Aid
+            </button>
+<button class="py-2 px-3 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors flex items-center justify-center gap-1" onclick="openDossier('MedRelief Coastal Response', 'KA-2015-0941', 'Govt Tier-1', '99.1', 'Mangaluru Coastal Depot', '114 Dispatches', 'Operates 24/7 Mobile Intensive Care Triage Vans equipped with solar-backed deep-freeze cold chains.')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Dossier</span>
+</button>
+<button class="w-9 h-9 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+</button>
+</div>
+</article>
+<!-- CARD 4: Karuna Seva Trust -->
+<article class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-4 group">
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-on-secondary-container text-[26px]">restaurant</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate" style="font-family: 'Noto Serif', Georgia, serif;">Karuna Seva Community Kitchen</h3>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+<span>Govt Tier-1</span>
+</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-caption text-caption">
+<span class="font-mono text-on-surface font-medium">DARPAN #KA-2019-7712</span>
+<span>•</span>
+<span>Yelahanka Emergency Outpost</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-md text-label-md font-bold text-primary">31.0 km</span>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+                  2h batch cycle
+                </span>
+</div>
+</div>
+<!-- Reliability & Metrics -->
+<div class="grid grid-cols-3 gap-2 p-2.5 rounded-xl bg-surface-container-low text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Trust Index</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex items-center justify-center gap-0.5">
+<span>96.2</span>
+<span class="text-[10px] text-on-tertiary-container font-bold">/100</span>
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Daily Output</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">5,000 Meals</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">FSSAI Certified</span>
+<span class="font-label-lg text-label-lg font-bold text-secondary">Yes (Grade A)</span>
+</div>
+</div>
+<!-- Inventory Surplus Breakdown -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface-variant font-semibold">Declared Depot Surplus</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">inventory_2</span>
+<span>3,200 Vacuum-Sealed Meal Kits</span>
+</span>
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">water_bottle</span>
+<span>10,000 Liters Potable Cans</span>
+</span>
+</div>
+</div>
+<!-- Urgent Depot Needs Tag -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-error-container/40 text-on-error-container font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-error">priority_high</span>
+<span class="font-semibold">Current Urgency Need:</span>
+<span>15 Tons Commercial LPG Cylinders &amp; Food Containers</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-2 px-3 rounded-xl bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors text-center shadow-sm" onclick="openDossier('Karuna Seva Community Kitchen', 'KA-2019-7712', 'Govt Tier-1', '96.2', 'Yelahanka Outpost', '84 Dispatches', 'Mass industrial community kitchen with steam boilers capable of dispatching 5,000 nutritious hot meals daily.')">
+              Coordinate Aid
+            </button>
+<button class="py-2 px-3 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors flex items-center justify-center gap-1" onclick="openDossier('Karuna Seva Community Kitchen', 'KA-2019-7712', 'Govt Tier-1', '96.2', 'Yelahanka Outpost', '84 Dispatches', 'Mass industrial community kitchen with steam boilers capable of dispatching 5,000 nutritious hot meals daily.')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Dossier</span>
+</button>
+<button class="w-9 h-9 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+</button>
+</div>
+</article>
+<!-- CARD 5: Janahit Primary Aid Coalition -->
+<article class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-4 group">
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[26px]">family_restroom</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate" style="font-family: 'Noto Serif', Georgia, serif;">Janahit Primary Aid Coalition</h3>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">workspace_premium</span>
+<span>Tier-2 Peer Attested</span>
+</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-caption text-caption">
+<span>5 Peer Endorsements</span>
+<span>•</span>
+<span>Mandya Distribution Center</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-md text-label-md font-bold text-primary">39.4 km</span>
+<span class="font-caption text-caption text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">schedule</span>
+                  2h 30m response
+                </span>
+</div>
+</div>
+<!-- Reliability & Metrics -->
+<div class="grid grid-cols-3 gap-2 p-2.5 rounded-xl bg-surface-container-low text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Trust Index</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex items-center justify-center gap-0.5">
+<span>91.5</span>
+<span class="text-[10px] text-on-tertiary-container font-bold">/100</span>
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dispatches</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">21 Done</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dispute Rate</span>
+<span class="font-label-lg text-label-lg font-bold text-secondary">0.0%</span>
+</div>
+</div>
+<!-- Inventory Surplus Breakdown -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface-variant font-semibold">Declared Depot Surplus</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">sanitizer</span>
+<span>1,400 Maternal &amp; Hygiene Packs</span>
+</span>
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">baby_changing_station</span>
+<span>350 Infant Formula Cans</span>
+</span>
+</div>
+</div>
+<!-- Urgent Depot Needs Tag -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">info</span>
+<span class="font-semibold">Current Urgency Need:</span>
+<span>Sanitary napkin dispensers &amp; water storage bladders</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-2 px-3 rounded-xl bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors text-center shadow-sm" onclick="openDossier('Janahit Primary Aid Coalition', 'KA-MUTUAL-4029', 'Tier-2 Peer Attested', '91.5', 'Mandya Distribution Hub', '21 Dispatches', 'Grassroots mutual-aid focusing on displaced women, pregnant mothers, and pediatric hygiene sanitation packages.')">
+              Coordinate Aid
+            </button>
+<button class="py-2 px-3 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors flex items-center justify-center gap-1" onclick="openDossier('Janahit Primary Aid Coalition', 'KA-MUTUAL-4029', 'Tier-2 Peer Attested', '91.5', 'Mandya Distribution Hub', '21 Dispatches', 'Grassroots mutual-aid focusing on displaced women, pregnant mothers, and pediatric hygiene sanitation packages.')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Dossier</span>
+</button>
+<button class="w-9 h-9 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+</button>
+</div>
+</article>
+<!-- CARD 6: Grama Vikas Emergency Fleet -->
+<article class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-4 group">
+<div class="flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary-fixed text-[26px]">local_shipping</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate" style="font-family: 'Noto Serif', Georgia, serif;">Grama Vikas Emergency Fleet</h3>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+<span>Govt Tier-1</span>
+</span>
+</div>
+<div class="flex items-center gap-2 mt-0.5 text-on-surface-variant font-caption text-caption">
+<span class="font-mono text-on-surface font-medium">DARPAN #KA-2016-5590</span>
+<span>•</span>
+<span>Belagavi Forward Command Depot</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-label-md text-label-md font-bold text-primary">44.8 km</span>
+<span class="font-caption text-caption text-on-tertiary-container flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[12px]">bolt</span>
+                  1h 00m response
+                </span>
+</div>
+</div>
+<!-- Reliability & Metrics -->
+<div class="grid grid-cols-3 gap-2 p-2.5 rounded-xl bg-surface-container-low text-center">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Trust Index</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface flex items-center justify-center gap-0.5">
+<span>97.5</span>
+<span class="text-[10px] text-on-tertiary-container font-bold">/100</span>
+</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Dispatches</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">63 Done</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fleet</span>
+<span class="font-label-lg text-label-lg font-bold text-secondary">11 4x4 Trucks</span>
+</div>
+</div>
+<!-- Inventory Surplus Breakdown -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface-variant font-semibold">Declared Depot Surplus</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">rv_hookup</span>
+<span>5 Heavy All-Terrain Winch Vans</span>
+</span>
+<span class="px-2 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-secondary">power</span>
+<span>12 Mobile Diesel Generator Carts</span>
+</span>
+</div>
+</div>
+<!-- Urgent Depot Needs Tag -->
+<div class="flex items-center gap-2 p-2 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-outline">info</span>
+<span class="font-semibold">Current Urgency Need:</span>
+<span>Off-road mud tires (Size 265/70R16)</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-2">
+<button class="flex-1 py-2 px-3 rounded-xl bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md transition-colors text-center shadow-sm" onclick="openDossier('Grama Vikas Emergency Fleet', 'KA-2016-5590', 'Govt Tier-1', '97.5', 'Belagavi Forward Command', '63 Dispatches', 'Specialized heavy off-road disaster logistics capable of penetrating cut-off mud tracks and flood-isolated villages.')">
+              Coordinate Aid
+            </button>
+<button class="py-2 px-3 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md transition-colors flex items-center justify-center gap-1" onclick="openDossier('Grama Vikas Emergency Fleet', 'KA-2016-5590', 'Govt Tier-1', '97.5', 'Belagavi Forward Command', '63 Dispatches', 'Specialized heavy off-road disaster logistics capable of penetrating cut-off mud tracks and flood-isolated villages.')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Dossier</span>
+</button>
+<button class="w-9 h-9 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Pagination / Endless Mesh Relay Status Footer -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">sync</span>
+<span class="font-caption text-caption text-on-surface-variant">Last registry synchronization: 4 minutes ago via NITI Aayog DARPAN API v3.</span>
+</div>
+<div class="flex items-center gap-1 self-end sm:self-auto">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant font-label-sm text-label-sm hover:bg-surface-container-high disabled:opacity-50" disabled="">Previous</button>
+<span class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold">1</span>
+<button class="px-3 py-1.5 rounded-lg hover:bg-surface-container text-on-surface font-label-sm text-label-sm">2</button>
+<button class="px-3 py-1.5 rounded-lg hover:bg-surface-container text-on-surface font-label-sm text-label-sm">3</button>
+<span class="px-2 text-on-surface-variant">...</span>
+<button class="px-3 py-1.5 rounded-lg hover:bg-surface-container text-on-surface font-label-sm text-label-sm">141</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm hover:bg-surface-container-high">Next</button>
+</div>
+</div>
+</main>
+</div>
+<!-- SLIDE-OVER DOSSIER DRAWER (Pure CSS & JS Controlled) -->
+<div class="fixed inset-0 bg-on-background/40 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0 pointer-events-none" id="dossierDrawerBackdrop">
+<div class="absolute right-0 top-0 bottom-0 w-full max-w-xl bg-surface-container-lowest shadow-2xl transition-transform duration-300 translate-x-full flex flex-col justify-between" id="dossierDrawer">
+<!-- Drawer Top Bar -->
+<div class="p-6 bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Institutional Credential Dossier</span>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" onclick="closeDossier()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex items-start justify-between gap-4 mt-2">
+<div class="flex flex-col">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface" id="drawerOrgTitle" style="font-family: 'Noto Serif', Georgia, serif;">Organization Title</h2>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-mono text-on-surface-variant font-label-sm text-label-sm" id="drawerRegNum">DARPAN #KA-2018-3109</span>
+<span>•</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold" id="drawerTierBadge">Tier-1 Verified</span>
+</div>
+</div>
+<div class="flex flex-col items-end">
+<span class="font-caption text-caption text-on-surface-variant">Trust Rating</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary" id="drawerTrustScore">98.8 / 100</span>
+</div>
+</div>
+</div>
+<!-- Drawer Content Scroll Area -->
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Summary Box -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Mission Scope &amp; Deployment Specialization</span>
+<p class="font-body-md text-body-md text-on-surface" id="drawerSummary">
+            Specialized humanitarian aid dispatch.
+          </p>
+</div>
+<!-- Verified Attestation Stamp Section -->
+<div class="flex flex-col gap-3">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Government &amp; Peer Sign-Off Stamps</span>
+<div class="p-3.5 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified_user</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">NITI Aayog DARPAN Portal Active Token</span>
+<span class="font-caption text-caption text-on-surface-variant">Validated: Fiscal Year 2024-2025 • FCRA Compliant</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">check_circle</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">handshake</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">State Disaster Management Authority (SDMA)</span>
+<span class="font-caption text-caption text-on-surface-variant">Mutual-Aid Protocol Token: SDMA/KA/AID-9921</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">check_circle</span>
+</div>
+</div>
+<!-- Verified Key Personnel -->
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Authorized Dispatch Officers</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface font-label-md text-label-md">
+                SR
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Dr. S. Ranganathan</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">Chief Medical Dispatcher</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low flex items-center gap-3">
+<div class="w-9 h-9 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-on-surface font-label-md text-label-md">
+                MK
+              </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Manjunath K.</span>
+<span class="font-caption text-caption text-on-surface-variant truncate">Depot Yard Master</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Dispatch Audit Record Mini-Table -->
+<div class="flex flex-col gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Recent Verified Consignments</span>
+<div class="rounded-xl overflow-hidden bg-surface-container-low">
+<div class="grid grid-cols-3 p-2.5 bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold uppercase">
+<span>Date</span>
+<span>Destination</span>
+<span class="text-right">Status</span>
+</div>
+<div class="divide-y divide-surface-container-high">
+<div class="grid grid-cols-3 p-2.5 text-on-surface font-body-sm text-body-sm items-center">
+<span>Yesterday 14:20</span>
+<span>Athani Sector 2</span>
+<span class="text-right text-on-tertiary-container font-semibold">Delivered</span>
+</div>
+<div class="grid grid-cols-3 p-2.5 text-on-surface font-body-sm text-body-sm items-center">
+<span>3 Days Ago</span>
+<span>Gokak Depot</span>
+<span class="text-right text-on-tertiary-container font-semibold">Delivered</span>
+</div>
+<div class="grid grid-cols-3 p-2.5 text-on-surface font-body-sm text-body-sm items-center">
+<span>5 Days Ago</span>
+<span>Belagavi Ring Rd</span>
+<span class="text-right text-on-tertiary-container font-semibold">Delivered</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Bottom Sticky Action Bar -->
+<div class="p-6 bg-surface-container-low flex items-center gap-3">
+<button class="flex-1 py-2.5 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md text-center" onclick="closeDossier()">
+          Dismiss
+        </button>
+<button class="flex-1 py-2.5 rounded-xl bg-primary text-on-primary hover:bg-primary-container transition-colors font-label-md text-label-md text-center shadow-sm">
+          Request Aid Transfer
+        </button>
+</div>
+</div>
+</div>
+<!-- Inline Behavioral Script for Proximity Slider & Drawer Interaction -->
+<script>
+    // Proximity range slider dynamic readout
+    const rangeInput = document.getElementById('radiusRange');
+    const radiusDisplay = document.getElementById('radiusValue');
+    if (rangeInput && radiusDisplay) {
+      rangeInput.addEventListener('input', function() {
+        radiusDisplay.textContent = this.value + ' km';
+      });
+    }
+
+    // Slide-over Dossier Trigger logic
+    function openDossier(title, regId, tier, score, depot, dispatches, summary) {
+      document.getElementById('drawerOrgTitle').textContent = title;
+      document.getElementById('drawerRegNum').textContent = regId;
+      document.getElementById('drawerTierBadge').textContent = tier;
+      document.getElementById('drawerTrustScore').textContent = score + ' / 100';
+      document.getElementById('drawerSummary').textContent = summary;
+
+      const backdrop = document.getElementById('dossierDrawerBackdrop');
+      const drawer = document.getElementById('dossierDrawer');
+      backdrop.classList.remove('opacity-0', 'pointer-events-none');
+      backdrop.classList.add('opacity-100');
+      drawer.classList.remove('translate-x-full');
+      drawer.classList.add('translate-x-0');
+    }
+
+    function closeDossier() {
+      const backdrop = document.getElementById('dossierDrawerBackdrop');
+      const drawer = document.getElementById('dossierDrawer');
+      backdrop.classList.remove('opacity-100');
+      backdrop.classList.add('opacity-0', 'pointer-events-none');
+      drawer.classList.remove('translate-x-0');
+      drawer.classList.add('translate-x-full');
+    }
+
+    // View switcher interactions
+    const gridBtn = document.getElementById('viewGridBtn');
+    const tableBtn = document.getElementById('viewTableBtn');
+    const mapBtn = document.getElementById('viewMapBtn');
+
+    if (gridBtn && tableBtn && mapBtn) {
+      const buttons = [gridBtn, tableBtn, mapBtn];
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          buttons.forEach(b => {
+            b.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+          btn.classList.remove('text-on-surface-variant');
+        });
+      });
+    }
+  </script>
+</div></main></div></body></html>

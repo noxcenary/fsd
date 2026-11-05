@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"inverse-surface":"#2e3130","on-surface-variant":"#414844","surface-bright":"#f8faf8","on-primary":"#ffffff","on-secondary":"#ffffff","on-surface":"#191c1b","primary-fixed":"#c0ecd7","surface-container-lowest":"#ffffff","surface-tint":"#3e6656","outline":"#717974","inverse-primary":"#a5d0bc","secondary-fixed":"#baeed9","on-secondary-container":"#3d6d5d","on-primary-container":"#7aa391","surface-dim":"#d8dad9","tertiary-fixed-dim":"#4edea3","on-primary-fixed":"#002116","primary-container":"#0f392b","on-error":"#ffffff","on-tertiary-fixed-variant":"#005236","background":"#f8faf8","error":"#ba1a1a","tertiary":"#002215","on-secondary-fixed-variant":"#1d4f40","surface-container":"#eceeec","primary":"#002318","secondary":"#376757","outline-variant":"#c1c8c3","on-background":"#191c1b","secondary-fixed-dim":"#9ed1bd","inverse-on-surface":"#eff1ef","tertiary-container":"#003a25","surface-variant":"#e1e3e1","primary-fixed-dim":"#a5d0bc","on-tertiary-fixed":"#002113","surface-container-highest":"#e1e3e1","on-secondary-fixed":"#002117","on-tertiary-container":"#00af79","surface-container-low":"#f2f4f2","surface":"#f8faf8","on-tertiary":"#ffffff","secondary-container":"#baeed9","on-error-container":"#93000a","tertiary-fixed":"#6ffbbe","surface-container-high":"#e6e9e7","on-primary-fixed-variant":"#264e3f","error-container":"#ffdad6"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"gutter-tablet":"1rem","space-xs":"0.25rem",gutter:"1rem",margin:"1rem","margin-desktop":"2rem","space-sm":"0.5rem","margin-tablet":"1.5rem","space-md":"0.75rem","gutter-desktop":"1.5rem","space-lg":"1rem","space-xl":"1.5rem"},fontFamily:{"body-sm":["Inter"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-sm":["Inter"],"label-md":["Inter"],"body-lg":["Inter"],"label-lg":["Inter"],"headline-md":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"body-md":["Inter"],"headline-sm":["Plus Jakarta Sans"],caption:["Inter"]},fontSize:{"body-sm":["13px",{lineHeight:"18px",fontWeight:"400"}],"display-lg-mobile":["26px",{lineHeight:"34px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-lg":["24px",{lineHeight:"32px",letterSpacing:"-0.015em",fontWeight:"600"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.02em",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.01em",fontWeight:"600"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"600"}],"headline-md":["20px",{lineHeight:"28px",letterSpacing:"-0.01em",fontWeight:"600"}],"display-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-sm":["16px",{lineHeight:"24px",letterSpacing:"-0.005em",fontWeight:"600"}],caption:["12px",{lineHeight:"16px",fontWeight:"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full max-w-[1600px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-gutter"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-tertiary-fixed text-[20px]">hub</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ReliefNet</span><span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-space-xs py-0.5 rounded">FieldGrid Relief OS</span></div><span class="font-caption text-caption text-secondary">Inter-NGO Humanitarian Grid</span></div></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low rounded-lg"><span class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Active Node:</span><span class="font-label-sm text-label-sm text-primary font-semibold">Karnataka Operational Node</span></div></div><div class="hidden md:flex flex-col items-center gap-1"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Organization Enrollment & Identity Trust Verification</span><nav class="flex items-center gap-space-xs bg-surface-container-low p-1 rounded-lg" data-active-classes="bg-primary-container text-on-primary font-semibold rounded"><a class="font-label-md text-label-md px-space-md py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="entity-identification" href="#">1. Entity ID</a><a class="font-label-md text-label-md px-space-md py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="credential-audit" href="#">2. Mandate & Audit</a><a class="font-label-md text-label-md px-space-md py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="field-operations" href="#">3. Field Cluster</a><a class="font-label-md text-label-md px-space-md py-1 text-on-surface-variant hover:text-on-surface transition-colors" data-path="cryptographic-trust" href="#">4. Key Signing</a><a aria-current="page" class="px-space-md py-1 transition-colors bg-primary-container text-on-primary font-semibold rounded" data-path="verification-status" href="#">5. Trust Status</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-1.5 rounded-lg bg-surface-container-low text-secondary"><span class="material-symbols-outlined text-[16px]">lock</span><span class="font-label-sm text-label-sm">TLS 1.3 Strict Enclave</span></div><a class="flex items-center gap-1 text-on-surface-variant hover:text-on-surface font-label-md text-label-md px-space-sm py-1.5 rounded transition-colors" data-path="help-desk" href="#"><span class="material-symbols-outlined text-[18px]">support_agent</span><span class="hidden lg:inline">Desk</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface min-h-[calc(100vh-100px)]"><div class="flex flex-col w-full">
+<!-- Interactive & Alert Enclave Banner -->
+<div class="w-full bg-surface-container-high px-margin md:px-margin-tablet lg:px-margin-desktop py-space-sm">
+<div class="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-space-sm text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center justify-center w-2 h-2 rounded-full bg-on-tertiary-container animate-ping"></span>
+<span class="font-semibold text-primary">INGESTION PIPELINE TELEMETRY:</span>
+<span>Secure Enclave Ingestion Stream #NODE-IN-KA-99</span>
+<span class="text-outline hidden sm:inline">•</span>
+<span class="hidden sm:inline">SHA-256 Ledger Witness Anchored</span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-mono text-on-surface">SESSION TICKET: 0x9AF8...B12</span>
+<span class="bg-surface-container-lowest px-space-xs py-0.5 rounded font-mono font-medium text-secondary">TAMPER-EVIDENT MODE</span>
+</div>
+</div>
+</div>
+<!-- Main Content Container with Utilitarian Grid -->
+<div class="max-w-[1600px] mx-auto w-full px-margin md:px-margin-tablet lg:px-margin-desktop py-space-xl flex flex-col gap-space-xl">
+<!-- Application Case Header Module -->
+<section class="bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="font-mono text-label-md font-semibold bg-surface-container-high text-primary px-space-sm py-1 rounded">
+            CASE: #APP-KA-2024-9921
+          </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+            Inter-Agency Mandate Dossier
+          </span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">
+            Jurisdiction: Karnataka Coastal & Basin Command
+          </span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-baseline gap-space-sm sm:gap-space-md">
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">
+            Kaveri Basin Relief Coalition
+          </h1>
+<span class="font-caption text-caption text-on-surface-variant font-mono">
+            UUID: e14c7c82-83de-40ba-8395-5dbbf2ce7193
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">
+          Multi-district disaster management consortia verifying credentials for Level-4 relief logistics dispatch authorization and cryptographic field ledger signing access.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end gap-space-md shrink-0">
+<div class="bg-amber-50 rounded-lg p-space-md flex flex-col items-start lg:items-end gap-1 shadow-sm">
+<div class="flex items-center gap-space-xs text-amber-900 font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] text-amber-700 animate-spin" style="animation-duration: 4s;">sync</span>
+<span class="font-bold tracking-wide uppercase">Under Dual-Tier Human Review</span>
+</div>
+<div class="flex items-center gap-space-xs font-mono font-medium text-amber-800 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span id="countdown-timer">Estimated decision in 4h 14m 58s</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs font-caption text-caption text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-on-tertiary-container">verified_user</span>
+<span>Zero Knowledge Proof Sign-Off Enclave</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Section: Document Vault (Left 7 Cols) + AI Risk Audit (Right 5 Cols) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- Left Column: Document Ingestion Vault Grid -->
+<section class="lg:col-span-7 flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-space-xs text-primary font-headline-md text-headline-md">
+<span class="material-symbols-outlined text-[24px]">lock_clock</span>
+<h2>Cryptographic Evidence Vault</h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Immutable dossier files parsed via OCR engine v4.2 with SHA256 integrity checksums.
+            </p>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container p-1 rounded-lg">
+<span class="font-label-sm text-label-sm px-space-sm py-1 rounded bg-surface-container-lowest text-primary font-semibold shadow-sm">
+              4/4 Verified
+            </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant px-space-xs">
+              0 Quarantined
+            </span>
+</div>
+</div>
+<!-- 4 Document Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Document Card 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-md group">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[22px]">description</span>
+</div>
+<span class="font-label-sm text-label-sm font-mono bg-secondary-fixed text-on-secondary-fixed-variant px-space-xs py-0.5 rounded">
+                  SHA-256 MATCH
+                </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold line-clamp-1">
+                  Society Registration & Bylaws
+                </h3>
+<span class="font-caption text-caption text-on-surface-variant font-mono">
+                  SOCIETY_REG_BYLAWS_2024.pdf • 4.8 MB
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">document_scanner</span>
+                  OCR Parse Log
+                </span>
+<span class="text-on-tertiary-container font-mono font-bold">100% Match</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">
+                Extracted: <span class="font-mono text-primary font-semibold">#SOC-BLR-4412</span>, Active Status, Karnataka Societies Act 1960. District Registrar Seal verified.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm">
+<span class="text-secondary font-mono">Timestamp: 02 Nov 09:12</span>
+<button class="text-primary hover:text-secondary font-semibold flex items-center gap-0.5 transition-colors">
+<span>Inspect OCR</span>
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Document Card 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-md group">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[22px]">account_balance</span>
+</div>
+<span class="font-label-sm text-label-sm font-mono bg-secondary-fixed text-on-secondary-fixed-variant px-space-xs py-0.5 rounded">
+                  AUDIT CLEARED
+                </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold line-clamp-1">
+                  Audited Balance Sheet (FY 2023-24)
+                </h3>
+<span class="font-caption text-caption text-on-surface-variant font-mono">
+                  ANNUAL_FIN_AUDIT_FY24.pdf • 8.2 MB
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">analytics</span>
+                  Fiscal Ledger Parser
+                </span>
+<span class="text-on-tertiary-container font-mono font-bold">UDIN Verified</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">
+                Audited by certified Chartered Accountant. Turnover <span class="font-semibold text-primary">₹42.50 Lakh</span>. Zero FCRA anomalies or foreign credit flags found.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm">
+<span class="text-secondary font-mono">Timestamp: 02 Nov 09:14</span>
+<button class="text-primary hover:text-secondary font-semibold flex items-center gap-0.5 transition-colors">
+<span>Inspect OCR</span>
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Document Card 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-md group">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[22px]">payments</span>
+</div>
+<span class="font-label-sm text-label-sm font-mono bg-secondary-fixed text-on-secondary-fixed-variant px-space-xs py-0.5 rounded">
+                  ESCROW READY
+                </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold line-clamp-1">
+                  Bank Proof & Cancelled Cheque
+                </h3>
+<span class="font-caption text-caption text-on-surface-variant font-mono">
+                  SBI_CURRENT_ACC_CANCELLED.png • 2.1 MB
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">sync_alt</span>
+                  Banking Mesh Match
+                </span>
+<span class="text-on-tertiary-container font-mono font-bold">NPCI Valid</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">
+                IFSC: <span class="font-mono text-primary font-semibold">SBIN0040112</span>. Beneficiary matches entity legal name 1:1. Automated penny drop test completed successfully.
+              </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm">
+<span class="text-secondary font-mono">Timestamp: 02 Nov 09:14</span>
+<button class="text-primary hover:text-secondary font-semibold flex items-center gap-0.5 transition-colors">
+<span>Inspect OCR</span>
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+</div>
+<!-- Document Card 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between gap-space-md group">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary-fixed transition-colors">
+<span class="material-symbols-outlined text-[22px]">warehouse</span>
+</div>
+<span class="font-label-sm text-label-sm font-mono bg-secondary-fixed text-on-secondary-fixed-variant px-space-xs py-0.5 rounded">
+                  GEO-LOCATED
+                </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary font-semibold line-clamp-1">
+                  Field Depot Lease Agreement
+                </h3>
+<span class="font-caption text-caption text-on-surface-variant font-mono">
+                  DOMLUR_DEPOT_LEASE_STAMP.pdf • 6.4 MB
+                </span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1 font-semibold text-primary">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container">pin_drop</span>
+                  Spatial Stamp Check
+                </span>
+<span class="text-on-tertiary-container font-mono font-bold">Geo Valid</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant">
+                Physical stamp: Bangalore East Taluk. Staging address verified to <span class="text-primary font-semibold">Domlur 4th Cross Warehousing Hub</span> (Cap: 4,000 cu ft).
+              </p>
+</div>
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm">
+<span class="text-secondary font-mono">Timestamp: 02 Nov 09:15</span>
+<button class="text-primary hover:text-secondary font-semibold flex items-center gap-0.5 transition-colors">
+<span>Inspect OCR</span>
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Field Operational Staging Node Photo Insight -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col sm:flex-row gap-space-lg items-center">
+<div class="w-full sm:w-48 h-32 rounded-lg overflow-hidden shrink-0 relative bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="A clean, organized humanitarian aid logistics warehouse hub in southern India filled with categorized pallets of bottled water, high-calorie emergency rations, and medicine kits labeled with crisp green stencils under institutional daylight LED fixtures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlAXBIXaBIp9K_T8u1B1DhViAujBbLIsYolrICxOgY99OxakQtkRqYskDqEpsVU_OeVQXw1EbNFu4V98iTDsPsVG89ga_5UHINqGEB0OlmDwii0vwIuzXo5XydMkYcM61os71jl96Op95strQlPFwo53ioGFz9HPezyNY00--30NHhkrzTUo69F7qjloeKS3rh8DpET0ki4hvO5jOrRehuDyjyXGA2ZC_i9A9AwDcH"/>
+<div class="absolute bottom-1 right-1 bg-surface-container-lowest/90 px-space-xs py-0.5 rounded font-caption text-caption font-mono text-primary font-semibold">
+              FIELD DEPOT
+            </div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-secondary">Spatial Verification Node</span>
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span>
+<span class="font-caption text-caption text-on-surface-variant font-mono">GPS: 12.9611° N, 77.6387° E</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-semibold">
+              Domlur Relief Staging Hub In-Person Survey Linked
+            </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              The facility deed correlates with on-ground telemetry reported by Karnataka State Disaster Management logistics reconnaissance teams on 28 October 2024.
+            </p>
+</div>
+</div>
+</section>
+<!-- Right Column: Transparent AI Risk Pre-Screening & Metric Breakdown -->
+<section class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Mandatory Governance Disclaimer Callout -->
+<div class="bg-primary-container text-on-primary p-space-lg rounded-xl shadow-sm flex flex-col gap-space-md">
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]">gavel</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-primary-fixed tracking-wider">
+                Governance Safeguard Policy
+              </span>
+<h3 class="font-headline-sm text-headline-sm text-on-primary font-bold">
+                Human-in-the-Loop Standard
+              </h3>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-primary-container leading-relaxed">
+            AI risk scores provide strictly decision support and prioritization triage for certified state nodal officers. <strong class="text-on-primary font-semibold">AI models NEVER auto-approve or auto-reject an organization.</strong> Every final credentialing or rejection decision requires dual human cryptographic signatures.
+          </p>
+<div class="flex items-center justify-between text-caption font-caption text-primary-fixed pt-space-xs">
+<span>FIPS 140-3 Algorithmic Audit Compliant</span>
+<span class="font-mono">Model: AID-Triage-v2.9</span>
+</div>
+</div>
+<!-- AI Risk Evaluation Score Box -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">
+                Risk Pre-Screening Index
+              </span>
+<span class="font-headline-md text-headline-md text-primary font-bold">
+                Low Operational Risk
+              </span>
+</div>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md font-bold px-space-md py-1 rounded">
+              GRADE A+
+            </span>
+</div>
+<!-- Gauge and Key Metrics -->
+<div class="flex flex-col sm:flex-row items-center gap-space-lg bg-surface-container-low p-space-lg rounded-xl">
+<!-- SVG Donut Chart (Score 88/100) -->
+<div class="relative w-32 h-32 shrink-0 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90 transform" viewbox="0 0 100 100">
+<!-- Background track -->
+<circle class="text-surface-container-highest" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-width="9"></circle>
+<!-- Active stroke (88% = 221.16 out of 251.32 circumference) -->
+<circle class="text-on-tertiary-container transition-all duration-1000 ease-out" cx="50" cy="50" fill="transparent" r="40" stroke="currentColor" stroke-dasharray="251.32" stroke-dashoffset="30.16" stroke-linecap="round" stroke-width="9"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-display-lg text-display-lg font-bold text-primary">88</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold -mt-1">/ 100 PTS</span>
+</div>
+</div>
+<div class="flex flex-col justify-center gap-space-xs w-full">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Triage Confidence</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+                Algorithmic synthesis detected comprehensive documentary harmony across official state databases and historical NGO tax filings.
+              </p>
+<div class="flex items-center gap-space-xs text-primary font-mono text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span>Flagged Incidents: 0 of 14 Checked</span>
+</div>
+</div>
+</div>
+<!-- Explainable Factors Breakdown Table -->
+<div class="flex flex-col gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">
+              Explainable Factor Matrix
+            </span>
+<div class="overflow-hidden rounded-lg bg-surface-container-low shadow-sm">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">
+<th class="py-space-sm px-space-md font-semibold">Verification Vector</th>
+<th class="py-space-sm px-space-md font-semibold text-center">Metric</th>
+<th class="py-space-sm px-space-md font-semibold text-right">Confidence Impact</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm">
+<!-- Factor 1 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-primary">Identity Consistency</div>
+<div class="font-caption text-caption text-on-surface-variant">Signatory names align with Aadhaar Vault hashes</div>
+</td>
+<td class="py-space-md px-space-md text-center font-mono font-bold text-on-tertiary-container">
+                      96%
+                    </td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-block bg-secondary-fixed text-on-secondary-fixed-variant px-space-xs py-0.5 rounded font-label-sm font-semibold">
+                        +32 pts
+                      </span>
+</td>
+</tr>
+<!-- Factor 2 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-primary">Anomaly Detection</div>
+<div class="font-caption text-caption text-on-surface-variant">Zero foreign contributions, standard overhead ratios</div>
+</td>
+<td class="py-space-md px-space-md text-center font-mono font-bold text-on-tertiary-container">
+                      0 Flags
+                    </td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-block bg-secondary-fixed text-on-secondary-fixed-variant px-space-xs py-0.5 rounded font-label-sm font-semibold">
+                        +24 pts
+                      </span>
+</td>
+</tr>
+<!-- Factor 3 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-primary">Peer Endorsement Integrity</div>
+<div class="font-caption text-caption text-on-surface-variant">Non-recursive signed vouching by IRCS & Hubballi Trust</div>
+</td>
+<td class="py-space-md px-space-md text-center font-mono font-bold text-on-tertiary-container">
+                      92%
+                    </td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-block bg-secondary-fixed text-on-secondary-fixed-variant px-space-xs py-0.5 rounded font-label-sm font-semibold">
+                        +20 pts
+                      </span>
+</td>
+</tr>
+<!-- Factor 4 -->
+<tr class="hover:bg-surface-container transition-colors">
+<td class="py-space-md px-space-md">
+<div class="font-semibold text-primary">Public Domain Field Signal</div>
+<div class="font-caption text-caption text-on-surface-variant">Verified disaster relief media citations (2023 Floods)</div>
+</td>
+<td class="py-space-md px-space-md text-center font-mono font-bold text-on-tertiary-container">
+                      85%
+                    </td>
+<td class="py-space-md px-space-md text-right">
+<span class="inline-block bg-secondary-fixed text-on-secondary-fixed-variant px-space-xs py-0.5 rounded font-label-sm font-semibold">
+                        +12 pts
+                      </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Peer Endorsement Avatar Strip -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="flex -space-x-2 overflow-hidden">
+<div class="inline-block h-8 w-8 rounded-full bg-primary-container text-on-primary font-bold font-mono text-label-sm flex items-center justify-center shadow">
+                  RC
+                </div>
+<div class="inline-block h-8 w-8 rounded-full bg-secondary text-on-secondary font-bold font-mono text-label-sm flex items-center justify-center shadow">
+                  HT
+                </div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-primary">2 Active Consortia Signers</span>
+<span class="font-caption text-caption text-on-surface-variant">Red Cross BLR & Hubballi Relief Trust</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-tertiary-container text-[20px]">verified</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Verification Timeline & Officer Review Queue Section -->
+<section class="bg-surface-container-lowest p-space-lg md:p-space-xl rounded-xl shadow-sm flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider">
+            Sequential Audit Trail
+          </span>
+<h2 class="font-headline-md text-headline-md text-primary font-bold">
+            Five-Stage Trust & Accreditation Pipeline
+          </h2>
+</div>
+<div class="flex items-center gap-space-sm font-label-sm text-label-sm bg-surface-container-high px-space-md py-1.5 rounded-lg text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">shield</span>
+<span>Dual Reviewer SLA Protocol: 6.0 Hours Target</span>
+</div>
+</div>
+<!-- Linear Stepper Track -->
+<div class="grid grid-cols-1 md:grid-cols-5 gap-space-md relative">
+<!-- Step 1: Completed -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm font-bold text-on-tertiary-container">STEP 01</span>
+<div class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-semibold">Document Ingestion & OCR</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-1">4 documents checksummed & parsed into structured json.</p>
+</div>
+<div class="font-caption text-caption font-mono text-secondary">
+            Completed: 02 Nov, 09:15 IST
+          </div>
+</div>
+<!-- Step 2: Completed -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm font-bold text-on-tertiary-container">STEP 02</span>
+<div class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-semibold">Peer Endorsements</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-1">2/2 cryptographic signatures received from accredited peers.</p>
+</div>
+<div class="font-caption text-caption font-mono text-secondary">
+            Completed: 02 Nov, 11:30 IST
+          </div>
+</div>
+<!-- Step 3: Completed -->
+<div class="bg-surface-container-low p-space-md rounded-xl flex flex-col justify-between gap-space-md">
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm font-bold text-on-tertiary-container">STEP 03</span>
+<div class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary font-semibold">AI Risk Pre-Screening</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-1">88/100 composite score logged in audit registry.</p>
+</div>
+<div class="font-caption text-caption font-mono text-secondary">
+            Completed: 02 Nov, 11:32 IST
+          </div>
+</div>
+<!-- Step 4: In Progress (Active Officer Review) -->
+<div class="bg-primary-container text-on-primary p-space-md rounded-xl flex flex-col justify-between gap-space-md shadow-md relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-20 h-20 bg-primary/20 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm font-bold text-primary-fixed">STEP 04 • ACTIVE</span>
+<div class="w-6 h-6 rounded-full bg-amber-400 text-primary-container flex items-center justify-center animate-pulse">
+<span class="material-symbols-outlined text-[16px]">hourglass_top</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-primary font-bold">Nodal Officer Review</h4>
+<p class="font-caption text-caption text-on-primary-container mt-1">
+              Assigned to District Officer <span class="font-semibold text-on-primary">R. Kulkarni</span> (SDMA-KA desk).
+            </p>
+</div>
+<div class="flex items-center gap-space-xs font-caption text-caption font-mono text-primary-fixed">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<span>In Human Triage Queue</span>
+</div>
+</div>
+<!-- Step 5: Pending -->
+<div class="bg-surface-container p-space-md rounded-xl flex flex-col justify-between gap-space-md opacity-70">
+<div class="flex items-center justify-between">
+<span class="font-mono text-label-sm font-bold text-on-surface-variant">STEP 05</span>
+<div class="w-6 h-6 rounded-full bg-surface-container-highest text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+</div>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Cryptographic Node Issuance</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-1">
+              Field operational keys provisioned upon dual-officer signoff.
+            </p>
+</div>
+<div class="font-caption text-caption font-mono text-on-surface-variant">
+            Pending Officer Approvals
+          </div>
+</div>
+</div>
+<!-- Human Review Officer Card Module -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary font-bold font-headline-sm">
+            RK
+          </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">Officer R. Kulkarni</span>
+<span class="bg-surface-container text-on-surface-variant font-label-sm text-label-sm px-space-xs py-0.5 rounded font-mono">SDMA-KA-881</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">
+              Senior Verification Officer • Karnataka State Disaster Management Enclave
+            </span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-stretch sm:self-auto justify-end">
+<button class="bg-surface-container-lowest hover:bg-surface-container text-primary font-label-md text-label-md px-space-md py-2 rounded shadow-sm transition-all flex items-center gap-1" id="ping-desk-btn">
+<span class="material-symbols-outlined text-[18px]">chat_bubble_outline</span>
+<span>Send Direct Ingestion Note</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Action & Emergency Dispatch Area -->
+<section class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm flex flex-col lg:flex-row items-center justify-between gap-space-lg">
+<div class="flex flex-col sm:flex-row items-center gap-space-md text-center sm:text-left">
+<div class="w-12 h-12 rounded-full bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">crisis_alert</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-error tracking-wider">
+            Active Flood Theater Override
+          </span>
+<p class="font-body-sm text-body-sm text-on-surface">
+            Are your field vehicles already mobilised in Kaveri basin floodwaters? Call the Rapid Nodal Fast-Track Line at <strong class="font-mono text-primary">+91 (080) 2203-2900</strong> for expedited manual clearance.
+          </p>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-center sm:justify-end gap-space-md w-full lg:w-auto">
+<!-- Supplemental Evidence Action -->
+<button class="bg-surface-container-low hover:bg-surface-container text-primary font-label-md text-label-md px-space-lg py-2.5 rounded shadow-sm transition-colors flex items-center gap-2" id="upload-supplement-btn">
+<span class="material-symbols-outlined text-[20px]">upload_file</span>
+<span>Upload Additional Evidence</span>
+</button>
+<!-- Cryptographic Manifest PDF Action -->
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md px-space-lg py-2.5 rounded shadow-sm transition-colors flex items-center gap-2" id="download-manifest-btn">
+<span class="material-symbols-outlined text-[20px]">download_for_offline</span>
+<span>Download Manifest (.PDF)</span>
+</button>
+</div>
+</section>
+</div>
+<!-- Interactive Slide-In Drawer for Additional Evidence Ingestion (Hidden by default) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm hidden" id="supplement-modal">
+<div class="bg-surface-container-lowest w-full max-w-[560px] mx-margin p-space-xl rounded-xl shadow-xl flex flex-col gap-space-lg">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-primary-container text-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">post_add</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-primary font-bold">Supplement Case File</h3>
+<span class="font-caption text-caption text-on-surface-variant font-mono">Case #APP-KA-2024-9921</span>
+</div>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface p-1 rounded" id="close-modal-btn">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Document Category</label>
+<select class="w-full bg-surface-container-low text-primary p-space-sm rounded font-body-sm text-body-sm focus:outline-none">
+<option>FCRA Exemption Certificate</option>
+<option>Additional Field Volunteer Roster</option>
+<option>Auxiliary Vehicle Fleet Registration</option>
+<option>Memorandum of Understanding (District Collector)</option>
+</select>
+</div>
+<div class="bg-surface-container-low p-space-xl rounded-xl flex flex-col items-center justify-center text-center gap-space-sm cursor-pointer hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[36px] text-secondary">cloud_upload</span>
+<span class="font-headline-sm text-headline-sm text-primary font-semibold">Drop secure payload file here</span>
+<span class="font-caption text-caption text-on-surface-variant">PDF, PNG, JPG, or PGP-encrypted files up to 25MB</span>
+</div>
+<div class="flex items-center justify-end gap-space-md pt-space-xs">
+<button class="px-space-lg py-2 text-on-surface-variant hover:text-on-surface font-label-md text-label-md" id="cancel-modal-btn">
+          Cancel
+        </button>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-space-lg py-2 rounded font-label-md text-label-md" id="submit-evidence-btn">
+          Ingest into Cryptographic Vault
+        </button>
+</div>
+</div>
+</div>
+<!-- Micro-Interactions Script -->
+<script>
+    // Live Countdown Simulation for Human Review ETA
+    let remainingSeconds = 4 * 3600 + 14 * 60 + 58;
+    const countdownEl = document.getElementById('countdown-timer');
+    if (countdownEl) {
+      setInterval(() => {
+        if (remainingSeconds > 0) {
+          remainingSeconds--;
+          const hours = Math.floor(remainingSeconds / 3600);
+          const minutes = Math.floor((remainingSeconds % 3600) / 60);
+          const seconds = remainingSeconds % 60;
+          countdownEl.textContent = `Estimated decision in ${hours}h ${minutes}m ${seconds < 10 ? '0' : ''}${seconds}s`;
+        }
+      }, 1000);
+    }
+
+    // Modal Interaction Handlers
+    const uploadBtn = document.getElementById('upload-supplement-btn');
+    const modalEl = document.getElementById('supplement-modal');
+    const closeBtn = document.getElementById('close-modal-btn');
+    const cancelBtn = document.getElementById('cancel-modal-btn');
+    const submitBtn = document.getElementById('submit-evidence-btn');
+    const downloadManifestBtn = document.getElementById('download-manifest-btn');
+    const pingDeskBtn = document.getElementById('ping-desk-btn');
+
+    if (uploadBtn && modalEl) {
+      uploadBtn.addEventListener('click', () => modalEl.classList.remove('hidden'));
+    }
+    if (closeBtn && modalEl) {
+      closeBtn.addEventListener('click', () => modalEl.classList.add('hidden'));
+    }
+    if (cancelBtn && modalEl) {
+      cancelBtn.addEventListener('click', () => modalEl.classList.add('hidden'));
+    }
+    if (submitBtn && modalEl) {
+      submitBtn.addEventListener('click', () => {
+        submitBtn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span> Verifying Hash...';
+        setTimeout(() => {
+          modalEl.classList.add('hidden');
+          submitBtn.innerHTML = 'Ingest into Cryptographic Vault';
+          alert('Document submitted to Enclave. Added to Senior Officer R. Kulkarni’s active review payload.');
+        }, 1000);
+      });
+    }
+
+    if (downloadManifestBtn) {
+      downloadManifestBtn.addEventListener('click', () => {
+        const originalText = downloadManifestBtn.innerHTML;
+        downloadManifestBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] animate-spin">sync</span> Generating PGP Manifest...';
+        setTimeout(() => {
+          downloadManifestBtn.innerHTML = originalText;
+          alert('Cryptographic Manifest #APP-KA-2024-9921 compiled with SHA-256 signatures.');
+        }, 1200);
+      });
+    }
+
+    if (pingDeskBtn) {
+      pingDeskBtn.addEventListener('click', () => {
+        const note = prompt('Enter priority memo for District Officer R. Kulkarni (SDMA-KA):', 'URGENT: Staging depot vehicles fueled and awaiting flood relief dispatch authorization.');
+        if (note) {
+          alert('Encrypted memo dispatched to Officer R. Kulkarni’s terminal queue.');
+        }
+      });
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-full max-w-[1600px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-md text-on-surface-variant"><span class="font-caption text-caption">© 2024 ReliefNet Consortium • Node ID: IND-KA-BNG-04</span><span class="font-caption text-caption hidden sm:inline">• FIPS 140-3 Trust Fabric</span></div><div class="flex items-center gap-space-lg"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="operational-guidelines" href="#">Operational Guidelines</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="security-manifesto" href="#">Security Manifesto</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="incident-line" href="#">Crisis Emergency Dispatch</a></div></div></footer></body></html>

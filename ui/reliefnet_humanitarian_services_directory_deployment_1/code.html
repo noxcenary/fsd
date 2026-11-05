@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-on-surface": "#eff1ef", "outline": "#717974", "surface-container-high": "#e6e9e7", "on-tertiary": "#ffffff", "inverse-primary": "#a5d0bc", "secondary-fixed-dim": "#9ed1bd", "on-surface-variant": "#414844", "on-tertiary-container": "#00af79", "secondary-container": "#baeed9", "surface-dim": "#d8dad9", "outline-variant": "#c1c8c3", "tertiary-fixed-dim": "#4edea3", "surface-variant": "#e1e3e1", "surface-container-highest": "#e1e3e1", "on-background": "#191c1b", "inverse-surface": "#2e3130", "on-secondary-fixed-variant": "#1d4f40", "on-tertiary-fixed-variant": "#005236", "on-secondary-container": "#3d6d5d", "error-container": "#ffdad6", "on-surface": "#191c1b", "primary-fixed-dim": "#a5d0bc", "primary-fixed": "#c0ecd7", "surface-tint": "#3e6656", "on-primary-container": "#7aa391", "on-secondary": "#ffffff", "background": "#f8faf8", "surface-bright": "#f8faf8", "secondary-fixed": "#baeed9", "primary-container": "#0f392b", "on-tertiary-fixed": "#002113", "on-primary-fixed-variant": "#264e3f", "primary": "#002318", "on-error-container": "#93000a", "on-secondary-fixed": "#002117", "on-error": "#ffffff", "tertiary-container": "#003a25", "on-primary-fixed": "#002116", "tertiary-fixed": "#6ffbbe", "on-primary": "#ffffff", "secondary": "#376757", "surface": "#f8faf8", "tertiary": "#002215", "error": "#ba1a1a", "surface-container-low": "#f2f4f2", "surface-container": "#eceeec", "surface-container-lowest": "#ffffff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "gutter-tablet": "1rem", "space-sm": "0.5rem", "space-md": "0.75rem", "space-xs": "0.25rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-lg": "1rem", "margin-tablet": "1.5rem", "gutter": "1rem", "space-xl": "1.5rem", "margin-desktop": "2rem" }, "fontFamily": { "label-lg": ["Inter"], "headline-md": ["Plus Jakarta Sans"], "label-md": ["Inter"], "body-lg": ["Inter"], "label-sm": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-md": ["Inter"], "caption": ["Inter"], "display-lg-mobile": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"] }, "fontSize": { "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "display-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center"><span class="material-symbols-outlined text-primary-fixed text-[20px]">grid_view</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">ReliefNet</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">FieldGrid OS</span></div></div><span class="font-label-sm text-label-sm px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-container font-semibold">v2.4</span></div><div class="px-space-md py-space-sm"><div class="bg-surface-container rounded-xl p-space-sm flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full bg-secondary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-secondary text-[16px]">corporate_fare</span></div><div class="flex flex-col min-w-0 flex-1"><div class="flex items-center gap-1"><span class="font-label-md text-label-md text-on-surface truncate">Asha Relief</span><span class="material-symbols-outlined text-on-tertiary-container text-[14px]">verified</span></div><span class="font-caption text-caption text-on-surface-variant truncate">Govt Verified NGO</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px] cursor-pointer hover:text-on-surface">unfold_more</span></div></div><div class="px-space-md pt-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant px-space-sm font-semibold">Operations</span></div><nav class="px-space-md pt-space-xs space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span class="font-label-lg text-label-lg">Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="directory" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span class="font-label-lg text-label-lg">Discover NGOs</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="resources" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span class="font-label-lg text-label-lg">Resources</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="requests" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span class="font-label-lg text-label-lg">Requests</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="matching" href="#"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span class="font-label-lg text-label-lg">AI Matching</span></a><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold" data-path="services" href="#"><span class="material-symbols-outlined text-[20px]">medical_services</span><span class="font-label-lg text-label-lg">Services</span></a></nav><div class="px-space-md pt-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant px-space-sm font-semibold">Coordination</span></div><nav class="px-space-md pt-space-xs space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="feed" href="#"><span class="material-symbols-outlined text-[20px]">dynamic_feed</span><span class="font-label-lg text-label-lg">Activity Feed</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="messages" href="#"><span class="material-symbols-outlined text-[20px]">forum</span><span class="font-label-lg text-label-lg">Messages</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="transactions" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span class="font-label-lg text-label-lg">Transactions</span></a></nav></div><div class="px-space-md pb-space-lg flex flex-col gap-1"><div class="pt-space-sm mb-1"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant px-space-sm font-semibold">Governance</span></div><nav class="space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-semibold"><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="trust" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-label-lg text-label-lg">Org Profile &amp; Trust</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-lg text-label-lg">Settings</span></a></nav><div class="mt-space-sm pt-space-sm bg-surface-container rounded-xl p-space-sm flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-2 h-2 rounded-full bg-on-tertiary-container animate-pulse"></div><span class="font-label-sm text-label-sm text-on-surface-variant">Satellite Uplink Active</span></div><span class="material-symbols-outlined text-secondary text-[16px]">wifi_tethering</span></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-xl flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-2 px-space-md py-1.5 rounded-full bg-error-container text-on-error-container"><span class="w-2 h-2 rounded-full bg-error animate-ping"></span><span class="font-label-sm text-label-sm font-bold uppercase tracking-wide">Crisis Active:</span><span class="font-label-sm text-label-sm font-semibold">Flood Relief · North Karnataka</span></div><div class="h-4 w-px bg-outline-variant"></div><div class="flex items-center gap-1.5 text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">schedule</span><span class="font-caption text-caption">Zulu 08:42</span></div></div><div class="flex items-center gap-space-lg"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px]">search</span><input class="w-80 pl-10 pr-4 py-1.5 rounded-xl bg-surface-container-high text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary-container transition-all" placeholder="Search emergency resources, manifests, requests..." type="text"/></div><div class="flex items-center gap-space-sm"><button class="relative w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error"></span></button><button class="w-9 h-9 rounded-xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">help_center</span></button><div class="h-6 w-px bg-outline-variant mx-1"></div><div class="flex items-center gap-space-sm pl-1"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface leading-tight">Dr. V. Rao</span><span class="font-label-sm text-label-sm text-on-surface-variant">Field Lead</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="relative pt-16 w-full px-8 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Script for Filtering & Tabs -->
+<script>
+    function switchTab(btn, cat) {
+      document.querySelectorAll('.filter-tab-pill').forEach(el => {
+        el.className = 'filter-tab-pill px-space-md py-1.5 rounded-full text-on-surface-variant bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-all hover:bg-surface-container-high hover:text-on-surface';
+      });
+      btn.className = 'filter-tab-pill px-space-md py-1.5 rounded-full bg-primary-container text-on-primary-fixed-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm';
+      
+      const cards = document.querySelectorAll('.service-grid-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.dataset.category === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function toggleQuickFilter(chip) {
+      chip.classList.toggle('bg-secondary-container');
+      chip.classList.toggle('text-on-secondary-container');
+      chip.classList.toggle('bg-surface-container');
+      chip.classList.toggle('text-on-surface-variant');
+    }
+
+    function openMissionDrawer() {
+      const drawer = document.getElementById('missionDrawer');
+      if (drawer) drawer.classList.remove('translate-x-full');
+    }
+
+    function closeMissionDrawer() {
+      const drawer = document.getElementById('missionDrawer');
+      if (drawer) drawer.classList.add('translate-x-full');
+    }
+
+    function triggerDispatchModal(serviceTitle, provider) {
+      const modal = document.getElementById('dispatchModal');
+      const titleSpan = document.getElementById('modalTargetService');
+      const providerSpan = document.getElementById('modalTargetProvider');
+      if (titleSpan) titleSpan.textContent = serviceTitle;
+      if (providerSpan) providerSpan.textContent = provider;
+      if (modal) modal.classList.remove('hidden');
+    }
+
+    function closeDispatchModal() {
+      const modal = document.getElementById('dispatchModal');
+      if (modal) modal.classList.add('hidden');
+    }
+  </script>
+<!-- Top Breadcrumb & Executive Command Bar -->
+<div class="flex flex-col gap-space-sm pb-space-lg">
+<div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption">
+<span class="hover:text-on-surface cursor-pointer">Operations Desk</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-on-surface cursor-pointer">Logistics &amp; Fleets</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Specialized Services Directory</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col max-w-3xl">
+<div class="flex items-center gap-space-sm mb-1">
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-on-tertiary-fixed font-label-sm text-label-sm uppercase tracking-wider font-semibold">Live Operational Ledger</span>
+<span class="text-on-surface-variant font-caption text-caption flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-tertiary-container"></span> Synchronized with Karnataka SDMA Node
+          </span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight leading-none mb-2">
+          Humanitarian Services &amp; Operational Assets
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Coordinate mutual-aid capabilities: high-mobility 4x4 triage vans, swiftwater Zodiac squads, trailer water purification engineers, and field kitchens without inter-agency friction.
+        </p>
+</div>
+<!-- Action CTAs -->
+<div class="flex items-center gap-space-sm shrink-0 flex-wrap">
+<button class="px-space-md py-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-dim font-label-md text-label-md flex items-center gap-2 transition-all" onclick="openMissionDrawer()">
+<span class="material-symbols-outlined text-[18px] text-secondary">satellite_alt</span>
+<span>Active Mission Telemetry</span>
+<span class="px-1.5 py-0.5 rounded-full bg-secondary text-on-secondary font-label-sm text-label-sm font-bold">1</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-label-md text-label-md flex items-center gap-2 transition-all" onclick="triggerDispatchModal('Rapid Assistance Intake', 'Karnataka Inter-Agency Mesh')">
+<span class="material-symbols-outlined text-[18px]">add_task</span>
+<span>Request Service Assistance</span>
+</button>
+<button class="px-space-lg py-2 rounded-lg bg-primary-container text-on-primary-fixed-variant hover:bg-primary font-label-lg text-label-lg flex items-center gap-2 shadow-sm transition-all">
+<span class="material-symbols-outlined text-[18px]">domain_add</span>
+<span>Register Capability</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Operational Telemetry Flash Ribbon -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Active Mobile Clinics</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">26 Units</span>
+<span class="font-caption text-caption text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> 19 In Field / 7 Standby
+        </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">medical_services</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Swiftwater &amp; Marine Vessels</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">18 Boats</span>
+<span class="font-caption text-caption text-error mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">crisis_alert</span> 12 Deployed in Belagavi Basin
+        </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">kayaking</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Clean Water Flow / Hr</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">48,000 L</span>
+<span class="font-caption text-caption text-on-tertiary-container mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">water_drop</span> 14 Engineering rigs active
+        </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">water_ec</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Rations &amp; Langar Output</span>
+<span class="font-headline-lg text-headline-lg text-on-surface font-bold">32,500/day</span>
+<span class="font-caption text-caption text-secondary mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> 12 Mobile Kitchen trucks
+        </span>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">soup_kitchen</span>
+</div>
+</div>
+</div>
+<!-- Category Nav Pills -->
+<div class="flex items-center gap-2 overflow-x-auto pb-space-sm mb-space-sm scrollbar-none">
+<button class="filter-tab-pill px-space-md py-1.5 rounded-full bg-primary-container text-on-primary-fixed-variant font-label-md text-label-md flex items-center gap-1.5 shadow-sm" onclick="switchTab(this, 'all')">
+<span>All Field Services</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-lowest/20 text-on-primary font-label-sm text-label-sm">84</span>
+</button>
+<button class="filter-tab-pill px-space-md py-1.5 rounded-full text-on-surface-variant bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-all hover:bg-surface-container-high hover:text-on-surface" onclick="switchTab(this, 'medical')">
+<span class="material-symbols-outlined text-[16px]">emergency</span>
+<span>Medical &amp; Mobile Clinics</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">26</span>
+</button>
+<button class="filter-tab-pill px-space-md py-1.5 rounded-full text-on-surface-variant bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-all hover:bg-surface-container-high hover:text-on-surface" onclick="switchTab(this, 'rescue')">
+<span class="material-symbols-outlined text-[16px]">sailing</span>
+<span>Heavy Logistics &amp; Rescue Fleets</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">18</span>
+</button>
+<button class="filter-tab-pill px-space-md py-1.5 rounded-full text-on-surface-variant bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-all hover:bg-surface-container-high hover:text-on-surface" onclick="switchTab(this, 'wash')">
+<span class="material-symbols-outlined text-[16px]">water_ph</span>
+<span>WASH &amp; Water Engineers</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">14</span>
+</button>
+<button class="filter-tab-pill px-space-md py-1.5 rounded-full text-on-surface-variant bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-all hover:bg-surface-container-high hover:text-on-surface" onclick="switchTab(this, 'food')">
+<span class="material-symbols-outlined text-[16px]">restaurant</span>
+<span>Field Kitchens &amp; Catering</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">12</span>
+</button>
+<button class="filter-tab-pill px-space-md py-1.5 rounded-full text-on-surface-variant bg-surface-container font-label-md text-label-md flex items-center gap-1.5 transition-all hover:bg-surface-container-high hover:text-on-surface" onclick="switchTab(this, 'roster')">
+<span class="material-symbols-outlined text-[16px]">groups</span>
+<span>Volunteer Rapid Roster</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm">14</span>
+</button>
+</div>
+<!-- Search & Utilitarian Quick Filter Toolbar -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm mb-space-lg flex flex-col md:flex-row gap-space-md items-stretch md:items-center justify-between">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg bg-surface-container-low text-on-surface placeholder:text-on-surface-variant font-body-sm text-body-sm focus:outline-none focus:bg-surface-container transition-all" placeholder="Search by vehicle type, specialized gear, medical crew, or operational node..." type="text"/>
+</div>
+<!-- Quick Attribute Chips -->
+<div class="flex items-center gap-2 flex-wrap">
+<button class="px-space-sm py-1.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm flex items-center gap-1 cursor-pointer transition-all" onclick="toggleQuickFilter(this)">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+<span>Immediate Response (24/7)</span>
+</button>
+<button class="px-space-sm py-1.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1 cursor-pointer transition-all" onclick="toggleQuickFilter(this)">
+<span class="material-symbols-outlined text-[14px]">airline_seat_recline_normal</span>
+<span>Dedicated Crew Included</span>
+</button>
+<button class="px-space-sm py-1.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1 cursor-pointer transition-all" onclick="toggleQuickFilter(this)">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span>Govt Verified Tier-1</span>
+</button>
+<button class="px-space-sm py-1.5 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1 cursor-pointer transition-all" onclick="toggleQuickFilter(this)">
+<span class="material-symbols-outlined text-[14px]">near_me</span>
+<span>Within 40km Radius</span>
+</button>
+<button class="w-8 h-8 rounded bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" title="Export Manifest as GeoJSON">
+<span class="material-symbols-outlined text-[18px]">ios_share</span>
+</button>
+</div>
+</div>
+<!-- Primary Services Showcase Grid (2x2 Asymmetric High-Density Layout) -->
+<div class="grid grid-cols-1 xl:grid-cols-2 gap-space-lg mb-space-xl">
+<!-- Card 1: 4x4 Mobile Triage Clinic -->
+<div class="service-grid-card bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col justify-between transition-all hover:shadow-md" data-category="medical">
+<div>
+<div class="p-space-lg bg-surface-container-low flex items-start justify-between gap-space-md">
+<div class="flex gap-space-md">
+<div class="w-14 h-14 rounded-lg bg-primary-container text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[32px]">ambulance</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Immediate Standby</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">4x4 Heavy Chassis</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight truncate">
+                2x 4x4 Mobile Triage Clinic &amp; O2 Vans
+              </h2>
+<div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption mt-0.5">
+<span class="font-semibold text-on-surface">St. Jude Health Mission</span>
+<span>·</span>
+<span class="flex items-center gap-0.5 text-on-tertiary-container"><span class="material-symbols-outlined text-[14px]">verified</span> DARPAN #KA-2019-4412</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">pin_drop</span> 5.0 km Depot
+          </span>
+</div>
+<!-- Spec Body & Photo Element -->
+<div class="p-space-lg flex flex-col md:flex-row gap-space-lg">
+<div class="w-full md:w-44 h-36 rounded-lg bg-cover bg-center shrink-0 overflow-hidden relative" data-alt="Rugged white and green specialized 4x4 ambulance mobile medical clinic parked ready on a tarmac with oxygen equipment visible through open rear doors, subdued natural lighting, sharp utilitarian aesthetic" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCqYuBnlzIuMDUW-XQBgwog295GusTb-_C5pWg_pQFBronQiAfonhG1rVdFhhtl-dX5QNxO4XoWqpHqRCewiRn9mHTHJkNBrpLGLdinBQ6OcaY9BVZucdWCqAb-_jN2TLptsJIfa0FPOB3QfIK4RB-dUVzZlgpC7VNTLQayjaWi8bWxULDjJF7JKttVGpwe3jGoy8h3tk1XrQEHmmy7mJAOwMlFAksNE4ANfvY8S4Jv')">
+<span class="absolute bottom-2 left-2 px-1.5 py-0.5 rounded bg-primary-container text-on-primary font-caption text-caption font-semibold">Self-Powered Diesel</span>
+</div>
+<div class="flex-1 flex flex-col justify-between space-y-3">
+<div class="grid grid-cols-2 gap-2 text-body-sm font-body-sm">
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Crew Onboard</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">1 Paramedic + 1 Driver</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-0.5">12h rotational shift</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Protocol Type</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Non-Monetary Aid</span>
+<span class="font-caption text-caption text-secondary block mt-0.5">Govt emergency mutual pact</span>
+</div>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block mb-1">Specialized Payload Inventory</span>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-caption text-caption">2x 10L/min O2 Concentrators</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-caption text-caption">Zoll AED Defibrillator</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-caption text-caption">4x Suture Minor Surgery Packs</span>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-caption text-caption">Cold-Chain Vaccines</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 text-caption font-caption text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span>Shivajinagar Yard · Instant GPS Tracking</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+            Inspect Crew Manifest
+          </button>
+<button class="px-space-md py-1.5 rounded bg-primary-container text-on-primary-fixed-variant hover:bg-primary font-label-md text-label-md flex items-center gap-1 transition-all" onclick="triggerDispatchModal('2x 4x4 Mobile Triage Clinic &amp; Emergency Oxygen Vans', 'St. Jude Health Mission')">
+<span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
+<span>Request Dispatch</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Swiftwater Inflatable Rescue Boat (IRB) Squad -->
+<div class="service-grid-card bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col justify-between transition-all hover:shadow-md" data-category="rescue">
+<div>
+<div class="p-space-lg bg-surface-container-low flex items-start justify-between gap-space-md">
+<div class="flex gap-space-md">
+<div class="w-14 h-14 rounded-lg bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[32px]">sailing</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Active Sector Belagavi</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Class-IV Water Qualified</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight truncate">
+                Swiftwater IRB Squad (Cluster B)
+              </h2>
+<div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption mt-0.5">
+<span class="font-semibold text-on-surface">Red Cross Karnataka Disaster Wing</span>
+<span>·</span>
+<span class="flex items-center gap-0.5 text-on-tertiary-container"><span class="material-symbols-outlined text-[14px]">verified</span> Govt Verified Tier-1</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-error">water</span> Krishna Basin
+          </span>
+</div>
+<!-- Spec Body & Photo Element -->
+<div class="p-space-lg flex flex-col md:flex-row gap-space-lg">
+<div class="w-full md:w-44 h-36 rounded-lg bg-cover bg-center shrink-0 overflow-hidden relative" data-alt="High-contrast action shot of heavy duty orange inflatable Zodiac rescue boats moored on riverbank, safety helmets and life jackets stacked systematically, grey monsoon skies, rugged utilitarian gear" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkO9wpUtvdyg2b2K8kGDBiBZxbhflTnmNCnJcGtaiGIsb0PfOIq05i3fCLdkWWOCMMUWpjmlsM7I0bgfh7zqDh2RIRLFokdY4AfE4CH03YmkTcIcRTeVhl3rP3JgRsyclzkr1CxHuNUTKk2P2S_Ui52iFX96e8zoGT1X8Cm5OJgG0S33TVhUGk03lN-tGV50s2kLkSEuJROtFOOdalPiyqZAmIxjkwFuS5L3U4Ll8A')">
+<span class="absolute bottom-2 left-2 px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-caption text-caption font-semibold">Evac: 40/hr capacity</span>
+</div>
+<div class="flex-1 flex flex-col justify-between space-y-3">
+<div class="grid grid-cols-2 gap-2 text-body-sm font-body-sm">
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Boat Fleets</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">3x Zodiac 40HP Outboard</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-0.5">Aluminum floorboards</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Divers &amp; Crew</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">6x Certified Rescue Divers</span>
+<span class="font-caption text-caption text-secondary block mt-0.5">WFR &amp; PADI rescue certified</span>
+</div>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block mb-1">Operational Nodal Readiness</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                Currently staged along Hubballi-Belagavi riverine corridor. Authorized for emergency lateral re-tasking by district disaster collectors or network incident commanders.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 text-caption font-caption text-error font-medium">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span>Nodal Call Protocol: Tier-1 Escalation Required</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+            Nodal Comms Line
+          </button>
+<button class="px-space-md py-1.5 rounded bg-primary-container text-on-primary-fixed-variant hover:bg-primary font-label-md text-label-md flex items-center gap-1 transition-all" onclick="triggerDispatchModal('Swiftwater Inflatable Rescue Boat Squad (Cluster B)', 'Red Cross Karnataka Disaster Wing')">
+<span class="material-symbols-outlined text-[16px]">call_split</span>
+<span>Joint Mission Re-Task</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Solar Water Filtration Engineering Team -->
+<div class="service-grid-card bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col justify-between transition-all hover:shadow-md" data-category="wash">
+<div>
+<div class="p-space-lg bg-surface-container-low flex items-start justify-between gap-space-md">
+<div class="flex gap-space-md">
+<div class="w-14 h-14 rounded-lg bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[32px]">water_drop</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Available for Dispatch</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">Off-Grid Solar Rig</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight truncate">
+                High-Capacity Solar Water Filtration Team
+              </h2>
+<div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption mt-0.5">
+<span class="font-semibold text-on-surface">CleanWaters Grassroots Collective</span>
+<span>·</span>
+<span class="text-on-surface-variant">Community Verified (4 Endorsements)</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">pin_drop</span> 14 km Depot
+          </span>
+</div>
+<!-- Spec Body & Photo Element -->
+<div class="p-space-lg flex flex-col md:flex-row gap-space-lg">
+<div class="w-full md:w-44 h-36 rounded-lg bg-cover bg-center shrink-0 overflow-hidden relative" data-alt="Industrial portable water filtration trailer with solar photovoltaic panels deployed on roof, clean stainless steel pumps, technician inspecting test vials, daylight outdoor technical setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBb3D1tZohIpPxaHOeUlFewlxI232AFNQSntyCVfUBG4Rq8KRhAPW9mSr8sNrCPeLrGTjdhJn_T1JteRodOIoPFzcKddF0IRIFdHUXSonn8sIv_DWFYLAh2rev0Hr4KFYNxBjAgghZQ9E_LUmzipz3048dV3TN7TMsXxeeVcrCELiJ8YaL1moNKMWPneasLVs7NZjSbSCoNoxK-MHJj5SI4oSgpDyYFX2BmDLf58P73')">
+<span class="absolute bottom-2 left-2 px-1.5 py-0.5 rounded bg-primary-container text-on-primary font-caption text-caption font-semibold">2,000 L/hr Potable</span>
+</div>
+<div class="flex-1 flex flex-col justify-between space-y-3">
+<div class="grid grid-cols-2 gap-2 text-body-sm font-body-sm">
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Filtration Tech</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Sand + Carbon + UV</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-0.5">Tested to WHO flood standards</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Deploy Crew</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">2 Certified Engineers</span>
+<span class="font-caption text-caption text-secondary block mt-0.5">Full spares &amp; replacement media</span>
+</div>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block mb-1">Mobility &amp; Deployment Readiness</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                Mounted on towable off-road trailer. Features integrated 12kW LiFePO4 battery pack and 1.8kW rooftop solar foldouts; operates autonomously without fuel dependency for 72+ continuous hours.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 text-caption font-caption text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span>Electronic City Yard · Pre-calibrated Turbidity Sensors</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+            View Field Proof
+          </button>
+<button class="px-space-md py-1.5 rounded bg-primary-container text-on-primary-fixed-variant hover:bg-primary font-label-md text-label-md flex items-center gap-1 transition-all" onclick="triggerDispatchModal('High-Capacity Solar Water Filtration Engineering Team', 'CleanWaters Grassroots Collective')">
+<span class="material-symbols-outlined text-[16px]">send</span>
+<span>Request Deployment</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 4: Community Heavy Relief Kitchen Unit -->
+<div class="service-grid-card bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden flex flex-col justify-between transition-all hover:shadow-md" data-category="food">
+<div>
+<div class="p-space-lg bg-surface-container-low flex items-start justify-between gap-space-md">
+<div class="flex gap-space-md">
+<div class="w-14 h-14 rounded-lg bg-primary-container text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[32px]">soup_kitchen</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 flex-wrap mb-1">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Active Rolling Fleet</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface font-label-sm text-label-sm">High-Volume Kitchen</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight truncate">
+                Heavy Relief Kitchen Fleet (Mobile Langar)
+              </h2>
+<div class="flex items-center gap-2 text-on-surface-variant font-caption text-caption mt-0.5">
+<span class="font-semibold text-on-surface">Annapoorna Humanitarian Trust</span>
+<span>·</span>
+<span class="text-on-surface-variant">Community Verified Network Partner</span>
+</div>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">pin_drop</span> Yeshwanthpur Base
+          </span>
+</div>
+<!-- Spec Body & Photo Element -->
+<div class="p-space-lg flex flex-col md:flex-row gap-space-lg">
+<div class="w-full md:w-44 h-36 rounded-lg bg-cover bg-center shrink-0 overflow-hidden relative" data-alt="Large commercial stainless steel mobile cooking truck interior with clean industrial steam kettles, packed sealed hygienic relief food boxes stacked neatly, volunteers in clean aprons preparing supplies" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDmudJ1T7UopgFm6CBcswD-rfGuOfNGZeGJb0KYqOQqf1QylN8pj3NoqI4sEmThBrCM9xeR0Jn8XchceLpnq9U0vmSZQK_6lQKqrZ86UCqyedcfo372BcWleCklouT3ylYlETC-6SeJMVyEp6VLuyBGgOrydllIKIGE224Y3cV2HlX2-0M2HQedX1gHYVYmiKqjOnMXmitCSnF2nC1vKG8N68YsxJ6MpczIxTRHh5J4')">
+<span class="absolute bottom-2 left-2 px-1.5 py-0.5 rounded bg-primary-container text-on-primary font-caption text-caption font-semibold">3,500 meals/cycle</span>
+</div>
+<div class="flex-1 flex flex-col justify-between space-y-3">
+<div class="grid grid-cols-2 gap-2 text-body-sm font-body-sm">
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Truck Fleet</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">2x Eicher 14ft Rigs</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-0.5">Industrial LPG manifold + water tanks</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded">
+<span class="font-caption text-caption text-on-surface-variant block uppercase">Thermal Holding</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Insulated Dispensers</span>
+<span class="font-caption text-caption text-secondary block mt-0.5">Maintains 65°C safe hot food 8 hrs</span>
+</div>
+</div>
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block mb-1">Operational Model</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+                Rapid mobilization to relief evacuation clusters. Can hook directly to central raw grain supplies or mobilize with pre-packed dal, rice, and sealed dry biscuit rations for first 48 hours.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Panel -->
+<div class="px-space-lg py-space-md bg-surface-container-low flex items-center justify-between gap-space-md">
+<div class="flex items-center gap-2 text-caption font-caption text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container"></span>
+<span>FSSAI Certified Hygiene Protocols Active</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+            Coordinate Rations Hub
+          </button>
+<button class="px-space-md py-1.5 rounded bg-primary-container text-on-primary-fixed-variant hover:bg-primary font-label-md text-label-md flex items-center gap-1 transition-all" onclick="triggerDispatchModal('Heavy Relief Kitchen Unit (Mobile Langar Fleet)', 'Annapoorna Humanitarian Trust')">
+<span class="material-symbols-outlined text-[16px]">soup_kitchen</span>
+<span>Request Kitchen Rig</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Secondary Panel: Inter-Agency Operational Protocol & Mutual-Aid Attestation -->
+<div class="bg-surface-container-low rounded-xl p-space-lg mb-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined text-[28px]">handshake</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Standard Mutual-Aid Service Pact (ReliefNet SMASP-10)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl">
+          All shared vehicular assets, specialized engineering crews, and rescue boats operate under decentralized non-monetary aid compacts. Fuel replenishment is audited via QR ledger and backed by SDMA emergency contingency credits.
+        </p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+        Read Mutual-Aid Bylaws
+      </button>
+<button class="px-space-md py-2 rounded-lg bg-primary text-on-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Review Signed Compacts</span>
+</button>
+</div>
+</div>
+<!-- Telemetry & Joint Mission Drawer (Right Flyout) -->
+<div class="fixed top-0 right-0 h-full w-full max-w-lg bg-surface-container-lowest shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between" id="missionDrawer">
+<div class="flex flex-col flex-1 overflow-y-auto">
+<!-- Drawer Header -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-on-tertiary-container animate-pulse"></span>
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Joint Mission Desk</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">Mission #JMM-402</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" onclick="closeMissionDrawer()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Drawer Content -->
+<div class="p-space-lg space-y-space-lg">
+<!-- Target Mission Overview -->
+<div class="bg-surface-container-low p-space-md rounded-xl space-y-2">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Active Deployment</span>
+<span class="font-caption text-caption text-on-surface-variant">Started 4h 18m ago</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface block font-bold">Hosapete Flood Camp Medical Rapid Response</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            St. Jude Mobile Triage Clinic #1 assigned to triage 240 displaced families at Government Higher Primary School Relief Hub.
+          </p>
+</div>
+<!-- Telemetry Map Preview -->
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-2 font-semibold">Live GPS Node Telemetry</span>
+<div class="w-full h-44 rounded-xl bg-cover bg-center shadow-sm relative overflow-hidden flex items-end p-space-md" data-location="Hosapete, Karnataka" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCP-tumym7OQC4-UwSsW1_c6tD6x03jP09Ma5bMsPJx2KI9v2VJRCUY4wDlHcxU5jfBnC2ZWZW17sgSmdn9syd3Mn14lIRy6q8imRNlXI_oHjcLEAHLPX3rC9qYX_TTjH_81OQ9r0TdaqmxaOFVzb0WJUX1MDWkAbVXiXvkCp-AyLzsBMjjy07NPWMECaalRN7DWPHzRIHkx1QRPy4oY_hSTaSDrmmPY04TqKM1A1Fz')">
+<div class="bg-surface/90 backdrop-blur-md px- space-md py-1.5 rounded-lg flex items-center justify-between w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-error">navigation</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Current Speed: 38 km/h</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant">ETA: 22 Mins</span>
+</div>
+</div>
+</div>
+<!-- Consumable & Mutual-Aid Attestation Audit -->
+<div class="space-y-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block font-semibold">Mission Telemetry &amp; Log</span>
+<div class="bg-surface-container rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">local_gas_station</span>
+<span class="font-body-sm text-body-sm text-on-surface">Fuel Level (Diesel)</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">78% (Tank 60L)</span>
+</div>
+<div class="bg-surface-container rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-tertiary-container">medical_information</span>
+<span class="font-body-sm text-body-sm text-on-surface">Oxygen Reserve</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">2,400 L / 100%</span>
+</div>
+<div class="bg-surface-container rounded-lg p-space-sm flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">assignment_turned_in</span>
+<span class="font-body-sm text-body-sm text-on-surface">Attestation Compact</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-tertiary-container font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">check</span> Digitally Signed
+            </span>
+</div>
+</div>
+<!-- Crew Log Timeline -->
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-2 font-semibold">Operational Checkpoints</span>
+<div class="space-y-3 relative pl-4">
+<div class="flex items-start gap-2 relative">
+<span class="w-2 h-2 rounded-full bg-on-tertiary-container mt-1 shrink-0"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Checkpoint 2: Passed Tungabhadra Toll Gate</span>
+<span class="font-caption text-caption text-on-surface-variant">Zulu 08:12 · Paramedic reports smooth transit</span>
+</div>
+</div>
+<div class="flex items-start gap-2 relative">
+<span class="w-2 h-2 rounded-full bg-secondary mt-1 shrink-0"></span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium">Checkpoint 1: Departed Shivajinagar Hub</span>
+<span class="font-caption text-caption text-on-surface-variant">Zulu 04:24 · Pre-trip equipment certified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Drawer Footer Actions -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-between gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="closeMissionDrawer()">
+        Dismiss Panel
+      </button>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors">
+          Mission Log PDF
+        </button>
+<button class="px-space-md py-2 rounded-lg bg-primary-container text-on-primary-fixed-variant hover:bg-primary font-label-md text-label-md transition-colors">
+          Broadcast Comms
+        </button>
+</div>
+</div>
+</div>
+<!-- Dispatch / Mutual-Aid Request Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/40 backdrop-blur-sm" id="dispatchModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full shadow-2xl overflow-hidden flex flex-col">
+<!-- Modal Header -->
+<div class="p-space-lg bg-surface-container-low flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold block">Humanitarian Inter-Agency Dispatch</span>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold mt-1" id="modalTargetService">Specialized Asset Dispatch</h3>
+<span class="font-caption text-caption text-secondary font-medium" id="modalTargetProvider">St. Jude Health Mission</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors" onclick="closeDispatchModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<!-- Modal Body Form -->
+<div class="p-space-lg space-y-space-md">
+<div>
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-1 font-semibold">Incident / Crisis Cluster</label>
+<select class="w-full px-space-md py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none">
+<option>Flood Relief · North Karnataka (Active Priority)</option>
+<option>Bagalkot Water Contamination Zone</option>
+<option>Raichur Evacuation Transit Center 3</option>
+</select>
+</div>
+<div>
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-1 font-semibold">Target Destination / Delivery Hub Coordinates</label>
+<input class="w-full px-space-md py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none" type="text" value="Community Hall Center, Ward 4, Hosapete (15.2689° N, 76.3909° E)"/>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-1 font-semibold">Requested Duration</label>
+<select class="w-full px-space-md py-2 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none">
+<option>48 Hours (Standard)</option>
+<option>72 Hours (Extended)</option>
+<option>5 Days (Rotating Crew)</option>
+</select>
+</div>
+<div>
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-1 font-semibold">Fuel Attestation</label>
+<div class="h-10 px-space-md rounded-lg bg-surface-container flex items-center text-on-surface-variant font-caption text-caption">
+              SDMA Card Contingency
+            </div>
+</div>
+</div>
+<div class="p-space-md rounded-lg bg-surface-container-low space-y-1">
+<div class="flex items-center gap-1.5 text-secondary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>ReliefNet Non-Monetary Mutual-Aid Agreement</span>
+</div>
+<p class="font-caption text-caption text-on-surface-variant leading-relaxed">
+            By dispatching, requesting officer pledges emergency security clearances, secure staging access, and return replenishment of consumables under Karnataka Disaster Protocol #2024-C.
+          </p>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-lg bg-surface-container-low flex items-center justify-end gap-space-sm">
+<button class="px-space-md py-2 rounded-lg bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" onclick="closeDispatchModal()">
+          Cancel
+        </button>
+<button class="px-space-lg py-2 rounded-lg bg-primary-container text-on-primary-fixed-variant hover:bg-primary font-label-md text-label-md font-bold flex items-center gap-1.5 transition-all" onclick="closeDispatchModal(); alert('Emergency dispatch request transmitted via satellite packet relay to asset leads.');">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+<span>Confirm Dispatch Order</span>
+</button>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

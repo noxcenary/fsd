@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;family=Public+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary":"#094cb2","primary-container":"#3366cc","on-primary":"#ffffff","on-primary-container":"#e7ebff","primary-fixed":"#d9e2ff","primary-fixed-dim":"#b1c5ff","on-primary-fixed":"#001946","on-primary-fixed-variant":"#00419d","secondary":"#5a5f63","secondary-container":"#dfe3e8","secondary-fixed":"#dfe3e8","secondary-fixed-dim":"#c2c7cc","on-secondary":"#ffffff","on-secondary-container":"#606569","on-secondary-fixed":"#171c20","on-secondary-fixed-variant":"#42474b","tertiary":"#6d5e00","tertiary-container":"#bfab49","tertiary-fixed":"#f9e37a","tertiary-fixed-dim":"#dcc661","on-tertiary":"#ffffff","on-tertiary-container":"#4a3f00","on-tertiary-fixed":"#211b00","on-tertiary-fixed-variant":"#524600","error":"#ba1a1a","error-container":"#ffdad6","on-error":"#ffffff","on-error-container":"#93000a","surface":"#faf9fa","surface-dim":"#dbdadb","surface-bright":"#faf9fa","surface-container-lowest":"#ffffff","surface-container-low":"#f5f3f4","surface-container":"#efedee","surface-container-high":"#e9e8e9","surface-container-highest":"#e3e2e3","surface-variant":"#e3e2e3","on-surface":"#1b1c1d","on-surface-variant":"#434653","outline":"#737784","outline-variant":"#c3c6d5","background":"#faf9fa","on-background":"#1b1c1d","inverse-surface":"#303031","inverse-on-surface":"#f2f0f1","inverse-primary":"#b1c5ff","surface-tint":"#2259bf"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter-tablet":"1rem","margin":"1rem","margin-desktop":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"1.5rem","gutter-desktop":"1.5rem","gutter":"1rem","space-lg":"1rem","margin-tablet":"1.5rem","space-md":"0.75rem"},"fontFamily":{"headline":["Noto Serif", "serif"],"display":["Noto Serif", "serif"],"body":["Inter", "sans-serif"],"label":["Public Sans", "sans-serif"],"serif":["Noto Serif", "serif"]},"fontSize":{}}}}</script></head><body class="bg-background font-body text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low border-r border-[#e2e8f0] z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-lg flex items-center justify-between border-b border-[#e2e8f0] bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="w-8 h-8 bg-primary flex items-center justify-center rounded-lg shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">account_balance</span></div><div class="flex flex-col"><span class="font-headline font-bold text-base text-[#1a365d] tracking-tight">ReliefNet</span><span class="font-label text-[11px] text-secondary uppercase font-semibold tracking-wider">FieldGrid Relief OS</span></div></div><span class="px-space-xs py-0.5 rounded bg-blue-50 text-primary border border-blue-200 font-label text-[10px] font-bold uppercase tracking-wider">v4.2</span></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm space-y-space-lg"><nav class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label text-[11px] text-outline uppercase tracking-wider font-semibold">Operations Desk</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label text-[13px] text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label text-[13px] text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="discover-ngos" href="#"><span class="material-symbols-outlined text-[20px]">corporate_fare</span><span>Discover NGOs</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label text-[13px] text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="resources" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Resources</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label text-[13px] text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="requests" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Requests</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label text-[13px] text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ai-matching" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span>AI Matching</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label text-[13px] text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="services" href="#"><span class="material-symbols-outlined text-[20px]">medical_services</span><span>Services</span></a></nav><nav class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label text-[11px] text-outline uppercase tracking-wider font-semibold">Coordination</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label text-[13px] text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="activity-feed" href="#"><span class="material-symbols-outlined text-[20px]">dynamic_feed</span><span>Activity Feed</span></a><a aria-current="page" class="flex items-center justify-between px-space-md py-space-sm transition-all bg-[#1a365d] text-white font-label text-[13px] font-semibold rounded-lg shadow-sm" data-path="messages" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">forum</span><span>Messages</span></div><span class="px-1.5 py-0.5 rounded-full bg-primary-container text-white text-[11px] font-bold">3</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label text-[13px] text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="transactions-transfers" href="#"><span class="material-symbols-outlined text-[20px]">swap_horiz</span><span>Transactions &amp; Transfers</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label text-[13px] text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dispute-escalations" href="#"><span class="material-symbols-outlined text-[20px]">gavel</span><span>Dispute Escalations</span></a></nav><nav class="space-y-space-xs"><div class="px-space-sm py-space-xs font-label text-[11px] text-outline uppercase tracking-wider font-semibold">Governance</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label text-[13px] text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="org-profile-trust" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Org Profile &amp; Trust</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-label text-[13px] text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings</span></a></nav></div></div><div class="p-space-md bg-surface-container-low border-t border-[#e2e8f0]"><div class="flex items-center justify-between p-space-sm rounded-lg bg-surface-container-lowest border border-[#e2e8f0] shadow-sm"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-[18px]">satellite_alt</span><div class="flex flex-col"><span class="font-label text-xs text-on-surface font-bold">Mesh Uplink</span><span class="font-body text-[11px] text-secondary">99.8% Online</span></div></div><div class="w-2.5 h-2.5 rounded-full bg-blue-100 flex items-center justify-center"><div class="w-1.5 h-1.5 rounded-full bg-primary"></div></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/95 backdrop-blur-xl z-40 border-b border-[#e2e8f0] shadow-sm"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md overflow-hidden"><div class="flex items-center gap-space-xs px-2.5 py-1 rounded bg-red-50 text-red-700 border border-red-200 font-label text-xs uppercase tracking-wide shrink-0"><span class="material-symbols-outlined text-[15px]">warning</span><span class="font-bold">CRISIS ACTIVE:</span><span>FLOOD RELIEF - NORTH KARNATAKA</span></div><div class="hidden xl:flex items-center gap-space-xs px-2.5 py-1 rounded bg-surface-container border border-[#e2e8f0] font-label text-xs text-on-surface-variant shrink-0"><span class="material-symbols-outlined text-[14px] text-outline">schedule</span><span>Zulu: 14:32:08 UTC</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="relative flex items-center w-64 md:w-80 bg-surface-container-low border border-[#e2e8f0] rounded-lg px-space-sm py-1.5"><span class="material-symbols-outlined text-[18px] text-outline mr-space-xs">emergency</span><input class="w-full bg-transparent font-body text-xs text-on-surface placeholder:text-outline focus:outline-none" placeholder="Search ops, manifest, coords..." type="text"/></div><div class="relative p-1.5 rounded-lg border border-[#e2e8f0] bg-surface-container-lowest hover:bg-surface-container transition-colors cursor-pointer"><span class="material-symbols-outlined text-on-surface-variant text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></div><div class="flex items-center gap-space-sm pl-space-xs py-1 pr-space-sm bg-surface-container-lowest border border-[#e2e8f0] rounded-lg hover:bg-surface-container transition-colors cursor-pointer"><div class="w-8 h-8 rounded-full bg-[#1a365d] text-white flex items-center justify-center font-bold text-xs"><span class="material-symbols-outlined text-white text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label text-xs text-on-surface font-bold leading-tight">Dr. V. Rao</span><span class="font-body text-[11px] text-secondary leading-tight truncate max-w-[190px]">Asha Relief (Govt Verified)</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Command Strip & Breadcrumbs -->
+<div class="px-space-lg py-5 bg-surface-container-lowest border-b border-[#e2e8f0] shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs text-secondary font-label text-[11px] uppercase tracking-wider mb-1 font-semibold">
+<span class="material-symbols-outlined text-[15px] text-primary">shield</span>
+<span class="text-primary font-bold">Secure Coordination Bus</span>
+<span>•</span>
+<span class="text-on-secondary-container font-semibold">Node KA-BLR-EAST-09</span>
+</div>
+<h1 class="font-headline text-2xl md:text-3xl text-[#1a365d] font-bold tracking-tight">Operational Comms &amp; Mission Coordination Desk</h1>
+<p class="font-body text-xs md:text-sm text-on-surface-variant mt-1">End-to-end encrypted dispatch channels, bilateral consignment negotiation, and rapid mutual-aid telecommunications.</p>
+</div>
+<!-- Global Console Actions -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="px-space-md py-2 rounded-lg border border-[#e2e8f0] bg-surface-container-lowest text-on-surface font-label text-xs font-semibold hover:bg-surface-container transition-colors flex items-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-secondary">file_download</span>
+<span>Export Comms Audit Log</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-error text-on-error font-label text-xs font-semibold hover:opacity-90 transition-opacity flex items-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">cell_tower</span>
+<span>Emergency Broadcast Ping</span>
+</button>
+<button class="px-space-md py-2 rounded-lg bg-primary hover:bg-[#1a365d] text-white font-label text-xs font-semibold transition-colors flex items-center gap-space-xs shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>+ New Mission Channel</span>
+</button>
+</div>
+</div>
+<!-- Main Dual-Column Comm Workspace -->
+<div class="grid grid-cols-1 lg:grid-cols-12 min-h-[calc(100vh-140px)]">
+<!-- LEFT COLUMN: Conversation Directory & Active Dispatch Threads (4 cols on desktop) -->
+<div class="lg:col-span-4 xl:col-span-4 bg-[#f8fafc] border-r border-[#e2e8f0] flex flex-col">
+<!-- Directory Toolbar & Live Filters -->
+<div class="p-space-md bg-surface-container-lowest border-b border-[#e2e8f0] flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label text-[11px] uppercase tracking-wider text-outline font-bold">Active Consignment Channels</span>
+<span class="px-2 py-0.5 rounded-full bg-blue-50 text-primary border border-blue-200 font-label text-[11px] font-bold">18 Online</span>
+</div>
+<!-- Search Bar -->
+<div class="relative flex items-center bg-surface-container-low border border-[#e2e8f0] rounded-lg px-space-sm py-1.5">
+<span class="material-symbols-outlined text-[18px] text-outline mr-space-xs">search</span>
+<input class="w-full bg-transparent font-body text-xs text-on-surface placeholder:text-outline focus:outline-none" placeholder="Filter NGO name, #REQ, or #WB..." type="text"/>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-on-surface">tune</span>
+</div>
+<!-- Filter Sub-Tabs -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-0.5">
+<button class="px-2.5 py-1 rounded-lg bg-primary text-white font-label text-xs font-semibold shrink-0 whitespace-nowrap shadow-sm" type="button">All (18)</button>
+<button class="px-2.5 py-1 rounded-lg border border-[#e2e8f0] bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label text-xs shrink-0 whitespace-nowrap" type="button">Active Transfers (7)</button>
+<button class="px-2.5 py-1 rounded-lg border border-[#e2e8f0] bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label text-xs shrink-0 whitespace-nowrap" type="button">Pledges (4)</button>
+<button class="px-2.5 py-1 rounded-lg border border-[#e2e8f0] bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label text-xs shrink-0 whitespace-nowrap" type="button">Disputes (2)</button>
+</div>
+</div>
+<!-- Thread List -->
+<div class="flex-1 overflow-y-auto space-y-1.5 p-space-sm">
+<!-- THREAD 1: ACTIVE SELECTED -->
+<div class="p-space-md rounded-lg bg-white border-l-4 border-l-primary border-y border-r border-[#e2e8f0] shadow-sm cursor-pointer relative transition-all">
+<div class="flex items-start justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary inline-block animate-pulse"></span>
+<span class="font-headline font-bold text-sm text-[#1a365d] truncate">XYZ Food Relief Foundation</span>
+</div>
+<span class="font-body text-[11px] text-secondary shrink-0 font-mono">2m ago</span>
+</div>
+<div class="flex items-center gap-1.5 mb-2 flex-wrap">
+<span class="px-1.5 py-0.5 rounded bg-blue-50 text-primary border border-blue-200 font-label text-[10px] font-bold">Govt Tier-1</span>
+<span class="px-1.5 py-0.5 rounded bg-slate-100 text-slate-700 font-label text-[10px] font-semibold">TRIP IN PROGRESS</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label text-[10px]">SLA 45m</span>
+</div>
+<div class="font-headline text-xs text-[#1a365d] font-bold truncate mb-1">
+            Requisition #REQ-1049: 300 kg Rice Transit
+          </div>
+<p class="font-body text-xs text-on-surface-variant line-clamp-2 mb-2 leading-relaxed">
+            Driver Ramesh K. (Tata 407) has cleared the Bellandur flyover checkpoint. Awaiting dock assignment.
+          </p>
+<div class="flex items-center justify-between pt-1 border-t border-slate-100">
+<div class="flex items-center gap-1 text-secondary font-label text-[11px]">
+<span class="material-symbols-outlined text-[14px] text-primary">local_shipping</span>
+<span class="font-mono">WB-2023-8821A</span>
+</div>
+<span class="w-5 h-5 rounded-full bg-primary text-white font-label text-[11px] flex items-center justify-center font-bold">1</span>
+</div>
+</div>
+<!-- THREAD 2: Helping Hands Society -->
+<div class="p-space-md rounded-lg bg-white border border-[#e2e8f0] hover:border-blue-300 transition-colors cursor-pointer shadow-xs">
+<div class="flex items-start justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline-variant inline-block"></span>
+<span class="font-headline font-semibold text-sm text-[#1a365d] truncate">Helping Hands Society</span>
+</div>
+<span class="font-body text-[11px] text-outline shrink-0 font-mono">14m ago</span>
+</div>
+<div class="flex items-center gap-1.5 mb-2 flex-wrap">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label text-[10px]">Tier-2 Community</span>
+<span class="px-1.5 py-0.5 rounded bg-blue-50 text-primary border border-blue-200 font-label text-[10px] font-semibold">HANDSHAKE READY</span>
+</div>
+<div class="font-headline text-xs text-on-surface font-semibold truncate mb-1">
+            #REQ-1049 Split: 150 kg Fortified Grain
+          </div>
+<p class="font-body text-xs text-on-surface-variant line-clamp-1">
+            Waybill #WB-2023-8821B signed by our trustee. Awaiting your dispatch pin.
+          </p>
+</div>
+<!-- THREAD 3: Red Cross Karnataka Disaster Wing -->
+<div class="p-space-md rounded-lg bg-white border border-[#e2e8f0] hover:border-blue-300 transition-colors cursor-pointer shadow-xs">
+<div class="flex items-start justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+<span class="font-headline font-semibold text-sm text-[#1a365d] truncate">Red Cross Karnataka Wing</span>
+</div>
+<span class="font-body text-[11px] text-outline shrink-0 font-mono">42m ago</span>
+</div>
+<div class="flex items-center gap-1.5 mb-2 flex-wrap">
+<span class="px-1.5 py-0.5 rounded bg-blue-50 text-primary border border-blue-200 font-label text-[10px] font-bold">Tier-1 Govt</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface font-label text-[10px]">DEPLOYED</span>
+</div>
+<div class="font-headline text-xs text-on-surface font-semibold truncate mb-1">
+            Swiftwater IRB Boat Repositioning #SRV-404
+          </div>
+<p class="font-body text-xs text-on-surface-variant line-clamp-1">
+            3 Zodiac rafts en route to Gokak riverine pocket. UHF Channel 04 locked.
+          </p>
+</div>
+<!-- THREAD 4: Hubballi Mutual Aid Trust (DISPUTE) -->
+<div class="p-space-md rounded-lg bg-red-50/50 border border-red-200 hover:bg-red-50 transition-colors cursor-pointer shadow-xs">
+<div class="flex items-start justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-error text-[16px]">warning</span>
+<span class="font-headline font-semibold text-sm text-red-900 truncate">Hubballi Mutual Aid</span>
+</div>
+<span class="font-body text-[11px] text-error shrink-0 font-mono font-bold">1h ago</span>
+</div>
+<div class="flex items-center gap-1.5 mb-2 flex-wrap">
+<span class="px-1.5 py-0.5 rounded bg-red-100 text-red-800 font-label text-[10px] font-bold">DISPUTE ACTIVE</span>
+<span class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label text-[10px]">SDMA Arbiter</span>
+</div>
+<div class="font-headline text-xs text-error font-semibold truncate mb-1">
+            Arbitration: Consignment #TR-8819 weight discrepancy
+          </div>
+<p class="font-body text-xs text-on-surface-variant line-clamp-1">
+            Weighbridge report logged -22kg tare variance. SDMA mediator assigned.
+          </p>
+</div>
+<!-- THREAD 5: MedRelief Coastal Response -->
+<div class="p-space-md rounded-lg bg-white border border-[#e2e8f0] hover:border-blue-300 transition-colors cursor-pointer shadow-xs">
+<div class="flex items-start justify-between gap-space-xs mb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-outline-variant inline-block"></span>
+<span class="font-headline font-semibold text-sm text-[#1a365d] truncate">MedRelief Coastal Response</span>
+</div>
+<span class="font-body text-[11px] text-outline shrink-0 font-mono">3h ago</span>
+</div>
+<div class="flex items-center gap-1.5 mb-2 flex-wrap">
+<span class="px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-label text-[10px] font-semibold">DELIVERED</span>
+<span class="px-1.5 py-0.5 rounded bg-blue-50 text-primary border border-blue-200 font-label text-[10px] font-semibold">AUDIT SEALED</span>
+</div>
+<div class="font-headline text-xs text-on-surface font-semibold truncate mb-1">
+            180 Vials Antivenom Cold-Chain Escort
+          </div>
+<p class="font-body text-xs text-on-surface-variant line-clamp-1">
+            Digital signatures synchronized. Temp curve maintained at 3.2°C.
+          </p>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Active Bilateral Consignment View (8 cols on desktop) -->
+<div class="lg:col-span-8 xl:col-span-8 bg-surface-container-lowest flex flex-col justify-between">
+<!-- Right Channel Header -->
+<div class="p-space-md bg-white border-b border-[#e2e8f0] shadow-xs flex flex-col gap-space-sm">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<!-- Partner Info & Credential Stack -->
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-lg bg-[#eff6ff] border border-blue-200 text-primary flex items-center justify-center font-headline text-lg shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[24px]">local_shipping</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline text-lg text-[#1a365d] font-bold">XYZ Food Relief Foundation</span>
+<span class="px-2 py-0.5 rounded bg-blue-50 border border-blue-200 text-primary font-label text-[11px] font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+<span>DARPAN #KA-2018-3109</span>
+</span>
+<span class="px-2 py-0.5 rounded bg-surface-container border border-[#e2e8f0] text-on-surface font-mono text-[11px]">
+                  Trust 98.8/100
+                </span>
+</div>
+<div class="flex items-center gap-space-md mt-0.5 flex-wrap font-body text-xs text-secondary">
+<span>Nodal: Ramesh K. (+91 98450 19283)</span>
+<span>•</span>
+<span class="flex items-center gap-1 font-mono text-primary font-medium">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+<span>TLS 1.3 / ECDSA P-256 Verified Channel</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Quick Channel Operations -->
+<div class="flex items-center gap-space-xs shrink-0 flex-wrap">
+<button class="px-space-sm py-1.5 rounded-lg border border-[#e2e8f0] bg-white text-on-surface font-label text-xs font-semibold hover:bg-surface-container shadow-xs flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">description</span>
+<span>Inspect Waybill</span>
+</button>
+<button class="px-space-sm py-1.5 rounded-lg bg-primary hover:bg-[#1a365d] text-white font-label text-xs font-semibold shadow-xs flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">fmd_good</span>
+<span>Live GPS (ETA 18m)</span>
+</button>
+<button class="p-1.5 rounded-lg border border-[#e2e8f0] bg-white text-outline hover:text-on-surface shadow-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Embedded Mission Context Banner -->
+<div class="p-3 rounded-lg bg-[#eff6ff] border border-blue-200 flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="px-2 py-1 rounded bg-[#1a365d] text-white font-mono text-[11px] font-bold uppercase tracking-wider">MISSION #REQ-1049</span>
+<div class="flex flex-col">
+<span class="font-headline text-xs md:text-sm text-[#1a365d] font-bold">300 kg Sona Masoori Rice Bilateral Allocation</span>
+<span class="font-body text-xs text-slate-600">Pledged to cover 60% of Bellandur Camp 04 shortfalls.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="flex flex-col items-end">
+<span class="font-mono text-[10px] text-secondary uppercase font-semibold">Progress Matrix</span>
+<span class="font-label text-xs font-bold text-[#1a365d] flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>STATE 03: IN TRANSIT</span>
+</span>
+</div>
+<!-- Radial mini-progress bar -->
+<div class="w-9 h-9 rounded-full bg-white border border-blue-300 flex items-center justify-center font-label text-xs font-bold text-primary shadow-xs">
+              60%
+            </div>
+</div>
+</div>
+</div>
+<!-- Secure Chat Stream -->
+<div class="flex-1 overflow-y-auto p-space-lg space-y-space-md bg-[#faf9fa]">
+<!-- System Audit Event Notice -->
+<div class="flex items-center justify-center my-space-xs">
+<div class="max-w-2xl px-space-md py-1.5 rounded-lg bg-white border border-[#e2e8f0] text-center font-body text-xs text-on-surface-variant flex items-center gap-space-xs shadow-xs">
+<span class="material-symbols-outlined text-[15px] text-primary">lock_clock</span>
+<span>Channel initialized from Algorithmic Match #M-8821 (94% Compatibility). Bilateral allocation agreed: 300 kg @ Indiranagar Warehouse Bay 04. ECDSA Handshake signed.</span>
+</div>
+</div>
+<!-- Inbound Message: Dr. Arvind (Partner Lead) -->
+<div class="flex items-start gap-space-sm max-w-2xl">
+<div class="w-8 h-8 rounded-full bg-[#1a365d] text-white flex items-center justify-center font-label text-xs font-bold shrink-0 shadow-xs">
+            DA
+          </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-headline font-bold text-xs text-[#1a365d]">Dr. Arvind (XYZ Lead)</span>
+<span class="font-body text-[11px] text-outline">13:52 IST</span>
+<span class="material-symbols-outlined text-[13px] text-primary">verified_user</span>
+</div>
+<div class="p-space-md rounded-xl bg-white border border-[#e2e8f0] shadow-xs text-on-surface font-body text-sm leading-relaxed">
+              Good afternoon Dr. Rao. Our warehouse team in Indiranagar has palletized the 300 kg lot with hermetic moisture barrier. Vehicle Tata 407 (KA-04-E-2192) has departed with driver Ramesh K. Digital waybill token has been generated below.
+            </div>
+</div>
+</div>
+<!-- Interactive Digital Waybill Card inside Chat -->
+<div class="max-w-2xl ml-11">
+<div class="p-space-md rounded-xl bg-white border border-[#e2e8f0] shadow-sm space-y-space-sm">
+<!-- Header of Waybill -->
+<div class="flex items-center justify-between pb-space-xs border-b border-[#e2e8f0]">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">receipt_long</span>
+<span class="font-headline font-bold text-sm text-[#1a365d]">Digital Consignment Waybill #WB-2023-8821A</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-blue-50 text-primary border border-blue-200 font-label text-[10px] font-bold">
+                SEALED &amp; VERIFIED
+              </span>
+</div>
+<!-- Waybill Specification Grid -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm p-space-sm bg-[#eff6ff] rounded-lg border border-blue-100 font-mono text-xs">
+<div>
+<span class="block font-label text-[10px] text-outline uppercase tracking-wider font-semibold">Consignor</span>
+<span class="font-bold text-[#1a365d]">XYZ Food Relief</span>
+</div>
+<div>
+<span class="block font-label text-[10px] text-outline uppercase tracking-wider font-semibold">Consignee</span>
+<span class="font-bold text-[#1a365d]">Asha Relief (Camp 04)</span>
+</div>
+<div>
+<span class="block font-label text-[10px] text-outline uppercase tracking-wider font-semibold">Driver &amp; Unit</span>
+<span class="font-bold text-[#1a365d]">Ramesh (Tata 407)</span>
+</div>
+<div>
+<span class="block font-label text-[10px] text-outline uppercase tracking-wider font-semibold">Payload</span>
+<span class="font-bold text-[#1a365d]">12 Bags (300 kg)</span>
+</div>
+</div>
+<!-- Live GPS Status Corridor -->
+<div class="flex flex-col gap-1.5 p-space-sm bg-surface-container-low rounded-lg border border-[#e2e8f0]">
+<div class="flex items-center justify-between font-label text-xs text-on-surface">
+<span class="flex items-center gap-1 font-semibold text-[#1a365d]">
+<span class="material-symbols-outlined text-[15px] text-primary">near_me</span>
+<span>GPS Corridor: Indiranagar → Bellandur Staging Dock</span>
+</span>
+<span class="font-mono text-secondary text-[11px]">4.8 km remaining • ETA 18 mins</span>
+</div>
+<!-- Route Progression graphic -->
+<div class="w-full bg-[#e2e8f0] h-2 rounded-full overflow-hidden flex">
+<div class="bg-primary h-full" style="width: 72%"></div>
+</div>
+<div class="flex justify-between font-body text-[11px] text-outline">
+<span>Hub Departed (13:45)</span>
+<span class="text-primary font-semibold">Checkpoint 2 Cleared</span>
+<span>Camp 04 Dock</span>
+</div>
+</div>
+<!-- Handshake Authorization & Hash Preview -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-xs font-mono text-[11px] text-secondary">
+<span class="material-symbols-outlined text-[15px] text-primary">qr_code_2</span>
+<span>HMAC Hash: 0x98AF...4B12 (Dual Secret Required)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1.5 rounded-lg border border-[#e2e8f0] bg-white text-on-surface font-label text-xs font-semibold hover:bg-surface-container transition-colors" type="button">
+                  Inspect Manifest
+                </button>
+<button class="px-space-md py-1.5 rounded-lg bg-primary hover:bg-[#1a365d] text-white font-label text-xs transition-colors font-bold shadow-xs" type="button">
+                  Sign Handshake Token
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Outbound Message: Current User (Dr. V. Rao) -->
+<div class="flex items-start gap-space-sm max-w-2xl ml-auto flex-row-reverse">
+<div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-label text-xs font-bold shrink-0 shadow-xs">
+            VR
+          </div>
+<div class="flex flex-col items-end">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="material-symbols-outlined text-[13px] text-primary">verified</span>
+<span class="font-body text-[11px] text-outline">14:10 IST</span>
+<span class="font-headline font-bold text-xs text-[#1a365d]">Dr. V. Rao (You)</span>
+</div>
+<div class="p-space-md rounded-xl bg-primary text-white shadow-sm font-body text-sm leading-relaxed text-left">
+              Acknowledged Dr. Arvind. Our field camp dock lead Dr. Vinay Rao is stationed at Staging Bay 02 with manual unloading crew ready. Water level along the culvert is clear and vehicle passage is open. Handshake token will be verified via biometric scanner at gate entry.
+            </div>
+</div>
+</div>
+<!-- Inbound Message: Driver Ramesh K. -->
+<div class="flex items-start gap-space-sm max-w-2xl">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-[#e2e8f0] text-[#1a365d] flex items-center justify-center font-label text-xs font-bold shrink-0">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="font-headline font-bold text-xs text-[#1a365d]">Ramesh K. (Driver Tata 407)</span>
+<span class="font-body text-[11px] text-outline">14:31 IST</span>
+<span class="px-1.5 py-0.2 rounded bg-blue-50 text-primary border border-blue-200 font-label text-[10px] font-mono">Mobile App</span>
+</div>
+<div class="p-space-md rounded-xl bg-white border border-[#e2e8f0] shadow-xs text-on-surface font-body text-sm leading-relaxed">
+              Arrived at Bellandur perimeter gate. Armed security requires consignee gate pass code to proceed inside Bay 02. Engine idling.
+            </div>
+</div>
+</div>
+</div>
+<!-- Chat Input Console & Mission Controls -->
+<div class="p-space-md bg-white border-t border-[#e2e8f0] shadow-xs flex flex-col gap-space-sm">
+<!-- Quick Fast-Action Chips -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-1">
+<button class="px-2.5 py-1 rounded-lg border border-[#e2e8f0] bg-surface-container-low text-on-surface-variant hover:text-primary hover:border-blue-300 font-label text-xs shrink-0 flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary">pin</span>
+<span>Issue Gate Pass #BP-402</span>
+</button>
+<button class="px-2.5 py-1 rounded-lg border border-[#e2e8f0] bg-surface-container-low text-on-surface-variant hover:text-primary hover:border-blue-300 font-label text-xs shrink-0 flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary">pin_drop</span>
+<span>Transmit Bay 02 Geofence Pin</span>
+</button>
+<button class="px-2.5 py-1 rounded-lg border border-[#e2e8f0] bg-surface-container-low text-on-surface-variant hover:text-primary hover:border-blue-300 font-label text-xs shrink-0 flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px] text-primary">qr_code</span>
+<span>Broadcast Consignee OTP</span>
+</button>
+<button class="px-2.5 py-1 rounded-lg bg-red-50 text-red-700 border border-red-200 hover:bg-red-100 font-label text-xs shrink-0 flex items-center gap-1 ml-auto transition-colors" type="button">
+<span class="material-symbols-outlined text-[14px]">report_problem</span>
+<span>Escalate Consignment Issue</span>
+</button>
+</div>
+<!-- Input Box and Control Shell -->
+<div class="flex flex-col rounded-xl border border-[#e2e8f0] bg-[#faf9fa] p-space-xs focus-within:border-primary focus-within:bg-white transition-all">
+<textarea class="w-full bg-transparent px-space-sm py-1.5 font-body text-xs md:text-sm text-on-surface placeholder:text-outline focus:outline-none resize-none" placeholder="Compose signed mission dispatch message to XYZ Food Relief team and logistics escorts..." rows="2"></textarea>
+<div class="flex items-center justify-between pt-space-xs px-space-xs border-t border-slate-100">
+<div class="flex items-center gap-1">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Attach Manifest / Waybill proof" type="button">
+<span class="material-symbols-outlined text-[18px]">attachment</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Send Field Geotag" type="button">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Send Signed Handshake Key" type="button">
+<span class="material-symbols-outlined text-[18px]">key</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Voice Dispatch Recording" type="button">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-mono text-[11px] text-secondary hidden sm:inline-block">ECDSA-256 Enabled</span>
+<button class="px-space-lg py-1.5 rounded-lg bg-primary hover:bg-[#1a365d] text-white font-label text-xs font-semibold transition-colors flex items-center gap-space-xs shadow-xs" type="button">
+<span>Dispatch</span>
+<span class="material-symbols-outlined text-[16px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

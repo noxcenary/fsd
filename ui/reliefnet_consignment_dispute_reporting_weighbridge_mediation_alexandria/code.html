@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&amp;family=Public+Sans:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"primary-container":"#0f392b","inverse-primary":"#a5d0bc","error":"#ba1a1a","on-primary-fixed":"#002116","surface-bright":"#f8faf8","tertiary-fixed":"#6ffbbe","tertiary-container":"#003a25","tertiary":"#002215","outline-variant":"#c1c8c3","on-primary":"#ffffff","on-surface":"#191c1b","surface":"#f8faf8","surface-container-high":"#e6e9e7","on-secondary-container":"#3d6d5d","surface-dim":"#d8dad9","primary":"#002318","surface-container-lowest":"#ffffff","on-error":"#ffffff","error-container":"#ffdad6","on-tertiary-container":"#00af79","on-tertiary":"#ffffff","surface-container-highest":"#e1e3e1","on-tertiary-fixed-variant":"#005236","on-secondary-fixed":"#002117","background":"#f8faf8","on-error-container":"#93000a","surface-variant":"#e1e3e1","secondary":"#376757","on-primary-fixed-variant":"#264e3f","outline":"#717974","inverse-surface":"#2e3130","surface-tint":"#3e6656","on-primary-container":"#7aa391","tertiary-fixed-dim":"#4edea3","on-secondary":"#ffffff","on-tertiary-fixed":"#002113","primary-fixed":"#c0ecd7","surface-container-low":"#f2f4f2","on-secondary-fixed-variant":"#1d4f40","surface-container":"#eceeec","secondary-fixed-dim":"#9ed1bd","secondary-container":"#baeed9","primary-fixed-dim":"#a5d0bc","on-background":"#191c1b","secondary-fixed":"#baeed9","on-surface-variant":"#414844","inverse-on-surface":"#eff1ef"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"gutter-tablet":"1rem","margin":"1rem","margin-desktop":"2rem","space-sm":"0.5rem","space-xs":"0.25rem","space-xl":"1.5rem","gutter-desktop":"1.5rem","gutter":"1rem","space-lg":"1rem","margin-tablet":"1.5rem","space-md":"0.75rem"},"fontFamily":{"label-lg":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],"label-sm":["Inter"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"caption":["Inter"],"display-lg":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"label-md":["Inter"]},"fontSize":{"label-lg":["14px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"600"}],"display-lg-mobile":["26px",{"lineHeight":"34px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"caption":["12px",{"lineHeight":"16px","fontWeight":"400"}],"display-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"600"}]}}}}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-low"><div class="flex items-center gap-space-sm"><div class="w-7 h-7 bg-primary flex items-center justify-center rounded"><span class="material-symbols-outlined text-on-primary text-[18px]">grid_view</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">ReliefNet</span><span class="font-label-sm text-label-sm text-secondary uppercase">FieldGrid Relief OS</span></div></div><span class="px-space-xs py-0.5 rounded bg-secondary-container text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase">v4.2</span></div><div class="flex-1 overflow-y-auto px-space-md py-space-sm space-y-space-lg"><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Operations Desk</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="discover-ngos" href="#"><span class="material-symbols-outlined text-[20px]">corporate_fare</span><span>Discover NGOs</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="resources" href="#"><span class="material-symbols-outlined text-[20px]">inventory_2</span><span>Resources</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="requests" href="#"><span class="material-symbols-outlined text-[20px]">assignment_late</span><span>Requests</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="ai-matching" href="#"><span class="material-symbols-outlined text-[20px]">hub</span><span>AI Matching</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="services" href="#"><span class="material-symbols-outlined text-[20px]">medical_services</span><span>Services</span></a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Coordination</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="activity-feed" href="#"><span class="material-symbols-outlined text-[20px]">dynamic_feed</span><span>Activity Feed</span></a><a class="flex items-center justify-between px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="messages" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">forum</span><span>Messages</span></div><span class="px-space-xs py-0.5 rounded bg-error text-on-error font-label-sm text-label-sm">3</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="transactions-transfers" href="#"><span class="material-symbols-outlined text-[20px]">swap_horiz</span><span>Transactions &amp; Transfers</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-container text-on-primary font-label-lg rounded" data-path="dispute-escalations" href="#"><span class="material-symbols-outlined text-[20px]">gavel</span><span>Dispute Escalations</span></a></nav><nav class="space-y-space-xs" data-active-classes="bg-primary-container text-on-primary font-label-lg rounded"><div class="px-space-sm py-space-xs font-label-sm text-label-sm text-outline uppercase tracking-wider">Governance</div><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="org-profile-trust" href="#"><span class="material-symbols-outlined text-[20px]">verified_user</span><span>Org Profile &amp; Trust</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Settings</span></a></nav></div></div><div class="p-space-md bg-surface-container"><div class="flex items-center justify-between p-space-sm rounded bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-secondary text-[18px]">satellite_alt</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface font-bold">Mesh Uplink</span><span class="font-caption text-caption text-secondary">99.8% Online</span></div></div><div class="w-2 h-2 rounded-full bg-secondary-container flex items-center justify-center"><div class="w-1.5 h-1.5 rounded-full bg-secondary"></div></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/90 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-space-lg flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md overflow-hidden"><div class="flex items-center gap-space-xs px-space-sm py-1 rounded bg-error-container text-on-error-container font-label-sm text-label-sm uppercase tracking-wide shrink-0"><span class="material-symbols-outlined text-[14px]">warning</span><span class="font-bold">CRISIS ACTIVE:</span><span>FLOOD RELIEF - NORTH KARNATAKA</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant shrink-0"><span class="material-symbols-outlined text-[14px] text-outline">schedule</span><span>Zulu: 14:32:08 UTC</span></div></div><div class="flex items-center gap-space-md shrink-0"><div class="relative flex items-center w-64 md:w-80 bg-surface-container-low rounded px-space-sm py-1.5"><span class="material-symbols-outlined text-[18px] text-outline mr-space-xs">emergency</span><input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none" placeholder="Search ops, manifest, coords..." type="text"/></div><div class="relative p-1.5 rounded bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer"><span class="material-symbols-outlined text-on-surface-variant text-[20px]">notifications</span><span class="absolute top-1 right-1 w-2 h-2 rounded-full bg-error"></span></div><div class="flex items-center gap-space-sm pl-space-xs py-1 pr-space-sm bg-surface-container-low rounded hover:bg-surface-container-high transition-colors cursor-pointer"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden md:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-bold leading-tight">Dr. V. Rao</span><span class="font-caption text-caption text-secondary leading-tight truncate max-w-[190px]">Asha Relief (Govt Verified)</span></div></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Interactive Navigation / Breadcrumbs & Action Bar -->
+<div class="p-space-lg md:px-margin-desktop bg-surface-container-low shadow-sm"><div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs font-caption text-caption text-secondary">
+<span class="hover:text-on-surface cursor-pointer">Governance &amp; Trust</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="hover:text-on-surface cursor-pointer">Dispute Escalations</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="font-label-sm text-label-sm text-primary font-bold font-mono">Case #DISP-2024-042</span>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline text-[26px] font-bold text-primary tracking-tight" style="font-family: 'Noto Serif', Georgia, serif;">Consignment Dispute Resolution &amp; Weighbridge Arbitration Desk</h1>
+<span class="px-space-xs py-0.5 rounded bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase tracking-wider font-semibold">NDMA Rule 14.B Compliant</span>
+</div>
+<p class="font-body text-body-sm text-on-surface-variant max-w-4xl">
+Cryptographically audited incident mediation for weight variances, damaged rations, cold-chain breaches, and delivery disputes under NDMA Inter-Agency Rules.
+</p>
+</div>
+<div class="flex items-center gap-space-sm shrink-0 flex-wrap">
+<button class="px-space-md py-1.5 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors flex items-center gap-space-xs shadow-sm" onclick="exportDocketModal()">
+<span class="material-symbols-outlined text-[18px] text-secondary">picture_as_pdf</span>
+<span>Export Case Docket (.PDF)</span>
+</button>
+<button class="px-space-md py-1.5 rounded bg-secondary-container text-on-secondary-container font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors flex items-center gap-space-xs shadow-sm" onclick="summonLiaisonToast()">
+<span class="material-symbols-outlined text-[18px]">cell_tower</span>
+<span>Summon State Liaison</span>
+</button>
+<button class="px-space-md py-1.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors flex items-center gap-space-xs shadow-sm" onclick="logIncidentModal()">
+<span class="material-symbols-outlined text-[18px]">add_box</span>
+<span>+ Log New Incident</span>
+</button>
+</div>
+</div></div>
+<!-- Primary Working Canvas -->
+<div class="p-space-lg md:p-margin-desktop space-y-space-lg">
+<!-- Top Alert Banner: Case Urgency Status & SLA Countdown -->
+<div class="relative overflow-hidden rounded bg-surface-container-lowest p-space-lg shadow-sm"><div class="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-error-container/20 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-space-md relative z-10">
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="w-12 h-12 rounded bg-error-container text-on-error-container flex items-center justify-center shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[28px]">balance</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="text-[18px] text-on-surface font-bold" style="font-family: 'Noto Serif', Georgia, serif;">INCIDENT #DISP-2024-042: Weight Discrepancy on Requisition #REQ-1014</span>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm uppercase font-bold tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+STATE: DISPUTED / UNDER ARBITRATION
+</span>
+</div>
+<div class="flex items-center gap-space-md mt-1 flex-wrap font-caption text-caption text-secondary">
+<span class="font-semibold text-error">TIER-2 WEIGHT VARIANCE (&gt; 5% TOLERANCE BREACH)</span>
+<span>•</span>
+<span>Arbitration Sector: Hubballi-Belagavi Logistics Corridor</span>
+<span>•</span>
+<span>Jurisdiction: Karnataka State SDMA Taskforce</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-md bg-surface-container-high px-space-md py-space-sm rounded shrink-0 border-t border-surface-container-high">
+<span class="material-symbols-outlined text-[22px] text-primary">hourglass_top</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Resolution SLA Window</span>
+<div class="flex items-baseline gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-primary font-bold font-mono" id="countdownDisplay">02:44:51</span>
+<span class="font-caption text-caption text-outline">(60m weighbridge arbitration limit)</span>
+</div>
+</div>
+</div>
+</div></div>
+<!-- 12-Column Responsive Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-start">
+<!-- Left Column: Dossier, Evidence, and Arbitration Timeline (8 cols / ~66%) -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- 1. Dispute Baseline & Allegation Dossier -->
+<div class="bg-surface-container-lowest rounded p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-md mb-space-md bg-surface-container-low -mx-space-lg -mt-space-lg px-space-lg pt-space-md rounded-t"><div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment</span>
+<span class="text-[15px] font-bold text-primary tracking-wide uppercase" style="font-family: 'Noto Serif', Georgia, serif;">Dispute Baseline &amp; Allegation Dossier</span>
+</div>
+<span class="font-caption text-caption text-secondary font-mono bg-surface-container px-2 py-0.5 rounded">HASH: 0x9b32...8fa1-SIG</span></div>
+<!-- Key Metrics Quad Card -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-md mb-space-lg">
+<div class="bg-surface-container-low p-space-md rounded">
+<span class="font-caption text-caption text-secondary uppercase block">Manifested Net</span>
+<span class="font-headline-sm text-headline-sm text-primary font-mono font-bold mt-1">450.0 kg</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-0.5">18 bags × 25 kg</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded">
+<span class="font-caption text-caption text-secondary uppercase block">Receiving Scale Net</span>
+<span class="font-headline-sm text-headline-sm text-error font-mono font-bold mt-1">418.0 kg</span>
+<span class="font-caption text-caption text-on-surface-variant block mt-0.5">18 bags verified</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded">
+<span class="font-caption text-caption text-secondary uppercase block">Total Deficit</span>
+<span class="font-headline-sm text-headline-sm text-error font-mono font-bold mt-1">-32.0 kg</span>
+<span class="font-label-sm text-label-sm text-error font-semibold block mt-0.5">-7.11% Variance</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded">
+<span class="font-caption text-caption text-secondary uppercase block">Permitted Tare Margin</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-mono font-bold mt-1">±9.0 kg</span>
+<span class="font-caption text-caption text-error block mt-0.5">Exceeded by 23.0 kg</span>
+</div>
+</div>
+<!-- Comprehensive Waybill Key-Value Matrix -->
+<div class="bg-surface-container-high rounded p-space-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md font-body-sm text-body-sm">
+<div class="space-y-space-xs">
+<div class="flex justify-between py-1 bg-surface-container-lowest px-space-sm rounded">
+<span class="text-secondary">Disputed Waybill:</span>
+<span class="font-mono font-bold text-on-surface">#WB-2023-8819</span>
+</div>
+<div class="flex justify-between py-1 bg-surface-container-lowest px-space-sm rounded">
+<span class="text-secondary">Commodity:</span>
+<span class="font-semibold text-on-surface">High-Protein Legumes &amp; Pulses</span>
+</div>
+<div class="flex justify-between py-1 bg-surface-container-lowest px-space-sm rounded">
+<span class="text-secondary">Batch Identifier:</span>
+<span class="font-mono text-on-surface">LOT-PULSE-109 / APMC Grade-A</span>
+</div>
+<div class="flex justify-between py-1 bg-surface-container-lowest px-space-sm rounded">
+<span class="text-secondary">Dispatch Waypoint:</span>
+<span class="text-on-surface">Hubballi Terminal Staging Depot</span>
+</div>
+</div>
+<div class="space-y-space-xs">
+<div class="flex justify-between py-1 bg-surface-container-lowest px-space-sm rounded">
+<span class="text-secondary">Dispute Claimant (Consignee):</span>
+<span class="font-semibold text-primary">Badami Flood Evac Center Lead</span>
+</div>
+<div class="flex justify-between py-1 bg-surface-container-lowest px-space-sm rounded">
+<span class="text-secondary">Responding Entity (Consignor):</span>
+<span class="font-semibold text-on-surface">Hubballi Mutual Aid Trust</span>
+</div>
+<div class="flex justify-between py-1 bg-surface-container-lowest px-space-sm rounded">
+<span class="text-secondary">Security Seal Status:</span>
+<span class="text-primary bg-primary-fixed px-1.5 py-0.5 rounded font-mono font-semibold">Seal #SL-8819 (Intact)</span>
+</div>
+<div class="flex justify-between py-1 bg-surface-container-lowest px-space-sm rounded">
+<span class="text-secondary">Arbitration Protocol:</span>
+<span class="text-on-surface">NDMA Standard 2% Tare Rule</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tolerance Variance Visualizer SVG Chart -->
+<div class="mt-space-md p-space-md bg-surface-container-low rounded">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-semibold">Variance Spectrum vs. Statutory Threshold</span>
+<span class="font-caption text-caption text-error font-bold font-mono">Excess Breach: 23 kg over limit</span>
+</div>
+<!-- Graphic Bar Visualizer -->
+<div class="relative w-full h-8 bg-surface-container-high rounded overflow-hidden flex">
+<!-- Legal Net Payload Base (0 - 418) -->
+<div class="h-full bg-secondary text-on-secondary flex items-center justify-start pl-2 font-caption text-caption font-mono" style="width: 92.8%;">
+                Delivered Cargo: 418 kg
+              </div>
+<!-- Permitted Tare Buffer (9kg) -->
+<div class="h-full bg-secondary-container text-on-secondary-fixed-variant flex items-center justify-center font-caption text-caption font-mono" style="width: 2.0%;">
+                ±2%
+              </div>
+<!-- Breach Area (23kg) -->
+<div class="h-full bg-error text-on-error flex items-center justify-center font-caption text-caption font-mono font-bold" style="width: 5.2%;">
+                BREACH
+              </div>
+</div>
+<div class="flex justify-between font-caption text-caption text-outline mt-1 font-mono">
+<span>0 kg</span>
+<span>418 kg (Actual Recv)</span>
+<span>441 kg (Max Tare Threshold)</span>
+<span>450 kg (Manifested)</span>
+</div>
+</div>
+</div>
+<!-- 2. Photographic & Weighbridge Forensic Evidence Vault -->
+<div class="bg-surface-container-lowest rounded p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-md mb-space-md bg-surface-container-low -mx-space-lg -mt-space-lg px-space-lg pt-space-md rounded-t"><div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">fact_check</span>
+<span class="text-[15px] font-bold text-primary tracking-wide uppercase" style="font-family: 'Noto Serif', Georgia, serif;">Photographic &amp; Weighbridge Forensic Evidence Vault</span>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">3 Cryptographically Tagged Items</span></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Evidence Card 1: Origin Weighbridge -->
+<div class="bg-surface-container-low rounded overflow-hidden flex flex-col justify-between group">
+<div class="relative h-44 w-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Close-up forensic scan of an official certified weighbridge scale slip printed on thermal paper showing tare and gross numbers with an ink validation stamp under bright depot fluorescent lighting with cool muted green tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChVo9gyEVdf_yKfiKgppkT7bxrYEk1QCkv3zP2dCZoKXubEb_Kn58Zu8KPbgke34Gm2G76rAxhutdu_L4Vnc78yuBgX-j2nUcCXNYuEPunKSCV0s4XHiD_NToejwWc767c82_ZUDJUxWjYmayugIEj_r0jzGL5XSmMtOXeBdMU7fenakmZ7vS0ROmGIi47ct64oGRiH1N_JrzHK9_BACvg4aF2Qcw9-Epkh2kACMM9"/>
+<div class="absolute top-2 left-2 px-space-xs py-0.5 bg-primary/90 text-on-primary rounded font-label-sm text-label-sm">
+                  ORIGIN DEPOT
+                </div>
+<div class="absolute bottom-2 right-2 px-space-xs py-0.5 bg-surface-container-lowest/90 text-on-surface rounded font-caption text-caption font-mono">
+                  08:14 UTC
+                </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Weighbridge Slip #WB-HUB-8812</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-1">
+                    Certified scale stamp at Hubballi Terminal. Gross: 452.1 kg, Tare: 2.1 kg, Net: 450.0 kg.
+                  </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-caption text-caption text-secondary-fixed-dim bg-primary-container px-1 rounded font-mono">VERIFIED CALIBRATION</span>
+<button class="text-secondary hover:text-primary font-caption text-caption underline cursor-pointer" onclick="inspectPhotoModal(1)">Inspect Slip</button>
+</div>
+</div>
+</div>
+<!-- Evidence Card 2: Destination Receiving Scale -->
+<div class="bg-surface-container-low rounded overflow-hidden flex flex-col justify-between group">
+<div class="relative h-44 w-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="High clarity digital photograph of an industrial electronic scale readout in an emergency field evacuation tent clearly displaying 418 point 0 kilograms with relief workers in safety vests standing nearby in daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHAfAM0OWuDUkIm64XOBHGxV76fDF0BFTA1z7KRXxZAYbEV7zO91Be9468kPwmSTpiSHdxLV3-F81Z1nXZqqIy6vdkgQHiHQM46ypI_hCnYlBP_oPVmLIOkS0Rsb_JWkmZo_QQXgjY9xLUSpV9NbA3VvzmMfj7uxd0dKbXTR58Ar0LHSoXO3G_dSSBVggaq67kXWTO_V4CnjanGSr1ZPkCNpBovQMM9qaXqL6lHPsn"/>
+<div class="absolute top-2 left-2 px-space-xs py-0.5 bg-error text-on-error rounded font-label-sm text-label-sm">
+                  DESTINATION TARE
+                </div>
+<div class="absolute bottom-2 right-2 px-space-xs py-0.5 bg-surface-container-lowest/90 text-on-surface rounded font-caption text-caption font-mono">
+                  10:12 UTC
+                </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">Receiving Scale Photo &amp; Receipt</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-1">
+                    Digital floor scale reading 418.0 kg recorded upon cargo arrival at Badami. Tamper seal #SL-8819 intact upon opening.
+                  </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-caption text-caption text-on-error-container bg-error-container px-1 rounded font-mono font-bold">-32 KG DELTA</span>
+<button class="text-secondary hover:text-primary font-caption text-caption underline cursor-pointer" onclick="inspectPhotoModal(2)">Inspect Scale</button>
+</div>
+</div>
+</div>
+<!-- Evidence Card 3: En-route transit & Cargo Bed -->
+<div class="bg-surface-container-low rounded overflow-hidden flex flex-col justify-between group">
+<div class="relative h-44 w-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Documentary photograph of cargo bed of a field logistics truck showing burlap sacks of grain with slight puncture tearing and spilled pulses near tie-down ratchet straps on muddy unpaved road conditions." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFqdR3WXW7g12Rel4HvPdIxuLE4VIw9C8JWOFibUnemiUYEryQv3BFfP6XOtGaVSprXLZvnPmtLpSU52uszb1lLm9-X1qoSErvmWUpWqrQ5oG4076rfT6QPN-n53FQ9MPpU2CW7G2OjN34rjui8A22itjkefu-Fs5oNRD4XRG0_H7XxZzFNTwoLH9rlqYyBqcnAHNDvt-VToOxzflAJ30xR1vUPG7ezFSUHtjy6SRa"/>
+<div class="absolute top-2 left-2 px-space-xs py-0.5 bg-secondary text-on-secondary rounded font-label-sm text-label-sm">
+                  TRANSIT DAMAGE
+                </div>
+<div class="absolute bottom-2 right-2 px-space-xs py-0.5 bg-surface-container-lowest/90 text-on-surface rounded font-caption text-caption font-mono">
+                  TRANSIT LOG
+                </div>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<h4 class="font-label-md text-label-md text-on-surface font-bold">En-Route Bed Damage Observation</h4>
+<p class="font-caption text-caption text-on-surface-variant mt-1">
+                    Field driver log documentation notes 2 burlap sacks sustained friction tearing against ratchet hardware during flooded bypass transit.
+                  </p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center justify-between">
+<span class="font-caption text-caption text-on-secondary-container bg-secondary-container px-1 rounded font-mono">ROAD DAMAGE</span>
+<button class="text-secondary hover:text-primary font-caption text-caption underline cursor-pointer" onclick="inspectPhotoModal(3)">Inspect Damage</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Mutual Reconciliation Hearing & Arbitrator Timeline -->
+<div class="bg-surface-container-lowest rounded p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-md mb-space-md bg-surface-container-low -mx-space-lg -mt-space-lg px-space-lg pt-space-md rounded-t"><div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">history_edu</span>
+<span class="text-[15px] font-bold text-primary tracking-wide uppercase" style="font-family: 'Noto Serif', Georgia, serif;">Mutual Reconciliation Hearing Timeline</span>
+</div>
+<span class="font-caption text-caption text-secondary font-mono bg-surface-container px-2 py-0.5 rounded">Chronological Audit Log (IST)</span></div>
+<!-- Structured Timeline Events -->
+<div class="relative pl-6 space-y-space-md before:absolute before:left-2 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<!-- Event 1 -->
+<div class="relative flex flex-col sm:flex-row sm:items-start gap-space-md">
+<div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-error flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-on-error"></div>
+</div>
+<div class="sm:w-28 shrink-0">
+<span class="font-label-sm text-label-sm font-mono text-error font-bold">09:30 IST</span>
+<span class="block font-caption text-caption text-outline">Consignee Alert</span>
+</div>
+<div class="flex-1 bg-surface-container-low p-space-sm rounded">
+<div class="flex items-center justify-between flex-wrap">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Dispute Formally Raised upon Offloading</span>
+<span class="px-space-xs py-0.5 bg-error-container text-on-error-container font-caption text-caption rounded font-semibold">Automated Credit Freeze</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Badami Flood Evacuation Center officer logged a 32 kg discrepancy on digital reception terminal. Automatic governance lockdown applied to Hubballi Mutual Aid Trust pending arbitration.
+                </p>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative flex flex-col sm:flex-row sm:items-start gap-space-md">
+<div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-primary flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-on-primary"></div>
+</div>
+<div class="sm:w-28 shrink-0">
+<span class="font-label-sm text-label-sm font-mono text-primary font-bold">10:00 IST</span>
+<span class="block font-caption text-caption text-outline">Governance Assignment</span>
+</div>
+<div class="flex-1 bg-surface-container-low p-space-sm rounded">
+<div class="flex items-center justify-between flex-wrap">
+<span class="font-label-md text-label-md text-on-surface font-semibold">SDMA Neutral Mediator Appointed</span>
+<span class="px-space-xs py-0.5 bg-primary-container text-inverse-primary font-caption text-caption rounded font-semibold">Official Assumed</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  State Disaster Management Authority assigned Mr. K. N. Murthy (Joint Commissioner of Relief, Northern Karnataka) to preside over weighbridge arbitration session.
+                </p>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative flex flex-col sm:flex-row sm:items-start gap-space-md">
+<div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-secondary flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-on-secondary"></div>
+</div>
+<div class="sm:w-28 shrink-0">
+<span class="font-label-sm text-label-sm font-mono text-secondary font-bold">10:15 IST</span>
+<span class="block font-caption text-caption text-outline">Consignor Evidence</span>
+</div>
+<div class="flex-1 bg-surface-container-low p-space-sm rounded">
+<div class="flex items-center justify-between flex-wrap">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Departure Weighbridge Calibration Certificate Uploaded</span>
+<span class="px-space-xs py-0.5 bg-secondary-container text-on-secondary-fixed-variant font-caption text-caption rounded font-semibold">Scale #SC-04 Validated</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                  Hubballi Mutual Aid Trust submitted Bureau of Indian Standards weights and measures certificate for Terminal Platform Scale #04, verified valid through March 2025.
+                </p>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="relative flex flex-col sm:flex-row sm:items-start gap-space-md">
+<div class="absolute -left-6 top-1 w-4 h-4 rounded-full bg-primary-container flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-on-tertiary-container"></div>
+</div>
+<div class="sm:w-28 shrink-0">
+<span class="font-label-sm text-label-sm font-mono text-primary font-bold">10:30 IST</span>
+<span class="block font-caption text-caption text-outline">Field Sworn Testimonial</span>
+</div>
+<div class="flex-1 bg-surface-container-low p-space-sm rounded">
+<div class="flex items-center justify-between flex-wrap">
+<span class="font-label-md text-label-md text-on-surface font-semibold">Driver Sworn Audio Note &amp; Route Telemetry</span>
+<span class="px-space-xs py-0.5 bg-surface-container text-secondary font-caption text-caption rounded font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">graphic_eq</span> 01:24 Audio
+                  </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 italic">
+                  “Bags 14 and 16 experienced puncture against cargo bed tie-down ratchets during unpaved culvert crossing near Malaprabha river overflow detour.”
+                </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Arbitrator Action Desk & Ledger Matrix (4 cols / ~33%) -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- 1. Independent Arbitrator Action Panel -->
+<div class="bg-surface-container-lowest rounded p-space-lg shadow-sm">
+<div class="flex items-center gap-space-sm pb-space-md mb-space-md bg-surface-container-low -mx-space-lg -mt-space-lg px-space-lg pt-space-md rounded-t"><span class="material-symbols-outlined text-primary text-[22px]">gavel</span>
+<div>
+<span class="text-[15px] font-bold text-primary uppercase block tracking-wider leading-none" style="font-family: 'Noto Serif', Georgia, serif;">Arbitrator Action Desk</span>
+<span class="font-caption text-caption text-secondary">SDMA Statutory Liaison Jurisdiction</span>
+</div></div>
+<!-- Officer Identity Card -->
+<div class="bg-surface-container-low p-space-md rounded mb-space-md flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center shrink-0 text-on-primary">
+<span class="material-symbols-outlined text-[20px]">badge</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Mr. K. N. Murthy</span>
+<span class="font-caption text-caption text-secondary truncate">SDMA Nodal Liaison Officer #KA-GOV-441</span>
+<span class="font-caption text-caption text-primary font-semibold">Special Relief Commission Power Active</span>
+</div>
+</div>
+<!-- Proposed Conciliation Findings -->
+<div class="space-y-space-sm mb-space-lg"><span class="font-label-sm text-label-sm text-secondary uppercase font-semibold block tracking-wider">Proposed Conciliation Findings:</span>
+<div class="bg-surface-container-high p-space-sm rounded border-l-2 border-primary">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">verified</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">1. Accidental En-Route Loss (Non-Fraudulent)</span>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">
+Physical damage confirmed due to flooded bypass turbulence. Tamper seal was verified intact; zero intentional diversion.
+</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high p-space-sm rounded border-l-2 border-primary">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0 mt-0.5">receipt_long</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">2. Amend Ledger to 418 kg</span>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">
+Adjust formal Bill of Quantities on immutable ledger to reflect 418 kg actual net grains accepted by Badami Camp.
+</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high p-space-sm rounded border-l-2 border-secondary">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">sync_alt</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">3. Immediate 32 kg Emergency Re-Broadcast</span>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">
+Trigger automated supplementary dispatch of 32 kg from Bagalkot Staging Bay to safeguard evacuee nutrient targets.
+</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-high p-space-sm rounded border-l-2 border-secondary">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">shield</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">4. Force Majeure Reputation Waiver</span>
+<p class="font-caption text-caption text-on-surface-variant mt-0.5">
+Waive customary 15-point penalty under Disaster Act Section 12 (documented washed-out bypass condition).
+</p>
+</div>
+</div>
+</div></div>
+<!-- Interactive Action Buttons Cluster -->
+<div class="space-y-space-xs">
+<button class="w-full py-2.5 px-space-md rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all flex items-center justify-center gap-space-xs shadow-sm" id="btnApprove" onclick="executeArbitrationRuling()">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span>Approve Compromise &amp; Amend Ledger</span>
+</button>
+<button class="w-full py-2 px-space-md rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high transition-colors flex items-center justify-center gap-space-xs shadow-sm" id="btnSecondaryWeigh" onclick="requestSecondaryWeighbridge()">
+<span class="material-symbols-outlined text-[18px] text-secondary">scale</span>
+<span>Request Second Weighbridge Verification</span>
+</button>
+<button class="w-full py-2 px-space-md rounded bg-surface-container-lowest text-error font-label-md text-label-md hover:bg-error-container transition-colors flex items-center justify-center gap-space-xs shadow-sm" id="btnEscalateFraud" onclick="escalateToFraudHearing()">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span>Escalate to Formal Anti-Fraud Hearing</span>
+</button>
+</div>
+</div>
+<!-- 2. Reputation & Ledger Impact Matrix -->
+<div class="bg-surface-container-lowest rounded p-space-lg shadow-sm">
+<div class="flex items-center gap-space-sm pb-space-md mb-space-md bg-surface-container-low -mx-space-lg -mt-space-lg px-space-lg pt-space-md rounded-t"><span class="material-symbols-outlined text-primary text-[20px]">analytics</span>
+<span class="text-[15px] font-bold text-primary uppercase tracking-wider" style="font-family: 'Noto Serif', Georgia, serif;">Reputation &amp; Ledger Impact Matrix</span></div>
+<div class="space-y-space-md font-body-sm text-body-sm">
+<!-- Trust Metric Indicators -->
+<div class="space-y-space-sm">
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface">Hubballi Mutual Aid Trust Rating</span>
+<span class="font-mono font-bold text-primary">94.8% (Protected)</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded overflow-hidden">
+<div class="h-full bg-secondary rounded" style="width: 94.8%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-sm text-label-sm mb-1">
+<span class="text-on-surface">Badami Evacuation Center Compliance</span>
+<span class="font-mono font-bold text-primary">99.1% (Exemplary)</span>
+</div>
+<div class="w-full h-2 bg-surface-container-high rounded overflow-hidden">
+<div class="h-full bg-primary rounded" style="width: 99.1%"></div>
+</div>
+</div>
+</div>
+<!-- Mathematical Rule Specification -->
+<div class="bg-surface-container-low p-space-md rounded space-y-space-xs">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold block">Statutory Formula (NDMA-GOV-2024):</span>
+<div class="flex items-start gap-space-xs text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0">timer</span>
+<span>Resolutions completed within 60-minute window incur <strong class="text-on-surface">0 reputation demerit</strong>.</span>
+</div>
+<div class="flex items-start gap-space-xs text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0">data_array</span>
+<span>The 32 kg discrepancy is isolated from historical reliability index upon mutual digital cosigning.</span>
+</div>
+<div class="flex items-start gap-space-xs text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[16px] text-secondary shrink-0">handshake</span>
+<span>Both participating organizations retain Tier-1 Disaster Dispatch clearance.</span>
+</div>
+</div>
+<!-- Block confirmation signature summary -->
+<div class="p-space-sm bg-surface-container-high rounded flex items-center justify-between font-mono text-caption text-outline">
+<span>BLOCK_REF: #984218-ARBIT</span>
+<span class="text-secondary font-semibold">SIGS_PENDING: 1/2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification Toast Container -->
+<div class="fixed bottom-6 right-6 hidden z-50 transition-all transform duration-300" id="toastNotification">
+<div class="bg-primary text-on-primary p-space-md rounded shadow-xl flex items-center gap-space-md">
+<span class="material-symbols-outlined text-[24px] text-inverse-primary" id="toastIcon">check_circle</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold" id="toastTitle">Action Confirmed</span>
+<span class="font-caption text-caption text-inverse-primary" id="toastMessage">Status updated across network nodes.</span>
+</div>
+<button class="ml-space-md text-inverse-primary hover:text-on-primary" onclick="hideToast()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+<!-- Generic Reusable Modal Container -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm hidden z-50 flex items-center justify-center p-space-md" id="modalContainer">
+<div class="bg-surface-container-lowest rounded max-w-lg w-full p-space-lg shadow-xl relative animate-in fade-in zoom-in-95 duration-200">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]" id="modalIcon">info</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="modalTitle">Incident Docket Details</h3>
+</div>
+<button class="text-secondary hover:text-on-surface" onclick="closeModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="py-space-md font-body-sm text-body-sm text-on-surface-variant" id="modalBody">
+        Modal content goes here.
+      </div>
+<div class="pt-space-sm flex justify-end gap-space-xs border-t border-surface-container-high">
+<button class="px-space-md py-1.5 rounded bg-surface-container text-on-surface font-label-md text-label-md hover:bg-surface-container-high" onclick="closeModal()">Cancel</button>
+<button class="px-space-md py-1.5 rounded bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container" id="modalConfirmBtn" onclick="closeModal()">Acknowledge</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Countdown simulation for Resolution SLA
+  let totalSeconds = 2 * 3600 + 44 * 60 + 51;
+  const countdownEl = document.getElementById('countdownDisplay');
+
+  setInterval(() => {
+    if (totalSeconds > 0) {
+      totalSeconds--;
+      const hrs = String(Math.floor(totalSeconds / 3600)).padStart(2, '0');
+      const mins = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, '0');
+      const secs = String(totalSeconds % 60).padStart(2, '0');
+      if (countdownEl) {
+        countdownEl.innerText = `${hrs}:${mins}:${secs}`;
+      }
+    }
+  }, 1000);
+
+  // Toast notification utility
+  function showToast(title, message, isError = false) {
+    const toast = document.getElementById('toastNotification');
+    const toastTitle = document.getElementById('toastTitle');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+
+    if (toast && toastTitle && toastMsg) {
+      toastTitle.innerText = title;
+      toastMsg.innerText = message;
+      if (isError) {
+        toastIcon.innerText = 'warning';
+        toastIcon.className = 'material-symbols-outlined text-[24px] text-error-container';
+      } else {
+        toastIcon.innerText = 'check_circle';
+        toastIcon.className = 'material-symbols-outlined text-[24px] text-inverse-primary';
+      }
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 4500);
+    }
+  }
+
+  function hideToast() {
+    const toast = document.getElementById('toastNotification');
+    if (toast) toast.classList.add('hidden');
+  }
+
+  // Modal helpers
+  function openModal(title, content, icon = 'info', confirmLabel = 'Acknowledge', onConfirm = null) {
+    const container = document.getElementById('modalContainer');
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalBody').innerHTML = content;
+    document.getElementById('modalIcon').innerText = icon;
+    const confirmBtn = document.getElementById('modalConfirmBtn');
+    confirmBtn.innerText = confirmLabel;
+    
+    confirmBtn.onclick = function() {
+      if (onConfirm) onConfirm();
+      closeModal();
+    };
+
+    container.classList.remove('hidden');
+  }
+
+  function closeModal() {
+    const container = document.getElementById('modalContainer');
+    container.classList.add('hidden');
+  }
+
+  // Primary Arbitration Rulings
+  function executeArbitrationRuling() {
+    openModal(
+      'Confirm Conciliation Compromise',
+      `<p class="mb-2">You are enacting the statutory compromise as <strong>SDMA Nodal Liaison Officer #KA-GOV-441</strong>:</p>
+       <ul class="list-disc pl-5 space-y-1 text-caption text-secondary font-mono">
+         <li>Accepted delivery revised from 450 kg to <strong>418 kg</strong>.</li>
+         <li>32 kg deficit broadcast issued to <strong>Bagalkot Staging Bay</strong>.</li>
+         <li>Penalty waiver enacted under <strong>NDMA Section 12 Force Majeure</strong>.</li>
+       </ul>
+       <p class="mt-3 font-semibold text-primary">This will cryptographically seal Case #DISP-2024-042 and restore mutual credits.</p>`,
+      'gavel',
+      'Sign & Transmit Ruling',
+      () => {
+        showToast('Ledger Amended Successfully', 'Case #DISP-2024-042 resolved. Re-broadcast queued for Bagalkot Staging.');
+      }
+    );
+  }
+
+  function requestSecondaryWeighbridge() {
+    openModal(
+      'Authorize Secondary Weighbridge Audit',
+      `<p>An independent certified mobile scale will be dispatched from <strong>Badami Municipal APMC Yard</strong> within 45 minutes to perform sack-by-sack tare validation.</p>
+       <p class="mt-2 text-caption text-secondary">Note: Additional verification freezes the current SLA countdown timer under Rule 14.C.</p>`,
+      'scale',
+      'Dispatch Mobile Weighbridge',
+      () => {
+        showToast('Secondary Weighbridge Requested', 'Mobile calibration unit dispatched from Badami APMC.');
+      }
+    );
+  }
+
+  function escalateToFraudHearing() {
+    openModal(
+      'Escalate to Formal Anti-Fraud Tribunal',
+      `<p class="text-error font-semibold">WARNING: Escalate to State Anti-Fraud &amp; Vigilance Commission?</p>
+       <p class="mt-2">This triggers an immediate 90-day license suspension of Hubballi Mutual Aid Trust transit permits pending a judicial inquiry. Use only if deliberate siphoning or diversion is suspected.</p>`,
+      'warning',
+      'Confirm Formal Escalation',
+      () => {
+        showToast('Tribunal Escalated', 'Case transferred to Karnataka Vigilance Commission.', true);
+      }
+    );
+  }
+
+  function summonLiaisonToast() {
+    showToast('Liaison Summoned', 'Emergency push alert sent to SDMA Joint Commissioner field terminal.');
+  }
+
+  function exportDocketModal() {
+    showToast('Docket Export Queued', 'Compiled forensic PDF docket (Hash: 0x9b32...8fa1) generated.');
+  }
+
+  function logIncidentModal() {
+    openModal(
+      'Log Consignment Variance Incident',
+      `<div class="space-y-3">
+         <p class="text-caption text-secondary">Initiate a formal NDMA weighbridge or cargo damage dispute against an active waybill manifest.</p>
+         <div>
+           <label class="block font-label-sm text-label-sm text-on-surface mb-1">Waybill Manifest Number</label>
+           <input type="text" placeholder="e.g., WB-2024-9901" class="w-full bg-surface-container-high px-space-sm py-1.5 rounded font-mono text-body-sm focus:outline-none focus:ring-1 focus:ring-secondary"/>
+         </div>
+         <div>
+           <label class="block font-label-sm text-label-sm text-on-surface mb-1">Discrepancy Category</label>
+           <select class="w-full bg-surface-container-high px-space-sm py-1.5 rounded font-body-sm text-on-surface focus:outline-none">
+             <option>Weight Variance (&gt; 2% Tare Margin)</option>
+             <option>Physical Cargo Tear / Spillage</option>
+             <option>Tamper Seal Breach</option>
+             <option>Cold Chain Temperature Breach</option>
+           </select>
+         </div>
+       </div>`,
+      'add_box',
+      'Submit Incident Docket',
+      () => {
+        showToast('Incident Submitted', 'New investigation docket initialized.');
+      }
+    );
+  }
+
+  function inspectPhotoModal(idx) {
+    const titles = [
+      'Origin Depot Weighbridge Slip #WB-HUB-8812',
+      'Destination Receiving Scale Photo & Tare Receipt',
+      'Cargo En-Route Seal & Burlap Tear Inspection'
+    ];
+    openModal(
+      titles[idx - 1] || 'Forensic Visual Evidence',
+      `<div class="p-space-sm bg-surface-container-high rounded text-center">
+         <span class="font-mono text-caption text-secondary block mb-2">METADATA AUDIT: SHA-256 Validated</span>
+         <p class="text-body-sm text-on-surface">Digital watermarks verify image capture directly via FieldGrid Android Client v4.2 with locked GPS coordinates and zero post-processing edits.</p>
+       </div>`,
+      'fact_check',
+      'Close Preview'
+    );
+  }
+</script></main></div></body></html>
